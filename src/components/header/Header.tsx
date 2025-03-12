@@ -1,21 +1,11 @@
-import Image from "next/image";
+import Navbar from '@/components/navbar/Navbar'
 
 function Header() {
   return (
     <header>
-      <div>
-        <a>
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Ruby Wager Logo"
-            width={16}
-            height={16}
-          />
-        </a>
-      </div>
+      <Navbar />
     </header>
-  );
+  )
 }
 
-export default Header;
+export default Header
