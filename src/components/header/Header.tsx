@@ -1,11 +1,9 @@
 import Navbar from '@/components/navbar/Navbar'
 
-function Header() {
+export default function Header() {
   return (
     <header>
       <Navbar />
     </header>
   )
 }
-
-export default Header

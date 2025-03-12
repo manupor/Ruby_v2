@@ -11,7 +11,12 @@ import {
   navigationMenuTriggerStyle,
 } from '@/components/ui/navigation-menu'
 import { Button } from '@/components/ui/button'
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
+import {
+  Sheet,
+  SheetTitle,
+  SheetContent,
+  SheetTrigger,
+} from '@/components/ui/sheet'
 import {
   List,
   X,
@@ -22,7 +27,7 @@ import {
   Info,
 } from '@phosphor-icons/react'
 
-const Navbar = () => {
+export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false)
 
   const navItems = [
@@ -55,7 +60,7 @@ const Navbar = () => {
 
   return (
     <div className="bg-foreground">
-      <div className="container mx-auto flex items-center justify-between px-4 py-3">
+      <div className="container mx-auto flex items-center justify-between px-4 py-3 lg:px-8">
         <div className="flex items-center">
           <Link href="/">
             <Image
@@ -104,6 +109,7 @@ const Navbar = () => {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[280px] sm:w-[350px]">
+              <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
               <div className="flex h-full flex-col p-5">
                 <div className="flex justify-end">
                   <Button size="icon" onClick={() => setIsOpen(false)}>
@@ -142,5 +148,3 @@ const Navbar = () => {
     </div>
   )
 }
-
-export default Navbar
