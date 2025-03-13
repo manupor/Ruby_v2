@@ -94,7 +94,7 @@ export default function Navbar() {
         </div>
 
         {/* Login and Sign Up buttons - hidden on mobile */}
-        <div className="hidden items-center gap-2 md:flex">
+        <div className="flex items-center gap-2">
           <Button variant="brandDark">Join Now</Button>
           <Button variant="outline">Login</Button>
         </div>
@@ -105,6 +105,7 @@ export default function Navbar() {
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon" className="lg:hidden">
                 <List color="white" className="h-6 w-6" />
+                {/* <span className="text-background uppercase">Menu</span> */}
                 <span className="sr-only">Toggle menu</span>
               </Button>
             </SheetTrigger>
