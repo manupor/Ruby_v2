@@ -34,32 +34,32 @@ export default function Navbar() {
     {
       href: '/sports',
       label: 'Sportsbook',
-      icon: <Football color={isOpen ? 'oklch(30.52% 0 0)' : 'white'} />,
+      icon: <Football color={'#AAA'} />,
     },
     {
       href: '/racebook',
       label: 'Racebook',
-      icon: <Horse color={isOpen ? 'oklch(30.52% 0 0)' : 'white'} />,
+      icon: <Horse color={'#AAA'} />,
     },
     {
       href: '/casino',
       label: 'Casino',
-      icon: <Spade color={isOpen ? 'oklch(30.52% 0 0)' : 'white'} />,
+      icon: <Spade color={'#AAA'} />,
     },
     {
       href: '/promotions',
       label: 'Promotions',
-      icon: <Tag color={isOpen ? 'oklch(30.52% 0 0)' : 'white'} />,
+      icon: <Tag color={'#AAA'} />,
     },
     {
       href: '/help',
       label: 'Help',
-      icon: <Info color={isOpen ? 'oklch(30.52% 0 0)' : 'white'} />,
+      icon: <Info color={'#AAA'} />,
     },
   ]
 
   return (
-    <div className="bg-foreground">
+    <div className="bg-background">
       <div className="container mx-auto flex items-center justify-between px-4 py-3 lg:px-8">
         <div className="flex items-center">
           <Link href="/">
@@ -103,7 +103,7 @@ export default function Navbar() {
         <div className="lg:hidden">
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon" className="lg:hidden">
+              <Button variant="outline" size="icon" className="lg:hidden">
                 <List color="white" className="h-6 w-6" />
                 {/* <span className="text-background uppercase">Menu</span> */}
                 <span className="sr-only">Toggle menu</span>
@@ -113,7 +113,11 @@ export default function Navbar() {
               <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
               <div className="flex h-full flex-col p-5">
                 <div className="flex justify-end">
-                  <Button size="icon" onClick={() => setIsOpen(false)}>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    onClick={() => setIsOpen(false)}
+                  >
                     <X size={24} />
                     <span className="sr-only">Close menu</span>
                   </Button>
@@ -124,7 +128,7 @@ export default function Navbar() {
                     <Link
                       key={item.href}
                       href={item.href}
-                      className="hover:bg-accent flex items-center rounded-md px-2 py-2 text-lg font-medium transition-colors"
+                      className="bg-background hover:bg-accent flex items-center rounded-md px-2 py-2 text-lg font-medium transition-colors"
                       onClick={() => setIsOpen(false)}
                     >
                       <span className="mr-2">{item.icon}</span>
