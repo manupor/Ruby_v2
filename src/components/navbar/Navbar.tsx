@@ -24,6 +24,8 @@ import {
   Horse,
   Spade,
   Tag,
+  Bank,
+  Article,
   Info,
 } from '@phosphor-icons/react'
 
@@ -32,7 +34,7 @@ export default function Navbar() {
 
   const navItems = [
     {
-      href: '/sports',
+      href: '/sportsbook',
       label: 'Sportsbook',
       icon: <Football color={'#AAA'} />,
     },
@@ -50,6 +52,16 @@ export default function Navbar() {
       href: '/promotions',
       label: 'Promotions',
       icon: <Tag color={'#AAA'} />,
+    },
+    {
+      href: '/banking',
+      label: 'Banking',
+      icon: <Bank color={'#AAA'} />,
+    },
+    {
+      href: '/rules',
+      label: 'Rules',
+      icon: <Article color={'#AAA'} />,
     },
     {
       href: '/help',
@@ -95,8 +107,18 @@ export default function Navbar() {
 
         {/* Login and Sign Up buttons - hidden on mobile */}
         <div className="flex items-center gap-2">
-          <Button variant="brandDark">Join Now</Button>
-          <Button variant="outline">Login</Button>
+          <Button
+            variant="brandDark"
+            className="font-thunder pb-1 text-lg font-bold uppercase"
+          >
+            Join Now
+          </Button>
+          <Button
+            variant="outline"
+            className="font-thunder pb-1 text-lg leading-1 font-bold uppercase"
+          >
+            Login
+          </Button>
         </div>
 
         {/* Mobile and tablet menu */}

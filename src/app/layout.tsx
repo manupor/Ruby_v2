@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import localFont from 'next/font/local'
 import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 
@@ -16,6 +17,12 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 })
 
+const fontThunder = localFont({
+  src: '../../public/fonts/Thunder-VF.ttf',
+  variable: '--font-thunder',
+  display: 'swap',
+})
+
 export const metadata: Metadata = {
   title: 'Rubywager.com',
   description: 'Ruby wager description goes here...',
@@ -29,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`dark ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`dark ${geistSans.variable} ${geistMono.variable} ${fontThunder.variable} antialiased`}
       >
         <Header />
         <Hero />
