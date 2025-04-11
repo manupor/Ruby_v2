@@ -74,7 +74,7 @@ export default function Navbar() {
     <div className="bg-background">
       <div className="container mx-auto flex items-center justify-between px-4 py-3 lg:px-8">
         <div className="flex items-center">
-          <Link href="/">
+          <Link href="/" className="min-w-[92px]">
             <Image
               src="/Ruby-Wager-Logo.png"
               alt="RubyWager Logo"

@@ -9,9 +9,7 @@ export const metadata: Metadata = {
 export default function RulesPage() {
   return (
     <main className="container mx-auto max-w-4xl px-4 py-20">
-      <h1 className="mb-10 text-3xl font-bold">
-        Responsible Gambling Guidelines
-      </h1>
+      <h1 className="mb-10 text-3xl font-bold">Rules</h1>
 
       <section className="mb-16">
         <p>
@@ -23,10 +21,14 @@ export default function RulesPage() {
         </p>
       </section>
 
+      <h2 className="text-brand mb-6 text-2xl font-bold">
+        Responsible Gambling Guidelines
+      </h2>
+
       <section className="mb-10">
-        <h2 className="mb-6 text-2xl font-semibold">
+        <h3 className="mb-6 text-xl font-semibold">
           Responsible Gambling Guidelines
-        </h2>
+        </h3>
         <div className="rounded-lg border border-[#ff5f5f5] p-6">
           <p className="mb-4">
             We encourage all players to follow these responsible gaming
@@ -54,9 +56,9 @@ export default function RulesPage() {
       </section>
 
       <section className="mb-10">
-        <h2 className="mb-6 text-2xl font-semibold">
+        <h3 className="mb-6 text-xl font-semibold">
           Self-Exclusion & Account Limits
-        </h2>
+        </h3>
         <div className="rounded-lg border border-[#ff5f5f5] p-6">
           <p className="mb-4">
             If you feel that gambling is becoming a problem, we offer the
@@ -84,9 +86,9 @@ export default function RulesPage() {
       </section>
 
       <section className="mb-10">
-        <h2 className="mb-6 text-2xl font-semibold">
+        <h3 className="mb-6 text-xl font-semibold">
           Recognizing Problem Gambling
-        </h2>
+        </h3>
         <div className="rounded-lg border border-[#ff5f5f5] p-6">
           <p className="mb-4">
             If you or someone you know is struggling with gambling addiction,
@@ -105,7 +107,7 @@ export default function RulesPage() {
       </section>
 
       <section className="mb-10">
-        <h2 className="mb-6 text-2xl font-semibold">Need Help?</h2>
+        <h3 className="mb-6 text-xl font-semibold">Need Help?</h3>
         <div className="rounded-lg border border-[#ff5f5f5] p-6">
           <p className="mb-4">
             If you believe you have a gambling problem, we encourage you to seek
@@ -146,12 +148,29 @@ export default function RulesPage() {
           </ul>
         </div>
       </section>
-      <section>
+      <section className="mb-12">
         <p>
           At Ruby Wager, we take responsible gaming seriously. If you ever need
           assistance or guidance, our support team is here to help. Play smart,
           stay in control, and enjoy the game!
         </p>
+      </section>
+
+      <h2 className="text-brand mb-6 text-2xl font-bold">
+        Sports Betting Rules
+      </h2>
+
+      <section className="mb-10">
+        <h3 className="mb-6 text-xl font-semibold">Sports Betting Rules</h3>
+        <div className="rounded-lg border border-[#ff5f5f5] p-6">
+          <p className="mb-4">
+            At Ruby Wager, we strive to provide a fair and transparent betting
+            environment for all players. Below are the key sports betting rules
+            you need to know to ensure a smooth and enjoyable experience. These
+            rules apply to all bets placed at Ruby Wager, and by placing a bet,
+            you agree to adhere to these terms.
+          </p>
+        </div>
       </section>
     </main>
   )
