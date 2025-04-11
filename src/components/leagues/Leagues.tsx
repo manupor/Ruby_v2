@@ -9,7 +9,6 @@ export default function Leagues() {
           <ul className="flex flex-wrap items-center justify-center gap-10">
             <li>
               <Image
-                className="scale-50"
                 src="/leagues/UEFA.png"
                 alt="UEFA"
                 width="114"
@@ -17,53 +16,22 @@ export default function Leagues() {
               />
             </li>
             <li>
-              <Image
-                className="scale-50"
-                src="/leagues/NBA.png"
-                alt="NBA"
-                width="45"
-                height="110"
-              />
+              <Image src="/leagues/NBA.png" alt="NBA" width="45" height="110" />
+            </li>
+            <li>
+              <Image src="/leagues/UFC.png" alt="UFC" width="170" height="58" />
+            </li>
+            <li>
+              <Image src="/leagues/NFL.png" alt="NFL" width="93" height="123" />
+            </li>
+            <li>
+              <Image src="/leagues/MLB.png" alt="MLB" width="136" height="76" />
+            </li>
+            <li>
+              <Image src="/leagues/MLS.png" alt="MLS" width="92" height="98" />
             </li>
             <li>
               <Image
-                className="scale-50"
-                src="/leagues/UFC.png"
-                alt="UFC"
-                width="170"
-                height="58"
-              />
-            </li>
-            <li>
-              <Image
-                className="scale-50"
-                src="/leagues/NFL.png"
-                alt="NFL"
-                width="93"
-                height="123"
-              />
-            </li>
-            <li>
-              <Image
-                className="scale-50"
-                src="/leagues/MLB.png"
-                alt="MLB"
-                width="136"
-                height="76"
-              />
-            </li>
-            <li>
-              <Image
-                className="scale-50"
-                src="/leagues/MLS.png"
-                alt="MLS"
-                width="92"
-                height="98"
-              />
-            </li>
-            <li>
-              <Image
-                className="scale-50"
                 src="/leagues/la-liga.png"
                 alt="La Liga Española"
                 width="216"
@@ -72,7 +40,6 @@ export default function Leagues() {
             </li>
             <li>
               <Image
-                className="scale-50"
                 src="/leagues/premier-league.png"
                 alt="Premier League"
                 width="67"

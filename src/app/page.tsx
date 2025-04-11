@@ -103,14 +103,12 @@ export default function Home() {
       <div className="py-10">
         <div className="flex flex-col items-center">
           <Image
-            // className="scale-0"
             src="/home/slots-banner.png"
             alt="UEFA"
             width="1920"
             height="634"
           />
           <Image
-            className="scale-40"
             src="/home/slots-logo.png"
             alt="UEFA"
             width="523"
