@@ -8,19 +8,31 @@ export const metadata: Metadata = {
 
 export default function RacebookPage() {
   return (
-    <main className="container mx-auto max-w-4xl px-4 py-20">
-      <h1 className="mb-10 text-3xl font-bold">Ruby Wager Racebook</h1>
+    <>
+      <div className="relative hidden h-[400px] w-full overflow-hidden lg:block">
+        <div
+          className="h-full w-full"
+          style={{
+            backgroundImage: `url('/racebook.png')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
+        />
+      </div>
+      <div className="container mx-auto max-w-4xl px-4 py-20">
+        <h1 className="mb-10 text-3xl font-bold">Ruby Wager Racebook</h1>
 
-      <section className="mb-16">
-        <p>
-          At Ruby Wager, we bring you the ultimate horse racing betting
-          experience, covering tracks from around the world with competitive
-          odds, fast payouts, and exciting wagering options. Whether you’re a
-          casual bettor or a seasoned handicapper, our racebook gives you access
-          to the best races, from Triple Crown events to daily races at top
-          tracks.
-        </p>
-      </section>
-    </main>
+        <section className="mb-16">
+          <p>
+            At Ruby Wager, we bring you the ultimate horse racing betting
+            experience, covering tracks from around the world with competitive
+            odds, fast payouts, and exciting wagering options. Whether you’re a
+            casual bettor or a seasoned handicapper, our racebook gives you
+            access to the best races, from Triple Crown events to daily races at
+            top tracks.
+          </p>
+        </section>
+      </div>
+    </>
   )
 }

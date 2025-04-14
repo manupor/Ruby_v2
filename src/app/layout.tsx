@@ -4,7 +4,6 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 
 import Header from '@/components/header/Header'
-import Hero from '@/components/hero/Hero'
 import Footer from '@/components/footer/Footer'
 
 const geistSans = Geist({
@@ -39,7 +38,6 @@ export default function RootLayout({
         className={`dark ${geistSans.variable} ${geistMono.variable} ${fontThunder.variable} antialiased`}
       >
         <Header />
-        <Hero />
         <main role="main">{children}</main>
         <Footer />
       </body>
