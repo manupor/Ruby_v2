@@ -72,105 +72,104 @@ export default function Navbar() {
 
   return (
     <div className="bg-background">
-      <div className="container mx-auto flex items-center justify-between px-4 py-3 lg:px-8">
-        <div className="flex items-center">
-          <Link href="/" className="min-w-[92px]">
-            <Image
-              src="/Ruby-Wager-Logo.png"
-              alt="RubyWager Logo"
-              width={92}
-              height={20}
-              priority
-            />
-          </Link>
-
-          {/* Navigation items for desktop - hidden on mobile and tablet */}
-          <div className="ml-[60px] hidden lg:block">
-            <NavigationMenu>
-              <NavigationMenuList>
-                {navItems.map((item) => (
-                  <NavigationMenuItem key={item.href}>
-                    <Link href={item.href} legacyBehavior passHref>
-                      <NavigationMenuLink
-                        className={navigationMenuTriggerStyle()}
-                      >
-                        <span className="mr-2">{item.icon}</span>
-                        <span>{item.label}</span>
-                      </NavigationMenuLink>
-                    </Link>
-                  </NavigationMenuItem>
-                ))}
-              </NavigationMenuList>
-            </NavigationMenu>
-          </div>
-        </div>
-
+      <div className="container flex w-[90%] items-center justify-between px-4 py-4 lg:mx-auto lg:w-full lg:px-4">
+        <Link href="/" className="min-w-[92px]">
+          <Image
+            src="/Ruby-Wager-Logo.png"
+            alt="RubyWager Logo"
+            width={92}
+            height={20}
+            priority
+          />
+        </Link>
         {/* Login and Sign Up buttons - hidden on mobile */}
         <div className="flex items-center gap-2">
           <Button
             variant="brandDark"
-            className="font-thunder pb-1 text-lg font-bold uppercase"
+            className="font-thunder px-4 pt-6 pb-5 text-2xl font-bold tracking-wider uppercase"
           >
             Join Now
           </Button>
           <Button
-            variant="outline"
-            className="font-thunder pb-1 text-lg leading-1 font-bold uppercase"
+            variant="default"
+            className="font-thunder px-4 pt-6 pb-5 text-2xl font-bold tracking-wider uppercase"
           >
             Login
           </Button>
         </div>
+      </div>
 
-        {/* Mobile and tablet menu */}
-        <div className="lg:hidden">
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild>
-              <Button variant="outline" size="icon" className="lg:hidden">
-                <List color="white" className="h-6 w-6" />
-                {/* <span className="text-background uppercase">Menu</span> */}
-                <span className="sr-only">Toggle menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[280px] sm:w-[350px]">
-              <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-              <div className="flex h-full flex-col p-5">
-                <div className="flex justify-end">
-                  <Button
-                    variant="outline"
-                    size="icon"
+      <div className="container mx-auto hidden px-4 pb-4 lg:block lg:px-4">
+        {/* Navigation items for desktop - hidden on mobile and tablet */}
+        <NavigationMenu className="block max-w-full">
+          <NavigationMenuList className="justify-between">
+            {navItems.map((item) => (
+              <NavigationMenuItem key={item.href}>
+                <Link href={item.href} legacyBehavior passHref>
+                  <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                    <span className="mr-2">{item.icon}</span>
+                    <span>{item.label}</span>
+                  </NavigationMenuLink>
+                </Link>
+              </NavigationMenuItem>
+            ))}
+          </NavigationMenuList>
+        </NavigationMenu>
+      </div>
+
+      {/* Mobile and tablet menu */}
+      <div className="absolute top-4 right-4 z-50 ml-2 lg:hidden">
+        <Sheet open={isOpen} onOpenChange={setIsOpen}>
+          <SheetTrigger asChild>
+            <Button
+              variant="outline"
+              size="icon"
+              className="h-[45px] w-[45px] lg:hidden"
+            >
+              <List color="white" className="h-6 w-6" />
+              {/* <span className="text-background uppercase">Menu</span> */}
+              <span className="sr-only">Toggle menu</span>
+            </Button>
+          </SheetTrigger>
+          <SheetContent side="right" className="w-[280px] sm:w-[350px]">
+            <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+            <div className="flex h-full flex-col p-5">
+              <div className="flex justify-end">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <X size={24} />
+                  <span className="sr-only">Close menu</span>
+                </Button>
+              </div>
+
+              <nav className="mt-8 flex flex-col gap-4">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="bg-background hover:bg-accent flex items-center rounded-md px-2 py-2 text-lg font-medium transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
-                    <X size={24} />
-                    <span className="sr-only">Close menu</span>
-                  </Button>
-                </div>
+                    <span className="mr-2">{item.icon}</span>
+                    <span>{item.label}</span>
+                  </Link>
+                ))}
+              </nav>
 
-                <nav className="mt-8 flex flex-col gap-4">
-                  {navItems.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="bg-background hover:bg-accent flex items-center rounded-md px-2 py-2 text-lg font-medium transition-colors"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      <span className="mr-2">{item.icon}</span>
-                      <span>{item.label}</span>
-                    </Link>
-                  ))}
-                </nav>
-
-                <div className="mt-auto flex gap-2 pb-6">
-                  <Button variant="brandDark" className="w-[50%]">
-                    Join Now
-                  </Button>
-                  <Button variant="outline" className="w-[50%]">
-                    Login
-                  </Button>
-                </div>
+              <div className="mt-auto flex gap-2 pb-6">
+                <Button variant="brandDark" className="w-[50%]">
+                  Join Now
+                </Button>
+                <Button variant="outline" className="w-[50%]">
+                  Login
+                </Button>
               </div>
-            </SheetContent>
-          </Sheet>
-        </div>
+            </div>
+          </SheetContent>
+        </Sheet>
       </div>
     </div>
   )
