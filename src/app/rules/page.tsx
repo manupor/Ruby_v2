@@ -161,6 +161,7 @@ export default function RulesPage() {
             </ul>
           </div>
         </section>
+
         <section className="mb-12">
           <p>
             At Ruby Wager, we take responsible gaming seriously. If you ever

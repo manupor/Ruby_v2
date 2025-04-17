@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="container mx-auto px-4 py-20 lg:px-8">
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
             {/* Brand section */}
-            <div className="space-y-2">
+            <div className="flex flex-col items-center space-y-2 text-center">
               <Link href="/">
                 <Image
                   src="/Ruby-Wager-Logo.png"
@@ -24,7 +24,7 @@ export default function Footer() {
             </div>
 
             {/* Links section */}
-            <nav className="flex flex-col space-y-2">
+            <nav className="flex flex-col items-center space-y-2 text-center">
               <Link
                 href="/about"
                 className="text-foreground hover:text-brand text-sm transition-colors"
@@ -58,7 +58,7 @@ export default function Footer() {
             </nav>
 
             {/* section */}
-            <div className="flex flex-col space-y-2">
+            <div className="flex flex-col items-center space-y-2 text-center">
               <Link
                 href="/banking"
                 className="text-foreground hover:text-brand text-sm transition-colors"
