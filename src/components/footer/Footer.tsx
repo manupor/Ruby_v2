@@ -1,88 +1,73 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { Building, BookText, Newspaper } from 'lucide-react' // O usa tus íconos si estás usando Phosphor
 
 export default function Footer() {
   return (
     <footer>
       <div className="bg-[#1A1A1A] text-[#F5F5F5]">
-        <div className="container mx-auto px-4 py-20 lg:px-8">
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+        <div className="mx-auto max-w-[1200px] px-4 py-20 lg:px-8">
+          <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
             {/* Brand section */}
-            <div className="flex flex-col items-center space-y-2 text-center">
+            <div className="flex flex-col items-start text-left space-y-4">
               <Link href="/">
                 <Image
                   src="/Ruby-Wager-Logo.png"
                   alt="RubyWager Logo"
-                  width={92}
-                  height={20}
+                  width={120}
+                  height={30}
                   priority
                 />
               </Link>
-              <p className="text-foreground mt-5 w-[180px] font-mono text-sm leading-5">
+              <p className="text-sm text-white/70 max-w-[220px]">
                 Your trusted platform for online wagering
               </p>
             </div>
 
             {/* Links section */}
-            <nav className="flex flex-col items-center space-y-2 text-center">
-              <Link
-                href="/about"
-                className="text-foreground hover:text-brand text-sm transition-colors"
-              >
+            <div className="flex flex-col items-start text-left space-y-3">
+              <div className="flex items-center gap-2 mb-2">
+                <BookText className="w-5 h-5 text-brand" />
+                <h4 className="font-bold uppercase text-sm tracking-wide">Learn More</h4>
+              </div>
+              <Link href="/about" className="text-sm text-white/90 hover:text-brand transition">
                 About Us
               </Link>
-              <Link
-                href="/rules"
-                className="text-foreground hover:text-brand text-sm transition-colors"
-              >
+              <Link href="/rules" className="text-sm text-white/90 hover:text-brand transition">
                 Sports Rules
               </Link>
-              <Link
-                href="/responsible-gaming"
-                className="text-foreground hover:text-brand text-sm transition-colors"
-              >
+              <Link href="/responsible-gaming" className="text-sm text-white/90 hover:text-brand transition">
                 Responsible Gaming
               </Link>
-              <Link
-                href="/why-ruby"
-                className="text-foreground hover:text-brand text-sm transition-colors"
-              >
+              <Link href="/why-ruby" className="text-sm text-white/90 hover:text-brand transition">
                 Why Ruby?
               </Link>
-              <Link
-                href="/faqs"
-                className="text-foreground hover:text-brand text-sm transition-colors"
-              >
-                FAQS
+              <Link href="/faqs" className="text-sm text-white/90 hover:text-brand transition">
+                FAQs
               </Link>
-            </nav>
+            </div>
 
-            {/* section */}
-            <div className="flex flex-col items-center space-y-2 text-center">
-              <Link
-                href="/banking"
-                className="text-foreground hover:text-brand text-sm transition-colors"
-              >
+            {/* Other section */}
+            <div className="flex flex-col items-start text-left space-y-3">
+              <div className="flex items-center gap-2 mb-2">
+                <Newspaper className="w-5 h-5 text-brand" />
+                <h4 className="font-bold uppercase text-sm tracking-wide">Resources</h4>
+              </div>
+              <Link href="/banking" className="text-sm text-white/90 hover:text-brand transition">
                 Banking
               </Link>
-              <Link
-                href="/crypto-tutorial"
-                className="text-foreground hover:text-brand text-sm transition-colors"
-              >
+              <Link href="/crypto-tutorial" className="text-sm text-white/90 hover:text-brand transition">
                 Crypto Tutorial
               </Link>
-              <Link
-                href="/news"
-                className="text-foreground hover:text-brand text-sm transition-colors"
-              >
+              <Link href="/news" className="text-sm text-white/90 hover:text-brand transition">
                 News Room
               </Link>
             </div>
           </div>
 
           {/* Copyright section */}
-          <div className="mt-8 pt-4 text-center">
-            <p className="text-xs text-[#777]">
+          <div className="mt-10 pt-6 border-t border-white/10 text-center">
+            <p className="text-xs text-white/50">
               &copy; {new Date().getFullYear()} RubyWager. All rights reserved.
             </p>
           </div>

@@ -1,27 +1,31 @@
+// ...mantén todos los imports que ya tienes
 import Link from 'next/link'
 import Image from 'next/image'
 import { Card, CardContent, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
-
 import Hero from '@/components/hero/Hero'
 import Leagues from '@/components/leagues/Leagues'
 import Banking from '@/components/banking/Banking'
+import { TicketPercent, ShieldCheck, Trophy } from 'lucide-react'
 
 const promotions = [
   {
     title: 'New customers',
+    icon: TicketPercent,
     content1: 'Bet $50 get up to $100',
     content2: 'Intantly un bonus bets',
     footer: 'Ruby keeps you in the game',
   },
   {
     title: 'Ruby rewards',
+    icon: ShieldCheck,
     content1: 'Claim your 10% insurance',
     content2: 'Refer a friend and get up to',
     footer: '$100 in bonus bets',
   },
   {
     title: 'NCAA and NFL Football',
+    icon: Trophy,
     content1: '20% Boost',
     content2: 'For any 6+ team parlay',
     footer: '',
@@ -60,6 +64,8 @@ export default function Home() {
   return (
     <>
       <Hero />
+
+      {/* PROMOTIONS SECTION */}
       <div className="container mx-auto px-4 pb-8 lg:px-8">
         <div className="panel my-20">
           <div className="mb-10 flex items-center justify-between">
@@ -72,53 +78,60 @@ export default function Home() {
             </Link>
           </div>
           <div className="flex flex-col gap-4 lg:flex-row">
-            {promotions.map((card) => (
-              <Link
-                key={card.title}
-                href="/promotions"
-                className="flex-1 hover:opacity-80"
-              >
-                <Card
+            {promotions.map((card) => {
+              const Icon = card.icon
+              return (
+                <Link
                   key={card.title}
-                  className="flex h-[200px] flex-1 flex-col"
+                  href="/promotions"
+                  className="flex-1 hover:opacity-80 transition duration-300"
                 >
-                  <CardContent className="flex-1">
-                    <CardTitle className="text-xl font-bold uppercase">
-                      {card.title}
-                    </CardTitle>
-                    <p className="text-brand mb-1 text-4xl leading-none font-black uppercase">
-                      {card.content1}
-                    </p>
-                    <p className="mb-1 text-xl leading-none font-semibold uppercase">
-                      {card.content2}
-                    </p>
-                    <p className="text-md text-brand-dark leading-none font-bold uppercase">
-                      {card.footer}
-                    </p>
-                  </CardContent>
-                </Card>
-              </Link>
-            ))}
+                  <Card className="flex h-[200px] flex-1 flex-col bg-[#1A1A1A] hover:scale-[1.02] transition-all duration-300 ease-in-out">
+                    <CardContent className="flex-1">
+                      <div className="flex items-center gap-4 mb-2">
+                        <Icon size={40} className="text-[#FF003D]" />
+                        <CardTitle className="text-xl font-bold uppercase">
+                          {card.title}
+                        </CardTitle>
+                      </div>
+                      <p className="text-brand mb-1 text-4xl leading-none font-black uppercase">
+                        {card.content1}
+                      </p>
+                      <p className="mb-1 text-xl leading-none font-semibold uppercase">
+                        {card.content2}
+                      </p>
+                      <p className="text-md text-brand-dark leading-none font-bold uppercase">
+                        {card.footer}
+                      </p>
+                    </CardContent>
+                  </Card>
+                </Link>
+              )
+            })}
           </div>
         </div>
       </div>
+
+      {/* GIF SECTION */}
       <div className="py-10">
-        <div className="flex flex-col items-center">
-          <Image
-            src="/home/slots-banner.png"
-            alt="UEFA"
-            width="1920"
-            height="634"
+        <div className="flex flex-col items-center animate-fade-in">
+          <img
+            src="/home/casino.gif"
+            alt="Casino Animation"
+            className="w-[600px] h-auto object-contain"
           />
           <Image
             src="/home/slots-logo.png"
-            alt="UEFA"
-            width="523"
-            height="87"
+            alt="Slots Logo"
+            width={523}
+            height={87}
           />
         </div>
       </div>
+
       <Leagues />
+
+      {/* SPORTS BETTING OPTIONS */}
       <div className="container mx-auto px-4 pb-8 lg:px-8">
         <div className="panel my-20">
           <div className="mb-10 flex items-center justify-between">
@@ -131,7 +144,7 @@ export default function Home() {
             {options.map((card) => (
               <Card
                 key={card.title}
-                className="relative flex h-[380px] w-[380px] flex-col overflow-hidden pb-8"
+                className="relative flex h-[380px] w-[380px] flex-col overflow-hidden pb-8 hover:scale-[1.02] transition-all duration-300 ease-in-out"
               >
                 <CardContent className="relative z-1 flex flex-1 flex-col justify-end">
                   <CardTitle className="text-foreground mb-3 text-2xl font-extrabold">
@@ -159,6 +172,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+
       <Banking />
     </>
   )
