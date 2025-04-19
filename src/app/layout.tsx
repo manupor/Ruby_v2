@@ -1,3 +1,5 @@
+// src/app/layout.tsx
+
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import { Geist, Geist_Mono } from 'next/font/google'
@@ -6,6 +8,7 @@ import './globals.css'
 import Header from '@/components/header/Header'
 import Footer from '@/components/footer/Footer'
 
+// Google Fonts
 const geistSans = Geist({
   variable: '--font-geist-sans',
   subsets: ['latin'],
@@ -16,8 +19,9 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 })
 
+// ✅ Font Thunder: Ruta correcta dentro de /src/app/fonts
 const fontThunder = localFont({
-  src: '../../public/fonts/Thunder-VF.ttf',
+  src: './fonts/Thunder-VF.ttf',
   variable: '--font-thunder',
   display: 'swap',
 })
