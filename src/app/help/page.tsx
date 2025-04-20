@@ -14,7 +14,7 @@ export default function HelpPage() {
         <div
           className="absolute inset-0 z-0"
           style={{
-            backgroundImage: `url('/HELP.png')`,
+            backgroundImage: `url('/help.png')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
