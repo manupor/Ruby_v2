@@ -27,68 +27,42 @@ import {
   Bank,
   Article,
   Info,
-  Question
+  Question,
 } from '@phosphor-icons/react'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false)
 
   const navItems = [
-    {
-      href: '/sportsbook',
-      label: 'Sportsbook',
-      icon: <Football color={'#AAA'} />, 
-    },
-    {
-      href: '/racebook',
-      label: 'Racebook',
-      icon: <Horse color={'#AAA'} />,
-    },
-    {
-      href: '/casino',
-      label: 'Casino',
-      icon: <Spade color={'#AAA'} />,
-    },
-    {
-      href: '/promotions',
-      label: 'Promotions',
-      icon: <Tag color={'#AAA'} />,
-    },
-    {
-      href: '/banking',
-      label: 'Banking',
-      icon: <Bank color={'#AAA'} />,
-    },
-    {
-      href: '/rules',
-      label: 'Rules',
-      icon: <Article color={'#AAA'} />,
-    },
-    {
-      href: '/help',
-      label: 'Help',
-      icon: <Info color={'#AAA'} />,
-    },
+    { href: '/sportsbook', label: 'Sportsbook', icon: <Football color={'#AAA'} /> },
+    { href: '/racebook', label: 'Racebook', icon: <Horse color={'#AAA'} /> },
+    { href: '/casino', label: 'Casino', icon: <Spade color={'#AAA'} /> },
+    { href: '/promotions', label: 'Promotions', icon: <Tag color={'#AAA'} /> },
+    { href: '/banking', label: 'Banking', icon: <Bank color={'#AAA'} /> },
+    { href: '/rules', label: 'Rules', icon: <Article color={'#AAA'} /> },
+    { href: '/help', label: 'Help', icon: <Info color={'#AAA'} /> },
   ]
 
   return (
     <>
       <div className="sticky top-0 z-50 bg-background shadow-md">
         <header className="w-full">
-          <div className="container flex w-full flex-col gap-2 px-4 py-3 lg:flex-row lg:items-center lg:justify-between lg:px-4">
+          <div className="container flex w-full flex-col gap-2 px-4 py-5 lg:flex-row lg:items-center lg:justify-between lg:px-4">
             <div className="flex w-full items-center justify-between gap-2">
               {/* Logo */}
-              <Link href="/" className="min-w-[72px]">
-                <Image
-                  src="/Ruby-Wager-Logo.png"
-                  alt="RubyWager Logo"
-                  width={120}
-                  height={30}
-                  priority
-                />
-              </Link>
+              <div className="flex items-center">
+                <Link href="/" className="min-w-[120px]">
+                  <Image
+                    src="/Ruby-Wager-Logo.png"
+                    alt="RubyWager Logo"
+                    width={200}
+                    height={60}
+                    priority
+                  />
+                </Link>
+              </div>
 
-              {/* Mobile layout - all elements inline */}
+              {/* Mobile layout */}
               <div className="flex items-center gap-2 lg:hidden">
                 <Link href="/login">
                   <Button
@@ -170,6 +144,7 @@ export default function Navbar() {
             </div>
           </div>
 
+          {/* Desktop nav menu */}
           <div className="container mx-auto hidden px-4 pb-4 lg:block lg:px-4">
             <NavigationMenu className="block max-w-full">
               <NavigationMenuList className="justify-between">
