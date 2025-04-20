@@ -131,6 +131,7 @@
     @apply bg-background text-foreground;
   }
 }
+
 @keyframes blink {
   0%, 100% {
     opacity: 1;
@@ -144,4 +145,25 @@
 
 .blink-strong {
   animation: blink 1s infinite;
+}
+
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@layer utilities {
+  .animate-scroll-horizontal {
+    animation: scroll-horizontal 25s linear infinite;
+  }
+
+  .scrolling-wrapper::after {
+    content: '';
+    display: inline-block;
+    width: 100%;
+  }
 }

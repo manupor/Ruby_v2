@@ -205,19 +205,15 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="py-10">
-        <div className="flex flex-col items-center animate-fade-in">
-          <img
-            src="/home/ruby 1.png"
-            alt="ruby1"
-            className="max-w-full w-[1200px] sm:w-[1600px] h-auto object-contain"
-          />
-          <Image
-            src="/home/slots-logo.png"
-            alt="Slots Logo"
-            width={160}
-            height={26}
-          />
+      {/* MÉTODOS DE PAGO - carrusel en mobile, estático en desktop */}
+      <div className="bg-[#C8102E] py-4 overflow-x-auto lg:overflow-x-hidden">
+        <div className="flex items-center gap-6 px-4 lg:justify-center lg:animate-none animate-scroll-horizontal whitespace-nowrap">
+          <Image src="/logos/tether.png" alt="Tether" width={50} height={30} className="min-w-[50px] object-contain" />
+          <Image src="/logos/venmo.png" alt="Venmo" width={50} height={30} className="min-w-[50px] object-contain" />
+          <Image src="/logos/cashapp.png" alt="Cash App" width={50} height={30} className="min-w-[50px] object-contain" />
+          <Image src="/logos/zelle.png" alt="Zelle" width={50} height={30} className="min-w-[50px] object-contain" />
+          <Image src="/logos/bitcoin.png" alt="Bitcoin" width={50} height={30} className="min-w-[50px] object-contain" />
+          <Image src="/logos/litecoin.png" alt="Litecoin" width={50} height={30} className="min-w-[50px] object-contain" />
         </div>
       </div>
 
