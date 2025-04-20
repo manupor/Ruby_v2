@@ -208,10 +208,11 @@ export default function Home() {
       <div className="py-10">
         <div className="flex flex-col items-center animate-fade-in">
           <img
-            src="/home/ruby 1.png"
-            alt="ruby1"
-            className="max-w-full w-[1200px] sm:w-[800px] h-auto object-contain"
-          />
+  src="/home/ruby 1.png"
+  alt="ruby1"
+  className="w-[1400px] sm:w-[1600px] max-w-full h-auto object-contain"
+/>
+
           <Image
             src="/home/slots-logo.png"
             alt="Slots Logo"
