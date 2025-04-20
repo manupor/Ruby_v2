@@ -99,6 +99,28 @@ export default function Navbar() {
                 Login
               </Button>
             </div>
+
+            {/* Mobile-only login/join now buttons */}
+            <div className="flex items-center gap-2 lg:hidden">
+              <Link href="/login">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="text-xs font-bold uppercase"
+                >
+                  Login
+                </Button>
+              </Link>
+              <Link href="/join">
+                <Button
+                  variant="brandDark"
+                  size="sm"
+                  className="text-xs font-bold uppercase"
+                >
+                  Join Now
+                </Button>
+              </Link>
+            </div>
           </div>
 
           <div className="container mx-auto hidden px-4 pb-4 lg:block lg:px-4">
@@ -158,15 +180,6 @@ export default function Navbar() {
                     </Link>
                   ))}
                 </nav>
-
-                <div className="mt-auto flex gap-2 pb-6">
-                  <Button variant="brandDark" className="w-[50%]">
-                    Join Now
-                  </Button>
-                  <Button variant="outline" className="w-[50%]">
-                    Login
-                  </Button>
-                </div>
               </div>
             </SheetContent>
           </Sheet>
