@@ -1,4 +1,5 @@
-// ...mantén todos los imports que ya tienes
+'use client'
+
 import Link from 'next/link'
 import Image from 'next/image'
 import { Card, CardContent, CardTitle } from '@/components/ui/card'
@@ -112,19 +113,19 @@ export default function Home() {
         </div>
       </div>
 
-      {/* GIF SECTION */}
+      {/* GIF SECTION OPTIMIZED */}
       <div className="py-10">
         <div className="flex flex-col items-center animate-fade-in">
           <img
             src="/home/ruby 1.png"
             alt="ruby1"
-            className="w-[1400px] h-auto object-contain"
+            className="w-[320px] sm:w-[500px] h-auto object-contain"
           />
           <Image
             src="/home/slots-logo.png"
             alt="Slots Logo"
-            width={260}
-            height={44}
+            width={180}
+            height={30}
           />
         </div>
       </div>
