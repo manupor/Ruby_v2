@@ -64,6 +64,7 @@ const options = [
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [offsetY, setOffsetY] = useState(0)
+  const [showScrollTop, setShowScrollTop] = useState(false)
 
   const heros = [
     {
@@ -87,7 +88,10 @@ const Hero = () => {
   ]
 
   useEffect(() => {
-    const handleScroll = () => setOffsetY(window.scrollY)
+    const handleScroll = () => {
+      setOffsetY(window.scrollY)
+      setShowScrollTop(window.scrollY > 300)
+    }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -149,6 +153,14 @@ const Hero = () => {
           />
         ))}
       </div>
+      {showScrollTop && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          className="fixed bottom-24 right-6 z-40 rounded-full bg-[#FF003D] px-4 py-3 text-white text-sm font-bold shadow-lg hover:bg-[#e60036] transition"
+        >
+          Back to Top
+        </button>
+      )}
     </div>
   )
 }
@@ -162,14 +174,6 @@ export default function Home() {
       </div>
 
       <Banking />
-
-      {/* Back to Top Button - repositioned */}
-      <button
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        className="fixed bottom-24 right-6 z-40 rounded-full bg-[#FF003D] px-4 py-3 text-white text-sm font-bold shadow-lg hover:bg-[#e60036] transition"
-      >
-        Back to Top
-      </button>
     </>
   )
 }
