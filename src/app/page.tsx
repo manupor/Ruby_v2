@@ -116,8 +116,8 @@ export default function Home() {
       <div className="py-10">
         <div className="flex flex-col items-center animate-fade-in">
           <img
-            src="/home/casino.gif"
-            alt="Casino Animation"
+            src="/home/ruby 1.png"
+            alt="ruby1"
             className="w-[600px] h-auto object-contain"
           />
           <Image
