@@ -168,24 +168,24 @@ export default function Home() {
               <span>See all promotions</span>
             </Link>
           </div>
-          <div className="flex flex-col gap-4 lg:flex-row">
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
             {promotions.map((card) => {
               const Icon = card.icon
               return (
                 <Link
                   key={card.title}
                   href="/promotions"
-                  className="flex-1 hover:opacity-80 transition duration-300"
+                  className="hover:opacity-80 transition duration-300"
                 >
-                  <Card className="flex h-[250px] flex-1 flex-col bg-[#1A1A1A] hover:scale-[1.02] transition-all duration-300 ease-in-out overflow-hidden">
-                    <CardContent className="flex flex-1 flex-col justify-between p-4">
-                      <div className="flex items-center gap-4 mb-2">
+                  <Card className="flex flex-col h-[300px] justify-between bg-[#1A1A1A] rounded-xl border shadow-sm hover:scale-[1.02] transition-all duration-300 ease-in-out overflow-hidden">
+                    <CardContent className="flex flex-col justify-between flex-1 p-4">
+                      <div className="flex items-center gap-4 mb-4">
                         <Icon size={40} className="text-[#FF003D] shrink-0" />
                         <CardTitle className="text-xl font-bold uppercase text-white">
                           {card.title}
                         </CardTitle>
                       </div>
-                      <div className="flex flex-col justify-between text-white text-pretty">
+                      <div className="flex flex-col justify-between text-white text-pretty flex-1">
                         <p className="text-brand text-3xl sm:text-4xl leading-tight font-black uppercase break-words">
                           {card.content1}
                         </p>
