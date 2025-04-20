@@ -119,13 +119,13 @@ export default function Home() {
           <img
             src="/home/ruby 1.png"
             alt="ruby1"
-            className="w-[320px] sm:w-[500px] h-auto object-contain"
+            className="w-[200px] sm:w-[300px] h-auto object-contain"
           />
           <Image
             src="/home/slots-logo.png"
             alt="Slots Logo"
-            width={180}
-            height={30}
+            width={160}
+            height={26}
           />
         </div>
       </div>
