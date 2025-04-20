@@ -157,7 +157,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-      {/* ...rest of the Home page stays unchanged... */}
       <div className="container mx-auto px-4 pb-8 lg:px-8">
         <div className="panel my-20">
           <div className="mb-10 flex items-center justify-between">
@@ -178,23 +177,25 @@ export default function Home() {
                   href="/promotions"
                   className="flex-1 hover:opacity-80 transition duration-300"
                 >
-                  <Card className="flex h-[200px] flex-1 flex-col bg-[#1A1A1A] hover:scale-[1.02] transition-all duration-300 ease-in-out">
-                    <CardContent className="flex-1">
+                  <Card className="flex h-[250px] flex-1 flex-col bg-[#1A1A1A] hover:scale-[1.02] transition-all duration-300 ease-in-out overflow-hidden">
+                    <CardContent className="flex flex-1 flex-col justify-between p-4">
                       <div className="flex items-center gap-4 mb-2">
-                        <Icon size={40} className="text-[#FF003D]" />
-                        <CardTitle className="text-xl font-bold uppercase">
+                        <Icon size={40} className="text-[#FF003D] shrink-0" />
+                        <CardTitle className="text-xl font-bold uppercase text-white">
                           {card.title}
                         </CardTitle>
                       </div>
-                      <p className="text-brand mb-1 text-4xl leading-none font-black uppercase">
-                        {card.content1}
-                      </p>
-                      <p className="mb-1 text-xl leading-none font-semibold uppercase">
-                        {card.content2}
-                      </p>
-                      <p className="text-md text-brand-dark leading-none font-bold uppercase">
-                        {card.footer}
-                      </p>
+                      <div className="flex flex-col justify-between text-white text-pretty">
+                        <p className="text-brand text-3xl sm:text-4xl leading-tight font-black uppercase break-words">
+                          {card.content1}
+                        </p>
+                        <p className="text-lg font-semibold uppercase">
+                          {card.content2}
+                        </p>
+                        <p className="text-md text-brand-dark font-bold uppercase">
+                          {card.footer}
+                        </p>
+                      </div>
                     </CardContent>
                   </Card>
                 </Link>
@@ -209,7 +210,7 @@ export default function Home() {
           <img
             src="/home/ruby 1.png"
             alt="ruby1"
-            className="w-[600px] sm:w-[600px] h-auto object-contain"
+            className="w-[400px] sm:w-[600px] h-auto object-contain"
           />
           <Image
             src="/home/slots-logo.png"
@@ -264,6 +265,15 @@ export default function Home() {
       </div>
 
       <Banking />
+  {/* Botón flotante Back to Top */}
+  <button
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        className="fixed bottom-6 right-6 z-50 rounded-full bg-[#FF003D] px-4 py-3 text-white text-sm font-bold shadow-lg hover:bg-[#e60036] transition"
+      >
+        Back to Top
+      </button>
     </>
   )
 }
+
+
