@@ -206,21 +206,20 @@ export default function Home() {
       </div>
 
       <div className="py-10">
-  <div className="flex flex-col items-center animate-fade-in">
-    <img
-      src="/home/ruby 1.png"
-      alt="ruby1"
-      className="ruby-image-mobile"
-    />
-    <Image
-      src="/home/slots-logo.png"
-      alt="Slots Logo"
-      width={160}
-      height={26}
-    />
-  </div>
-</div>
-
+        <div className="flex flex-col items-center animate-fade-in">
+          <img
+            src="/home/ruby 1.png"
+            alt="ruby1"
+            className="ruby-image-mobile w-[800px] sm:w-[1600px] max-w-full h-auto object-contain mx-auto"
+          />
+          <Image
+            src="/home/slots-logo.png"
+            alt="Slots Logo"
+            width={160}
+            height={26}
+          />
+        </div>
+      </div>
 
       <Leagues />
 
