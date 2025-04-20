@@ -75,7 +75,7 @@ export default function Navbar() {
     <>
       <div className="sticky top-0 z-50 bg-background shadow-md">
         <header className="w-full">
-          <div className="container flex w-full items-center justify-between px-4 py-4 lg:mx-auto lg:px-4">
+          <div className="container flex w-full flex-col gap-2 px-4 py-3 lg:flex-row lg:items-center lg:justify-between lg:px-4">
             <div className="flex w-full items-center justify-between gap-2">
               {/* Logo */}
               <Link href="/" className="min-w-[72px]">
