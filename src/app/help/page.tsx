@@ -12,7 +12,7 @@ export default function HelpPage() {
       {/* HERO SECTION WITH TEXT */}
       <div
         className="relative flex h-[400px] w-full items-center justify-start bg-cover bg-center px-6 lg:px-16"
-        style={{ backgroundImage: `url('/HELP.png')` }}
+        style={{ backgroundImage: `url('/help.png')` }}
       >
         <div className="text-white max-w-2xl">
           <h1 className="text-5xl font-extrabold leading-tight">
