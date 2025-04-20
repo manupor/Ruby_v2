@@ -210,7 +210,7 @@ export default function Home() {
           <img
             src="/home/ruby 1.png"
             alt="ruby1"
-            className="max-w-full w-[600px] sm:w-[800px] h-auto object-contain"
+            className="max-w-full w-[1200px] sm:w-[1600px] h-auto object-contain"
           />
           <Image
             src="/home/slots-logo.png"
