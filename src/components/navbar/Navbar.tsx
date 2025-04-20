@@ -85,23 +85,9 @@ export default function Navbar() {
                 priority
               />
             </Link>
-            <div className="hidden items-center gap-2 lg:flex">
-              <Button
-                variant="brandDark"
-                className="font-black px-4 pt-6 pb-5 text-2xl tracking-wider uppercase"
-              >
-                Join Now
-              </Button>
-              <Button
-                variant="default"
-                className="font-black px-4 pt-6 pb-5 text-2xl tracking-wider uppercase"
-              >
-                Login
-              </Button>
-            </div>
 
-            {/* Mobile-only login/join now buttons */}
-            <div className="flex items-center gap-2 lg:hidden">
+            {/* Mobile login/join now above menu icon */}
+            <div className="flex items-center gap-2 lg:hidden order-2">
               <Link href="/login">
                 <Button
                   variant="outline"
@@ -120,6 +106,66 @@ export default function Navbar() {
                   Join Now
                 </Button>
               </Link>
+            </div>
+
+            <div className="hidden items-center gap-2 lg:flex">
+              <Button
+                variant="brandDark"
+                className="font-black px-4 pt-6 pb-5 text-2xl tracking-wider uppercase"
+              >
+                Join Now
+              </Button>
+              <Button
+                variant="default"
+                className="font-black px-4 pt-6 pb-5 text-2xl tracking-wider uppercase"
+              >
+                Login
+              </Button>
+            </div>
+
+            {/* Menu icon below mobile buttons */}
+            <div className="lg:hidden order-3">
+              <Sheet open={isOpen} onOpenChange={setIsOpen}>
+                <SheetTrigger asChild>
+                  <Button
+                    variant="outline"
+                    size="icon"
+                    className="h-[45px] w-[45px]"
+                  >
+                    <List color="white" className="h-6 w-6" />
+                    <span className="sr-only">Toggle menu</span>
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="right" className="w-[280px] sm:w-[350px]">
+                  <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+                  <div className="flex h-full flex-col p-5">
+                    <div className="flex justify-end">
+                      <Button
+                        variant="outline"
+                        size="icon"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        <X size={24} />
+                        <span className="sr-only">Close menu</span>
+                      </Button>
+                    </div>
+
+                    <nav className="mt-8 flex flex-col gap-4">
+                      {navItems.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          className="bg-background hover:bg-accent flex items-center rounded-md px-2 py-2 text-lg font-medium transition-colors"
+                          onClick={() => setIsOpen(false)}
+                        >
+                          <span className="mr-2">{item.icon}</span>
+                          <span>{item.label}</span>
+                        </Link>
+                      ))}
+                    </nav>
+                  </div>
+                </SheetContent>
+              </Sheet>
             </div>
           </div>
 
@@ -140,50 +186,6 @@ export default function Navbar() {
             </NavigationMenu>
           </div>
         </header>
-
-        <div className="absolute top-4 right-4 z-50 ml-2 lg:hidden">
-          <Sheet open={isOpen} onOpenChange={setIsOpen}>
-            <SheetTrigger asChild>
-              <Button
-                variant="outline"
-                size="icon"
-                className="h-[45px] w-[45px]"
-              >
-                <List color="white" className="h-6 w-6" />
-                <span className="sr-only">Toggle menu</span>
-              </Button>
-            </SheetTrigger>
-            <SheetContent side="right" className="w-[280px] sm:w-[350px]">
-              <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-              <div className="flex h-full flex-col p-5">
-                <div className="flex justify-end">
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <X size={24} />
-                    <span className="sr-only">Close menu</span>
-                  </Button>
-                </div>
-
-                <nav className="mt-8 flex flex-col gap-4">
-                  {navItems.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      className="bg-background hover:bg-accent flex items-center rounded-md px-2 py-2 text-lg font-medium transition-colors"
-                      onClick={() => setIsOpen(false)}
-                    >
-                      <span className="mr-2">{item.icon}</span>
-                      <span>{item.label}</span>
-                    </Link>
-                  ))}
-                </nav>
-              </div>
-            </SheetContent>
-          </Sheet>
-        </div>
       </div>
 
       {/* Floating Help Button */}
