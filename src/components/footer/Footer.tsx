@@ -1,6 +1,13 @@
 import Link from 'next/link'
 import Image from 'next/image'
-import { Building, BookText, Newspaper } from 'lucide-react' // O usa tus íconos si estás usando Phosphor
+import {
+  Building,
+  BookText,
+  Newspaper,
+  Facebook,
+  Instagram,
+  Youtube
+} from 'lucide-react' // Asegúrate de tener estos íconos disponibles
 
 export default function Footer() {
   return (
@@ -47,7 +54,7 @@ export default function Footer() {
               </Link>
             </div>
 
-            {/* Other section */}
+            {/* Other section + Socials */}
             <div className="flex flex-col items-start text-left space-y-3">
               <div className="flex items-center gap-2 mb-2">
                 <Newspaper className="w-5 h-5 text-brand" />
@@ -62,6 +69,22 @@ export default function Footer() {
               <Link href="/news" className="text-sm text-white/90 hover:text-brand transition">
                 News Room
               </Link>
+
+              {/* Social Media */}
+              <div className="mt-6">
+                <h4 className="font-bold uppercase text-sm tracking-wide mb-2">Follow Us</h4>
+                <div className="flex gap-4">
+                  <Link href="https://www.instagram.com" target="_blank" aria-label="Instagram">
+                    <Instagram className="w-5 h-5 text-white hover:text-brand transition" />
+                  </Link>
+                  <Link href="https://www.youtube.com" target="_blank" aria-label="YouTube">
+                    <Youtube className="w-5 h-5 text-white hover:text-brand transition" />
+                  </Link>
+                  <Link href="https://www.facebook.com" target="_blank" aria-label="Facebook">
+                    <Facebook className="w-5 h-5 text-white hover:text-brand transition" />
+                  </Link>
+                </div>
+              </div>
             </div>
           </div>
 
