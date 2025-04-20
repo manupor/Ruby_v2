@@ -112,33 +112,22 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="bg-black py-16">
-  <div className="container mx-auto px-4">
-    <h2 className="text-4xl font-bold text-center text-white mb-12">Popular Games</h2>
-    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-      {[
-        { img: '/games/blackjack.png', title: 'Blackjack' },
-        { img: '/games/slots.png', title: 'Slots' },
-        { img: '/games/roulette.png', title: 'Roulette' },
-        { img: '/games/baccarat.png', title: 'Baccarat' },
-        { img: '/games/poker.png', title: 'Poker' },
-        { img: '/games/keno.png', title: 'Keno' },
-        { img: '/games/craps.png', title: 'Craps' },
-        { img: '/games/sports.png', title: 'Sportsbook' },
-      ].map((game, index) => (
-        <div key={index} className="text-center">
+      {/* GIF SECTION */}
+      <div className="py-10">
+        <div className="flex flex-col items-center animate-fade-in">
           <img
-            src={game.img}
-            alt={game.title}
-            className="w-full h-auto rounded-md transition transform hover:scale-105"
+            src="/home/casino.gif"
+            alt="ruby1"
+            className="w-[300px] h-auto object-contain"
           />
-          <p className="mt-2 text-white font-medium">{game.title}</p>
+          <Image
+            src="/home/slots-logo.png"
+            alt="Slots Logo"
+            width={260}
+            height={44}
+          />
         </div>
-      ))}
-    </div>
-  </div>
-</div>
-
+      </div>
 
       <Leagues />
 
