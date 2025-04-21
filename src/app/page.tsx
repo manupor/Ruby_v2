@@ -105,101 +105,6 @@ export default function Home() {
     <>
       <Hero />
 
-      {/* Ruby Banner + Slots Logo */}
-      <div className="relative z-10 bg-black py-16 flex flex-col items-center justify-center gap-8">
-        <img
-          src="/home/ruby 1.png"
-          alt="ruby1"
-          className="w-full max-w-[1800px] h-auto object-contain mx-auto scale-[1.1] sm:scale-[1.2] transition-transform duration-500"
-        />
-        <Image
-          src="/home/slots-logo.png"
-          alt="Slots Logo"
-          width={180}
-          height={32}
-          className="relative z-20 -mt-10 sm:-mt-14"
-        />
-      </div>
-
-      {/* Promotions */}
-      <div className="container mx-auto px-4 pb-8 lg:px-8">
-        <div className="panel my-20">
-          <div className="mb-10 flex items-center justify-between">
-            <h1 className="text-3xl font-bold text-white">Promotions</h1>
-            <Link href="/promotions" className="text-xs underline hover:no-underline">
-              <span>See all promotions</span>
-            </Link>
-          </div>
-          <div className="flex flex-col gap-4 lg:flex-row">
-            {promotions.map((card) => {
-              const Icon = card.icon
-              return (
-                <Link key={card.title} href="/promotions" className="flex-1 hover:opacity-80 transition duration-300">
-                  <Card className="flex h-[250px] flex-1 flex-col bg-[#1A1A1A] hover:scale-[1.02] transition-all duration-300 ease-in-out overflow-hidden">
-                    <CardContent className="flex flex-1 flex-col justify-between p-4">
-                      <div className="flex items-center gap-4 mb-2">
-                        <Icon size={40} className="text-[#FF003D] shrink-0" />
-                        <CardTitle className="text-xl font-bold uppercase text-white">
-                          {card.title}
-                        </CardTitle>
-                      </div>
-                      <div className="flex flex-col justify-between text-white text-pretty">
-                        <p className="text-brand text-3xl sm:text-4xl leading-tight font-black uppercase break-words">
-                          {card.content1}
-                        </p>
-                        <p className="text-lg font-semibold uppercase">
-                          {card.content2}
-                        </p>
-                        <p className="text-md text-brand-dark font-bold uppercase">
-                          {card.footer}
-                        </p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </Link>
-              )
-            })}
-          </div>
-        </div>
-      </div>
-
-      <Leagues />
-
-      {/* Sports Betting Options */}
-      <div className="container mx-auto px-4 pb-8 lg:px-8">
-        <div className="panel my-20">
-          <div className="mb-10 flex items-center justify-between">
-            <h1 className="text-3xl font-bold text-white">Sports betting options</h1>
-            <Link href="/odds" className="text-xs underline hover:no-underline">
-              <span>See all options</span>
-            </Link>
-          </div>
-          <div className="flex flex-wrap justify-center gap-x-9 gap-y-10">
-            {options.map((card) => (
-              <Card key={card.title} className="relative flex h-[380px] w-[380px] flex-col overflow-hidden pb-8 hover:scale-[1.02] transition-all duration-300 ease-in-out">
-                <CardContent className="relative z-1 flex flex-1 flex-col justify-end">
-                  <CardTitle className="text-foreground mb-3 text-2xl font-extrabold">
-                    {card.title}
-                  </CardTitle>
-                  <Button variant="outline" size="lg" className="w-fit font-bold uppercase">
-                    View odds
-                  </Button>
-                </CardContent>
-                <figure className="absolute inset-0 z-0">
-                  <Image
-                    src={card.image_src}
-                    alt={card.image_alt}
-                    className="h-full w-full object-cover"
-                    width={400}
-                    height={400}
-                  />
-                </figure>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </div>
-
       {/* Bonuses Section */}
       <div className="container mx-auto px-4 pb-20 lg:px-8">
         <div className="panel my-20">
@@ -207,7 +112,7 @@ export default function Home() {
             <h1 className="text-4xl font-bold text-white uppercase tracking-wide">
               Claim Your Bonuses
             </h1>
-            <p className="text-[#c19652] mt-2 text-lg font-medium">
+            <p className="text-brand mt-2 text-lg font-medium">
               Don’t miss out on these exclusive offers
             </p>
           </div>
@@ -217,20 +122,20 @@ export default function Home() {
               return (
                 <div
                   key={index}
-                  className="bg-[#1f1f1f] border border-[#333] text-white rounded-2xl p-6 shadow-md hover:shadow-xl hover:border-[#c19652] transition-all duration-300 group"
+                  className="bg-black border border-black text-brand rounded-2xl p-6 shadow-md hover:shadow-xl hover:border-brand transition-all duration-300 group"
                 >
                   <div className="flex flex-col items-center text-center space-y-4">
-                    <Icon size={48} className="stroke-[#c19652] group-hover:scale-110 transition-transform duration-300" />
+                    <Icon size={48} className="stroke-brand group-hover:scale-110 transition-transform duration-300" />
                     <div>
-                      <p className="text-4xl font-extrabold text-[#c19652]">
+                      <p className="text-4xl font-extrabold text-brand">
                         {ticket.text1}
                       </p>
                       <p className="text-xl font-bold uppercase">{ticket.text2}</p>
-                      <p className="text-sm text-gray-400">{ticket.text3}</p>
+                      <p className="text-sm text-brand-dark">{ticket.text3}</p>
                     </div>
                     <Link
                       href="/promotions"
-                      className="mt-4 inline-block rounded-full bg-[#c19652] px-5 py-2 text-sm font-semibold uppercase text-black hover:bg-[#d7af5b] transition"
+                      className="mt-4 inline-block rounded-full bg-brand px-5 py-2 text-sm font-semibold uppercase text-black hover:bg-brand-dark transition"
                     >
                       More Info
                     </Link>
