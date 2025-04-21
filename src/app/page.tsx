@@ -120,11 +120,11 @@ export default function Home() {
             {promoTickets.map((ticket, index) => {
               const Icon = ticket.icon
               return (
-                <div
+                <Card
                   key={index}
-                  className="bg-black border border-black text-brand rounded-2xl p-6 shadow-md hover:shadow-xl hover:border-brand transition-all duration-300 group"
+                  className="!bg-black !text-brand border border-black rounded-2xl p-6 shadow-md hover:shadow-xl hover:border-brand transition-all duration-300 group"
                 >
-                  <div className="flex flex-col items-center text-center space-y-4">
+                  <CardContent className="flex flex-col items-center text-center space-y-4">
                     <Icon size={48} className="stroke-brand group-hover:scale-110 transition-transform duration-300" />
                     <div>
                       <p className="text-4xl font-extrabold text-brand">
@@ -139,8 +139,8 @@ export default function Home() {
                     >
                       More Info
                     </Link>
-                  </div>
-                </div>
+                  </CardContent>
+                </Card>
               )
             })}
           </div>
