@@ -11,19 +11,25 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        brand: '#c19652',
-        'brand-dark': '#a7813c',
+        brand: 'var(--brand)',
+        'brand-dark': 'var(--brand-dark)',
+        background: 'var(--background)',
+        foreground: 'var(--foreground)',
+        border: 'var(--border)',
+        ring: 'var(--ring)',
+        card: 'var(--card)',
+        'card-foreground': 'var(--card-foreground)',
       },
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],
         mono: ['var(--font-mono)', ...fontFamily.mono],
         thunder: ['var(--font-thunder)', ...fontFamily.sans],
       },
-      spacing: {
-        // Ejemplo: '72': '18rem',
-      },
-      screens: {
-        // Ejemplo: '3xl': '1920px',
+      borderRadius: {
+        sm: 'calc(var(--radius) - 4px)',
+        md: 'calc(var(--radius) - 2px)',
+        lg: 'var(--radius)',
+        xl: 'calc(var(--radius) + 4px)',
       },
     },
   },
