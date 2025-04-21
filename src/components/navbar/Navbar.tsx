@@ -11,7 +11,6 @@ import {
   Spade,
   Tag,
   Bank,
-  Article,
   Question
 } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button'
@@ -52,11 +51,6 @@ export default function Navbar() {
       icon: <Bank size={24} color="#c19652" />,
     },
     {
-      href: '/about',
-      label: 'About',
-      icon: <Article size={24} color="#c19652" />,
-    },
-    {
       href: '/help',
       label: 'Help',
       icon: <Question size={24} color="#c19652" />,
@@ -65,7 +59,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50">
-      {/* Top section - color only applied locally */}
+      {/* Top section */}
       <div className="bg-[#1A1A1A] shadow-md px-6 py-3 flex items-center justify-between border-b border-neutral-800">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
@@ -138,7 +132,7 @@ export default function Navbar() {
         </Sheet>
       </div>
 
-      {/* Bottom nav */}
+      {/* Bottom nav with icons */}
       <nav className="hidden lg:flex items-center justify-center gap-10 py-3 bg-[#2C2C2C]">
         {navItems.map((item) => (
           <Link
