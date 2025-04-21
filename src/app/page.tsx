@@ -2,12 +2,12 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { useEffect, useState } from 'react'
 import { Card, CardContent, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import Leagues from '@/components/leagues/Leagues'
 import Banking from '@/components/banking/Banking'
 import { TicketPercent, ShieldCheck, Trophy } from 'lucide-react'
-import { useEffect, useState } from 'react'
 
 const promotions = [
   {
@@ -108,7 +108,7 @@ const Hero = () => {
           transform: `translateY(${offsetY * 0.3}px)`,
         }}
       />
-      <div className="relative z-10 flex h-full items-center px-6 lg:px-16 text-white">
+      <div className="relative z-10 flex h-full items-center px-6 lg:px-16 text-white bg-black/40 backdrop-blur-sm">
         <div>
           <h1 className="text-2xl lg:text-4xl font-bold tracking-tight uppercase mb-2">
             {heros[currentSlide].text1}
@@ -128,13 +128,13 @@ const Hero = () => {
         onClick={() =>
           setCurrentSlide((prev) => (prev - 1 + heros.length) % heros.length)
         }
-        className="absolute top-1/2 left-4 -translate-y-1/2 transform rounded-full bg-black/30 p-2 text-white hover:bg-black/50"
+        className="absolute top-1/2 left-4 -translate-y-1/2 transform rounded-full bg-black/40 p-2 text-white hover:bg-black/60 transition"
       >
         &lt;
       </button>
       <button
         onClick={() => setCurrentSlide((prev) => (prev + 1) % heros.length)}
-        className="absolute top-1/2 right-4 -translate-y-1/2 transform rounded-full bg-black/30 p-2 text-white hover:bg-black/50"
+        className="absolute top-1/2 right-4 -translate-y-1/2 transform rounded-full bg-black/40 p-2 text-white hover:bg-black/60 transition"
       >
         &gt;
       </button>
@@ -157,9 +157,11 @@ export default function Home() {
   return (
     <>
       <Hero />
+
+      {/* PROMOTIONS */}
       <div className="container mx-auto px-4 pb-8 lg:px-8">
-        <div className="panel my-20">
-          <div className="mb-10 flex items-center justify-between">
+        <section className="my-20">
+          <div className="mb-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <h1 className="text-3xl font-bold">Promotions</h1>
             <Link
               href="/promotions"
@@ -168,25 +170,25 @@ export default function Home() {
               <span>See all promotions</span>
             </Link>
           </div>
-          <div className="flex flex-col gap-4 lg:flex-row">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {promotions.map((card) => {
               const Icon = card.icon
               return (
                 <Link
                   key={card.title}
                   href="/promotions"
-                  className="flex-1 hover:opacity-80 transition duration-300"
+                  className="transition duration-300 hover:opacity-80"
                 >
-                  <Card className="flex h-[250px] flex-1 flex-col bg-[#1A1A1A] hover:scale-[1.02] transition-all duration-300 ease-in-out overflow-hidden">
-                    <CardContent className="flex flex-1 flex-col justify-between p-4">
-                      <div className="flex items-center gap-4 mb-2">
-                        <Icon size={40} className="text-[#FF003D] shrink-0" />
+                  <Card className="flex flex-col bg-[#1A1A1A] h-full hover:scale-[1.02] transition-all duration-300 ease-in-out">
+                    <CardContent className="flex flex-col justify-between p-5 h-full">
+                      <div className="flex items-center gap-4 mb-4">
+                        <Icon size={40} className="text-[#FF003D]" />
                         <CardTitle className="text-xl font-bold uppercase text-white">
                           {card.title}
                         </CardTitle>
                       </div>
-                      <div className="flex flex-col justify-between text-white text-pretty">
-                        <p className="text-brand text-3xl sm:text-4xl leading-tight font-black uppercase break-words">
+                      <div className="flex flex-col text-white">
+                        <p className="text-brand text-3xl sm:text-4xl font-black uppercase">
                           {card.content1}
                         </p>
                         <p className="text-lg font-semibold uppercase">
@@ -202,15 +204,16 @@ export default function Home() {
               )
             })}
           </div>
-        </div>
+        </section>
       </div>
 
-      <div className="py-10">
-        <div className="flex flex-col items-center animate-fade-in">
+      {/* VISUAL BANNER */}
+      <div className="py-14 bg-black">
+        <div className="flex flex-col items-center gap-6 animate-fade-in">
           <img
             src="/home/ruby 1.png"
             alt="ruby1"
-            className="w-[800px] sm:w-[1600px] max-w-full h-auto object-contain mx-auto"
+            className="w-[800px] sm:w-[1200px] max-w-full h-auto object-contain mx-auto"
           />
           <Image
             src="/home/slots-logo.png"
@@ -221,24 +224,35 @@ export default function Home() {
         </div>
       </div>
 
+      {/* LEAGUES */}
       <Leagues />
 
+      {/* BETTING OPTIONS */}
       <div className="container mx-auto px-4 pb-8 lg:px-8">
-        <div className="panel my-20">
-          <div className="mb-10 flex items-center justify-between">
+        <section className="my-20">
+          <div className="mb-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <h1 className="text-3xl font-bold">Sports betting options</h1>
             <Link href="/odds" className="text-xs underline hover:no-underline">
               <span>See all options</span>
             </Link>
           </div>
-          <div className="flex flex-wrap justify-center gap-x-9 gap-y-10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {options.map((card) => (
               <Card
                 key={card.title}
-                className="relative flex h-[380px] w-[380px] flex-col overflow-hidden pb-8 hover:scale-[1.02] transition-all duration-300 ease-in-out"
+                className="relative flex flex-col overflow-hidden hover:scale-[1.02] transition-all duration-300 ease-in-out h-full"
               >
-                <CardContent className="relative z-1 flex flex-1 flex-col justify-end">
-                  <CardTitle className="text-foreground mb-3 text-2xl font-extrabold">
+                <figure className="absolute inset-0 z-0">
+                  <Image
+                    src={card.image_src}
+                    alt={card.image_alt}
+                    className="h-full w-full object-cover"
+                    width={400}
+                    height={400}
+                  />
+                </figure>
+                <CardContent className="relative z-10 flex flex-col justify-end bg-gradient-to-t from-black/70 via-black/50 to-transparent p-6">
+                  <CardTitle className="text-white mb-3 text-2xl font-extrabold">
                     {card.title}
                   </CardTitle>
                   <Button
@@ -249,21 +263,13 @@ export default function Home() {
                     View odds
                   </Button>
                 </CardContent>
-                <figure className="absolute inset-0 z-0">
-                  <Image
-                    src={card.image_src}
-                    alt={card.image_alt}
-                    className="h-full w-full object-cover"
-                    width={400}
-                    height={400}
-                  />
-                </figure>
               </Card>
             ))}
           </div>
-        </div>
+        </section>
       </div>
 
+      {/* BANKING */}
       <Banking />
     </>
   )
