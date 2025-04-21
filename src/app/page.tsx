@@ -295,35 +295,48 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Bonuses Section */}
-      <div className="container mx-auto px-4 pb-8 lg:px-8">
-        <div className="panel my-20">
-          <div className="mb-10">
-            <h1 className="text-3xl font-bold text-white">Claim Your Bonuses</h1>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {promoTickets.map((ticket, index) => (
-              <div
-                key={index}
-                className="rounded-xl bg-[#F2F4F7] text-blue-900 p-6 shadow-md flex flex-col sm:flex-row items-center gap-4 hover:shadow-xl transition duration-300"
-              >
-                <div className="text-5xl animate-pulse">{ticket.icon}</div>
-                <div>
-                  <p className="text-3xl font-extrabold">{ticket.text1}</p>
-                  <p className="text-lg font-bold uppercase">{ticket.text2}</p>
-                  <p className="text-sm text-gray-600">{ticket.text3}</p>
-                  <Link
-                    href="/promotions"
-                    className="text-sm text-blue-600 font-semibold hover:underline"
-                  >
-                    MORE INFO
-                  </Link>
-                </div>
-              </div>
-            ))}
+    {/* Bonuses Section */}
+<div className="container mx-auto px-4 pb-20 lg:px-8">
+  <div className="panel my-20">
+    <div className="mb-10 text-center">
+      <h1 className="text-4xl font-bold text-white uppercase tracking-wide">
+        Claim Your Bonuses
+      </h1>
+      <p className="text-[#c19652] mt-2 text-lg font-medium">
+        Don’t miss out on these exclusive offers
+      </p>
+    </div>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {promoTickets.map((ticket, index) => (
+        <div
+          key={index}
+          className="bg-[#1f1f1f] border border-[#333] text-white rounded-2xl p-6 shadow-md hover:shadow-xl hover:border-[#c19652] transition-all duration-300 group"
+        >
+          <div className="flex flex-col items-center text-center space-y-4">
+            <div className="text-5xl animate-pulse group-hover:scale-110 transition-transform duration-300">
+              {ticket.icon}
+            </div>
+            <div>
+              <p className="text-4xl font-extrabold text-[#c19652]">
+                {ticket.text1}
+              </p>
+              <p className="text-xl font-bold uppercase">{ticket.text2}</p>
+              <p className="text-sm text-gray-400">{ticket.text3}</p>
+            </div>
+            <Link
+              href="/promotions"
+              className="mt-4 inline-block rounded-full bg-[#c19652] px-5 py-2 text-sm font-semibold uppercase text-black hover:bg-[#d7af5b] transition"
+            >
+              More Info
+            </Link>
           </div>
         </div>
-      </div>
+      ))}
+    </div>
+  </div>
+</div>
+
 
       <Banking />
     </>
