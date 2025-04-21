@@ -52,11 +52,6 @@ export default function Navbar() {
       icon: <Bank size={24} color="#c19652" />,
     },
     {
-      href: '/about',
-      label: 'About',
-      icon: <Article size={24} color="#c19652" />,
-    },
-    {
       href: '/help',
       label: 'Help',
       icon: <Question size={24} color="#c19652" />,
