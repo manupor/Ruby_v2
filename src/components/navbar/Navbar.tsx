@@ -67,7 +67,7 @@ export default function Navbar() {
     <header className="bg-black text-white sticky top-0 z-50 shadow-md border-b border-zinc-800">
       {/* Top bar: logo + actions */}
       <div className="flex items-center justify-between px-6 py-3">
-        {/* Logo */}
+        {/* ✅ Logo */}
         <Link href="/" className="flex items-center space-x-2">
           <Image
             src="/logo-ruby.png"
@@ -78,13 +78,20 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Desktop buttons */}
+        {/* ✅ Desktop buttons */}
         <div className="hidden lg:flex items-center gap-4">
           <Link href="/join">
-            <Button className="uppercase font-bold text-sm px-6 py-2">Join Now</Button>
+            <Button
+              className="uppercase font-bold text-sm px-6 py-2 bg-[#FF003D] text-white hover:bg-[#e60036] transition-colors duration-200"
+            >
+              Join Now
+            </Button>
           </Link>
           <Link href="/login">
-            <Button variant="outline" className="uppercase font-bold text-sm px-6 py-2 border-white text-white hover:text-black hover:bg-white">
+            <Button
+              variant="outline"
+              className="uppercase font-bold text-sm px-6 py-2 border-white text-white hover:text-black hover:bg-white"
+            >
               Login
             </Button>
           </Link>
@@ -114,7 +121,7 @@ export default function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="flex items-center gap-3 text-lg font-medium hover:text-[#c19652] transition-colors duration-200"
+                  className="flex items-center gap-3 text-lg font-medium hover:text-[#c19652]"
                 >
                   {item.icon}
                   {item.label}
@@ -122,7 +129,9 @@ export default function Navbar() {
               ))}
               <div className="mt-6 flex flex-col gap-2">
                 <Link href="/join">
-                  <Button className="w-full uppercase font-bold text-sm">Join Now</Button>
+                  <Button className="w-full uppercase font-bold text-sm bg-[#FF003D] text-white hover:bg-[#e60036]">
+                    Join Now
+                  </Button>
                 </Link>
                 <Link href="/login">
                   <Button variant="outline" className="w-full uppercase font-bold text-sm border-white text-white hover:text-black hover:bg-white">
@@ -135,7 +144,7 @@ export default function Navbar() {
         </Sheet>
       </div>
 
-      {/* Bottom navigation menu (tabs with icons) */}
+      {/* Bottom tabs */}
       <nav className="hidden lg:flex items-center justify-center gap-10 py-3 bg-zinc-900 border-t border-zinc-800">
         {navItems.map((item) => (
           <Link
