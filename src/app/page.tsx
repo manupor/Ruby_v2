@@ -185,13 +185,13 @@ export default function Home() {
     <>
       <Hero />
 
-      {/* Ruby Banner */}
-      <div className="py-10 z-10 relative">
+      {/* ✅ Ruby Banner actualizado */}
+      <div className="py-16 z-10 relative bg-black">
         <div className="flex flex-col items-center animate-fade-in">
           <img
             src="/home/ruby 1.png"
             alt="ruby1"
-            className="w-[800px] sm:w-[1600px] max-w-full h-auto object-contain mx-auto"
+            className="w-full max-w-[1800px] h-auto object-contain mx-auto scale-[1.1] sm:scale-[1.2] transition-transform duration-500"
           />
           <Image
             src="/home/slots-logo.png"
@@ -295,7 +295,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* ✅ Nueva Sección: Bonos en estilo limpio */}
+      {/* Bonuses Section */}
       <div className="container mx-auto px-4 pb-8 lg:px-8">
         <div className="panel my-20">
           <div className="mb-10">
