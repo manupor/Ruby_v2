@@ -47,28 +47,24 @@ const promoTickets = [
     text1: '125%',
     text2: 'Reload Bonus',
     text3: 'Free Play',
-    bgImage: '/bonuses/reload-bg.png',
   },
   {
     icon: Gift,
     text1: '200%',
     text2: 'Signup Bonus',
     text3: 'Free Play',
-    bgImage: '/bonuses/signup-bg.png',
   },
   {
     icon: Wallet,
     text1: '20%',
     text2: 'Cash Bonus',
     text3: 'Bonus',
-    bgImage: '/bonuses/cash-bg.png',
   },
   {
     icon: HandCoins,
     text1: '$25',
     text2: 'No Deposit',
     text3: 'Free Play',
-    bgImage: '/bonuses/nodpo-bg.png',
   },
 ]
 
@@ -160,13 +156,13 @@ export default function Home() {
                   <Card className="flex h-[250px] flex-1 flex-col bg-neutral-900 hover:scale-[1.02] transition-all duration-300 ease-in-out overflow-hidden">
                     <CardContent className="flex flex-1 flex-col justify-between p-4">
                       <div className="flex items-center gap-4 mb-2">
-                        <Icon size={40} className="text-[#c19652] shrink-0" />
+                        <Icon size={40} className="text-yellow-500 shrink-0" />
                         <CardTitle className="text-xl font-bold uppercase text-white">
                           {card.title}
                         </CardTitle>
                       </div>
                       <div className="flex flex-col justify-between text-white text-pretty">
-                        <p className="text-[#c19652] text-3xl sm:text-4xl leading-tight font-black uppercase break-words">
+                        <p className="text-yellow-500 text-3xl sm:text-4xl leading-tight font-black uppercase break-words">
                           {card.content1}
                         </p>
                         <p className="text-lg font-semibold uppercase">
@@ -221,44 +217,38 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="container mx-auto px-4 pb-20 lg:px-8">
+      {/* Claim Your Bonuses - actualizado */}
+      <div className="container mx-auto px-4 pb-20 lg:px-8 bg-black">
         <div className="panel my-20">
           <div className="mb-10 text-center">
             <h1 className="text-4xl font-bold text-white uppercase tracking-wide">
               Claim Your Bonuses
             </h1>
-            <p className="text-[#c19652] mt-2 text-lg font-medium">
+            <p className="text-[#ffc300] mt-2 text-lg font-medium">
               Don’t miss out on these exclusive offers
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {promoTickets.map((ticket, index) => {
               const Icon = ticket.icon
               return (
                 <div
                   key={index}
-                  className="relative bg-neutral-900 border border-neutral-700 text-white rounded-2xl p-6 shadow-md hover:shadow-xl hover:border-[#c19652] transition-all duration-300 group overflow-hidden"
+                  className="bg-[#111111] text-white text-center p-8 rounded-xl border border-neutral-800 shadow-md hover:shadow-xl hover:border-[#ffc300] transition-all duration-300 flex flex-col items-center justify-between"
                 >
-                  <div
-                    className="absolute inset-0 bg-cover bg-center opacity-10 group-hover:opacity-20 transition-opacity duration-300"
-                    style={{ backgroundImage: `url(${ticket.bgImage})` }}
-                  />
-                  <div className="relative z-10 flex flex-col items-center text-center space-y-4">
-                    <Icon size={48} className="text-[#c19652] group-hover:scale-110 transition-transform duration-300" />
-                    <div>
-                      <p className="text-4xl font-extrabold text-[#c19652]">
-                        {ticket.text1}
-                      </p>
-                      <p className="text-xl font-bold uppercase">{ticket.text2}</p>
-                      <p className="text-sm text-gray-400">{ticket.text3}</p>
-                    </div>
-                    <Link
-                      href="/promotions"
-                      className="mt-4 inline-block rounded-full bg-[#c19652] px-5 py-2 text-sm font-semibold uppercase text-black hover:bg-[#a7813c] transition"
-                    >
-                      More Info
-                    </Link>
+                  <Icon size={48} className="text-[#ffc300] mb-4" />
+                  <div className="space-y-2">
+                    <p className="text-4xl font-extrabold text-[#ffc300]">{ticket.text1}</p>
+                    <p className="text-xl font-bold uppercase">{ticket.text2}</p>
+                    <p className="text-sm text-gray-400">{ticket.text3}</p>
                   </div>
+                  <Link
+                    href="/promotions"
+                    className="mt-6 inline-block bg-[#ffc300] text-black font-bold px-6 py-2 rounded-full uppercase text-sm hover:bg-[#e6b200] transition"
+                  >
+                    More Info
+                  </Link>
                 </div>
               )
             })}
