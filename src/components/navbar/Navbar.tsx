@@ -34,87 +34,79 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false)
 
   const navItems = [
-    { href: '/sportsbook', label: 'Sportsbook', icon: <Football color={'#AAA'} /> },
-    { href: '/racebook', label: 'Racebook', icon: <Horse color={'#AAA'} /> },
-    { href: '/casino', label: 'Casino', icon: <Spade color={'#AAA'} /> },
-    { href: '/promotions', label: 'Promotions', icon: <Tag color={'#AAA'} /> },
-    { href: '/banking', label: 'Banking', icon: <Bank color={'#AAA'} /> },
-    { href: '/rules', label: 'Rules', icon: <Article color={'#AAA'} /> },
-    { href: '/help', label: 'Help', icon: <Info color={'#AAA'} /> },
+    { href: '/sportsbook', label: 'Sportsbook', icon: <Football color="#AAA" /> },
+    { href: '/racebook', label: 'Racebook', icon: <Horse color="#AAA" /> },
+    { href: '/casino', label: 'Casino', icon: <Spade color="#AAA" /> },
+    { href: '/promotions', label: 'Promotions', icon: <Tag color="#AAA" /> },
+    { href: '/banking', label: 'Banking', icon: <Bank color="#AAA" /> },
+    { href: '/rules', label: 'Rules', icon: <Article color="#AAA" /> },
+    { href: '/help', label: 'Help', icon: <Info color="#AAA" /> },
   ]
 
   return (
     <>
       <div className="sticky top-0 z-50 bg-background shadow-md">
         <header className="w-full">
-          {/* TOP BAR DESKTOP */}
-          <div className="hidden lg:flex justify-between items-center w-full max-w-7xl mx-auto px-4 py-4">
-            {/* Logo grande solo en desktop */}
+          <div className="w-full max-w-7xl mx-auto flex items-center justify-between px-4 py-4 lg:px-8">
+            {/* Logo grande */}
             <Link href="/" className="flex items-center">
               <Image
                 src="/Ruby-Wager-Logo.png"
                 alt="RubyWager Logo"
-                width={260}
-                height={70}
+                width={230}
+                height={65}
                 className="object-contain hidden lg:block"
                 priority
               />
-            </Link>
-
-            {/* Desktop buttons */}
-            <div className="hidden lg:flex items-center gap-3">
-              <Link href="/join">
-                <Button
-                  variant="brandDark"
-                  className="font-black px-6 py-3 text-base tracking-wider uppercase"
-                >
-                  Join Now
-                </Button>
-              </Link>
-              <Link href="/login">
-                <Button
-                  variant="default"
-                  className="font-black px-6 py-3 text-base tracking-wider uppercase"
-                >
-                  Login
-                </Button>
-              </Link>
-            </div>
-          </div>
-
-          {/* NAV MENU DESKTOP */}
-          <div className="max-w-7xl mx-auto hidden lg:block px-4 pb-4">
-            <NavigationMenu className="block w-full">
-              <NavigationMenuList className="justify-between">
-                {navItems.map((item) => (
-                  <NavigationMenuItem key={item.href}>
-                    <Link href={item.href} legacyBehavior passHref>
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <span className="mr-2">{item.icon}</span>
-                        <span>{item.label}</span>
-                      </NavigationMenuLink>
-                    </Link>
-                  </NavigationMenuItem>
-                ))}
-              </NavigationMenuList>
-            </NavigationMenu>
-          </div>
-
-          {/* MOBILE NAVIGATION */}
-          <div className="flex items-center justify-between max-w-7xl mx-auto px-4 pb-4 lg:hidden">
-            {/* Logo pequeño solo en mobile */}
-            <Link href="/" className="flex items-center">
               <Image
                 src="/Ruby-Wager-Logo.png"
                 alt="RubyWager Logo"
-                width={160}
-                height={44}
-                className="block lg:hidden"
+                width={140}
+                height={40}
+                className="object-contain block lg:hidden"
                 priority
               />
             </Link>
 
-            <div className="flex items-center gap-2">
+            {/* NAVIGATION + BUTTONS (desktop) */}
+            <div className="hidden lg:flex items-center justify-between flex-1 ml-8">
+              <NavigationMenu className="w-full">
+                <NavigationMenuList className="w-full justify-between">
+                  {navItems.map((item) => (
+                    <NavigationMenuItem key={item.href}>
+                      <Link href={item.href} legacyBehavior passHref>
+                        <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                          <span className="mr-2">{item.icon}</span>
+                          <span>{item.label}</span>
+                        </NavigationMenuLink>
+                      </Link>
+                    </NavigationMenuItem>
+                  ))}
+                </NavigationMenuList>
+              </NavigationMenu>
+
+              <div className="flex items-center gap-3 ml-6">
+                <Link href="/join">
+                  <Button
+                    variant="brandDark"
+                    className="font-black px-6 py-3 text-base tracking-wider uppercase"
+                  >
+                    Join Now
+                  </Button>
+                </Link>
+                <Link href="/login">
+                  <Button
+                    variant="default"
+                    className="font-black px-6 py-3 text-base tracking-wider uppercase"
+                  >
+                    Login
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            {/* MOBILE RIGHT SIDE */}
+            <div className="flex lg:hidden items-center gap-2">
               <Link href="/login">
                 <Button
                   variant="outline"
@@ -133,8 +125,6 @@ export default function Navbar() {
                   Join Now
                 </Button>
               </Link>
-
-              {/* Mobile menu button */}
               <Sheet open={isOpen} onOpenChange={setIsOpen}>
                 <SheetTrigger asChild>
                   <Button variant="outline" size="icon" className="h-[36px] w-[36px]">
@@ -151,7 +141,6 @@ export default function Navbar() {
                         <span className="sr-only">Close menu</span>
                       </Button>
                     </div>
-
                     <nav className="mt-8 flex flex-col gap-4">
                       {navItems.map((item) => (
                         <Link
@@ -165,6 +154,10 @@ export default function Navbar() {
                         </Link>
                       ))}
                     </nav>
+                    <div className="mt-auto flex gap-2 pb-6">
+                      <Button variant="brandDark" className="w-[50%]">Join Now</Button>
+                      <Button variant="outline" className="w-[50%]">Login</Button>
+                    </div>
                   </div>
                 </SheetContent>
               </Sheet>
