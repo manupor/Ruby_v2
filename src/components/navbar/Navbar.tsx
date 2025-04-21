@@ -47,16 +47,16 @@ export default function Navbar() {
     <>
       <div className="sticky top-0 z-50 bg-background shadow-md">
         <header className="w-full">
-          {/* TOP BAR */}
-          <div className="flex justify-between items-center w-full max-w-7xl mx-auto px-4 py-4 lg:px-8">
-            {/* Logo grande */}
+          {/* TOP BAR DESKTOP */}
+          <div className="hidden lg:flex justify-between items-center w-full max-w-7xl mx-auto px-4 py-4">
+            {/* Logo grande solo en desktop */}
             <Link href="/" className="flex items-center">
               <Image
                 src="/Ruby-Wager-Logo.png"
                 alt="RubyWager Logo"
                 width={260}
                 height={70}
-                className="object-contain"
+                className="object-contain hidden lg:block"
                 priority
               />
             </Link>
@@ -82,7 +82,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* DESKTOP NAV MENU */}
+          {/* NAV MENU DESKTOP */}
           <div className="max-w-7xl mx-auto hidden lg:block px-4 pb-4">
             <NavigationMenu className="block w-full">
               <NavigationMenuList className="justify-between">
@@ -102,15 +102,18 @@ export default function Navbar() {
 
           {/* MOBILE NAVIGATION */}
           <div className="flex items-center justify-between max-w-7xl mx-auto px-4 pb-4 lg:hidden">
+            {/* Logo pequeño solo en mobile */}
             <Link href="/" className="flex items-center">
               <Image
                 src="/Ruby-Wager-Logo.png"
                 alt="RubyWager Logo"
                 width={160}
                 height={44}
+                className="block lg:hidden"
                 priority
               />
             </Link>
+
             <div className="flex items-center gap-2">
               <Link href="/login">
                 <Button
@@ -130,6 +133,8 @@ export default function Navbar() {
                   Join Now
                 </Button>
               </Link>
+
+              {/* Mobile menu button */}
               <Sheet open={isOpen} onOpenChange={setIsOpen}>
                 <SheetTrigger asChild>
                   <Button variant="outline" size="icon" className="h-[36px] w-[36px]">
@@ -146,6 +151,7 @@ export default function Navbar() {
                         <span className="sr-only">Close menu</span>
                       </Button>
                     </div>
+
                     <nav className="mt-8 flex flex-col gap-4">
                       {navItems.map((item) => (
                         <Link
