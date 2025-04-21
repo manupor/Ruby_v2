@@ -289,28 +289,45 @@ export default function Home() {
 
       {/* 🔥 NUEVA SECCIÓN DE BONOS */}
       <div className="container mx-auto px-4 pb-8 lg:px-8">
-        <div className="panel my-20">
-          <div className="mb-10 flex items-center justify-between">
-            <h1 className="text-3xl font-bold">Claim Your Bonuses</h1>
+  <div className="panel my-20">
+    <div className="mb-10 flex items-center justify-between">
+      <h1 className="text-3xl font-bold text-white">Claim Your Bonuses</h1>
+    </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {promoTickets.map((ticket, index) => (
+        <div
+          key={index}
+          className="rounded-xl bg-[#F2F4F7] text-blue-900 p-6 shadow-md flex flex-col sm:flex-row items-center gap-4 hover:shadow-xl transition duration-300"
+        >
+          {/* Icono animado */}
+          <div className="text-5xl animate-pulse text-blue-700">
+            {/* Puedes cambiar el ícono según corresponda */}
+            {index === 0 && <span>🔁</span>}
+            {index === 1 && <span>🎁</span>}
+            {index === 2 && <span>💰</span>}
+            {index === 3 && <span>🎉</span>}
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {promoTickets.map((ticket, index) => (
-              <div
-                key={index}
-                className="rounded-2xl bg-gradient-to-br from-[#FF003D] to-[#C4002E] text-white p-6 shadow-lg text-center flex flex-col justify-center items-center h-[160px]"
-              >
-                <p className="text-5xl font-extrabold text-gold drop-shadow-md">
-                  {ticket.text1}
-                </p>
-                <p className="text-xl font-black uppercase tracking-wide">{ticket.text2}</p>
-                <p className="text-md font-bold uppercase tracking-tight text-white">
-                  {ticket.text3}
-                </p>
-              </div>
-            ))}
+
+          {/* Contenido del bono */}
+          <div className="text-left">
+            <p className="text-3xl font-extrabold text-blue-900">
+              {ticket.text1}
+            </p>
+            <p className="text-lg font-bold uppercase">{ticket.text2}</p>
+            <p className="text-sm text-gray-600 mb-2">{ticket.text3}</p>
+            <Link
+              href="/promotions"
+              className="text-sm font-semibold text-blue-600 hover:underline"
+            >
+              MORE INFO
+            </Link>
           </div>
         </div>
-      </div>
+      ))}
+    </div>
+  </div>
+</div>
+
 
       <Banking />
     </>
