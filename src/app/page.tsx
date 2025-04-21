@@ -47,24 +47,28 @@ const promoTickets = [
     text1: '125%',
     text2: 'Reload Bonus',
     text3: 'Free Play',
+    bgImage: '/bonuses/reload-bg.png',
   },
   {
     icon: Gift,
     text1: '200%',
     text2: 'Signup Bonus',
     text3: 'Free Play',
+    bgImage: '/bonuses/signup-bg.png',
   },
   {
     icon: Wallet,
     text1: '20%',
     text2: 'Cash Bonus',
     text3: 'Bonus',
+    bgImage: '/bonuses/cash-bg.png',
   },
   {
     icon: HandCoins,
     text1: '$25',
     text2: 'No Deposit',
     text3: 'Free Play',
+    bgImage: '/bonuses/nodpo-bg.png',
   },
 ]
 
@@ -126,18 +130,8 @@ export default function Home() {
       <Hero />
 
       <div className="relative z-10 bg-black py-16 flex flex-col items-center justify-center gap-8">
-        <img
-          src="/home/ruby 1.png"
-          alt="ruby1"
-          className="w-full max-w-[1800px] h-auto object-contain mx-auto scale-[1.1] sm:scale-[1.2] transition-transform duration-500"
-        />
-        <Image
-          src="/home/slots-logo.png"
-          alt="Slots Logo"
-          width={180}
-          height={32}
-          className="relative z-20 -mt-10 sm:-mt-14"
-        />
+        <img src="/home/ruby 1.png" alt="ruby1" className="w-full max-w-[1800px] h-auto object-contain mx-auto scale-[1.1] sm:scale-[1.2] transition-transform duration-500" />
+        <Image src="/home/slots-logo.png" alt="Slots Logo" width={180} height={32} className="relative z-20 -mt-10 sm:-mt-14" />
       </div>
 
       <div className="container mx-auto px-4 pb-8 lg:px-8">
@@ -203,13 +197,7 @@ export default function Home() {
                   </Button>
                 </CardContent>
                 <figure className="absolute inset-0 z-0">
-                  <Image
-                    src={card.image_src}
-                    alt={card.image_alt}
-                    className="h-full w-full object-cover"
-                    width={400}
-                    height={400}
-                  />
+                  <Image src={card.image_src} alt={card.image_alt} className="h-full w-full object-cover" width={400} height={400} />
                 </figure>
               </Card>
             ))}
@@ -217,38 +205,44 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Claim Your Bonuses - actualizado */}
-      <div className="container mx-auto px-4 pb-20 lg:px-8 bg-black">
+      <div className="container mx-auto px-4 pb-20 lg:px-8">
         <div className="panel my-20">
           <div className="mb-10 text-center">
             <h1 className="text-4xl font-bold text-white uppercase tracking-wide">
               Claim Your Bonuses
             </h1>
-            <p className="text-[#ffc300] mt-2 text-lg font-medium">
+            <p className="text-yellow-500 mt-2 text-lg font-medium">
               Don’t miss out on these exclusive offers
             </p>
           </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {promoTickets.map((ticket, index) => {
               const Icon = ticket.icon
               return (
                 <div
                   key={index}
-                  className="bg-[#111111] text-white text-center p-8 rounded-xl border border-neutral-800 shadow-md hover:shadow-xl hover:border-[#ffc300] transition-all duration-300 flex flex-col items-center justify-between"
+                  className="relative bg-neutral-900 border border-neutral-700 text-white rounded-2xl p-6 shadow-md hover:shadow-xl hover:border-yellow-500 transition-all duration-300 group overflow-hidden"
                 >
-                  <Icon size={48} className="text-[#ffc300] mb-4" />
-                  <div className="space-y-2">
-                    <p className="text-4xl font-extrabold text-[#ffc300]">{ticket.text1}</p>
-                    <p className="text-xl font-bold uppercase">{ticket.text2}</p>
-                    <p className="text-sm text-gray-400">{ticket.text3}</p>
+                  <div
+                    className="absolute inset-0 bg-cover bg-center opacity-10 group-hover:opacity-20 transition-opacity duration-300"
+                    style={{ backgroundImage: `url(${ticket.bgImage})` }}
+                  />
+                  <div className="relative z-10 flex flex-col items-center text-center space-y-4">
+                    <Icon size={48} className="text-yellow-500 group-hover:scale-110 transition-transform duration-300" />
+                    <div>
+                      <p className="text-4xl font-extrabold text-yellow-500">
+                        {ticket.text1}
+                      </p>
+                      <p className="text-xl font-bold uppercase">{ticket.text2}</p>
+                      <p className="text-sm text-gray-400">{ticket.text3}</p>
+                    </div>
+                    <Link
+                      href="/promotions"
+                      className="mt-4 inline-block rounded-full bg-yellow-500 px-5 py-2 text-sm font-semibold uppercase text-black hover:bg-yellow-400 transition"
+                    >
+                      More Info
+                    </Link>
                   </div>
-                  <Link
-                    href="/promotions"
-                    className="mt-6 inline-block bg-[#ffc300] text-black font-bold px-6 py-2 rounded-full uppercase text-sm hover:bg-[#e6b200] transition"
-                  >
-                    More Info
-                  </Link>
                 </div>
               )
             })}
