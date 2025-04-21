@@ -47,30 +47,40 @@ export default function Navbar() {
     <>
       <div className="sticky top-0 z-50 bg-background shadow-md">
         <header className="w-full">
-          <div className="container flex w-full min-h-[80px] items-center justify-between gap-2 px-4 py-6 lg:flex-row lg:px-4">
-            {/* Logo responsive */}
-            <div className="flex items-center">
-              <Link href="/" className="flex items-center">
-                <Image
-                  src="/Ruby-Wager-Logo.png"
-                  alt="RubyWager Logo"
-                  width={160}
-                  height={44}
-                  className="block lg:hidden"
-                  priority
-                />
-                <Image
-                  src="/Ruby-Wager-Logo.png"
-                  alt="RubyWager Logo"
-                  width={220}
-                  height={60}
-                  className="hidden lg:block"
-                  priority
-                />
+          <div className="container mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-6 lg:px-8">
+            {/* Logo */}
+            <Link href="/" className="flex items-center justify-center">
+              <Image
+                src="/Ruby-Wager-Logo.png"
+                alt="RubyWager Logo"
+                width={240}
+                height={70}
+                className="object-contain"
+                priority
+              />
+            </Link>
+
+            {/* Desktop buttons */}
+            <div className="hidden lg:flex items-center gap-4">
+              <Link href="/join">
+                <Button
+                  variant="brandDark"
+                  className="font-black px-6 py-4 text-xl tracking-wider uppercase"
+                >
+                  Join Now
+                </Button>
+              </Link>
+              <Link href="/login">
+                <Button
+                  variant="default"
+                  className="font-black px-6 py-4 text-xl tracking-wider uppercase"
+                >
+                  Login
+                </Button>
               </Link>
             </div>
 
-            {/* Mobile buttons and menu */}
+            {/* Mobile */}
             <div className="flex items-center gap-2 lg:hidden">
               <Link href="/login">
                 <Button
@@ -90,14 +100,9 @@ export default function Navbar() {
                   Join Now
                 </Button>
               </Link>
-
               <Sheet open={isOpen} onOpenChange={setIsOpen}>
                 <SheetTrigger asChild>
-                  <Button
-                    variant="outline"
-                    size="icon"
-                    className="h-[36px] w-[36px]"
-                  >
+                  <Button variant="outline" size="icon" className="h-[36px] w-[36px]">
                     <List color="white" className="h-5 w-5" />
                     <span className="sr-only">Toggle menu</span>
                   </Button>
@@ -106,16 +111,11 @@ export default function Navbar() {
                   <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
                   <div className="flex h-full flex-col p-5">
                     <div className="flex justify-end">
-                      <Button
-                        variant="outline"
-                        size="icon"
-                        onClick={() => setIsOpen(false)}
-                      >
+                      <Button variant="outline" size="icon" onClick={() => setIsOpen(false)}>
                         <X size={24} />
                         <span className="sr-only">Close menu</span>
                       </Button>
                     </div>
-
                     <nav className="mt-8 flex flex-col gap-4">
                       {navItems.map((item) => (
                         <Link
@@ -133,26 +133,10 @@ export default function Navbar() {
                 </SheetContent>
               </Sheet>
             </div>
-
-            {/* Desktop buttons */}
-            <div className="hidden lg:flex items-center gap-2">
-              <Button
-                variant="brandDark"
-                className="font-black px-4 pt-6 pb-5 text-2xl tracking-wider uppercase"
-              >
-                Join Now
-              </Button>
-              <Button
-                variant="default"
-                className="font-black px-4 pt-6 pb-5 text-2xl tracking-wider uppercase"
-              >
-                Login
-              </Button>
-            </div>
           </div>
 
-          {/* Desktop nav menu */}
-          <div className="container mx-auto hidden px-4 pb-4 lg:block lg:px-4">
+          {/* Nav menu */}
+          <div className="container mx-auto hidden lg:block px-4 pb-4">
             <NavigationMenu className="block max-w-full">
               <NavigationMenuList className="justify-between">
                 {navItems.map((item) => (
