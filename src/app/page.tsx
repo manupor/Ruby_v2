@@ -61,6 +61,29 @@ const options = [
   },
 ]
 
+const promoTickets = [
+  {
+    text1: '125%',
+    text2: 'RELOAD BONUS',
+    text3: 'FREE PLAY',
+  },
+  {
+    text1: '200%',
+    text2: 'SIGNUP',
+    text3: 'FREE PLAY',
+  },
+  {
+    text1: '20%',
+    text2: 'CASH',
+    text3: 'BONUS',
+  },
+  {
+    text1: '$25',
+    text2: 'NO DEPOSIT',
+    text3: 'FREE PLAY',
+  },
+]
+
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [offsetY, setOffsetY] = useState(0)
@@ -259,6 +282,31 @@ export default function Home() {
                   />
                 </figure>
               </Card>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      {/* 🔥 NUEVA SECCIÓN DE BONOS */}
+      <div className="container mx-auto px-4 pb-8 lg:px-8">
+        <div className="panel my-20">
+          <div className="mb-10 flex items-center justify-between">
+            <h1 className="text-3xl font-bold">Claim Your Bonuses</h1>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {promoTickets.map((ticket, index) => (
+              <div
+                key={index}
+                className="rounded-2xl bg-gradient-to-br from-[#FF003D] to-[#C4002E] text-white p-6 shadow-lg text-center flex flex-col justify-center items-center h-[160px]"
+              >
+                <p className="text-5xl font-extrabold text-gold drop-shadow-md">
+                  {ticket.text1}
+                </p>
+                <p className="text-xl font-black uppercase tracking-wide">{ticket.text2}</p>
+                <p className="text-md font-bold uppercase tracking-tight text-white">
+                  {ticket.text3}
+                </p>
+              </div>
             ))}
           </div>
         </div>
