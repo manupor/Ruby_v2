@@ -28,32 +28,32 @@ export default function Navbar() {
     {
       href: '/sportsbook',
       label: 'Sportsbook',
-      icon: <Football size={24} color="#c19652" />,
+      icon: <Football size={28} color="#c19652" />, // icon size increased
     },
     {
       href: '/racebook',
       label: 'Racebook',
-      icon: <Horse size={24} color="#c19652" />,
+      icon: <Horse size={28} color="#c19652" />, // icon size increased
     },
     {
       href: '/casino',
       label: 'Casino',
-      icon: <Spade size={24} color="#c19652" />,
+      icon: <Spade size={28} color="#c19652" />, // icon size increased
     },
     {
       href: '/promotions',
       label: 'Promotions',
-      icon: <Tag size={24} color="#c19652" />,
+      icon: <Tag size={28} color="#c19652" />, // icon size increased
     },
     {
       href: '/banking',
       label: 'Banking',
-      icon: <Bank size={24} color="#c19652" />,
+      icon: <Bank size={28} color="#c19652" />, // icon size increased
     },
     {
       href: '/help',
       label: 'Help',
-      icon: <Question size={24} color="#c19652" />,
+      icon: <Question size={28} color="#c19652" />, // icon size increased
     },
   ]
 
@@ -133,16 +133,18 @@ export default function Navbar() {
       </div>
 
       {/* Bottom nav with icons */}
-      <nav className="hidden lg:flex items-center justify-center gap-10 py-3 bg-[#2C2C2C]">
-        {navItems.map((item) => (
-          <Link
-            key={item.href}
-            href={item.href}
-            className="flex flex-col items-center text-sm font-semibold uppercase text-white hover:text-[#c19652] transition"
-          >
-            {item.icon}
-            <span>{item.label}</span>
-          </Link>
+      <nav className="hidden lg:flex items-center justify-center gap-4 py-3 bg-[#2C2C2C]">
+        {navItems.map((item, index) => (
+          <React.Fragment key={item.href}>
+            <Link
+              href={item.href}
+              className="flex flex-col items-center text-base font-semibold uppercase text-white hover:text-[#c19652] transition px-4"
+            >
+              {item.icon}
+              <span>{item.label}</span>
+            </Link>
+            {index < navItems.length - 1 && <span className="h-6 w-px bg-gray-600" />}
+          </React.Fragment>
         ))}
       </nav>
     </header>
