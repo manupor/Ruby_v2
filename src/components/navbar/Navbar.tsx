@@ -47,27 +47,22 @@ export default function Navbar() {
     <>
       <div className="sticky top-0 z-50 bg-background shadow-md">
         <header className="w-full">
-          {/* Grid Layout */}
-          <div className="grid grid-cols-3 items-center justify-between w-full max-w-7xl mx-auto px-4 py-6 lg:px-8">
-            {/* Left: Logo */}
-            <div className="flex justify-start lg:justify-center">
-              <Link href="/" className="flex items-center justify-center">
-                <Image
-                  src="/Ruby-Wager-Logo.png"
-                  alt="RubyWager Logo"
-                  width={220}
-                  height={60}
-                  className="object-contain"
-                  priority
-                />
-              </Link>
-            </div>
+          {/* TOP BAR */}
+          <div className="flex justify-between items-center w-full max-w-7xl mx-auto px-4 py-4 lg:px-8">
+            {/* Logo grande */}
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/Ruby-Wager-Logo.png"
+                alt="RubyWager Logo"
+                width={230}
+                height={65}
+                className="object-contain"
+                priority
+              />
+            </Link>
 
-            {/* Center: Spacer (can use for additional content if needed) */}
-            <div></div>
-
-            {/* Right: Join Now + Login */}
-            <div className="hidden lg:flex items-center justify-end gap-3">
+            {/* Desktop buttons */}
+            <div className="hidden lg:flex items-center gap-3">
               <Link href="/join">
                 <Button
                   variant="brandDark"
@@ -87,7 +82,7 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* Navigation Menu */}
+          {/* DESKTOP NAV MENU */}
           <div className="container mx-auto hidden lg:block px-4 pb-4">
             <NavigationMenu className="block max-w-full">
               <NavigationMenuList className="justify-between">
@@ -105,7 +100,7 @@ export default function Navbar() {
             </NavigationMenu>
           </div>
 
-          {/* Mobile View (hamburger + buttons) */}
+          {/* MOBILE NAVIGATION */}
           <div className="flex items-center justify-between px-4 pb-4 lg:hidden">
             <Link href="/" className="flex items-center">
               <Image
@@ -172,7 +167,7 @@ export default function Navbar() {
         </header>
       </div>
 
-      {/* Floating Help Button */}
+      {/* FLOATING HELP BUTTON */}
       <Link
         href="/help"
         className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full bg-brand px-4 py-3 text-white shadow-lg hover:bg-brand-dark transition"
