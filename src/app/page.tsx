@@ -129,7 +129,6 @@ export default function Home() {
     <>
       <Hero />
 
-      {/* Ruby Banner + Slots Logo */}
       <div className="relative z-10 bg-black py-16 flex flex-col items-center justify-center gap-8">
         <img
           src="/home/ruby 1.png"
@@ -145,7 +144,6 @@ export default function Home() {
         />
       </div>
 
-      {/* Promotions */}
       <div className="container mx-auto px-4 pb-8 lg:px-8">
         <div className="panel my-20">
           <div className="mb-10 flex items-center justify-between">
@@ -189,7 +187,6 @@ export default function Home() {
 
       <Leagues />
 
-      {/* Sports Betting Options */}
       <div className="container mx-auto px-4 pb-8 lg:px-8">
         <div className="panel my-20">
           <div className="mb-10 flex items-center justify-between">
@@ -224,7 +221,6 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Bonuses Section */}
       <div className="container mx-auto px-4 pb-20 lg:px-8">
         <div className="panel my-20">
           <div className="mb-10 text-center">
