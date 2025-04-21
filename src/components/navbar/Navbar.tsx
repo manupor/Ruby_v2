@@ -11,6 +11,7 @@ import {
   Spade,
   Tag,
   Bank,
+  Article,
   Question
 } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button'
@@ -28,38 +29,43 @@ export default function Navbar() {
     {
       href: '/sportsbook',
       label: 'Sportsbook',
-      icon: <Football size={28} color="#c19652" />, // icon size increased
+      icon: <Football size={24} color="#c19652" />,
     },
     {
       href: '/racebook',
       label: 'Racebook',
-      icon: <Horse size={28} color="#c19652" />, // icon size increased
+      icon: <Horse size={24} color="#c19652" />,
     },
     {
       href: '/casino',
       label: 'Casino',
-      icon: <Spade size={28} color="#c19652" />, // icon size increased
+      icon: <Spade size={24} color="#c19652" />,
     },
     {
       href: '/promotions',
       label: 'Promotions',
-      icon: <Tag size={28} color="#c19652" />, // icon size increased
+      icon: <Tag size={24} color="#c19652" />,
     },
     {
       href: '/banking',
       label: 'Banking',
-      icon: <Bank size={28} color="#c19652" />, // icon size increased
+      icon: <Bank size={24} color="#c19652" />,
+    },
+    {
+      href: '/about',
+      label: 'About',
+      icon: <Article size={24} color="#c19652" />,
     },
     {
       href: '/help',
       label: 'Help',
-      icon: <Question size={28} color="#c19652" />, // icon size increased
+      icon: <Question size={24} color="#c19652" />,
     },
   ]
 
   return (
     <header className="sticky top-0 z-50">
-      {/* Top section */}
+      {/* Top section - color only applied locally */}
       <div className="bg-[#1A1A1A] shadow-md px-6 py-3 flex items-center justify-between border-b border-neutral-800">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
@@ -132,19 +138,17 @@ export default function Navbar() {
         </Sheet>
       </div>
 
-      {/* Bottom nav with icons */}
-      <nav className="hidden lg:flex items-center justify-center gap-4 py-3 bg-[#2C2C2C]">
-        {navItems.map((item, index) => (
-          <React.Fragment key={item.href}>
-            <Link
-              href={item.href}
-              className="flex flex-col items-center text-base font-semibold uppercase text-white hover:text-[#c19652] transition px-4"
-            >
-              {item.icon}
-              <span>{item.label}</span>
-            </Link>
-            {index < navItems.length - 1 && <span className="h-6 w-px bg-gray-600" />}
-          </React.Fragment>
+      {/* Bottom nav */}
+      <nav className="hidden lg:flex items-center justify-center gap-10 py-3 bg-[#2C2C2C]">
+        {navItems.map((item) => (
+          <Link
+            key={item.href}
+            href={item.href}
+            className="flex flex-col items-center text-sm font-semibold uppercase text-white hover:text-[#c19652] transition"
+          >
+            {item.icon}
+            <span>{item.label}</span>
+          </Link>
         ))}
       </nav>
     </header>
