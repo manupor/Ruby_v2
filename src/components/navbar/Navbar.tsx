@@ -41,13 +41,24 @@ export default function Navbar() {
   return (
     <div className="bg-background">
       <div className="container mx-auto flex items-center justify-between px-4 py-3 lg:px-8">
-        <div className="flex items-center">
+        <div className="flex items-center gap-4">
           <Link href="/">
+            {/* Logo grande en desktop */}
             <Image
               src="/Ruby-Wager-Logo.png"
               alt="RubyWager Logo"
               width={220}
               height={60}
+              className="hidden lg:block"
+              priority
+            />
+            {/* Logo pequeño en mobile */}
+            <Image
+              src="/Ruby-Wager-Logo.png"
+              alt="RubyWager Logo"
+              width={120}
+              height={35}
+              className="block lg:hidden"
               priority
             />
           </Link>
@@ -72,13 +83,19 @@ export default function Navbar() {
         </div>
 
         {/* Login and Sign Up buttons */}
-        <div className="flex items-center gap-2">
+        <div className="hidden lg:flex items-center gap-2">
           <Button variant="brandDark">Join Now</Button>
           <Button variant="outline">Login</Button>
         </div>
 
         {/* Mobile Menu */}
-        <div className="lg:hidden">
+        <div className="lg:hidden flex items-center gap-2">
+          <Link href="/login">
+            <Button variant="outline" size="sm">Login</Button>
+          </Link>
+          <Link href="/join">
+            <Button variant="brandDark" size="sm">Join Now</Button>
+          </Link>
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button variant="outline" size="icon" className="lg:hidden">
