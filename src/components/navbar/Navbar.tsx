@@ -65,8 +65,8 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50">
-      {/* Top section */}
-      <div className="bg-[#1A1A1A] text-white shadow-md px-6 py-3 flex items-center justify-between border-b border-neutral-800">
+      {/* Top section - color only applied locally */}
+      <div className="bg-[#1A1A1A] shadow-md px-6 py-3 flex items-center justify-between border-b border-neutral-800">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
           <Image
@@ -98,7 +98,7 @@ export default function Navbar() {
         {/* Mobile menu */}
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="lg:hidden">
+            <Button variant="ghost" size="icon" className="lg:hidden text-white">
               <List size={24} />
             </Button>
           </SheetTrigger>
@@ -115,7 +115,7 @@ export default function Navbar() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setIsOpen(false)}
-                  className="flex items-center gap-3 text-lg font-medium hover:text-[#c19652]"
+                  className="flex items-center gap-3 text-lg font-medium text-white hover:text-[#c19652]"
                 >
                   {item.icon}
                   {item.label}
@@ -138,7 +138,7 @@ export default function Navbar() {
         </Sheet>
       </div>
 
-      {/* Bottom nav with icons */}
+      {/* Bottom nav */}
       <nav className="hidden lg:flex items-center justify-center gap-10 py-3 bg-[#2C2C2C]">
         {navItems.map((item) => (
           <Link
