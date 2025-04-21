@@ -11,20 +11,19 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        brand: 'var(--brand)',
-        'brand-dark': 'var(--brand-dark)',
-        background: 'var(--background)',
-        foreground: 'var(--foreground)',
-        card: 'var(--card)',
-        'card-foreground': 'var(--card-foreground)',
-        border: 'var(--border)',
-        input: 'var(--input)',
-        ring: 'var(--ring)',
+        brand: '#c19652',
+        'brand-dark': '#a7813c',
       },
       fontFamily: {
         sans: ['var(--font-sans)', ...fontFamily.sans],
         mono: ['var(--font-mono)', ...fontFamily.mono],
         thunder: ['var(--font-thunder)', ...fontFamily.sans],
+      },
+      spacing: {
+        // Ejemplo: '72': '18rem',
+      },
+      screens: {
+        // Ejemplo: '3xl': '1920px',
       },
     },
   },
