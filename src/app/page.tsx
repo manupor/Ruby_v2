@@ -64,23 +64,27 @@ const options = [
 const promoTickets = [
   {
     text1: '125%',
-    text2: 'RELOAD BONUS',
-    text3: 'FREE PLAY',
+    text2: 'Reload Bonus',
+    text3: 'Free Play',
+    icon: '🔁',
   },
   {
     text1: '200%',
-    text2: 'SIGNUP',
-    text3: 'FREE PLAY',
+    text2: 'Signup Bonus',
+    text3: 'Free Play',
+    icon: '🎁',
   },
   {
     text1: '20%',
-    text2: 'CASH',
-    text3: 'BONUS',
+    text2: 'Cash Bonus',
+    text3: 'Bonus',
+    icon: '💰',
   },
   {
     text1: '$25',
-    text2: 'NO DEPOSIT',
-    text3: 'FREE PLAY',
+    text2: 'No Deposit',
+    text3: 'Free Play',
+    icon: '🎉',
   },
 ]
 
@@ -123,7 +127,7 @@ const Hero = () => {
   }, [heros.length])
 
   return (
-    <div className="relative h-[600px] overflow-hidden">
+    <div className="relative h-[600px] overflow-hidden z-0">
       <div
         className="absolute inset-0 bg-cover bg-center transition-transform duration-300 ease-out"
         style={{
@@ -151,17 +155,17 @@ const Hero = () => {
         onClick={() =>
           setCurrentSlide((prev) => (prev - 1 + heros.length) % heros.length)
         }
-        className="absolute top-1/2 left-4 -translate-y-1/2 transform rounded-full bg-black/30 p-2 text-white hover:bg-black/50"
+        className="absolute top-1/2 left-4 -translate-y-1/2 transform rounded-full bg-black/30 p-2 text-white hover:bg-black/50 z-20"
       >
         &lt;
       </button>
       <button
         onClick={() => setCurrentSlide((prev) => (prev + 1) % heros.length)}
-        className="absolute top-1/2 right-4 -translate-y-1/2 transform rounded-full bg-black/30 p-2 text-white hover:bg-black/50"
+        className="absolute top-1/2 right-4 -translate-y-1/2 transform rounded-full bg-black/30 p-2 text-white hover:bg-black/50 z-20"
       >
         &gt;
       </button>
-      <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 transform space-x-2 z-10">
+      <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 transform space-x-2 z-20">
         {heros.map((_, index) => (
           <button
             key={index}
@@ -180,10 +184,29 @@ export default function Home() {
   return (
     <>
       <Hero />
+
+      {/* Ruby Banner */}
+      <div className="py-10 z-10 relative">
+        <div className="flex flex-col items-center animate-fade-in">
+          <img
+            src="/home/ruby 1.png"
+            alt="ruby1"
+            className="w-[800px] sm:w-[1600px] max-w-full h-auto object-contain mx-auto"
+          />
+          <Image
+            src="/home/slots-logo.png"
+            alt="Slots Logo"
+            width={160}
+            height={26}
+          />
+        </div>
+      </div>
+
+      {/* Promotions */}
       <div className="container mx-auto px-4 pb-8 lg:px-8">
         <div className="panel my-20">
           <div className="mb-10 flex items-center justify-between">
-            <h1 className="text-3xl font-bold">Promotions</h1>
+            <h1 className="text-3xl font-bold text-white">Promotions</h1>
             <Link
               href="/promotions"
               className="text-xs underline hover:no-underline"
@@ -228,28 +251,13 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="py-10">
-        <div className="flex flex-col items-center animate-fade-in">
-          <img
-            src="/home/ruby 1.png"
-            alt="ruby1"
-            className="w-[800px] sm:w-[1600px] max-w-full h-auto object-contain mx-auto"
-          />
-          <Image
-            src="/home/slots-logo.png"
-            alt="Slots Logo"
-            width={160}
-            height={26}
-          />
-        </div>
-      </div>
-
       <Leagues />
 
+      {/* Sports Betting Options */}
       <div className="container mx-auto px-4 pb-8 lg:px-8">
         <div className="panel my-20">
           <div className="mb-10 flex items-center justify-between">
-            <h1 className="text-3xl font-bold">Sports betting options</h1>
+            <h1 className="text-3xl font-bold text-white">Sports betting options</h1>
             <Link href="/odds" className="text-xs underline hover:no-underline">
               <span>See all options</span>
             </Link>
@@ -287,47 +295,35 @@ export default function Home() {
         </div>
       </div>
 
-      {/* 🔥 NUEVA SECCIÓN DE BONOS */}
+      {/* ✅ Nueva Sección: Bonos en estilo limpio */}
       <div className="container mx-auto px-4 pb-8 lg:px-8">
-  <div className="panel my-20">
-    <div className="mb-10 flex items-center justify-between">
-      <h1 className="text-3xl font-bold text-white">Claim Your Bonuses</h1>
-    </div>
-    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-      {promoTickets.map((ticket, index) => (
-        <div
-          key={index}
-          className="rounded-xl bg-[#F2F4F7] text-blue-900 p-6 shadow-md flex flex-col sm:flex-row items-center gap-4 hover:shadow-xl transition duration-300"
-        >
-          {/* Icono animado */}
-          <div className="text-5xl animate-pulse text-blue-700">
-            {/* Puedes cambiar el ícono según corresponda */}
-            {index === 0 && <span>🔁</span>}
-            {index === 1 && <span>🎁</span>}
-            {index === 2 && <span>💰</span>}
-            {index === 3 && <span>🎉</span>}
+        <div className="panel my-20">
+          <div className="mb-10">
+            <h1 className="text-3xl font-bold text-white">Claim Your Bonuses</h1>
           </div>
-
-          {/* Contenido del bono */}
-          <div className="text-left">
-            <p className="text-3xl font-extrabold text-blue-900">
-              {ticket.text1}
-            </p>
-            <p className="text-lg font-bold uppercase">{ticket.text2}</p>
-            <p className="text-sm text-gray-600 mb-2">{ticket.text3}</p>
-            <Link
-              href="/promotions"
-              className="text-sm font-semibold text-blue-600 hover:underline"
-            >
-              MORE INFO
-            </Link>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {promoTickets.map((ticket, index) => (
+              <div
+                key={index}
+                className="rounded-xl bg-[#F2F4F7] text-blue-900 p-6 shadow-md flex flex-col sm:flex-row items-center gap-4 hover:shadow-xl transition duration-300"
+              >
+                <div className="text-5xl animate-pulse">{ticket.icon}</div>
+                <div>
+                  <p className="text-3xl font-extrabold">{ticket.text1}</p>
+                  <p className="text-lg font-bold uppercase">{ticket.text2}</p>
+                  <p className="text-sm text-gray-600">{ticket.text3}</p>
+                  <Link
+                    href="/promotions"
+                    className="text-sm text-blue-600 font-semibold hover:underline"
+                  >
+                    MORE INFO
+                  </Link>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
-      ))}
-    </div>
-  </div>
-</div>
-
+      </div>
 
       <Banking />
     </>
