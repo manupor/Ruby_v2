@@ -15,28 +15,28 @@ const promoTickets = [
     text1: '125%',
     text2: 'Reload Bonus',
     text3: 'Free Play',
-    bgImage: '/bonuses/reload-bg.png',
+    bgImage: '/bonuses/reload-bg-enhanced.jpg',
   },
   {
     icon: Gift,
     text1: '200%',
     text2: 'Signup Bonus',
     text3: 'Free Play',
-    bgImage: '/bonuses/signup-bg.png',
+    bgImage: '/bonuses/signup-bg-enhanced.jpg',
   },
   {
     icon: Wallet,
     text1: '20%',
     text2: 'Cash Bonus',
     text3: 'Bonus',
-    bgImage: '/bonuses/cash-bg.png',
+    bgImage: '/bonuses/cash-bg-enhanced.jpg',
   },
   {
     icon: HandCoins,
     text1: '$25',
     text2: 'No Deposit',
     text3: 'Free Play',
-    bgImage: '/bonuses/nodpo-bg.png',
+    bgImage: '/bonuses/nodpo-bg-enhanced.jpg',
   },
 ]
 
@@ -45,7 +45,7 @@ const BonusesSection = () => {
     <div className="container mx-auto px-4 pb-20 lg:px-8">
       <div className="panel my-20">
         <div className="mb-10 text-center">
-          <h1 className="text-4xl font-bold text-white uppercase tracking-wide">
+          <h1 className="text-4xl font-bold text-yellow-500 uppercase tracking-wide">
             Claim Your Bonuses
           </h1>
           <p className="text-yellow-500 mt-2 text-lg font-medium">
@@ -58,10 +58,10 @@ const BonusesSection = () => {
             return (
               <div
                 key={index}
-                className="relative bg-black border border-yellow-700 text-yellow-500 rounded-2xl p-6 shadow-lg hover:shadow-2xl hover:border-yellow-400 transition-all duration-300 group overflow-hidden"
+                className="relative bg-black border border-yellow-700 text-yellow-500 rounded-2xl p-6 shadow-xl hover:shadow-2xl hover:border-yellow-400 transition-all duration-300 group overflow-hidden"
               >
                 <div
-                  className="absolute inset-0 bg-cover bg-center opacity-5 group-hover:opacity-10 transition-opacity duration-300"
+                  className="absolute inset-0 bg-cover bg-center opacity-10 group-hover:opacity-20 transition-opacity duration-300"
                   style={{ backgroundImage: `url(${ticket.bgImage})` }}
                 />
                 <div className="relative z-10 flex flex-col items-center text-center space-y-4">
