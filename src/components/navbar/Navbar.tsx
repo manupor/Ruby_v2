@@ -47,25 +47,31 @@ export default function Navbar() {
     <>
       <div className="sticky top-0 z-50 bg-background shadow-md">
         <header className="w-full">
-          <div className="container mx-auto flex w-full max-w-7xl items-center justify-between px-4 py-6 lg:px-8">
-            {/* Logo */}
-            <Link href="/" className="flex items-center justify-center">
-              <Image
-                src="/Ruby-Wager-Logo.png"
-                alt="RubyWager Logo"
-                width={240}
-                height={70}
-                className="object-contain"
-                priority
-              />
-            </Link>
+          {/* Grid Layout */}
+          <div className="grid grid-cols-3 items-center justify-between w-full max-w-7xl mx-auto px-4 py-6 lg:px-8">
+            {/* Left: Logo */}
+            <div className="flex justify-start lg:justify-center">
+              <Link href="/" className="flex items-center justify-center">
+                <Image
+                  src="/Ruby-Wager-Logo.png"
+                  alt="RubyWager Logo"
+                  width={220}
+                  height={60}
+                  className="object-contain"
+                  priority
+                />
+              </Link>
+            </div>
 
-            {/* Desktop buttons */}
-            <div className="hidden lg:flex items-center gap-4">
+            {/* Center: Spacer (can use for additional content if needed) */}
+            <div></div>
+
+            {/* Right: Join Now + Login */}
+            <div className="hidden lg:flex items-center justify-end gap-3">
               <Link href="/join">
                 <Button
                   variant="brandDark"
-                  className="font-black px-6 py-4 text-xl tracking-wider uppercase"
+                  className="font-black px-6 py-3 text-base tracking-wider uppercase"
                 >
                   Join Now
                 </Button>
@@ -73,15 +79,44 @@ export default function Navbar() {
               <Link href="/login">
                 <Button
                   variant="default"
-                  className="font-black px-6 py-4 text-xl tracking-wider uppercase"
+                  className="font-black px-6 py-3 text-base tracking-wider uppercase"
                 >
                   Login
                 </Button>
               </Link>
             </div>
+          </div>
 
-            {/* Mobile */}
-            <div className="flex items-center gap-2 lg:hidden">
+          {/* Navigation Menu */}
+          <div className="container mx-auto hidden lg:block px-4 pb-4">
+            <NavigationMenu className="block max-w-full">
+              <NavigationMenuList className="justify-between">
+                {navItems.map((item) => (
+                  <NavigationMenuItem key={item.href}>
+                    <Link href={item.href} legacyBehavior passHref>
+                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        <span className="mr-2">{item.icon}</span>
+                        <span>{item.label}</span>
+                      </NavigationMenuLink>
+                    </Link>
+                  </NavigationMenuItem>
+                ))}
+              </NavigationMenuList>
+            </NavigationMenu>
+          </div>
+
+          {/* Mobile View (hamburger + buttons) */}
+          <div className="flex items-center justify-between px-4 pb-4 lg:hidden">
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/Ruby-Wager-Logo.png"
+                alt="RubyWager Logo"
+                width={160}
+                height={44}
+                priority
+              />
+            </Link>
+            <div className="flex items-center gap-2">
               <Link href="/login">
                 <Button
                   variant="outline"
@@ -133,24 +168,6 @@ export default function Navbar() {
                 </SheetContent>
               </Sheet>
             </div>
-          </div>
-
-          {/* Nav menu */}
-          <div className="container mx-auto hidden lg:block px-4 pb-4">
-            <NavigationMenu className="block max-w-full">
-              <NavigationMenuList className="justify-between">
-                {navItems.map((item) => (
-                  <NavigationMenuItem key={item.href}>
-                    <Link href={item.href} legacyBehavior passHref>
-                      <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                        <span className="mr-2">{item.icon}</span>
-                        <span>{item.label}</span>
-                      </NavigationMenuLink>
-                    </Link>
-                  </NavigationMenuItem>
-                ))}
-              </NavigationMenuList>
-            </NavigationMenu>
           </div>
         </header>
       </div>
