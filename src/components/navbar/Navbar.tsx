@@ -54,8 +54,8 @@ export default function Navbar() {
               <Image
                 src="/Ruby-Wager-Logo.png"
                 alt="RubyWager Logo"
-                width={230}
-                height={65}
+                width={260}
+                height={70}
                 className="object-contain"
                 priority
               />
@@ -83,8 +83,8 @@ export default function Navbar() {
           </div>
 
           {/* DESKTOP NAV MENU */}
-          <div className="container mx-auto hidden lg:block px-4 pb-4">
-            <NavigationMenu className="block max-w-full">
+          <div className="max-w-7xl mx-auto hidden lg:block px-4 pb-4">
+            <NavigationMenu className="block w-full">
               <NavigationMenuList className="justify-between">
                 {navItems.map((item) => (
                   <NavigationMenuItem key={item.href}>
@@ -101,7 +101,7 @@ export default function Navbar() {
           </div>
 
           {/* MOBILE NAVIGATION */}
-          <div className="flex items-center justify-between px-4 pb-4 lg:hidden">
+          <div className="flex items-center justify-between max-w-7xl mx-auto px-4 pb-4 lg:hidden">
             <Link href="/" className="flex items-center">
               <Image
                 src="/Ruby-Wager-Logo.png"
