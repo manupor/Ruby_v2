@@ -199,49 +199,47 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      {/* Bonuses Section */}
-      <div className="container mx-auto px-4 pb-20 lg:px-8">
-        <div className="panel my-20">
-          <div className="mb-10 text-center">
-            <h1 className="text-4xl font-bold text-white uppercase tracking-wide">
-              Claim Your Bonuses
-            </h1>
-            <p className="text-[#c19652] mt-2 text-lg font-medium">
-              Don’t miss out on these exclusive offers
-            </p>
+{/* Bonuses Section */}
+<div className="container mx-auto px-4 pb-20 lg:px-8">
+  <div className="panel my-20">
+    <div className="mb-10 text-center">
+      <h1 className="text-4xl font-bold text-white uppercase tracking-wide">
+        Claim Your Bonuses
+      </h1>
+      <p className="text-[#c19652] mt-2 text-lg font-medium">
+        Don’t miss out on these exclusive offers
+      </p>
+    </div>
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {promoTickets.map((ticket, index) => {
+        const Icon = ticket.icon
+        return (
+          <div
+            key={index}
+            className="bg-neutral-900 border border-neutral-700 text-white rounded-2xl p-6 shadow-md hover:shadow-xl hover:border-[#c19652] transition-all duration-300 group"
+          >
+            <div className="flex flex-col items-center text-center space-y-4">
+              <Icon size={48} className="text-[#c19652] group-hover:scale-110 transition-transform duration-300" />
+              <div>
+                <p className="text-4xl font-extrabold text-[#c19652]">
+                  {ticket.text1}
+                </p>
+                <p className="text-xl font-bold uppercase">{ticket.text2}</p>
+                <p className="text-sm text-gray-400">{ticket.text3}</p>
+              </div>
+              <Link
+                href="/promotions"
+                className="mt-4 inline-block rounded-full bg-[#c19652] px-5 py-2 text-sm font-semibold uppercase text-black hover:bg-[#d7af5b] transition"
+              >
+                More Info
+              </Link>
+            </div>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {promoTickets.map((ticket, index) => {
-              const Icon = ticket.icon
-              return (
-                <div
-                  key={index}
-                  className="bg-[#1f1f1f] border border-[#333] text-white rounded-2xl p-6 shadow-md hover:shadow-xl hover:border-[#c19652] transition-all duration-300 group"
-                >
-                  <div className="flex flex-col items-center text-center space-y-4">
-                    <Icon size={48} className="stroke-[#c19652] group-hover:scale-110 transition-transform duration-300" />
-                    <div>
-                      <p className="text-4xl font-extrabold text-[#c19652]">
-                        {ticket.text1}
-                      </p>
-                      <p className="text-xl font-bold uppercase">{ticket.text2}</p>
-                      <p className="text-sm text-gray-400">{ticket.text3}</p>
-                    </div>
-                    <Link
-                      href="/promotions"
-                      className="mt-4 inline-block rounded-full bg-[#c19652] px-5 py-2 text-sm font-semibold uppercase text-black hover:bg-[#d7af5b] transition"
-                    >
-                      More Info
-                    </Link>
-                  </div>
-                </div>
-              )
-            })}
-          </div>
-        </div>
-      </div>
-
+        )
+      })}
+    </div>
+  </div>
+</div>
       <Banking />
     </>
   )
