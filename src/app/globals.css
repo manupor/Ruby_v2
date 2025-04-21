@@ -2,7 +2,7 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/* BRAND COLORS (aplicadas como variables) */
+/* BRAND COLORS */
 :root {
   --brand: #c19652;
   --brand-dark: #a7813c;
@@ -15,7 +15,7 @@
   --ring: #444;
 }
 
-/* MODO OSCURO */
+/* DARK MODE */
 .dark {
   --background: #0d0d0d;
   --foreground: #ffffff;
@@ -25,16 +25,19 @@
   --ring: #555;
 }
 
+/* BASE LAYER */
 @layer base {
   * {
-    @apply border-border;
+    border-color: var(--border);
   }
 
   body {
-    @apply bg-background text-foreground;
+    background-color: var(--background);
+    color: var(--foreground);
   }
 }
 
+/* ANIMATION */
 @keyframes blink {
   0%, 100% {
     opacity: 1;
