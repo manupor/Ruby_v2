@@ -43,7 +43,7 @@ export default function Navbar() {
       <div className="container mx-auto flex items-center justify-between px-4 py-3 lg:px-8">
         <div className="flex items-center gap-4">
           <Link href="/">
-            {/* Logo grande (solo desktop) */}
+            {/* Logo grande en desktop */}
             <Image
               src="/Ruby-Wager-Logo.png"
               alt="RubyWager Logo"
@@ -52,7 +52,7 @@ export default function Navbar() {
               className="hidden lg:block"
               priority
             />
-            {/* Logo pequeño (solo mobile) */}
+            {/* Logo pequeño en mobile */}
             <Image
               src="/Ruby-Wager-Logo.png"
               alt="RubyWager Logo"
@@ -63,7 +63,7 @@ export default function Navbar() {
             />
           </Link>
 
-          {/* Navigation menu (solo desktop) */}
+          {/* Navigation items for desktop */}
           <div className="ml-[60px] hidden lg:block">
             <NavigationMenu>
               <NavigationMenuList>
@@ -82,17 +82,13 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Desktop: Join/Login */}
+        {/* Login and Sign Up buttons */}
         <div className="hidden lg:flex items-center gap-2">
-          <Link href="/join">
-            <Button variant="brandDark">Join Now</Button>
-          </Link>
-          <Link href="/login">
-            <Button variant="outline">Login</Button>
-          </Link>
+          <Button variant="brandDark">Join Now</Button>
+          <Button variant="outline">Login</Button>
         </div>
 
-        {/* Mobile: Join/Login + Menu */}
+        {/* Mobile Menu */}
         <div className="lg:hidden flex items-center gap-2">
           <Link href="/login">
             <Button variant="outline" size="sm">Login</Button>
