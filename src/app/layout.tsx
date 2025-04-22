@@ -105,7 +105,6 @@ export default function Home() {
     <>
       <Hero />
 
-      {/* Bonuses Section */}
       <div className="container mx-auto px-4 pb-20 lg:px-8">
         <div className="panel my-20">
           <div className="mb-10 text-center">
@@ -122,20 +121,37 @@ export default function Home() {
               return (
                 <div
                   key={index}
-                  className="!bg-black !text-brand border border-black rounded-2xl p-6 shadow-md hover:shadow-xl hover:border-brand transition-all duration-300 group"
+                  className="rounded-2xl p-6 shadow-md hover:shadow-xl transition-all duration-300 group"
+                  style={{
+                    backgroundColor: '#1a1a1a',
+                    color: '#c19652',
+                    border: '1px solid #c19652',
+                  }}
                 >
                   <div className="flex flex-col items-center text-center space-y-4">
-                    <Icon size={48} className="stroke-brand group-hover:scale-110 transition-transform duration-300" />
+                    <Icon
+                      size={48}
+                      className="transition-transform duration-300 group-hover:scale-110"
+                      style={{ stroke: '#c19652' }}
+                    />
                     <div>
-                      <p className="text-4xl font-extrabold text-brand">
+                      <p className="text-4xl font-extrabold" style={{ color: '#c19652' }}>
                         {ticket.text1}
                       </p>
-                      <p className="text-xl font-bold uppercase">{ticket.text2}</p>
-                      <p className="text-sm text-brand-dark">{ticket.text3}</p>
+                      <p className="text-xl font-bold uppercase" style={{ color: '#d9b76c' }}>
+                        {ticket.text2}
+                      </p>
+                      <p className="text-sm" style={{ color: '#e6c98f' }}>
+                        {ticket.text3}
+                      </p>
                     </div>
                     <Link
                       href="/promotions"
-                      className="mt-4 inline-block rounded-full bg-brand px-5 py-2 text-sm font-semibold uppercase text-black hover:bg-brand-dark transition"
+                      className="mt-4 inline-block rounded-full px-5 py-2 text-sm font-semibold uppercase transition"
+                      style={{
+                        backgroundColor: '#c19652',
+                        color: '#000000',
+                      }}
                     >
                       More Info
                     </Link>
