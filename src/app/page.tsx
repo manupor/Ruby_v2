@@ -112,25 +112,27 @@ export default function Home() {
             {promoTickets.map((ticket, index) => {
               const Icon = ticket.icon
               return (
-                <div
+                <Card
                   key={index}
-                  className="bg-[#111] text-brand border border-[#2a2a2a] rounded-xl p-6 flex flex-col items-center text-center space-y-4 hover:border-brand hover:shadow-lg transition"
+                  className="bg-[#0a0a0a] text-brand border border-[#333] rounded-xl p-6 flex flex-col items-center text-center space-y-4 hover:border-brand hover:shadow-lg transition"
                 >
-                  <Icon size={48} className="stroke-brand group-hover:scale-110 transition-transform duration-300" />
-                  <div>
-                    <p className="text-3xl font-extrabold text-brand">
-                      {ticket.text1}
-                    </p>
-                    <p className="text-lg font-bold uppercase text-white">{ticket.text2}</p>
-                    <p className="text-sm text-brand-dark">{ticket.text3}</p>
-                  </div>
-                  <Link
-                    href="/promotions"
-                    className="mt-4 inline-block rounded-full bg-brand px-5 py-2 text-sm font-semibold uppercase text-black hover:bg-brand-dark transition"
-                  >
-                    More Info
-                  </Link>
-                </div>
+                  <CardContent className="flex flex-col items-center text-center space-y-4">
+                    <Icon size={48} className="stroke-brand group-hover:scale-110 transition-transform duration-300" />
+                    <div>
+                      <p className="text-3xl font-extrabold text-brand">
+                        {ticket.text1}
+                      </p>
+                      <p className="text-lg font-bold uppercase text-white">{ticket.text2}</p>
+                      <p className="text-sm text-brand-dark">{ticket.text3}</p>
+                    </div>
+                    <Link
+                      href="/promotions"
+                      className="mt-4 inline-block rounded-full bg-brand px-5 py-2 text-sm font-semibold uppercase text-black hover:bg-brand-dark transition"
+                    >
+                      More Info
+                    </Link>
+                  </CardContent>
+                </Card>
               )
             })}
           </div>
