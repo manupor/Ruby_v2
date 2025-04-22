@@ -106,14 +106,14 @@ const Hero = () => {
 export default function Home() {
   return (
     <>
-      <Hero />
+      <Hero/>
 
       {/* 🔥 Banner Deportivo Fondo */}
 <div className="relative h-[500px] overflow-hidden">
   <div
     className="absolute inset-0 bg-cover bg-center opacity-60 transition-opacity duration-700 ease-in-out hover:opacity-80"
     style={{
-      backgroundImage: `url('/banners/Banner Nuevo Ruby.png')`,
+      backgroundImage: `url('/banner-ruby.png')`,
     }}
   />
   <div className="relative z-10 flex h-full items-center justify-center px-4">
