@@ -74,30 +74,30 @@ export default function Home() {
             </Link>
           </div>
           <div className="flex flex-col gap-4 lg:flex-row">
-          {promotions.map((card) => (
-  <Link
-    key={card.title}
-    href="/promotions"
-    className="flex-1 hover:opacity-80"
-  >
-    <Card className="flex h-[200px] flex-1 flex-col !bg-black !text-yellow-500 !border-yellow-500">
-      <CardContent className="flex-1">
-        <CardTitle className="text-xl font-bold uppercase !text-yellow-500">
-          {card.title}
-        </CardTitle>
-        <p className="mb-1 text-4xl leading-none font-black uppercase !text-yellow-500">
-          {card.content1}
-        </p>
-        <p className="mb-1 text-xl leading-none font-semibold uppercase !text-yellow-400">
-          {card.content2}
-        </p>
-        <p className="text-md leading-none font-bold uppercase !text-yellow-300">
-          {card.footer}
-        </p>
-      </CardContent>
-    </Card>
-  </Link>
-))}
+            {promotions.map((card) => (
+              <Link
+                key={card.title}
+                href="/promotions"
+                className="flex-1 hover:opacity-80"
+              >
+                <Card className="card-bonus flex h-[200px] flex-1 flex-col">
+                  <CardContent className="flex-1">
+                    <CardTitle className="text-xl font-bold uppercase">
+                      {card.title}
+                    </CardTitle>
+                    <p className="mb-1 text-4xl leading-none font-black uppercase">
+                      {card.content1}
+                    </p>
+                    <p className="mb-1 text-xl leading-none font-semibold uppercase">
+                      {card.content2}
+                    </p>
+                    <p className="text-md leading-none font-bold uppercase">
+                      {card.footer}
+                    </p>
+                  </CardContent>
+                </Card>
+              </Link>
+            ))}
           </div>
         </div>
       </div>

@@ -2,11 +2,9 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-/* BRAND COLORS */
 :root {
   --brand: #c19652;
   --brand-dark: #a7813c;
-
   --background: #000000;
   --foreground: #ffffff;
   --card: #0a0a0a;
@@ -15,7 +13,6 @@
   --ring: #444;
 }
 
-/* DARK MODE */
 .dark {
   --background: #0d0d0d;
   --foreground: #ffffff;
@@ -25,7 +22,6 @@
   --ring: #555;
 }
 
-/* BASE LAYER */
 @layer base {
   * {
     border-color: var(--border);
@@ -37,7 +33,6 @@
   }
 }
 
-/* ANIMATION */
 @keyframes blink {
   0%, 100% {
     opacity: 1;
@@ -51,4 +46,10 @@
 
 .blink-strong {
   animation: blink 1s infinite;
+}
+
+.card-bonus {
+  background-color: #000000 !important;
+  color: #c19652 !important;
+  border: 1px solid #c19652 !important;
 }
