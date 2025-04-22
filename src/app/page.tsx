@@ -33,14 +33,6 @@ const promotions = [
   },
 ]
 
-const options = [
-  { title: 'March Basketball Betting', image_src: '/promotions/01.png', image_alt: 'March Basketball Betting at RubyWager' },
-  { title: 'Casino Betting', image_src: '/promotions/02.png', image_alt: 'Casino Betting at RubyWager' },
-  { title: 'Pro Football Betting', image_src: '/promotions/03.png', image_alt: 'Pro Football Betting at RubyWager' },
-  { title: 'Soccer Betting', image_src: '/promotions/04.png', image_alt: 'Soccer Betting at RubyWager' },
-  { title: 'UFC Betting', image_src: '/promotions/05.png', image_alt: 'UFC Betting at RubyWager' },
-]
-
 const promoTickets = [
   { icon: PercentCircle, text1: '125%', text2: 'Reload Bonus', text3: 'Free Play' },
   { icon: Gift, text1: '200%', text2: 'Signup Bonus', text3: 'Free Play' },
@@ -107,40 +99,38 @@ export default function Home() {
 
       {/* Bonuses Section */}
       <div className="container mx-auto px-4 pb-20 lg:px-8">
-        <div className="panel my-20">
+        <div className="panel my-20 bg-[#0d0d0d] rounded-3xl shadow-inner p-8 border border-[#2a2a2a]">
           <div className="mb-10 text-center">
-            <h1 className="text-4xl font-bold text-white uppercase tracking-wide">
+            <h1 className="text-4xl font-bold text-brand uppercase tracking-wide">
               Claim Your Bonuses
             </h1>
-            <p className="text-brand mt-2 text-lg font-medium">
-              Don’t miss out on these exclusive offers
+            <p className="text-gray-400 mt-2 text-lg font-medium">
+              Unlock the best promos tailored for you
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {promoTickets.map((ticket, index) => {
               const Icon = ticket.icon
               return (
-                <Card
+                <div
                   key={index}
-                  className="!bg-black !text-brand border border-black rounded-2xl p-6 shadow-md hover:shadow-xl hover:border-brand transition-all duration-300 group"
+                  className="bg-[#111] text-brand border border-[#2a2a2a] rounded-xl p-6 flex flex-col items-center text-center space-y-4 hover:border-brand hover:shadow-lg transition"
                 >
-                  <CardContent className="flex flex-col items-center text-center space-y-4">
-                    <Icon size={48} className="stroke-brand group-hover:scale-110 transition-transform duration-300" />
-                    <div>
-                      <p className="text-4xl font-extrabold text-brand">
-                        {ticket.text1}
-                      </p>
-                      <p className="text-xl font-bold uppercase">{ticket.text2}</p>
-                      <p className="text-sm text-brand-dark">{ticket.text3}</p>
-                    </div>
-                    <Link
-                      href="/promotions"
-                      className="mt-4 inline-block rounded-full bg-brand px-5 py-2 text-sm font-semibold uppercase text-black hover:bg-brand-dark transition"
-                    >
-                      More Info
-                    </Link>
-                  </CardContent>
-                </Card>
+                  <Icon size={48} className="stroke-brand group-hover:scale-110 transition-transform duration-300" />
+                  <div>
+                    <p className="text-3xl font-extrabold text-brand">
+                      {ticket.text1}
+                    </p>
+                    <p className="text-lg font-bold uppercase text-white">{ticket.text2}</p>
+                    <p className="text-sm text-brand-dark">{ticket.text3}</p>
+                  </div>
+                  <Link
+                    href="/promotions"
+                    className="mt-4 inline-block rounded-full bg-brand px-5 py-2 text-sm font-semibold uppercase text-black hover:bg-brand-dark transition"
+                  >
+                    More Info
+                  </Link>
+                </div>
               )
             })}
           </div>
