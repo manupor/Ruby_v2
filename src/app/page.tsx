@@ -106,24 +106,17 @@ const Hero = () => {
 export default function Home() {
   return (
     <>
-      <Hero/>
+      {/* Fondo general de la página */}
+      <div
+        className="fixed inset-0 -z-10 bg-cover bg-center opacity-20 pointer-events-none"
+        style={{
+          backgroundImage: `url('/banners/banner-ruby.png')`,
+        }}
+      />
 
-      {/* 🔥 Banner Deportivo Fondo */}
-<div className="relative h-[500px] overflow-hidden">
-  <div
-    className="absolute inset-0 bg-cover bg-center opacity-60 transition-opacity duration-700 ease-in-out hover:opacity-80"
-    style={{
-      backgroundImage: `url('/banner-ruby.png')`,
-    }}
-  />
-  <div className="relative z-10 flex h-full items-center justify-center px-4">
-    <h2 className="text-4xl md:text-5xl font-extrabold text-white text-center">
-      Welcome to RubyWager – Bet Like a Pro
-    </h2>
-  </div>
-</div>
+      <Hero />
 
-      {/* 🎰 Logo + Slots */}
+      {/* Contenido principal */}
       <div className="relative z-10 bg-black py-16 flex flex-col items-center justify-center gap-8">
         <img
           src="/home/ruby 1.png"
@@ -139,7 +132,7 @@ export default function Home() {
         />
       </div>
 
-      {/* 🔥 Promotions */}
+      {/* Promotions */}
       <div className="container mx-auto px-4 pb-8 lg:px-8">
         <div className="panel my-20">
           <div className="mb-10 flex items-center justify-between">
@@ -183,7 +176,7 @@ export default function Home() {
 
       <Leagues />
 
-      {/* 📊 Sports Betting Options */}
+      {/* Betting Options */}
       <div className="container mx-auto px-4 pb-8 lg:px-8">
         <div className="panel my-20">
           <div className="mb-10 flex items-center justify-between">
@@ -218,7 +211,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* 🎁 Bonuses */}
+      {/* Bonuses */}
       <div className="container mx-auto px-4 pb-20 lg:px-8">
         <div className="panel my-20">
           <div className="mb-10 text-center">
