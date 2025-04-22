@@ -1,20 +1,20 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
-import { Card, CardContent, CardTitle } from '@/components/ui/card'
+import { useEffect, useState } from 'react'
+import { Card, CardContent } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import Leagues from '@/components/leagues/Leagues'
 import Banking from '@/components/banking/Banking'
 import { TicketPercent, ShieldCheck, Trophy } from 'lucide-react'
-import { useEffect, useState } from 'react'
+import Image from 'next/image'
 
 const promotions = [
   {
     title: 'New customers',
     icon: TicketPercent,
     content1: 'Bet $50 get up to $100',
-    content2: 'Intantly un bonus bets',
+    content2: 'Instantly in bonus bets',
     footer: 'Ruby keeps you in the game',
   },
   {
@@ -92,7 +92,7 @@ const Hero = () => {
   )
 }
 
-export default function Home() {
+export default function Page() {
   return (
     <>
       <Hero />
@@ -119,9 +119,7 @@ export default function Home() {
                   <CardContent className="flex flex-col items-center text-center space-y-4">
                     <Icon size={48} className="stroke-brand group-hover:scale-110 transition-transform duration-300" />
                     <div>
-                      <p className="text-3xl font-extrabold text-brand">
-                        {ticket.text1}
-                      </p>
+                      <p className="text-3xl font-extrabold text-brand">{ticket.text1}</p>
                       <p className="text-lg font-bold uppercase text-white">{ticket.text2}</p>
                       <p className="text-sm text-brand-dark">{ticket.text3}</p>
                     </div>
