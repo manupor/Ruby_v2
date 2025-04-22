@@ -6,27 +6,27 @@ import { Card, CardContent, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
 import Leagues from '@/components/leagues/Leagues'
 import Banking from '@/components/banking/Banking'
-import { PercentCircle, Gift, Wallet, HandCoins } from 'lucide-react'
+import { TicketPercent, ShieldCheck, Trophy } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 const promotions = [
   {
     title: 'New customers',
-    icon: PercentCircle,
+    icon: TicketPercent,
     content1: 'Bet $50 get up to $100',
     content2: 'Intantly un bonus bets',
     footer: 'Ruby keeps you in the game',
   },
   {
     title: 'Ruby rewards',
-    icon: Gift,
+    icon: ShieldCheck,
     content1: 'Claim your 10% insurance',
     content2: 'Refer a friend and get up to',
     footer: '$100 in bonus bets',
   },
   {
     title: 'NCAA and NFL Football',
-    icon: HandCoins,
+    icon: Trophy,
     content1: '20% Boost',
     content2: 'For any 6+ team parlay',
     footer: '',
@@ -34,10 +34,10 @@ const promotions = [
 ]
 
 const promoTickets = [
-  { icon: PercentCircle, text1: '125%', text2: 'Reload Bonus', text3: 'Free Play' },
-  { icon: Gift, text1: '200%', text2: 'Signup Bonus', text3: 'Free Play' },
-  { icon: Wallet, text1: '20%', text2: 'Cash Bonus', text3: 'Bonus' },
-  { icon: HandCoins, text1: '$25', text2: 'No Deposit', text3: 'Free Play' },
+  { icon: TicketPercent, text1: '125%', text2: 'Reload Bonus', text3: 'Free Play' },
+  { icon: ShieldCheck, text1: '200%', text2: 'Signup Bonus', text3: 'Free Play' },
+  { icon: Trophy, text1: '20%', text2: 'Cash Bonus', text3: 'Bonus' },
+  { icon: TicketPercent, text1: '$25', text2: 'No Deposit', text3: 'Free Play' },
 ]
 
 const Hero = () => {
@@ -98,8 +98,8 @@ export default function Home() {
       <Hero />
 
       {/* Bonuses Section */}
-      <div className="container mx-auto px-4 pb-20 lg:px-8">
-        <div className="panel my-20 bg-[#0d0d0d] rounded-3xl shadow-inner p-8 border border-[#2a2a2a]">
+      <div className="bonuses-section container mx-auto px-4 pb-20 lg:px-8">
+        <div className="panel my-20 bg-black rounded-3xl shadow-inner p-8 border border-neutral-800">
           <div className="mb-10 text-center">
             <h1 className="text-4xl font-bold text-brand uppercase tracking-wide">
               Claim Your Bonuses
@@ -114,7 +114,7 @@ export default function Home() {
               return (
                 <Card
                   key={index}
-                  className="bg-[#0a0a0a] text-brand border border-[#333] rounded-xl p-6 flex flex-col items-center text-center space-y-4 hover:border-brand hover:shadow-lg transition"
+                  className="bg-neutral-900 text-brand border border-neutral-700 rounded-xl p-6 flex flex-col items-center text-center space-y-4 hover:border-brand hover:shadow-lg transition"
                 >
                   <CardContent className="flex flex-col items-center text-center space-y-4">
                     <Icon size={48} className="stroke-brand group-hover:scale-110 transition-transform duration-300" />
