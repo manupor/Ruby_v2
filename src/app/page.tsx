@@ -1,3 +1,31 @@
+'use client'
+
+import Link from 'next/link'
+import Image from 'next/image'
+import { Card, CardContent, CardTitle } from '@/components/ui/card'
+import { Button } from '@/components/ui/button'
+import Hero from '@/components/hero/Hero'
+import Leagues from '@/components/leagues/Leagues'
+import Banking from '@/components/banking/Banking'
+
+const options = [
+  {
+    title: 'March Basketball Betting',
+    image_src: '/promotions/01.png',
+    image_alt: 'March Basketball',
+  },
+  {
+    title: 'Champions League Action',
+    image_src: '/promotions/02.png',
+    image_alt: 'Champions League',
+  },
+  {
+    title: 'NFL Draft Specials',
+    image_src: '/promotions/03.png',
+    image_alt: 'NFL Draft',
+  },
+]
+
 export default function Home() {
   return (
     <>
@@ -6,15 +34,15 @@ export default function Home() {
         <div className="flex flex-col items-center">
           <Image
             src="/home/slots-banner.png"
-            alt="UEFA"
-            width="1920"
-            height="634"
+            alt="Slots Banner"
+            width={1920}
+            height={634}
           />
           <Image
             src="/home/slots-logo.png"
-            alt="UEFA"
-            width="523"
-            height="87"
+            alt="Slots Logo"
+            width={523}
+            height={87}
           />
         </div>
       </div>
@@ -33,7 +61,7 @@ export default function Home() {
                 key={card.title}
                 className="relative flex h-[380px] w-[380px] flex-col overflow-hidden pb-8"
               >
-                <CardContent className="relative z-1 flex flex-1 flex-col justify-end">
+                <CardContent className="relative z-10 flex flex-1 flex-col justify-end">
                   <CardTitle className="text-foreground mb-3 text-2xl font-extrabold">
                     {card.title}
                   </CardTitle>
