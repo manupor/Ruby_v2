@@ -77,6 +77,7 @@ const promoTickets = [
 const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [offsetY, setOffsetY] = useState(0)
+  const [windowWidth, setWindowWidth] = useState(0)
 
   const heros = [
     {
@@ -102,7 +103,20 @@ const Hero = () => {
   useEffect(() => {
     const handleScroll = () => setOffsetY(window.scrollY)
     window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    // Set initial width
+    setWindowWidth(window.innerWidth)
+
+    // Update width on resize
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth)
+    }
+
+    window.addEventListener('resize', handleResize)
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      window.removeEventListener('resize', handleResize)
+    }
   }, [])
 
   useEffect(() => {
@@ -138,7 +152,11 @@ const Hero = () => {
               <h2 className="mb-6 text-[8px] font-bold uppercase sm:text-[20px] md:text-[24px] lg:text-[30px]">
                 {heros[currentSlide].text3}
               </h2>
-              <Button variant="brand" size="lg" className="blink-strong">
+              <Button
+                variant="brand"
+                size={windowWidth >= 1024 ? 'massive' : 'lg'}
+                className="blink-strong"
+              >
                 JOIN NOW
               </Button>
             </div>

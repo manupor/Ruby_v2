@@ -67,10 +67,10 @@ export default function Navbar() {
           <Image
             src="/logo-ruby.png"
             alt="RubyWager Logo"
-            width={180}
-            height={60}
+            width={220}
+            height={80}
             priority
-            className="w-[130px] sm:w-[180px]"
+            className="w-[130px] sm:w-[220px]"
           />
         </Link>
 
@@ -79,13 +79,13 @@ export default function Navbar() {
           <Link href="/login">
             <Button
               variant="outline"
-              className="border-white px-3 py-2 text-[8px] font-bold text-white uppercase hover:bg-white hover:text-black sm:px-6 sm:text-lg"
+              className="border-white px-3 py-2 text-[8px] font-bold text-white uppercase hover:bg-white hover:text-black sm:px-6 sm:text-2xl"
             >
               Login
             </Button>
           </Link>
           <Link href="/join">
-            <Button className="bg-[#FF003D] px-3 py-2 text-[8px] font-bold text-white uppercase transition hover:bg-[#e60036] sm:px-6 sm:text-lg">
+            <Button className="bg-[#FF003D] px-3 py-2 text-[8px] font-bold text-white uppercase transition hover:bg-[#e60036] sm:px-6 sm:text-2xl">
               Join Now
             </Button>
           </Link>
