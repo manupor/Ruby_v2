@@ -125,9 +125,6 @@ const Hero = () => {
           }}
         />
 
-        {/* Gradient overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>
-
         {/* Content container positioned absolutely over the image */}
         <div className="absolute top-0 left-0 flex h-full w-full items-center">
           <div className="px-4 sm:px-6 lg:px-16">

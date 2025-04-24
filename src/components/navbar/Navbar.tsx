@@ -67,10 +67,10 @@ export default function Navbar() {
           <Image
             src="/logo-ruby.png"
             alt="RubyWager Logo"
-            width={150}
-            height={50}
+            width={180}
+            height={60}
             priority
-            className="w-[130px] sm:w-[150px]"
+            className="w-[130px] sm:w-[180px]"
           />
         </Link>
 
@@ -79,13 +79,13 @@ export default function Navbar() {
           <Link href="/login">
             <Button
               variant="outline"
-              className="border-white px-3 py-2 text-xs font-bold text-white uppercase hover:bg-white hover:text-black sm:px-6 sm:text-sm"
+              className="border-white px-3 py-2 text-[8px] font-bold text-white uppercase hover:bg-white hover:text-black sm:px-6 sm:text-lg"
             >
               Login
             </Button>
           </Link>
           <Link href="/join">
-            <Button className="bg-[#FF003D] px-3 py-2 text-xs font-bold text-white uppercase transition hover:bg-[#e60036] sm:px-6 sm:text-sm">
+            <Button className="bg-[#FF003D] px-3 py-2 text-[8px] font-bold text-white uppercase transition hover:bg-[#e60036] sm:px-6 sm:text-lg">
               Join Now
             </Button>
           </Link>
@@ -111,7 +111,7 @@ export default function Navbar() {
                     key={item.href}
                     href={item.href}
                     onClick={() => setIsOpen(false)}
-                    className="flex items-center gap-3 text-lg font-medium text-white hover:text-[#c19652]"
+                    className="flex items-center gap-3 text-xl font-medium text-white hover:text-[#c19652]"
                   >
                     {React.cloneElement(item.icon, { size: 28 })}
                     {item.label}
@@ -129,7 +129,7 @@ export default function Navbar() {
           <Link
             key={item.href}
             href={item.href}
-            className="flex flex-col items-center text-base font-semibold text-white uppercase transition hover:text-[#c19652]"
+            className="flex flex-col items-center text-xl font-semibold text-white uppercase transition hover:text-[#c19652]"
           >
             {item.icon}
             <span className="mt-1">{item.label}</span>
