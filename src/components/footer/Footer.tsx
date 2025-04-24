@@ -19,7 +19,7 @@ export default function Footer() {
             <div className="flex flex-col items-start text-left space-y-4">
               <Link href="/">
                 <Image
-                  src="/Ruby-Wager-Logo.png"
+                  src="/footer-logo.svg"
                   alt="RubyWager Logo"
                   width={120}
                   height={30}

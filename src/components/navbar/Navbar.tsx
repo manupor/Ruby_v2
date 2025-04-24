@@ -12,7 +12,7 @@ import {
   Tag,
   Bank,
   Article,
-  Question
+  Question,
 } from '@phosphor-icons/react'
 import { Button } from '@/components/ui/button'
 import {
@@ -29,120 +29,110 @@ export default function Navbar() {
     {
       href: '/sportsbook',
       label: 'Sportsbook',
-      icon: <Football size={24} color="#c19652" />,
+      icon: <Football size={32} color="#c19652" />,
     },
     {
       href: '/racebook',
       label: 'Racebook',
-      icon: <Horse size={24} color="#c19652" />,
+      icon: <Horse size={32} color="#c19652" />,
     },
     {
       href: '/casino',
       label: 'Casino',
-      icon: <Spade size={24} color="#c19652" />,
+      icon: <Spade size={32} color="#c19652" />,
     },
     {
       href: '/promotions',
       label: 'Promotions',
-      icon: <Tag size={24} color="#c19652" />,
+      icon: <Tag size={32} color="#c19652" />,
     },
     {
       href: '/banking',
       label: 'Banking',
-      icon: <Bank size={24} color="#c19652" />,
+      icon: <Bank size={32} color="#c19652" />,
     },
     {
       href: '/help',
       label: 'Help',
-      icon: <Question size={24} color="#c19652" />,
+      icon: <Question size={32} color="#c19652" />,
     },
   ]
 
   return (
     <header className="sticky top-0 z-50">
       {/* Top section - color only applied locally */}
-      <div className="bg-[#1A1A1A] shadow-md px-6 py-3 flex items-center justify-between border-b border-neutral-800">
+      <div className="flex items-center justify-between border-b border-neutral-800 bg-[#1A1A1A] px-4 py-4 shadow-md sm:px-6">
         {/* Logo */}
         <Link href="/" className="flex items-center space-x-2">
           <Image
             src="/logo-ruby.png"
             alt="RubyWager Logo"
-            width={120}
-            height={40}
+            width={150}
+            height={50}
             priority
+            className="w-[130px] sm:w-[150px]"
           />
         </Link>
 
-        {/* Desktop actions */}
-        <div className="hidden lg:flex items-center gap-4">
+        <div className="flex items-center gap-2 sm:gap-4">
+          {/* Auth buttons - Visible on all devices */}
           <Link href="/login">
             <Button
               variant="outline"
-              className="uppercase font-bold text-sm px-6 py-2 border-white text-white hover:text-black hover:bg-white"
+              className="border-white px-3 py-2 text-xs font-bold text-white uppercase hover:bg-white hover:text-black sm:px-6 sm:text-sm"
             >
               Login
             </Button>
           </Link>
           <Link href="/join">
-            <Button className="uppercase font-bold text-sm px-6 py-2 bg-[#FF003D] text-white hover:bg-[#e60036] transition">
+            <Button className="bg-[#FF003D] px-3 py-2 text-xs font-bold text-white uppercase transition hover:bg-[#e60036] sm:px-6 sm:text-sm">
               Join Now
             </Button>
           </Link>
-        </div>
 
-        {/* Mobile menu */}
-        <Sheet open={isOpen} onOpenChange={setIsOpen}>
-          <SheetTrigger asChild>
-            <Button variant="ghost" size="icon" className="lg:hidden text-white">
-              <List size={24} />
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="right" className="w-72 sm:w-96">
-            <div className="flex items-center justify-between mb-4">
-              <SheetTitle>Menu</SheetTitle>
-              <Button variant="ghost" size="icon" onClick={() => setIsOpen(false)}>
-                <X size={24} />
+          {/* Mobile menu trigger */}
+          <Sheet open={isOpen} onOpenChange={setIsOpen}>
+            <SheetTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="ml-2 text-white lg:hidden"
+              >
+                <List size={28} />
               </Button>
-            </div>
-            <nav className="flex flex-col gap-4">
-              {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  onClick={() => setIsOpen(false)}
-                  className="flex items-center gap-3 text-lg font-medium text-white hover:text-[#c19652]"
-                >
-                  {item.icon}
-                  {item.label}
-                </Link>
-              ))}
-              <div className="mt-6 flex flex-col gap-2">
-                <Link href="/login">
-                  <Button variant="outline" className="w-full uppercase font-bold text-sm border-white text-white hover:text-black hover:bg-white">
-                    Login
-                  </Button>
-                </Link>
-                <Link href="/join">
-                  <Button className="w-full uppercase font-bold text-sm bg-[#FF003D] text-white hover:bg-[#e60036]">
-                    Join Now
-                  </Button>
-                </Link>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-72 sm:w-96">
+              <div className="mb-6 flex items-center justify-between">
+                <SheetTitle>Menu</SheetTitle>
               </div>
-            </nav>
-          </SheetContent>
-        </Sheet>
+              <nav className="flex flex-col gap-5">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center gap-3 text-lg font-medium text-white hover:text-[#c19652]"
+                  >
+                    {React.cloneElement(item.icon, { size: 28 })}
+                    {item.label}
+                  </Link>
+                ))}
+              </nav>
+            </SheetContent>
+          </Sheet>
+        </div>
       </div>
 
       {/* Bottom nav */}
-      <nav className="hidden lg:flex items-center justify-center gap-10 py-3 bg-[#2C2C2C]">
+      <nav className="hidden items-center justify-center gap-12 bg-[#2C2C2C] py-4 lg:flex">
         {navItems.map((item) => (
           <Link
             key={item.href}
             href={item.href}
-            className="flex flex-col items-center text-sm font-semibold uppercase text-white hover:text-[#c19652] transition"
+            className="flex flex-col items-center text-base font-semibold text-white uppercase transition hover:text-[#c19652]"
           >
             {item.icon}
-            <span>{item.label}</span>
+            <span className="mt-1">{item.label}</span>
           </Link>
         ))}
       </nav>

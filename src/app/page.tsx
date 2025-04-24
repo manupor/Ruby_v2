@@ -1,12 +1,13 @@
 'use client'
 
-import Link from 'next/link'
-import Image from 'next/image'
-import { Card, CardContent, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import Leagues from '@/components/leagues/Leagues'
 import Banking from '@/components/banking/Banking'
-import { PercentCircle, Gift, Wallet, HandCoins } from 'lucide-react'
+import CasinoBanner from '@/components/casino-banner/CasinoBanner'
+import GamesGridSection from '@/components/grid-cards/GamesGridSection'
+import Leagues from '@/components/leagues/Leagues'
+import PromotionsSection from '@/components/promotions/PromotionsSection'
+import { Button } from '@/components/ui/button'
+import { Gift, HandCoins, PercentCircle, Wallet } from 'lucide-react'
+import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 const promotions = [
@@ -34,15 +35,40 @@ const promotions = [
 ]
 
 const options = [
-  { title: 'March Basketball Betting', image_src: '/promotions/01.png', image_alt: 'March Basketball Betting at RubyWager' },
-  { title: 'Casino Betting', image_src: '/promotions/02.png', image_alt: 'Casino Betting at RubyWager' },
-  { title: 'Pro Football Betting', image_src: '/promotions/03.png', image_alt: 'Pro Football Betting at RubyWager' },
-  { title: 'Soccer Betting', image_src: '/promotions/04.png', image_alt: 'Soccer Betting at RubyWager' },
-  { title: 'UFC Betting', image_src: '/promotions/05.png', image_alt: 'UFC Betting at RubyWager' },
+  {
+    title: 'March Basketball Betting',
+    image_src: '/promotions/01.png',
+    image_alt: 'March Basketball Betting at RubyWager',
+  },
+  {
+    title: 'Casino Betting',
+    image_src: '/promotions/02.png',
+    image_alt: 'Casino Betting at RubyWager',
+  },
+  {
+    title: 'Pro Football Betting',
+    image_src: '/promotions/03.png',
+    image_alt: 'Pro Football Betting at RubyWager',
+  },
+  {
+    title: 'Soccer Betting',
+    image_src: '/promotions/04.png',
+    image_alt: 'Soccer Betting at RubyWager',
+  },
+  {
+    title: 'UFC Betting',
+    image_src: '/promotions/05.png',
+    image_alt: 'UFC Betting at RubyWager',
+  },
 ]
 
 const promoTickets = [
-  { icon: PercentCircle, text1: '125%', text2: 'Reload Bonus', text3: 'Free Play' },
+  {
+    icon: PercentCircle,
+    text1: '125%',
+    text2: 'Reload Bonus',
+    text3: 'Free Play',
+  },
   { icon: Gift, text1: '200%', text2: 'Signup Bonus', text3: 'Free Play' },
   { icon: Wallet, text1: '20%', text2: 'Cash Bonus', text3: 'Bonus' },
   { icon: HandCoins, text1: '$25', text2: 'No Deposit', text3: 'Free Play' },
@@ -53,9 +79,24 @@ const Hero = () => {
   const [offsetY, setOffsetY] = useState(0)
 
   const heros = [
-    { text1: 'Weekly Rebate, Daily Payouts', text2: '100% SIGN UP BONUS!', text3: 'FASTEST IN THE BUSINESS', img_src: '/hero/01.png' },
-    { text1: 'BET ON ALL', text2: 'MAJOR TRACKS', text3: '6% HORSE REBATE!', img_src: '/hero/02.png' },
-    { text1: 'CASINO BRINGS', text2: 'VEGAS ACTION TO YOU', text3: 'FREE SPINS + MONTHLY INSURANCE!', img_src: '/hero/03.png' },
+    {
+      text1: 'Weekly Rebate, Daily Payouts',
+      text2: '100% SIGN UP BONUS!',
+      text3: 'FASTEST IN THE BUSINESS',
+      img_src: '/hero/01.png',
+    },
+    {
+      text1: 'BET ON ALL',
+      text2: 'MAJOR TRACKS',
+      text3: '6% HORSE REBATE!',
+      img_src: '/hero/02.png',
+    },
+    {
+      text1: 'CASINO BRINGS',
+      text2: 'VEGAS ACTION TO YOU',
+      text3: 'FREE SPINS + MONTHLY INSURANCE!',
+      img_src: '/hero/03.png',
+    },
   ]
 
   useEffect(() => {
@@ -72,28 +113,39 @@ const Hero = () => {
   }, [heros.length])
 
   return (
-    <div className="relative h-[600px] overflow-hidden z-0">
-      <div
-        className="absolute inset-0 bg-cover bg-center transition-transform duration-300 ease-out"
-        style={{
-          backgroundImage: `url(${heros[currentSlide].img_src})`,
-          transform: `translateY(${offsetY * 0.3}px)`,
-        }}
-      />
-      <div className="relative z-10 flex h-full items-center px-6 lg:px-16 text-white">
-        <div>
-          <h1 className="text-2xl lg:text-4xl font-bold tracking-tight uppercase mb-2">
-            {heros[currentSlide].text1}
-          </h1>
-          <p className="text-5xl lg:text-6xl font-black tracking-tight mb-2">
-            {heros[currentSlide].text2}
-          </p>
-          <h2 className="text-3xl lg:text-4xl font-bold uppercase mb-6">
-            {heros[currentSlide].text3}
-          </h2>
-          <Button variant="brand" size="massive" className="blink-strong">
-            JOIN NOW
-          </Button>
+    <div className="relative w-full">
+      {/* Image as the primary element that controls dimensions */}
+      <div className="relative w-full overflow-hidden py-3 sm:py-0">
+        <img
+          src={heros[currentSlide].img_src}
+          alt="Hero banner"
+          className="w-full"
+          style={{
+            transform: `translateY(${offsetY * 0.3}px)`,
+          }}
+        />
+
+        {/* Gradient overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-r from-black via-black/70 to-transparent"></div>
+
+        {/* Content container positioned absolutely over the image */}
+        <div className="absolute top-0 left-0 flex h-full w-full items-center">
+          <div className="px-4 sm:px-6 lg:px-16">
+            <div className="max-w-md text-white">
+              <h1 className="mb-2 text-[8px] font-bold tracking-tight uppercase sm:text-[18px] md:text-[20px] lg:text-[24px]">
+                {heros[currentSlide].text1}
+              </h1>
+              <p className="mb-2 text-[12px]/1 font-black tracking-tight sm:text-[30px]/10 md:text-[36px] lg:text-[48px]">
+                {heros[currentSlide].text2}
+              </p>
+              <h2 className="mb-6 text-[8px] font-bold uppercase sm:text-[20px] md:text-[24px] lg:text-[30px]">
+                {heros[currentSlide].text3}
+              </h2>
+              <Button variant="brand" size="lg" className="blink-strong">
+                JOIN NOW
+              </Button>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -106,90 +158,50 @@ export default function Home() {
       <Hero />
 
       {/* 🎯 Promotions section with background image */}
-      <div className="relative my-20">
-        {/* Fondo de banner detrás */}
-        <div
-          className="absolute inset-0 -z-10 bg-cover bg-center opacity-20 pointer-events-none"
-          style={{
-            backgroundImage: `url('/banner-ruby.png')`,
-          }}
-        />
+      <PromotionsSection promotions={promotions} />
 
-        <div className="container mx-auto px-4 pb-8 lg:px-8">
-          <div className="panel">
-            <div className="mb-10 flex items-center justify-between">
-              <h1 className="text-3xl font-bold text-white">Promotions</h1>
-              <Link href="/promotions" className="text-xs underline hover:no-underline">
-                <span>See all promotions</span>
-              </Link>
-            </div>
-            <div className="flex flex-col gap-4 lg:flex-row">
-              {promotions.map((card) => {
-                const Icon = card.icon
-                return (
-                  <Link key={card.title} href="/promotions" className="flex-1 hover:opacity-80 transition duration-300">
-                    <Card className="flex h-[250px] flex-1 flex-col bg-[#1A1A1A] hover:scale-[1.02] transition-all duration-300 ease-in-out overflow-hidden rounded-xl">
-                      <CardContent className="flex flex-1 flex-col justify-between p-4">
-                        <div className="flex items-center gap-4 mb-2">
-                          <Icon size={40} className="text-[#FF003D] shrink-0" />
-                          <CardTitle className="text-xl font-bold uppercase text-white">
-                            {card.title}
-                          </CardTitle>
-                        </div>
-                        <div className="flex flex-col justify-between text-white text-pretty">
-                          <p className="text-brand text-3xl sm:text-4xl leading-tight font-black uppercase break-words">
-                            {card.content1}
-                          </p>
-                          <p className="text-lg font-semibold uppercase">
-                            {card.content2}
-                          </p>
-                          <p className="text-md text-brand-dark font-bold uppercase">
-                            {card.footer}
-                          </p>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </Link>
-                )
-              })}
-            </div>
-          </div>
-        </div>
-      </div>
+      <CasinoBanner />
 
       <Leagues />
+
+      <GamesGridSection />
 
       {/* 🎁 Bonuses section */}
       <div className="container mx-auto px-4 pb-20 lg:px-8">
         <div className="panel my-20">
           <div className="mb-10 text-center">
-            <h1 className="text-4xl font-bold text-white uppercase tracking-wide">
+            <h1 className="text-4xl font-bold tracking-wide text-white uppercase">
               Claim Your Bonuses
             </h1>
-            <p className="text-[#c19652] mt-2 text-lg font-medium">
+            <p className="mt-2 text-lg font-medium text-[#c19652]">
               Don’t miss out on these exclusive offers
             </p>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {promoTickets.map((ticket, index) => {
               const Icon = ticket.icon
               return (
                 <div
                   key={index}
-                  className="bg-[#1f1f1f] border border-[#333] text-white rounded-2xl p-6 shadow-md hover:shadow-xl hover:border-[#c19652] transition-all duration-300 group"
+                  className="group rounded-2xl border border-[#333] bg-[url('/tarjeta.png')] bg-cover bg-center p-6 text-white shadow-md transition-all duration-300 hover:border-[#c19652] hover:shadow-xl"
                 >
-                  <div className="flex flex-col items-center text-center space-y-4">
-                    <Icon size={48} className="stroke-[#c19652] group-hover:scale-110 transition-transform duration-300" />
+                  <div className="flex flex-col items-center space-y-4 text-center">
+                    <Icon
+                      size={48}
+                      className="stroke-[#c19652] transition-transform duration-300 group-hover:scale-110"
+                    />
                     <div>
                       <p className="text-4xl font-extrabold text-[#c19652]">
                         {ticket.text1}
                       </p>
-                      <p className="text-xl font-bold uppercase">{ticket.text2}</p>
+                      <p className="text-xl font-bold uppercase">
+                        {ticket.text2}
+                      </p>
                       <p className="text-sm text-gray-400">{ticket.text3}</p>
                     </div>
                     <Link
                       href="/promotions"
-                      className="mt-4 inline-block rounded-full bg-[#c19652] px-5 py-2 text-sm font-semibold uppercase text-black hover:bg-[#d7af5b] transition"
+                      className="mt-4 inline-block rounded-full bg-[#c19652] px-5 py-2 text-sm font-semibold text-black uppercase transition hover:bg-[#d7af5b]"
                     >
                       More Info
                     </Link>

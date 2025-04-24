@@ -7,6 +7,7 @@ import './globals.css'
 
 import Header from '@/components/header/Header'
 import Footer from '@/components/footer/Footer'
+import FloatingHelpButton from '@/components/floating-button/FloatingHelpButton'
 
 // Google Fonts
 const geistSans = Geist({
@@ -43,6 +44,7 @@ export default function RootLayout({
       >
         <Header />
         <main role="main">{children}</main>
+        <FloatingHelpButton />
         <Footer />
       </body>
     </html>
