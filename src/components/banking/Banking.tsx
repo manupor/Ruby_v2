@@ -1,13 +1,8 @@
 'use client'
 
-import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 
 export default function Banking() {
-  const [currentSlide, setCurrentSlide] = useState(0)
-  const [isMobile, setIsMobile] = useState(false)
-  const slideIntervalRef = useRef<NodeJS.Timeout | null>(null)
-
   const bankingLogos = [
     { src: '/banking/t.png', alt: 'T', width: 78, height: 68 },
     { src: '/banking/venmo.png', alt: 'Venmo', width: 128, height: 24 },
@@ -18,88 +13,107 @@ export default function Banking() {
     { src: '/banking/tether.png', alt: 'Tether', width: 153, height: 42 },
   ]
 
-  const totalSlides = Math.ceil(bankingLogos.length / 3)
-
-  // Check screen size and start/stop autoplay
-  useEffect(() => {
-    const checkMobile = () => {
-      const mobile = window.innerWidth < 768
-      setIsMobile(mobile)
-
-      // Clear any existing interval
-      if (slideIntervalRef.current) {
-        clearInterval(slideIntervalRef.current)
-        slideIntervalRef.current = null
-      }
-
-      // Set up auto-sliding for mobile
-      if (mobile) {
-        slideIntervalRef.current = setInterval(() => {
-          setCurrentSlide((prev) => (prev + 1) % totalSlides)
-        }, 3000) // Change slide every 3 seconds
-      }
-    }
-
-    // Initial check
-    checkMobile()
-
-    // Add event listener
-    window.addEventListener('resize', checkMobile)
-
-    // Cleanup
-    return () => {
-      window.removeEventListener('resize', checkMobile)
-      if (slideIntervalRef.current) {
-        clearInterval(slideIntervalRef.current)
-      }
-    }
-  }, [totalSlides])
-
   return (
     <section>
+      <style jsx global>{`
+        .banking-carousel {
+          mask-image: linear-gradient(
+            90deg,
+            transparent,
+            #fff 10%,
+            #fff 90%,
+            transparent
+          );
+          overflow: hidden;
+        }
+
+        .banking-logo-scroll {
+          display: flex;
+          align-items: center;
+          gap: 4rem;
+          animation: banking-scroll 25s linear infinite;
+          width: max-content;
+        }
+
+        /* Add additional copies for smoother transition */
+        .banking-logo-scroll:after {
+          content: '';
+          display: block;
+          width: 4rem; /* Same as gap */
+        }
+
+        .banking-logo-scroll:hover {
+          animation-play-state: paused;
+        }
+
+        @keyframes banking-scroll {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(
+              calc(-50% - 2rem)
+            ); /* Adjust for precise looping */
+          }
+        }
+
+        @media (max-width: 768px) {
+          .banking-logo-scroll {
+            gap: 3rem;
+            animation-duration: 20s;
+          }
+
+          .banking-logo-scroll:after {
+            width: 3rem; /* Same as gap for mobile */
+          }
+
+          @keyframes banking-scroll {
+            from {
+              transform: translateX(0);
+            }
+            to {
+              transform: translateX(
+                calc(-50% - 1.5rem)
+              ); /* Adjust for mobile */
+            }
+          }
+        }
+      `}</style>
+
       <div className="bg-brand-dark text-[#F5F5F5]">
-        <div className="container mx-auto px-4 py-8 lg:px-8">
-          {/* Desktop View - Show all logos */}
-          <ul className="hidden flex-wrap items-center justify-center gap-10 md:flex">
+        <div className="banking-carousel container mx-auto px-4 py-6 lg:px-8">
+          <div className="banking-logo-scroll py-2">
+            {/* First set of logos */}
             {bankingLogos.map((logo, index) => (
-              <li key={index}>
+              <div
+                key={`logo-1-${index}`}
+                className="flex items-center justify-center"
+              >
                 <Image
                   src={logo.src}
                   alt={logo.alt}
                   width={logo.width}
                   height={logo.height}
+                  className="h-[80%] w-[80%] md:h-auto md:w-auto"
                 />
-              </li>
-            ))}
-          </ul>
-
-          {/* Mobile View - Auto-sliding Carousel */}
-          <div className="relative md:hidden">
-            <div className="overflow-hidden">
-              <div
-                className="flex transition-transform duration-700 ease-in-out"
-                style={{ transform: `translateX(-${currentSlide * 100}%)` }}
-              >
-                {Array.from({ length: totalSlides }).map((_, slideIndex) => (
-                  <div key={slideIndex} className="w-full flex-shrink-0">
-                    <ul className="flex items-center justify-around">
-                      {bankingLogos
-                        .slice(slideIndex * 3, slideIndex * 3 + 3)
-                        .map((logo, logoIndex) => (
-                          <li key={logoIndex} className="flex justify-center">
-                            <Image
-                              src={logo.src}
-                              alt={logo.alt}
-                              width={Math.floor(logo.width * 0.8)}
-                              height={Math.floor(logo.height * 0.8)}
-                            />
-                          </li>
-                        ))}
-                    </ul>
-                  </div>
-                ))}
               </div>
-            </div>
+            ))}
+
+            {/* Duplicate logos for infinite scrolling effect */}
+            {bankingLogos.map((logo, index) => (
+              <div
+                key={`logo-2-${index}`}
+                className="flex items-center justify-center"
+              >
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={logo.width}
+                  height={logo.height}
+                  className="h-[80%] w-[80%] md:h-auto md:w-auto"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </div>

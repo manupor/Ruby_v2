@@ -62,6 +62,11 @@ const options = [
     image_src: '/promotions/05.png',
     image_alt: 'UFC Betting at RubyWager',
   },
+  {
+    title: 'Rugby Betting',
+    image_src: '/promotions/06.png',
+    image_alt: 'Rugby Betting',
+  },
 ]
 
 const promoTickets = [
@@ -80,6 +85,7 @@ const Hero = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
   const [offsetY, setOffsetY] = useState(0)
   const [windowWidth, setWindowWidth] = useState(0)
+  const [isMobile, setIsMobile] = useState(false)
 
   const heros = [
     {
@@ -87,37 +93,44 @@ const Hero = () => {
       text2: '100% SIGN UP BONUS!',
       text3: 'FASTEST IN THE BUSINESS',
       img_src: '/hero/01.png',
+      mobile_img_src: '/hero/mobile/01.png',
     },
     {
       text1: 'BET ON ALL',
       text2: 'MAJOR TRACKS',
       text3: '6% HORSE REBATE!',
       img_src: '/hero/02.png',
+      mobile_img_src: '/hero/mobile/02.png',
     },
     {
       text1: 'CASINO BRINGS',
       text2: 'VEGAS ACTION TO YOU',
       text3: 'FREE SPINS + MONTHLY INSURANCE!',
       img_src: '/hero/03.png',
+      mobile_img_src: '/hero/mobile/03.png',
     },
   ]
 
   useEffect(() => {
     const handleScroll = () => setOffsetY(window.scrollY)
     window.addEventListener('scroll', handleScroll)
-    // Set initial width
-    setWindowWidth(window.innerWidth)
 
-    // Update width on resize
-    const handleResize = () => {
-      setWindowWidth(window.innerWidth)
+    // Set initial width and mobile state
+    const checkMobile = () => {
+      const width = window.innerWidth
+      setWindowWidth(width)
+      setIsMobile(width < 640) // sm breakpoint is 640px
     }
 
-    window.addEventListener('resize', handleResize)
+    // Run once on mount
+    checkMobile()
+
+    // Add event listeners
+    window.addEventListener('resize', checkMobile)
 
     return () => {
       window.removeEventListener('scroll', handleScroll)
-      window.removeEventListener('resize', handleResize)
+      window.removeEventListener('resize', checkMobile)
     }
   }, [])
 
@@ -130,28 +143,35 @@ const Hero = () => {
 
   return (
     <div className="relative w-full">
-      {/* Image as the primary element that controls dimensions */}
-      <div className="relative w-full overflow-hidden py-3 sm:py-0">
+      {/* Image container */}
+      <div className="relative h-[400px] w-full overflow-hidden sm:h-auto sm:py-0">
         <img
-          src={heros[currentSlide].img_src}
+          src={
+            isMobile
+              ? heros[currentSlide].mobile_img_src
+              : heros[currentSlide].img_src
+          }
           alt="Hero banner"
-          className="w-full opacity-50 sm:opacity-100"
+          className="h-full w-full object-cover sm:h-auto sm:object-contain"
           style={{
             transform: `translateY(${offsetY * 0.3}px)`,
           }}
         />
 
+        {/* Dark overlay for better text visibility on mobile */}
+        <div className="absolute inset-0 bg-black/30 sm:hidden"></div>
+
         {/* Content container positioned absolutely over the image */}
         <div className="absolute top-0 left-0 flex h-full w-full items-center">
           <div className="w-full px-4 sm:px-6 lg:px-16">
             <div className="mx-auto text-center text-white sm:mx-0 sm:max-w-md sm:text-left">
-              <h1 className="mb-2 text-[8px] font-bold tracking-tight uppercase text-shadow-lg/30 sm:text-[18px] md:text-[20px] lg:text-[24px]">
+              <h1 className="mb-2 text-[18px] font-bold tracking-tight uppercase text-shadow-lg/30 md:text-[20px] lg:text-[24px]">
                 {heros[currentSlide].text1}
               </h1>
-              <p className="mb-2 text-[12px]/1 font-black tracking-tight text-shadow-lg/30 sm:text-[30px]/10 md:text-[36px] lg:text-[48px]">
+              <p className="mb-2 text-[30px]/10 font-black tracking-tight text-shadow-lg/30 md:text-[36px] lg:text-[48px]">
                 {heros[currentSlide].text2}
               </p>
-              <h2 className="mb-6 text-[8px] font-bold uppercase text-shadow-lg/30 sm:text-[20px] md:text-[24px] lg:text-[30px]">
+              <h2 className="mb-6 text-[20px] font-bold uppercase text-shadow-lg/30 md:text-[24px] lg:text-[30px]">
                 {heros[currentSlide].text3}
               </h2>
               <Button

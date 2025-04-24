@@ -1,6 +1,5 @@
-import React from 'react'
-import Link from 'next/link'
 import Image from 'next/image'
+import Link from 'next/link'
 
 const GamesGridSection = () => {
   const games = [
@@ -19,7 +18,11 @@ const GamesGridSection = () => {
       image: '/game-cards/07.png',
       title: 'DWARVEN GEMS MEGAWAYS',
     },
-    { id: 8, image: '/game-cards/08.png', title: 'BUFFALO POWER 2 HOLD AND WIN' },
+    {
+      id: 8,
+      image: '/game-cards/08.png',
+      title: 'BUFFALO POWER 2 HOLD AND WIN',
+    },
   ]
 
   return (
@@ -55,26 +58,13 @@ const GamesGridSection = () => {
             {/* Play Now Button - Positioned half over card, half out */}
             <div className="absolute inset-x-0 -bottom-3 z-10 flex translate-y-1/2 transform justify-center">
               <Link href="#">
-                <button className="rounded-full bg-[#ff003d] px-8 py-2 text-sm font-bold text-white uppercase shadow-lg transition hover:bg-red-600  cursor-pointer">
+                <button className="cursor-pointer rounded-full bg-[#ff003d] px-8 py-2 text-sm font-bold text-white uppercase shadow-lg transition hover:bg-red-600">
                   PLAY NOW
                 </button>
               </Link>
             </div>
           </div>
         ))}
-      </div>
-
-      {/* SPWRTS Logo at Bottom */}
-      <div className="mt-16 flex justify-center">
-        <div className="relative h-16 w-96">
-          <Image
-            src="/home/slots-logo.png"
-            alt="SPWRTS Logo"
-            width={340}
-            height={100}
-            objectFit="contain"
-          />
-        </div>
       </div>
     </div>
   )
