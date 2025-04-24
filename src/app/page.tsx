@@ -133,7 +133,7 @@ const Hero = () => {
         <img
           src={heros[currentSlide].img_src}
           alt="Hero banner"
-          className="w-full"
+          className="w-full opacity-50 sm:opacity-100"
           style={{
             transform: `translateY(${offsetY * 0.3}px)`,
           }}
@@ -141,15 +141,15 @@ const Hero = () => {
 
         {/* Content container positioned absolutely over the image */}
         <div className="absolute top-0 left-0 flex h-full w-full items-center">
-          <div className="px-4 sm:px-6 lg:px-16">
-            <div className="max-w-md text-white">
-              <h1 className="mb-2 text-[8px] font-bold tracking-tight uppercase sm:text-[18px] md:text-[20px] lg:text-[24px]">
+          <div className="w-full px-4 sm:px-6 lg:px-16">
+            <div className="mx-auto text-center text-white sm:mx-0 sm:max-w-md sm:text-left">
+              <h1 className="mb-2 text-[8px] font-bold tracking-tight uppercase sm:text-[18px] md:text-[20px] lg:text-[24px] text-shadow-lg/30">
                 {heros[currentSlide].text1}
               </h1>
-              <p className="mb-2 text-[12px]/1 font-black tracking-tight sm:text-[30px]/10 md:text-[36px] lg:text-[48px]">
+              <p className="mb-2 text-[12px]/1 font-black tracking-tight sm:text-[30px]/10 md:text-[36px] lg:text-[48px] text-shadow-lg/30">
                 {heros[currentSlide].text2}
               </p>
-              <h2 className="mb-6 text-[8px] font-bold uppercase sm:text-[20px] md:text-[24px] lg:text-[30px]">
+              <h2 className="mb-6 text-[8px] font-bold uppercase sm:text-[20px] md:text-[24px] lg:text-[30px] text-shadow-lg/30">
                 {heros[currentSlide].text3}
               </h2>
               <Button
