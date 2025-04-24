@@ -163,15 +163,15 @@ const Hero = () => {
 
         {/* Content container positioned absolutely over the image */}
         <div className="absolute top-0 left-0 flex h-full w-full items-center">
-          <div className="w-full px-4 sm:px-6 lg:px-16">
-            <div className="mx-auto text-center text-white sm:mx-0 sm:max-w-md sm:text-left">
-              <h1 className="mb-2 text-[18px] font-bold tracking-tight uppercase text-shadow-lg/30 md:text-[20px] lg:text-[24px]">
+          <div className="container mx-auto w-full px-4 sm:px-6 lg:px-16">
+            <div className="mx-auto text-center text-white sm:mx-0 md:text-left">
+              <h1 className="mb-2 text-[18px] font-bold tracking-tight uppercase text-shadow-lg/30 md:text-[20px] lg:text-2xl">
                 {heros[currentSlide].text1}
               </h1>
-              <p className="mb-2 text-[30px]/10 font-black tracking-tight text-shadow-lg/30 md:text-[36px] lg:text-[48px]">
+              <p className="mb-2 text-[30px]/10 font-black tracking-tight md:text-[36px] lg:text-6xl">
                 {heros[currentSlide].text2}
               </p>
-              <h2 className="mb-6 text-[20px] font-bold uppercase text-shadow-lg/30 md:text-[24px] lg:text-[30px]">
+              <h2 className="mb-6 text-[20px] font-bold uppercase text-shadow-lg/30 md:text-2xl lg:text-4xl">
                 {heros[currentSlide].text3}
               </h2>
               <Button
