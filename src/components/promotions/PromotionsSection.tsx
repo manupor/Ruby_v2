@@ -35,9 +35,9 @@ const PromotionsSection = ({ promotions }: any) => {
     <div className="relative my-20" ref={sectionRef}>
       {/* Background image with increased height and gradient overlay */}
       <div
-        className="absolute inset-0 -z-10 bg-cover bg-center"
+        className="absolute inset-0 -z-10 bg-black bg-center"
         style={{
-          backgroundImage: `linear-gradient(to top, #0a0a0a 0%, transparent 15%, transparent 85%, #0a0a0a 100%), url('/banner-ruby.png')`,
+          backgroundImage: `linear-gradient(to top, black 0%, transparent 15%, transparent 85%, black 100%), url('/banner-ruby.png')`,
           backgroundPosition: 'center',
           backgroundSize: 'cover',
           height: '120%',

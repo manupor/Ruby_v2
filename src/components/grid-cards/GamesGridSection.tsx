@@ -53,7 +53,7 @@ const GamesGridSection = () => {
             </div>
 
             {/* Play Now Button - Positioned half over card, half out */}
-            <div className="absolute inset-x-0 bottom-0 z-10 flex translate-y-1/2 transform justify-center">
+            <div className="absolute inset-x-0 -bottom-3 z-10 flex translate-y-1/2 transform justify-center">
               <Link href="#">
                 <button className="rounded-full bg-[#ff003d] px-8 py-2 text-sm font-bold text-white uppercase shadow-lg transition hover:bg-red-600  cursor-pointer">
                   PLAY NOW

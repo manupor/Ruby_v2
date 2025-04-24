@@ -21,9 +21,9 @@ const CasinoBanner = () => {
         <Image
           src="/home/slots-logo.png"
           alt="SLWTS Logo"
-          width={200}
-          height={80}
-          className="h-auto w-36"
+          width={300}
+          height={120}
+          className="h-auto w-1/4"
         />
       </div>
     </div>

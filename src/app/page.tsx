@@ -6,7 +6,9 @@ import GamesGridSection from '@/components/grid-cards/GamesGridSection'
 import Leagues from '@/components/leagues/Leagues'
 import PromotionsSection from '@/components/promotions/PromotionsSection'
 import { Button } from '@/components/ui/button'
+import { Card, CardContent, CardTitle } from '@/components/ui/card'
 import { Gift, HandCoins, PercentCircle, Wallet } from 'lucide-react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
@@ -143,13 +145,13 @@ const Hero = () => {
         <div className="absolute top-0 left-0 flex h-full w-full items-center">
           <div className="w-full px-4 sm:px-6 lg:px-16">
             <div className="mx-auto text-center text-white sm:mx-0 sm:max-w-md sm:text-left">
-              <h1 className="mb-2 text-[8px] font-bold tracking-tight uppercase sm:text-[18px] md:text-[20px] lg:text-[24px] text-shadow-lg/30">
+              <h1 className="mb-2 text-[8px] font-bold tracking-tight uppercase text-shadow-lg/30 sm:text-[18px] md:text-[20px] lg:text-[24px]">
                 {heros[currentSlide].text1}
               </h1>
-              <p className="mb-2 text-[12px]/1 font-black tracking-tight sm:text-[30px]/10 md:text-[36px] lg:text-[48px] text-shadow-lg/30">
+              <p className="mb-2 text-[12px]/1 font-black tracking-tight text-shadow-lg/30 sm:text-[30px]/10 md:text-[36px] lg:text-[48px]">
                 {heros[currentSlide].text2}
               </p>
-              <h2 className="mb-6 text-[8px] font-bold uppercase sm:text-[20px] md:text-[24px] lg:text-[30px] text-shadow-lg/30">
+              <h2 className="mb-6 text-[8px] font-bold uppercase text-shadow-lg/30 sm:text-[20px] md:text-[24px] lg:text-[30px]">
                 {heros[currentSlide].text3}
               </h2>
               <Button
@@ -178,6 +180,47 @@ export default function Home() {
       <CasinoBanner />
 
       <Leagues />
+
+      <div className="container mx-auto px-4 pb-8 lg:px-8">
+        <div className="panel my-20">
+          <div className="mb-10 flex items-center justify-between">
+            <h1 className="text-3xl font-bold">Sports betting options</h1>
+            <Link href="/odds" className="text-xs underline hover:no-underline">
+              <span>See all options</span>
+            </Link>
+          </div>
+          <div className="flex flex-wrap justify-center gap-x-9 gap-y-10">
+            {options.map((card) => (
+              <Card
+                key={card.title}
+                className="relative flex h-[380px] w-[380px] flex-col overflow-hidden pb-8"
+              >
+                <CardContent className="relative z-1 flex flex-1 flex-col justify-end">
+                  <CardTitle className="text-foreground mb-3 text-2xl font-extrabold">
+                    {card.title}
+                  </CardTitle>
+                  <Button
+                    variant="outline"
+                    size="lg"
+                    className="w-fit font-bold uppercase"
+                  >
+                    View odds
+                  </Button>
+                </CardContent>
+                <figure className="absolute inset-0 z-0">
+                  <Image
+                    src={card.image_src}
+                    alt={card.image_alt}
+                    className="h-full w-full object-cover"
+                    width={400}
+                    height={400}
+                  />
+                </figure>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </div>
 
       <GamesGridSection />
 
