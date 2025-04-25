@@ -5,6 +5,7 @@ import CasinoBanner from '@/components/casino-banner/CasinoBanner'
 import GamesGridSection from '@/components/grid-cards/GamesGridSection'
 import Leagues from '@/components/leagues/Leagues'
 import PromotionsSection from '@/components/promotions/PromotionsSection'
+import BetSmarterSection from '@/components/smarter-cta/BetSmarterSection'
 import { Button } from '@/components/ui/button'
 import { Card, CardContent, CardTitle } from '@/components/ui/card'
 import { Gift, HandCoins, PercentCircle, Wallet } from 'lucide-react'
@@ -290,6 +291,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <BetSmarterSection />
 
       <Banking />
     </>

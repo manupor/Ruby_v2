@@ -106,7 +106,7 @@ export default function Footer() {
                 </h4>
                 <div className="flex justify-center gap-4">
                   <Link
-                    href="https://www.instagram.com"
+                    href="https://www.instagram.com/betwithruby"
                     target="_blank"
                     aria-label="Instagram"
                   >

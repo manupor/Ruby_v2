@@ -32,7 +32,7 @@ const PromotionsSection = ({ promotions }: any) => {
   }, [])
 
   return (
-    <div className="relative my-20 overflow-hidden h-[50vh] flex flex-col justify-end" ref={sectionRef}>
+    <div className="relative my-20 overflow-hidden sm:h-[60vh] flex flex-col justify-end" ref={sectionRef}>
       {/* Background image container - contained within this section */}
       <div
         className="absolute inset-0 -z-10 bg-center"

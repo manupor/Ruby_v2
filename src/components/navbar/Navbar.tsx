@@ -70,7 +70,7 @@ export default function Navbar() {
             width={220}
             height={80}
             priority
-            className="w-[130px] sm:w-[220px]"
+            className="w-[130px] sm:w-[220px] xl:w-[280px]"
           />
         </Link>
 
@@ -79,13 +79,13 @@ export default function Navbar() {
           <Link href="/login">
             <Button
               variant="outline"
-              className="border-white px-3 py-2 text-[8px] font-bold text-white uppercase hover:bg-white hover:text-black sm:px-6 sm:text-2xl"
+              className="border-white px-3 py-2 xl:py-6 text-[8px] font-bold text-white uppercase hover:bg-white hover:text-black sm:px-6 sm:text-2xl xl:text-3xl"
             >
               Login
             </Button>
           </Link>
           <Link href="/join">
-            <Button className="bg-[#FF003D] px-3 py-2 text-[8px] font-bold text-white uppercase transition hover:bg-[#e60036] sm:px-6 sm:text-2xl">
+            <Button className="bg-[#FF003D] px-3 py-2 xl:py-6 text-[8px] font-bold text-white uppercase transition hover:bg-[#e60036] sm:px-6 sm:text-2xl xl:text-3xl">
               Join Now
             </Button>
           </Link>
