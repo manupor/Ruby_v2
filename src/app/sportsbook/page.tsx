@@ -1,14 +1,13 @@
 'use client'
 
-import Link from 'next/link'
+import { Gift, PercentCircle, Sparkles, Wallet } from 'lucide-react'
 import Image from 'next/image'
-import { Card, CardContent, CardTitle } from '@/components/ui/card'
-import { Button } from '@/components/ui/button'
-import { PercentCircle, Gift, Wallet, Sparkles } from 'lucide-react'
+import Link from 'next/link'
 
+import Banking from '@/components/banking/Banking'
 import Hero from '@/components/hero/Hero'
 import Leagues from '@/components/leagues/Leagues'
-import Banking from '@/components/banking/Banking'
+import BetSmarterSection from '@/components/smarter-cta/BetSmarterSection'
 
 const promoTickets = [
   {
@@ -48,12 +47,14 @@ export default function Home() {
 
       <div className="container mx-auto px-4 pb-8 lg:px-8">
         <div className="panel my-20">
-          <h1 className="mb-10 text-3xl font-bold text-white">Claim Your Bonuses</h1>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <h1 className="mb-10 text-3xl font-bold text-white">
+            Claim Your Bonuses
+          </h1>
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {promoTickets.map((card, index) => (
               <div
                 key={index}
-                className="rounded-xl p-6 shadow-md flex flex-col sm:flex-row items-center gap-4 hover:shadow-xl transition duration-300"
+                className="flex flex-col items-center gap-4 rounded-xl p-6 shadow-md transition duration-300 hover:shadow-xl sm:flex-row"
                 style={{
                   backgroundColor: '#1a1a1a',
                   color: '#c19652',
@@ -67,7 +68,7 @@ export default function Home() {
                   <p className="text-sm text-[#d9b76c]">{card.text3}</p>
                   <Link
                     href={card.href}
-                    className="text-sm font-semibold mt-2 inline-block"
+                    className="mt-2 inline-block text-sm font-semibold"
                     style={{ color: '#e6c98f' }}
                   >
                     MORE INFO
@@ -78,6 +79,8 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      <BetSmarterSection />
 
       <div className="py-10">
         <div className="flex flex-col items-center">

@@ -10,7 +10,7 @@ export default function HelpPage() {
   return (
     <>
       {/* Hero con texto sobre la imagen */}
-      <div className="relative hidden h-[400px] w-full overflow-hidden lg:block">
+      <div className="relative hidden h-[600px] w-full overflow-hidden lg:block">
         <div
           className="absolute inset-0 z-0"
           style={{

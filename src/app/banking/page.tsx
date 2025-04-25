@@ -9,13 +9,13 @@ export const metadata: Metadata = {
 export default function BankingPage() {
   return (
     <>
-      <div className="relative hidden h-[400px] w-full overflow-hidden lg:block">
+      <div className="relative hidden h-[600px] w-full overflow-hidden lg:block">
         <div
           className="h-full w-full"
           style={{
             backgroundImage: `url('/banking.png')`,
             backgroundSize: 'cover',
-            backgroundPosition: 'center',
+            backgroundPosition: 'top',
           }}
         />
       </div>

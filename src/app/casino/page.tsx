@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 export default function CasinoPage() {
   return (
     <>
-      <div className="relative hidden h-[400px] w-full overflow-hidden lg:block">
+      <div className="relative hidden h-[600px] w-full overflow-hidden lg:block">
         <div
           className="h-full w-full"
           style={{
