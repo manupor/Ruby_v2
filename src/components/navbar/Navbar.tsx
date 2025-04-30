@@ -72,6 +72,14 @@ export default function Navbar() {
             priority
             className="w-[130px] sm:w-[220px] xl:w-[280px]"
           />
+          <Image
+            src="/You play, we pay.svg"
+            alt="RubyWager Logo"
+            width={220}
+            height={80}
+            priority
+            className="hidden w-[130px] sm:w-[220px] xl:w-[280px] sm:block"
+          />
         </Link>
 
         <div className="flex items-center gap-2 sm:gap-4">

@@ -10,7 +10,7 @@ export default function Hero() {
   const heros = [
     {
       text1: 'Weekly rebatess, Daily Payouts',
-      text2: '100% SIGN UP BONUS!',
+      text2: '200% SIGN UP BONUS!',
       text3: 'FASTEST IN THE BUSINESS',
       img_src: '/hero/01.png',
     },
@@ -63,8 +63,8 @@ export default function Hero() {
                 </h2>
               </div>
               <Button variant="brand" size="massive" className="blink-strong">
-  JOIN NOW
-</Button>
+                JOIN NOW
+              </Button>
             </div>
           </div>
         ))}

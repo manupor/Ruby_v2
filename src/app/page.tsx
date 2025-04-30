@@ -90,7 +90,7 @@ const Hero = () => {
   const heros = [
     {
       text1: 'Weekly Rebate, Daily Payouts',
-      text2: '100% SIGN UP BONUS!',
+      text2: '200% SIGN UP BONUS!',
       text3: 'FASTEST IN THE BUSINESS',
       img_src: '/hero/01.png',
       mobile_img_src: '/hero/mobile/01.png',
@@ -141,6 +141,19 @@ const Hero = () => {
     return () => clearInterval(interval)
   }, [heros.length])
 
+  // Navigation handlers
+  const goToPrevSlide = () => {
+    setCurrentSlide((prev) => (prev - 1 + heros.length) % heros.length)
+  }
+
+  const goToNextSlide = () => {
+    setCurrentSlide((prev) => (prev + 1) % heros.length)
+  }
+
+  const goToSlide = (index: number) => {
+    setCurrentSlide(index)
+  }
+
   return (
     <div className="relative w-full">
       {/* Image container */}
@@ -183,6 +196,36 @@ const Hero = () => {
               </Button>
             </div>
           </div>
+        </div>
+
+        {/* Left/Right Navigation Arrows */}
+        <button
+          onClick={goToPrevSlide}
+          className="absolute top-1/2 left-4 -translate-y-1/2 transform rounded-full bg-black/30 p-2 text-white hover:bg-black/50"
+          aria-label="Previous slide"
+        >
+          &lt;
+        </button>
+        <button
+          onClick={goToNextSlide}
+          className="absolute top-1/2 right-4 -translate-y-1/2 transform rounded-full bg-black/30 p-2 text-white hover:bg-black/50"
+          aria-label="Next slide"
+        >
+          &gt;
+        </button>
+
+        {/* Dot Indicators */}
+        <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 transform space-x-2">
+          {heros.map((_, index) => (
+            <button
+              key={index}
+              className={`h-3 w-3 rounded-full ${
+                index === currentSlide ? 'bg-white' : 'bg-white/50'
+              }`}
+              onClick={() => goToSlide(index)}
+              aria-label={`Go to slide ${index + 1}`}
+            />
+          ))}
         </div>
       </div>
     </div>
