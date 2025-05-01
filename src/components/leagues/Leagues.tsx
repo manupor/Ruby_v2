@@ -8,21 +8,29 @@ export default function Leagues() {
       <style>
         {`
           .carousel {
-          mask-image: linear-gradient(90deg, transparent, #fff 20%, #fff 80%, transparent);
-            // position: relative;
-            // display: flex;
-            // overflow: hidden;
+            mask-image: linear-gradient(90deg, transparent, #fff 10%, #fff 90%, transparent);
           }
+          
           .logo-carousel {
-            margin: 80px 0;
+            margin: 60px 0;
             display: flex;
             align-items: center;
-            gap: 6rem;
+            gap: 2rem;
             animation: scroll 30s linear infinite;
             width: max-content;
           }
+          
+          @media (min-width: 768px) {
+            .logo-carousel {
+              gap: 4rem;
+              margin: 80px 0;
+            }
+          }
+          
           .logo-carousel:hover {
-            animation-play-state: paused;}
+            animation-play-state: paused;
+          }
+          
           @keyframes scroll {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
@@ -32,54 +40,152 @@ export default function Leagues() {
       <div className="carousel container mx-auto">
         <div className="overflow-hidden">
           <div className="logo-carousel">
-            <Image
-              src="/leagues/UEFA.png"
-              alt="UEFA"
-              width="114"
-              height="111"
-            />
-            <Image src="/leagues/NBA.png" alt="NBA" width="45" height="110" />
-            <Image src="/leagues/UFC.png" alt="UFC" width="170" height="58" />
-            <Image src="/leagues/NFL.png" alt="NFL" width="93" height="123" />
-            <Image src="/leagues/MLB.png" alt="MLB" width="136" height="76" />
-            <Image src="/leagues/MLS.png" alt="MLS" width="92" height="98" />
-            <Image
-              src="/leagues/la-liga.png"
-              alt="La Liga Española"
-              width="216"
-              height="62"
-            />
-            <Image
-              src="/leagues/premier-league.png"
-              alt="Premier League"
-              width="67"
-              height="113"
-            />
+            <div className="flex w-14 items-center justify-center md:w-auto">
+              <Image
+                src="/leagues/UEFA.png"
+                alt="UEFA"
+                width="114"
+                height="111"
+                className="h-auto max-h-12 w-full md:max-h-none"
+              />
+            </div>
+            <div className="flex w-10 items-center justify-center md:w-auto">
+              <Image
+                src="/leagues/NBA.png"
+                alt="NBA"
+                width="45"
+                height="110"
+                className="h-auto max-h-12 w-full md:max-h-none"
+              />
+            </div>
+            <div className="flex w-14 items-center justify-center md:w-auto">
+              <Image
+                src="/leagues/UFC.png"
+                alt="UFC"
+                width="170"
+                height="58"
+                className="h-auto max-h-8 w-full md:max-h-none"
+              />
+            </div>
+            <div className="flex w-10 items-center justify-center md:w-auto">
+              <Image
+                src="/leagues/NFL.png"
+                alt="NFL"
+                width="93"
+                height="123"
+                className="h-auto max-h-12 w-full md:max-h-none"
+              />
+            </div>
+            <div className="flex w-14 items-center justify-center md:w-auto">
+              <Image
+                src="/leagues/MLB.png"
+                alt="MLB"
+                width="136"
+                height="76"
+                className="h-auto max-h-8 w-full md:max-h-none"
+              />
+            </div>
+            <div className="flex w-10 items-center justify-center md:w-auto">
+              <Image
+                src="/leagues/MLS.png"
+                alt="MLS"
+                width="92"
+                height="98"
+                className="h-auto max-h-10 w-full md:max-h-none"
+              />
+            </div>
+            <div className="flex w-14 items-center justify-center md:w-auto">
+              <Image
+                src="/leagues/la-liga.png"
+                alt="La Liga Española"
+                width="216"
+                height="62"
+                className="h-auto max-h-8 w-full md:max-h-none"
+              />
+            </div>
+            <div className="flex w-10 items-center justify-center md:w-auto">
+              <Image
+                src="/leagues/premier-league.png"
+                alt="Premier League"
+                width="67"
+                height="113"
+                className="h-auto max-h-10 w-full md:max-h-none"
+              />
+            </div>
 
             {/* Duplicate images for infinite scrolling effect */}
-            <Image
-              src="/leagues/UEFA.png"
-              alt="UEFA"
-              width="114"
-              height="111"
-            />
-            <Image src="/leagues/NBA.png" alt="NBA" width="45" height="110" />
-            <Image src="/leagues/UFC.png" alt="UFC" width="170" height="58" />
-            <Image src="/leagues/NFL.png" alt="NFL" width="93" height="123" />
-            <Image src="/leagues/MLB.png" alt="MLB" width="136" height="76" />
-            <Image src="/leagues/MLS.png" alt="MLS" width="92" height="98" />
-            <Image
-              src="/leagues/la-liga.png"
-              alt="La Liga Española"
-              width="216"
-              height="62"
-            />
-            <Image
-              src="/leagues/premier-league.png"
-              alt="Premier League"
-              width="67"
-              height="113"
-            />
+            <div className="flex w-14 items-center justify-center md:w-auto">
+              <Image
+                src="/leagues/UEFA.png"
+                alt="UEFA"
+                width="114"
+                height="111"
+                className="h-auto max-h-12 w-full md:max-h-none"
+              />
+            </div>
+            <div className="flex w-10 items-center justify-center md:w-auto">
+              <Image
+                src="/leagues/NBA.png"
+                alt="NBA"
+                width="45"
+                height="110"
+                className="h-auto max-h-12 w-full md:max-h-none"
+              />
+            </div>
+            <div className="flex w-14 items-center justify-center md:w-auto">
+              <Image
+                src="/leagues/UFC.png"
+                alt="UFC"
+                width="170"
+                height="58"
+                className="h-auto max-h-8 w-full md:max-h-none"
+              />
+            </div>
+            <div className="flex w-10 items-center justify-center md:w-auto">
+              <Image
+                src="/leagues/NFL.png"
+                alt="NFL"
+                width="93"
+                height="123"
+                className="h-auto max-h-12 w-full md:max-h-none"
+              />
+            </div>
+            <div className="flex w-14 items-center justify-center md:w-auto">
+              <Image
+                src="/leagues/MLB.png"
+                alt="MLB"
+                width="136"
+                height="76"
+                className="h-auto max-h-8 w-full md:max-h-none"
+              />
+            </div>
+            <div className="flex w-10 items-center justify-center md:w-auto">
+              <Image
+                src="/leagues/MLS.png"
+                alt="MLS"
+                width="92"
+                height="98"
+                className="h-auto max-h-10 w-full md:max-h-none"
+              />
+            </div>
+            <div className="flex w-14 items-center justify-center md:w-auto">
+              <Image
+                src="/leagues/la-liga.png"
+                alt="La Liga Española"
+                width="216"
+                height="62"
+                className="h-auto max-h-8 w-full md:max-h-none"
+              />
+            </div>
+            <div className="flex w-10 items-center justify-center md:w-auto">
+              <Image
+                src="/leagues/premier-league.png"
+                alt="Premier League"
+                width="67"
+                height="113"
+                className="h-auto max-h-10 w-full md:max-h-none"
+              />
+            </div>
           </div>
         </div>
       </div>

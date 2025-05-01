@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 const CasinoBanner = () => {
   return (
-    <div className="relative mt-40 mb-10 w-full">
+    <div className="relative mt-20 sm:mt-40 mb-10 w-full">
       {/* Main casino image with zoom effect on mobile */}
       <div className="relative w-full overflow-hidden">
         <div className="origin-center scale-[1.5] sm:scale-100 sm:transform-none">
