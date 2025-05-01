@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="mx-auto max-w-[1200px] px-4 py-16 lg:px-8">
           <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
             {/* Brand section */}
-            <div className="flex flex-col items-start text-left md:items-center md:text-center">
+            <div className="flex flex-col items-center text-center">
               <Link href="/">
                 <Image
                   src="/footer-logo.svg"
@@ -26,7 +26,7 @@ export default function Footer() {
             </div>
 
             {/* Links section */}
-            <div className="flex flex-col items-start space-y-3 text-left md:items-center md:text-center">
+            <div className="flex flex-col items-center space-y-3 text-center">
               <div className="mb-2 flex items-center gap-2">
                 <BookText className="text-brand h-5 w-5" />
                 <h4 className="text-sm font-bold tracking-wide uppercase">
@@ -66,7 +66,7 @@ export default function Footer() {
             </div>
 
             {/* Other section + Socials */}
-            <div className="flex flex-col items-start space-y-3 text-left md:items-center md:text-center">
+            <div className="flex flex-col items-center space-y-3 text-center">
               <div className="mb-2 flex items-center gap-2">
                 <Newspaper className="text-brand h-5 w-5" />
                 <h4 className="text-sm font-bold tracking-wide uppercase">
@@ -93,11 +93,11 @@ export default function Footer() {
               </Link>
 
               {/* Social Media */}
-              <div className="mt-6 w-full">
+              <div className="mt-6">
                 <h4 className="mb-2 text-sm font-bold tracking-wide uppercase">
                   Follow Us
                 </h4>
-                <div className="flex justify-start gap-4 md:justify-center">
+                <div className="flex justify-center gap-4">
                   <Link
                     href="https://www.instagram.com/betwithruby"
                     target="_blank"
@@ -125,7 +125,7 @@ export default function Footer() {
           </div>
 
           {/* Copyright section */}
-          <div className="mt-10 border-t border-white/10 pt-6 text-left md:text-center">
+          <div className="mt-10 border-t border-white/10 pt-6 text-center">
             <p className="text-xs text-white/50">
               &copy; {new Date().getFullYear()} RubyWager. All rights reserved.
             </p>
