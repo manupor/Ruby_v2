@@ -3,9 +3,9 @@ import Image from 'next/image'
 
 const CasinoBanner = () => {
   return (
-    <div className="relative mt-20 sm:mt-40 mb-10 w-full">
+    <div className="mt-20 mb-10 w-full">
       {/* Main casino image with zoom effect on mobile */}
-      <div className="relative w-full overflow-hidden">
+      <div className="w-full overflow-hidden">
         <div className="origin-center scale-[1.5] sm:scale-100 sm:transform-none">
           <Image
             src="/home/slots-banner.png"
@@ -19,13 +19,13 @@ const CasinoBanner = () => {
       </div>
 
       {/* SLWTS Logo centered at the bottom */}
-      <div className="absolute right-0 bottom-0 sm:bottom-8 left-0 flex justify-center">
+      <div className="flex justify-center">
         <Image
           src="/home/slots-logo.png"
           alt="SLWTS Logo"
           width={300}
           height={120}
-          className="h-auto w-1/4"
+          className="h-auto w-1/2 sm:w-1/4"
         />
       </div>
     </div>
