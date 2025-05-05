@@ -2,11 +2,12 @@ import React from 'react'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Rules | RubyWager',
-  description: 'Official rules and guidelines for RubyWager platform',
+  title: 'Responsible Gaming | RubyWager',
+  description:
+    'Responsible gambling guidelines and resources for RubyWager platform users',
 }
 
-export default function RulesPage() {
+export default function ResponsibleGamingPage() {
   return (
     <>
       <div className="relative h-[400px] w-full overflow-hidden">
@@ -20,7 +21,7 @@ export default function RulesPage() {
         />
       </div>
       <div className="container mx-auto max-w-4xl px-4 py-20">
-        <h1 className="mb-10 text-3xl font-bold">Rules</h1>
+        <h1 className="mb-10 text-3xl font-bold">Responsible Gambling</h1>
         <section className="mb-16">
           <p>
             At Ruby Wager, we are committed to providing a safe, secure, and
@@ -30,12 +31,10 @@ export default function RulesPage() {
             gambling activities.
           </p>
         </section>
-        <h2 className="text-brand mb-6 text-2xl font-bold">
-          Responsible Gambling Guidelines
-        </h2>
+
         <section className="mb-10">
           <h3 className="mb-6 text-xl font-semibold">
-            Responsible Gambling Guidelines
+            💡 Responsible Gambling Guidelines
           </h3>
           <div className="rounded-lg border border-[#ff5f5f5] p-6">
             <p className="mb-4">
@@ -44,23 +43,23 @@ export default function RulesPage() {
             </p>
             <ul className="list-disc space-y-2 pl-6">
               <li>
-                Set a Budget – Never bet more than you can afford to lose.
+                ✔ Set a Budget – Never bet more than you can afford to lose.
               </li>
               <li>
-                Manage Your Time – Keep track of how much time you spend
+                ✔ Manage Your Time – Keep track of how much time you spend
                 gambling.
               </li>
               <li>
-                Avoid Chasing Losses – Losing is part of the game; don’t try to
-                recover losses with bigger bets.
+                ✔ Avoid Chasing Losses – Losing is part of the game; don't try
+                to recover losses with bigger bets.
               </li>
               <li>
-                Keep It Fun – Gambling should be a form of entertainment, not a
-                financial solution.
+                ✔ Keep It Fun – Gambling should be a form of entertainment, not
+                a financial solution.
               </li>
               <li>
-                Know When to Take a Break – If betting stops being fun, consider
-                stepping away for a while.
+                ✔ Know When to Take a Break – If betting stops being fun,
+                consider stepping away for a while.
               </li>
             </ul>
           </div>
@@ -68,7 +67,7 @@ export default function RulesPage() {
 
         <section className="mb-10">
           <h3 className="mb-6 text-xl font-semibold">
-            Self-Exclusion & Account Limits
+            🛑 Self-Exclusion & Account Limits
           </h3>
           <div className="rounded-lg border border-[#ff5f5f5] p-6">
             <p className="mb-4">
@@ -89,7 +88,7 @@ export default function RulesPage() {
                 spending.
               </li>
             </ul>
-            <p>
+            <p className="mt-4">
               To request any of these options, contact our Customer Support Team
               via live chat, email, WhatsApp, or iMessage.
             </p>
@@ -98,7 +97,7 @@ export default function RulesPage() {
 
         <section className="mb-10">
           <h3 className="mb-6 text-xl font-semibold">
-            Recognizing Problem Gambling
+            ⚠ Recognizing Problem Gambling
           </h3>
           <div className="rounded-lg border border-[#ff5f5f5] p-6">
             <p className="mb-4">
@@ -106,13 +105,13 @@ export default function RulesPage() {
               look out for these warning signs:
             </p>
             <ul className="list-disc space-y-2 pl-6">
-              <li>Betting more than intended or beyond financial means.</li>
+              <li>🔹 Betting more than intended or beyond financial means.</li>
               <li>
-                Feeling stressed, anxious, or guilty about gambling losses.
+                🔹 Feeling stressed, anxious, or guilty about gambling losses.
               </li>
-              <li>Hiding gambling activity from family or friends.</li>
+              <li>🔹 Hiding gambling activity from family or friends.</li>
               <li>
-                Borrowing money to gamble or struggling financially due to
+                🔹 Borrowing money to gamble or struggling financially due to
                 betting.
               </li>
             </ul>
@@ -120,7 +119,7 @@ export default function RulesPage() {
         </section>
 
         <section className="mb-10">
-          <h3 className="mb-6 text-xl font-semibold">Need Help?</h3>
+          <h3 className="mb-6 text-xl font-semibold">🆘 Need Help?</h3>
           <div className="rounded-lg border border-[#ff5f5f5] p-6">
             <p className="mb-4">
               If you believe you have a gambling problem, we encourage you to
@@ -168,23 +167,6 @@ export default function RulesPage() {
             need assistance or guidance, our support team is here to help. Play
             smart, stay in control, and enjoy the game!
           </p>
-        </section>
-
-        <h2 className="text-brand mb-6 text-2xl font-bold">
-          Sports Betting Rules
-        </h2>
-
-        <section className="mb-10">
-          <h3 className="mb-6 text-xl font-semibold">Sports Betting Rules</h3>
-          <div className="rounded-lg border border-[#ff5f5f5] p-6">
-            <p className="mb-4">
-              At Ruby Wager, we strive to provide a fair and transparent betting
-              environment for all players. Below are the key sports betting
-              rules you need to know to ensure a smooth and enjoyable
-              experience. These rules apply to all bets placed at Ruby Wager,
-              and by placing a bet, you agree to adhere to these terms.
-            </p>
-          </div>
         </section>
       </div>
     </>

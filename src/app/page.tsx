@@ -1,11 +1,13 @@
 'use client'
 
 import Banking from '@/components/banking/Banking'
+import BlogSection from '@/components/blog/BlogSection'
 import BonusesSection from '@/components/bonuses/BonusesSection'
 import CasinoBanner from '@/components/casino-banner/CasinoBanner'
 import GamesGridSection from '@/components/grid-cards/GamesGridSection'
 import Leagues from '@/components/leagues/Leagues'
 import PromotionsSection from '@/components/promotions/PromotionsSection'
+import ReviewsSection from '@/components/reviews/ReviewsSection'
 import SportsOptions from '@/components/sports-options/SportsOptions'
 import { Button } from '@/components/ui/button'
 import { Gift, HandCoins, PercentCircle, Wallet } from 'lucide-react'
@@ -291,6 +293,11 @@ export default function Home() {
       <SportsOptions options={options} />
 
       <GamesGridSection />
+
+      <ReviewsSection />
+
+      {/* 📝 Blog section */}
+      <BlogSection />
 
       {/* 🎁 Bonuses section */}
       <BonusesSection promoTickets={promoTickets} />

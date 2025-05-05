@@ -176,3 +176,128 @@
 .no-scrollbar::-webkit-scrollbar {
   display: none; /* Chrome, Safari and Opera */
 }
+
+/* Custom animation for the review cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.review-card {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+/* Hover effect for review cards */
+.review-card:hover {
+  box-shadow:
+    0 10px 25px -5px rgba(173, 24, 24, 0.1),
+    0 10px 10px -5px rgba(173, 24, 24, 0.04);
+  border-color: rgba(220, 38, 38, 0.3);
+}
+
+/* Pulsing animation for navigation buttons */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.4);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(220, 38, 38, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+  }
+}
+
+.nav-button:hover {
+  animation: pulse 1.5s infinite;
+}
+
+/* Custom star styling */
+.star-rating .star-filled {
+  color: #dc2626;
+  fill: #dc2626;
+}
+
+.star-rating .star-empty {
+  color: #4b5563;
+  fill: none;
+}
+
+/* Custom dot indicator animation */
+.dot-indicator {
+  transition: all 0.3s ease;
+}
+
+.dot-indicator.active {
+  width: 24px;
+  background-color: #dc2626;
+}
+
+/* Blink animation for special highlight */
+@keyframes blink-strong {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.blink-strong {
+  animation: blink-strong 2s infinite;
+}
+
+/* Background Gradient for Reviews Section */
+.reviews-section-bg {
+  background: linear-gradient(120deg, #0a0a0a, #1a1a1a);
+  position: relative;
+}
+
+.reviews-section-bg::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(
+    circle at top right,
+    rgba(220, 38, 38, 0.1),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* Custom scrollbar for the review section */
+.reviews-container::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.reviews-container::-webkit-scrollbar-track {
+  background: #2d2d2d;
+  border-radius: 10px;
+}
+
+.reviews-container::-webkit-scrollbar-thumb {
+  background: #dc2626;
+  border-radius: 10px;
+}
+
+.reviews-container::-webkit-scrollbar-thumb:hover {
+  background: #b91c1c;
+}
+
+/* Add subtle texture to the background */
+.subtle-texture {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23dc2626' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}

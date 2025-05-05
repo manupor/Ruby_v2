@@ -52,6 +52,12 @@ export default function Footer() {
                 Responsible Gaming
               </Link>
               <Link
+                href="/terms-conditions"
+                className="hover:text-brand text-sm text-white/90 transition"
+              >
+                Terms & Conditions
+              </Link>
+              <Link
                 href="/why-ruby"
                 className="hover:text-brand text-sm text-white/90 transition"
               >
@@ -104,20 +110,6 @@ export default function Footer() {
                     aria-label="Instagram"
                   >
                     <Instagram className="hover:text-brand h-5 w-5 text-white transition" />
-                  </Link>
-                  <Link
-                    href="https://www.youtube.com"
-                    target="_blank"
-                    aria-label="YouTube"
-                  >
-                    <Youtube className="hover:text-brand h-5 w-5 text-white transition" />
-                  </Link>
-                  <Link
-                    href="https://www.facebook.com"
-                    target="_blank"
-                    aria-label="Facebook"
-                  >
-                    <Facebook className="hover:text-brand h-5 w-5 text-white transition" />
                   </Link>
                 </div>
               </div>
