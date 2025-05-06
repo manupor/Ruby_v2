@@ -10,16 +10,70 @@ export const metadata: Metadata = {
 export default function ResponsibleGamingPage() {
   return (
     <>
-      <div className="relative h-[400px] w-full overflow-hidden">
+      {/* Desktop hero section */}
+      <div className="relative hidden h-[600px] w-full overflow-hidden lg:block">
         <div
           className="h-full w-full"
           style={{
-            backgroundImage: `url('/rules.png')`,
+            backgroundImage: `url('/responsible-gaming.png')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
-        />
+        >
+          {/* Content container positioned absolutely over the image */}
+          {/* <div className="absolute top-0 left-0 flex h-full w-full items-center">
+            <div className="container mx-auto w-full px-4 sm:px-6 lg:px-16">
+              <div className="mx-auto text-white sm:mx-0 md:text-left">
+                <h1 className="mb-2 text-[18px] font-bold tracking-tight uppercase text-shadow-lg md:text-[20px] lg:text-2xl">
+                  PLAY RESPONSIBLY WITH RUBY WAGER
+                </h1>
+                <p className="mb-2 text-[30px]/10 font-black tracking-tight md:text-[36px] lg:text-6xl text-shadow-lg">
+                  Bet Smart. Stay In Control.
+                </p>
+                <h2 className="mb-6 text-[20px] font-bold uppercase text-shadow-lg md:text-1xl">
+                  Your entertainment, your limits, our commitment.
+                </h2>
+                <button className="blink-strong rounded bg-red-600 px-6 py-3 text-lg font-bold text-white hover:bg-red-700">
+                  Learn More About Safe Play
+                </button>
+              </div>
+            </div>
+          </div> */}
+        </div>
       </div>
+
+      {/* Mobile hero section */}
+      <div className="relative w-full lg:hidden">
+        <div className="relative w-full">
+          <img
+            src="/responsible-gaming-mobile.png"
+            alt="Responsible gaming banner"
+            className="h-auto w-full"
+          />
+          {/* Dark overlay for better text visibility */}
+          <div className="absolute inset-0 bg-black/50"></div>
+        </div>
+
+        {/* Content positioned in center with adjusted styling */}
+        {/* <div className="absolute inset-0 flex items-center justify-center">
+          <div className="px-8 text-center">
+            <h1 className="mb-1 text-[16px] font-medium tracking-wide text-white uppercase">
+              PLAY RESPONSIBLY
+            </h1>
+            <p className="mb-1 text-[26px] leading-tight font-bold tracking-wide text-white">
+              Bet Smart. Stay In Control.
+            </p>
+            <h2 className="mb-6 text-[16px] font-medium tracking-wide text-white uppercase">
+              Entertainment with limits
+            </h2>
+            <button className="blink-strong rounded bg-red-600 px-4 py-2 font-bold text-white hover:bg-red-700">
+              LEARN MORE
+            </button>
+          </div>
+        </div> */}
+      </div>
+
+      {/* Main content - keeping the original content */}
       <div className="container mx-auto max-w-4xl px-4 py-20">
         <h1 className="mb-10 text-3xl font-bold">Responsible Gambling</h1>
         <section className="mb-16">
@@ -34,7 +88,7 @@ export default function ResponsibleGamingPage() {
 
         <section className="mb-10">
           <h3 className="mb-6 text-xl font-semibold">
-            💡 Responsible Gambling Guidelines
+            Responsible Gambling Guidelines
           </h3>
           <div className="rounded-lg border border-[#ff5f5f5] p-6">
             <p className="mb-4">
@@ -43,23 +97,23 @@ export default function ResponsibleGamingPage() {
             </p>
             <ul className="list-disc space-y-2 pl-6">
               <li>
-                ✔ Set a Budget – Never bet more than you can afford to lose.
+                Set a Budget – Never bet more than you can afford to lose.
               </li>
               <li>
-                ✔ Manage Your Time – Keep track of how much time you spend
+                Manage Your Time – Keep track of how much time you spend
                 gambling.
               </li>
               <li>
-                ✔ Avoid Chasing Losses – Losing is part of the game; don't try
-                to recover losses with bigger bets.
+                Avoid Chasing Losses – Losing is part of the game; don't try to
+                recover losses with bigger bets.
               </li>
               <li>
-                ✔ Keep It Fun – Gambling should be a form of entertainment, not
-                a financial solution.
+                Keep It Fun – Gambling should be a form of entertainment, not a
+                financial solution.
               </li>
               <li>
-                ✔ Know When to Take a Break – If betting stops being fun,
-                consider stepping away for a while.
+                Know When to Take a Break – If betting stops being fun, consider
+                stepping away for a while.
               </li>
             </ul>
           </div>
@@ -67,7 +121,7 @@ export default function ResponsibleGamingPage() {
 
         <section className="mb-10">
           <h3 className="mb-6 text-xl font-semibold">
-            🛑 Self-Exclusion & Account Limits
+            Self-Exclusion & Account Limits
           </h3>
           <div className="rounded-lg border border-[#ff5f5f5] p-6">
             <p className="mb-4">
@@ -97,7 +151,7 @@ export default function ResponsibleGamingPage() {
 
         <section className="mb-10">
           <h3 className="mb-6 text-xl font-semibold">
-            ⚠ Recognizing Problem Gambling
+            Recognizing Problem Gambling
           </h3>
           <div className="rounded-lg border border-[#ff5f5f5] p-6">
             <p className="mb-4">
@@ -105,13 +159,13 @@ export default function ResponsibleGamingPage() {
               look out for these warning signs:
             </p>
             <ul className="list-disc space-y-2 pl-6">
-              <li>🔹 Betting more than intended or beyond financial means.</li>
+              <li>Betting more than intended or beyond financial means.</li>
               <li>
-                🔹 Feeling stressed, anxious, or guilty about gambling losses.
+                Feeling stressed, anxious, or guilty about gambling losses.
               </li>
-              <li>🔹 Hiding gambling activity from family or friends.</li>
+              <li>Hiding gambling activity from family or friends.</li>
               <li>
-                🔹 Borrowing money to gamble or struggling financially due to
+                Borrowing money to gamble or struggling financially due to
                 betting.
               </li>
             </ul>
@@ -119,7 +173,7 @@ export default function ResponsibleGamingPage() {
         </section>
 
         <section className="mb-10">
-          <h3 className="mb-6 text-xl font-semibold">🆘 Need Help?</h3>
+          <h3 className="mb-6 text-xl font-semibold">Need Help?</h3>
           <div className="rounded-lg border border-[#ff5f5f5] p-6">
             <p className="mb-4">
               If you believe you have a gambling problem, we encourage you to
