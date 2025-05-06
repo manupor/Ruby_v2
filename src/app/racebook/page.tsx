@@ -30,9 +30,9 @@ export default function RacebookPage() {
                 <p className="mb-2 text-[30px]/10 font-black tracking-tight md:text-[36px] lg:text-6xl">
                   Fast. Fierce. Unstoppable.
                 </p>
-                <h2 className="mb-6 text-[20px] font-bold uppercase text-shadow-lg/30 md:text-2xl lg:text-4xl">
-                  From local derbies to international classics — saddle up and
-                  ride the odds.
+                <h2 className="md:text-1xl mb-6 text-[20px] font-bold uppercase text-shadow-lg/30">
+                  From local derbies to international classics <br /> saddle up
+                  and ride the odds.
                 </h2>
                 <button className="blink-strong rounded bg-red-600 px-6 py-3 text-lg font-bold text-white hover:bg-red-700">
                   Place Your Bets Now — The race is on.

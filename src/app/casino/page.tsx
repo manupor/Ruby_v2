@@ -30,7 +30,7 @@ export default function CasinoPage() {
                 <p className="mb-2 text-[30px]/10 font-black tracking-tight md:text-[36px] lg:text-6xl">
                   Spin. Win. Repeat.
                 </p>
-                <h2 className="mb-6 text-[20px] font-bold uppercase text-shadow-lg/30 md:text-2xl lg:text-4xl">
+                <h2 className="md:text-1xl mb-6 text-[20px] font-bold uppercase text-shadow-lg/30">
                   Step into a world of elite gaming — slots, tables, and
                   jackpots await.
                 </h2>
