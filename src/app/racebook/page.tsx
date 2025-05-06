@@ -34,7 +34,7 @@ export default function RacebookPage() {
                   From local derbies to international classics — saddle up and
                   ride the odds.
                 </h2>
-                <button className="bg-brand blink-strong rounded px-6 py-3 text-lg font-bold text-white">
+                <button className="blink-strong rounded bg-red-600 px-6 py-3 text-lg font-bold text-white hover:bg-red-700">
                   Place Your Bets Now — The race is on.
                 </button>
               </div>
@@ -67,7 +67,7 @@ export default function RacebookPage() {
             <h2 className="mb-6 text-[16px] font-medium tracking-wide text-white uppercase">
               Saddle up and ride the odds
             </h2>
-            <button className="bg-brand blink-strong rounded px-4 py-2 font-bold text-white">
+            <button className="blink-strong rounded bg-red-600 px-4 py-2 font-bold text-white hover:bg-red-700">
               PLACE YOUR BETS
             </button>
           </div>

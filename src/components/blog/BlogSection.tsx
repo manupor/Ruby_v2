@@ -23,7 +23,7 @@ const blogPosts: BlogPostProps[] = [
       'Learn how to build better NFL parlays with this comprehensive guide to maximizing your profits while managing risk effectively.',
     date: 'May 2, 2025',
     readTime: '5 mins read',
-    image: '/blogs/nfl-parlay.jpg',
+    image: '/blogs/betting_tips.png',
     slug: 'maximizing-nfl-parlays',
     likes: 236,
   },
@@ -34,7 +34,7 @@ const blogPosts: BlogPostProps[] = [
       'Discover the most exciting crypto casino games that offer the best odds and biggest payouts available on Ruby Wager.',
     date: 'April 28, 2025',
     readTime: '4 mins read',
-    image: '/blogs/crypto-casino.jpg',
+    image: '/blogs/casino.png',
     slug: 'top-crypto-casino-games',
     likes: 452,
   },
@@ -45,7 +45,7 @@ const blogPosts: BlogPostProps[] = [
       'Master the fundamentals of horse racing bets with our comprehensive guide to odds, betting types, and track strategies.',
     date: 'April 25, 2025',
     readTime: '7 mins read',
-    image: '/blogs/horse-racing.jpg',
+    image: '/blogs/racing.png',
     slug: 'horse-racing-betting-guide',
     likes: 305,
   },
@@ -75,16 +75,21 @@ const BlogSection = () => {
               key={index}
               className="overflow-hidden rounded-lg border border-gray-800 bg-[#1A1A1A] transition-transform duration-300 hover:-translate-y-2"
             >
-              {/* Featured Image */}
+              {/* Featured Image - Updated to preserve aspect ratio */}
               <Link href={`/blog/${post.slug}`} className="relative block">
-                <div className="relative h-[200px] w-full overflow-hidden">
+                <div
+                  className="relative w-full overflow-hidden"
+                  style={{ paddingBottom: '56.25%' }}
+                >
+                  {' '}
+                  {/* 16:9 aspect ratio */}
                   <img
                     src={
-                    //   post.image ||
+                      post.image ||
                       'https://placehold.co/640x360/151515/ff0000.png?text=Ruby+Wager+Blog'
                     }
                     alt={post.title}
-                    className="h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+                    className="absolute top-0 left-0 h-full w-full object-contain transition-transform duration-500 hover:scale-105"
                     onError={(e) => {
                       // Fallback for missing images
                       const target = e.target as HTMLImageElement
