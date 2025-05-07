@@ -8,7 +8,7 @@ export default function Home() {
     <>
       <HeroHome />
 
-      <div className="my-20">
+      <div className="mb-20">
         <BetSmarterSection />
       </div>
     </>
