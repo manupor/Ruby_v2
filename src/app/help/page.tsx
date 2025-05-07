@@ -44,7 +44,7 @@ export default function HelpPage() {
             className="h-auto w-full"
           />
           {/* Dark overlay for better text visibility */}
-          <div className="absolute inset-0 bg-black/50"></div>
+          {/* <div className="absolute inset-0 bg-black/50"></div> */}
 
           {/* Content positioned at bottom left */}
           <div className="absolute -bottom-6 flex justify-center w-full items-center">
