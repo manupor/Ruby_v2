@@ -45,16 +45,11 @@ export default function HelpPage() {
           />
           {/* Dark overlay for better text visibility */}
           <div className="absolute inset-0 bg-black/50"></div>
-        </div>
 
-        {/* Content positioned in center with adjusted styling */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="px-8 text-center">
-            <h1 className="mb-6 text-[26px] leading-tight font-bold tracking-wide text-white uppercase">
-              From Signup to Cashout, We've Got You
-            </h1>
+          {/* Content positioned at bottom left */}
+          <div className="absolute -bottom-6 flex justify-center w-full items-center">
             <button className="blink-strong rounded bg-red-600 px-4 py-2 font-bold text-white hover:bg-red-700">
-              CONTACT US
+              Contact Support
             </button>
           </div>
         </div>
@@ -64,7 +59,7 @@ export default function HelpPage() {
       <div className="container mx-auto max-w-4xl px-4 py-20 text-white">
         <section className="mb-10 space-y-6">
           <h2 className="text-3xl font-bold">
-            Customer Support That Puts You First !!
+            Customer Support That Puts You First!
           </h2>
           <p>
             At Ruby Wager, customer satisfaction isn't just important — it's
