@@ -95,13 +95,13 @@ export default function Navbar() {
           <Link href="/login">
             <Button
               variant="outline"
-              className="border-white px-3 py-2 text-[8px] font-bold text-white uppercase hover:bg-white hover:text-black sm:px-6 sm:text-2xl xl:py-6 xl:text-3xl"
+              className="border-white px-3 py-2 text-[12px] font-bold text-white uppercase hover:bg-white hover:text-black sm:px-6 sm:text-2xl xl:py-6 xl:text-3xl"
             >
               Login
             </Button>
           </Link>
           <Link href="/join">
-            <Button className="bg-[#FF003D] px-3 py-2 text-[8px] font-bold text-white uppercase transition hover:bg-[#e60036] sm:px-6 sm:text-2xl xl:py-6 xl:text-3xl">
+            <Button className="bg-[#FF003D] px-3 py-2 text-[12px] font-bold text-white uppercase transition hover:bg-[#e60036] sm:px-6 sm:text-2xl xl:py-6 xl:text-3xl">
               Join Now
             </Button>
           </Link>
