@@ -1,4 +1,6 @@
-import React from 'react'
+import BonusesSection from '@/components/bonuses/BonusesSection'
+import HorizontalPromosSection from '@/components/promotions/HorizontalPromosSection'
+import { Gift, HandCoins, PercentCircle, Wallet } from 'lucide-react'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -6,6 +8,18 @@ export const metadata: Metadata = {
   description:
     'Discover exclusive promotions, deposit bonuses, and special offers to maximize your bankroll at Ruby Wager',
 }
+
+const promoTickets = [
+  {
+    icon: PercentCircle,
+    text1: '125%',
+    text2: 'Reload Bonus',
+    text3: 'Free Play',
+  },
+  { icon: Gift, text1: '200%', text2: 'Signup Bonus', text3: 'Free Play' },
+  { icon: Wallet, text1: '20%', text2: 'Cash Bonus', text3: 'Bonus' },
+  { icon: HandCoins, text1: '$25', text2: 'No Deposit', text3: 'Free Play' },
+]
 
 export default function PromotionsPage() {
   return (
@@ -74,7 +88,7 @@ export default function PromotionsPage() {
       </div>
 
       {/* Main content */}
-      <div className="container mx-auto max-w-4xl px-4 py-20">
+      <div className="container mx-auto max-w-4xl px-4 pt-20">
         <h1 className="mb-10 text-3xl font-bold">Promotions & Bonuses</h1>
         <section className="mb-16">
           <p>
@@ -86,6 +100,12 @@ export default function PromotionsPage() {
           </p>
         </section>
       </div>
+
+      {/* 🎁 Bonuses section */}
+      <BonusesSection promoTickets={promoTickets} />
+
+      {/* 🔥 Horizontal Promos section */}
+      <HorizontalPromosSection />
     </>
   )
 }

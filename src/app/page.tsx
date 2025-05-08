@@ -10,9 +10,7 @@ import Leagues from '@/components/leagues/Leagues'
 import PromotionsSection from '@/components/promotions/PromotionsSection'
 import ReviewsSection from '@/components/reviews/ReviewsSection'
 import SportsOptions from '@/components/sports-options/SportsOptions'
-import { Button } from '@/components/ui/button'
 import { Gift, HandCoins, PercentCircle, Wallet } from 'lucide-react'
-import { useEffect, useState } from 'react'
 
 const promotions = [
   {
@@ -105,7 +103,9 @@ export default function Home() {
       <BlogSection />
 
       {/* 🎁 Bonuses section */}
-      <BonusesSection promoTickets={promoTickets} />
+      <div className="pb-10 md:pb-20 lg:px-8">
+        <BonusesSection promoTickets={promoTickets} />
+      </div>
 
       <Banking />
     </>
