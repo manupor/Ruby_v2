@@ -56,7 +56,7 @@ export default function RacebookPage() {
         </div>
 
         {/* Content positioned in center with adjusted styling */}
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 flex items-center justify-center mt-12">
           <div className="px-8 text-center">
             <h1 className="mb-1 text-[16px] font-medium tracking-wide text-white uppercase">
               BET THE TRACK WITH RUBYWAGER

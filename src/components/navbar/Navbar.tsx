@@ -141,7 +141,11 @@ export default function Navbar() {
               </div>
 
               {/* Why Join? section */}
-              <Link href="/why-ruby" className="block w-full">
+              <Link
+                href="/why-ruby"
+                className="block w-full"
+                onClick={() => setIsOpen(false)}
+              >
                 <div className="m-4 rounded-xl bg-[#1b1b1b] p-4 text-center">
                   <span className="text-xl font-bold text-white">
                     WHY JOIN?

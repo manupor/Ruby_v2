@@ -23,15 +23,15 @@ const promotions = [
   {
     title: 'Ruby rewards',
     icon: Gift,
-    content1: 'Claim your 10% insurance',
-    content2: 'Refer a friend and get up to',
-    footer: '$100 in bonus bets',
+    content1: 'Claim your 10% Insurance',
+    content2: 'During NFL season get 10% losses back weekly!',
+    footer: '',
   },
   {
     title: 'NCAA and NFL Football',
     icon: HandCoins,
-    content1: '20% Boost',
-    content2: 'For any 6+ team parlay',
+    content1: '20% Parlay payout BOOST!',
+    content2: 'Bet any 6 teamer and recieve an extra 20% if it cashes!',
     footer: '',
   },
 ]

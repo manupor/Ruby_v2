@@ -79,7 +79,7 @@ export default function CasinoPage() {
       <div className="container mx-auto max-w-4xl px-4 pt-20">
         <h1 className="mb-10 text-3xl font-bold">Ruby Wager Casino</h1>
         <section className="mb-16">
-          <p>
+          <p className="mb-4 text-sm sm:text-base">  
             Step into the thrilling world of Ruby Wager Casino, where big wins,
             fast payouts, and top-tier gaming await! Whether you love classic
             table games, high-stakes poker, or spinning the reels on the hottest

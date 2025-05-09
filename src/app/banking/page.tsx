@@ -128,6 +128,11 @@ export default function BankingPage() {
               withdrawals, please contact us directly to coordinate a custom
               arrangement.
             </p>
+            <p className="mb-4">
+              We offer 2 free payouts per week. After that, all payout methods
+              except crypto (which remains free) are subject to a $50 processing
+              fee per transaction.
+            </p>
             <p>
               <strong>Note:</strong> All withdrawals are subject to verification
               and compliance review. We prioritize fast and fair processing for

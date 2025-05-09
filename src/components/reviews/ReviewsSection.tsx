@@ -172,7 +172,7 @@ const ReviewsSection = () => {
             What Bettors Are Saying
           </h2>
           <p className="mx-auto max-w-2xl text-gray-400">
-            Ruby Wager has helped thousands of players experience the thrill of
+            Ruby Wager has helped players experience the thrill of
             sports betting with fast payouts and exceptional customer service.
           </p>
         </div>
