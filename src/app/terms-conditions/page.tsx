@@ -1,4 +1,3 @@
-import React from 'react'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -10,66 +9,21 @@ export default function TermsConditionsPage() {
   return (
     <>
       {/* Desktop hero section */}
-      <div className="relative hidden h-[600px] w-full overflow-hidden lg:block">
-        <div
-          className="h-full w-full"
-          style={{
-            backgroundImage: `url('/terms-conditions.png')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        >
-          {/* Content container positioned absolutely over the image */}
-          {/* <div className="absolute top-0 left-0 flex h-full w-full items-center">
-            <div className="container mx-auto w-full px-4 sm:px-6 lg:px-16">
-              <div className="mx-auto text-white sm:mx-0 md:text-left">
-                <h1 className="mb-2 text-[18px] font-bold tracking-tight uppercase text-shadow-lg md:text-[20px] lg:text-2xl">
-                  OFFICIAL TERMS & CONDITIONS
-                </h1>
-                <p className="mb-2 text-[30px]/10 font-black tracking-tight md:text-[36px] lg:text-6xl text-shadow-lg">
-                  Transparent. Detailed. Fair.
-                </p>
-                <h2 className="mb-6 text-[20px] font-bold uppercase text-shadow-lg md:text-1xl">
-                  The legal agreement between you and Ruby Wager.
-                </h2>
-                <button className="blink-strong rounded bg-red-600 px-6 py-3 text-lg font-bold text-white hover:bg-red-700">
-                  Agree & Continue
-                </button>
-              </div>
-            </div>
-          </div> */}
-        </div>
+      <div className="relative hidden w-full overflow-hidden lg:block">
+        <img
+          src="/terms-conditions.png"
+          alt="Terms and Conditions banner"
+          className="h-auto w-full"
+        />
       </div>
 
       {/* Mobile hero section */}
       <div className="relative w-full lg:hidden">
-        <div className="relative w-full">
-          <img
-            src="/terms-conditions-mobile.png"
-            alt="Terms and Conditions banner"
-            className="h-auto w-full"
-          />
-          {/* Dark overlay for better text visibility */}
-          {/* <div className="absolute inset-0 bg-black/50"></div> */}
-        </div>
-
-        {/* Content positioned in center with adjusted styling */}
-        {/* <div className="absolute inset-0 flex items-center justify-center">
-          <div className="px-8 text-center">
-            <h1 className="mb-1 text-[16px] font-medium tracking-wide text-white uppercase">
-              TERMS & CONDITIONS
-            </h1>
-            <p className="mb-1 text-[26px] leading-tight font-bold tracking-wide text-white">
-              Transparent. Detailed. Fair.
-            </p>
-            <h2 className="mb-6 text-[16px] font-medium tracking-wide text-white uppercase">
-              Our legal agreement
-            </h2>
-            <button className="blink-strong rounded bg-red-600 px-4 py-2 font-bold text-white hover:bg-red-700">
-              AGREE & CONTINUE
-            </button>
-          </div>
-        </div> */}
+        <img
+          src="/terms-conditions-mobile.png"
+          alt="Terms and Conditions banner"
+          className="h-auto w-full"
+        />
       </div>
 
       {/* Main content - keeping the original content */}
