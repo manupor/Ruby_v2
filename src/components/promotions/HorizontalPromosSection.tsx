@@ -1,6 +1,6 @@
-import React from 'react'
+import { Volleyball, Wallet } from 'lucide-react'
 import Link from 'next/link'
-import { Wallet, Volleyball } from 'lucide-react'
+import React from 'react'
 
 interface PromoCardProps {
   icon: React.ElementType
@@ -18,35 +18,56 @@ const PromoCard = ({
   backgroundImage,
 }: PromoCardProps) => {
   return (
-    <div
-      className="group blink-border relative overflow-hidden rounded-2xl border border-[#333] bg-cover bg-center p-6 text-white shadow-lg transition-all duration-300 hover:border-[#c19652] hover:shadow-xl"
-      style={{ backgroundImage: `url('${backgroundImage}')` }}
-    >
-      {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/50"></div>
+    <article className="overflow-hidden rounded-lg border border-gray-800 bg-[#1A1A1A] transition-transform duration-300 hover:-translate-y-2">
+      {/* Featured Image - Using aspect ratio container like blog cards */}
+      <Link href="/promotions" className="relative block">
+        <div
+          className="relative w-full overflow-hidden"
+          style={{ paddingBottom: '56.25%' }} // 16:9 aspect ratio
+        >
+          <img
+            src={backgroundImage}
+            alt={title}
+            className="absolute top-0 left-0 h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+          />
+          {/* Dark overlay for better text visibility */}
+          <div className="absolute inset-0 bg-black/40"></div>
+          
+          {/* Icon overlay */}
+          <div className="absolute top-4 left-4">
+            <Icon
+              size={40}
+              className="text-[#c19652] animate-pulse"
+            />
+          </div>
+        </div>
+      </Link>
 
-      <div className="relative z-10 flex flex-col items-center space-y-4 text-center">
-        <Icon
-          size={48}
-          className="animate-pulse text-[#c19652] transition-transform duration-300 group-hover:scale-110"
-        />
-        <div className="space-y-2">
-          <h3 className="text-shadow text-xl font-extrabold text-[#c19652] md:text-2xl">
+      {/* Content */}
+      <div className="p-6">
+        <Link href="/promotions">
+          <h3 className="mb-3 text-xl font-bold text-white transition-colors hover:text-red-500">
             {title}
           </h3>
-          <p className="text-md font-bold text-shadow-sm md:text-lg">
-            {subtitle}
-          </p>
-          <p className="text-sm text-gray-300 text-shadow-sm">{description}</p>
-        </div>
-        <Link
-          href="/promotions"
-          className="mt-2 inline-block animate-pulse rounded-full bg-[#c19652] px-5 py-2 text-sm font-semibold text-black uppercase transition hover:bg-[#d7af5b]"
-        >
-          CLAIM NOW
         </Link>
+        <p className="mb-2 text-sm font-semibold text-[#c19652]">
+          {subtitle}
+        </p>
+        <p className="mb-4 text-sm text-gray-400">
+          {description}
+        </p>
+
+        {/* CTA Button */}
+        <div className="flex justify-center">
+          <Link
+            href="/promotions"
+            className="rounded-md bg-red-600 px-6 py-3 font-medium text-white transition-colors hover:bg-red-700"
+          >
+            CLAIM NOW
+          </Link>
+        </div>
       </div>
-    </div>
+    </article>
   )
 }
 
@@ -72,7 +93,7 @@ const HorizontalPromosSection = () => {
     <div className="container mx-auto px-4 pb-10 md:pb-20 lg:px-8">
       <div className="mt-8 md:mt-16">
         {/* Grid: 1 column on mobile, 2 columns on larger screens */}
-        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
+        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
           {promos.map((promo, index) => (
             <PromoCard
               key={index}
