@@ -112,7 +112,7 @@ const HeroHome = () => {
           </div>
 
           {/* Navigation dots at bottom */}
-          <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 transform space-x-2">
+          <div className="absolute bottom-1 left-1/2 flex -translate-x-1/2 transform space-x-2">
             {heros.map((_, index) => (
               <button
                 key={index}
