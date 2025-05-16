@@ -46,9 +46,16 @@ export default function HelpPage() {
 
           {/* Content positioned at bottom left */}
           <div className="absolute -bottom-6 flex w-full items-center justify-center">
-            <button className="blink-strong rounded bg-red-600 px-4 py-2 font-bold text-white hover:bg-red-700">
-              Contact Support
-            </button>
+            <div className="container mx-auto w-full px-4 sm:px-6 lg:px-16">
+              <div className="mx-auto text-center">
+                <h1 className="mb-2 text-[16px] font-extrabold tracking-tight uppercase text-shadow-lg/30">
+                  From Signup to Cashout, <br /> We've Got You
+                </h1>
+                <button className="blink-strong rounded bg-red-600 px-4 py-2 font-bold text-white hover:bg-red-700">
+                  Contact Support
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
