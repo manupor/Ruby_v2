@@ -1,7 +1,5 @@
-import React from 'react'
+import { CreditCard, Football, Gift, Lightning } from '@phosphor-icons/react'
 import Link from 'next/link'
-import Image from 'next/image'
-import { Football, CreditCard, Gift, Lightning } from '@phosphor-icons/react'
 
 const BetSmarterSection = () => {
   return (

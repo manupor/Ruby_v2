@@ -1,4 +1,4 @@
-import React from 'react'
+import HeroSection from '@/components/hero/HeroSection'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -10,23 +10,16 @@ export const metadata: Metadata = {
 export default function WhyRubyPage() {
   return (
     <>
-      {/* Desktop hero section */}
-      <div className="relative hidden w-full overflow-hidden lg:block">
-        <img
-          src="/why-ruby.png"
-          alt="Why Ruby Wager banner"
-          className="h-auto w-full"
-        />
-      </div>
-
-      {/* Mobile hero section */}
-      <div className="relative w-full lg:hidden">
-        <img
-          src="/why-ruby-mobile.png"
-          alt="Why Ruby Wager banner"
-          className="h-auto w-full"
-        />
-      </div>
+      <HeroSection
+        title=""
+        subtitle=""
+        description=""
+        buttonText=""
+        buttonLink="/contact"
+        desktopImage="/why-ruby.png"
+        mobileImage="/why-ruby-mobile.png"
+        buttonVariant="default"
+      />
 
       {/* Main content - keeping the original content */}
       <div className="container mx-auto max-w-4xl px-4 py-20">

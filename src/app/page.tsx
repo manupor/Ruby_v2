@@ -86,6 +86,11 @@ export default function Home() {
     <>
       <HeroHome />
 
+      {/* 🎁 Bonuses section */}
+      <div className="pb-10 md:pb-20 lg:px-8">
+        <BonusesSection promoTickets={promoTickets} />
+      </div>
+
       {/* 🎯 Promotions section with background image */}
       <PromotionsSection promotions={promotions} />
 
@@ -101,11 +106,6 @@ export default function Home() {
 
       {/* 📝 Blog section */}
       <BlogSection />
-
-      {/* 🎁 Bonuses section */}
-      <div className="pb-10 md:pb-20 lg:px-8">
-        <BonusesSection promoTickets={promoTickets} />
-      </div>
 
       <Banking />
     </>

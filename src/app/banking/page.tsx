@@ -1,5 +1,6 @@
 import React from 'react'
 import { Metadata } from 'next'
+import HeroSection from '@/components/hero/HeroSection'
 
 export const metadata: Metadata = {
   title: 'Banking & Payments | RubyWager',
@@ -10,25 +11,18 @@ export const metadata: Metadata = {
 export default function BankingPage() {
   return (
     <>
-      {/* Desktop hero section */}
-      <div className="relative hidden w-full overflow-hidden lg:block">
-        <img
-          src="/banking.png"
-          alt="Banking and Payments banner"
-          className="h-auto w-full"
-        />
-      </div>
+      <HeroSection
+        title="Bank on Your Terms"
+        subtitle="Crypto, cards, or cashouts"
+        description="Fund your play and get paid fast. No limits, no delays, no hassle."
+        buttonText="GET STARTED"
+        buttonLink="/join"
+        desktopImage="/banking.png"
+        mobileImage="/banking-mobile.png"
+        buttonVariant="brand"
+      />
 
-      {/* Mobile hero section */}
-      <div className="relative w-full lg:hidden">
-        <img
-          src="/banking-mobile.png"
-          alt="Banking and Payments banner"
-          className="h-auto w-full"
-        />
-      </div>
-
-      {/* Main content - keeping the original content */}
+      {/* Main content */}
       <div className="container mx-auto max-w-4xl px-4 py-20">
         <h1 className="mb-10 text-3xl font-bold">
           Banking & Payments at Ruby Wager

@@ -1,3 +1,4 @@
+import HeroSection from '@/components/hero/HeroSection'
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -8,23 +9,16 @@ export const metadata: Metadata = {
 export default function TermsConditionsPage() {
   return (
     <>
-      {/* Desktop hero section */}
-      <div className="relative hidden w-full overflow-hidden lg:block">
-        <img
-          src="/terms-conditions.png"
-          alt="Terms and Conditions banner"
-          className="h-auto w-full"
-        />
-      </div>
-
-      {/* Mobile hero section */}
-      <div className="relative w-full lg:hidden">
-        <img
-          src="/terms-conditions-mobile.png"
-          alt="Terms and Conditions banner"
-          className="h-auto w-full"
-        />
-      </div>
+      <HeroSection
+        title=""
+        subtitle=""
+        description=""
+        buttonText=""
+        buttonLink="/contact"
+        desktopImage="/terms-conditions.png"
+        mobileImage="/terms-conditions-mobile.png"
+        buttonVariant="default"
+      />
 
       {/* Main content - keeping the original content */}
       <div className="container mx-auto max-w-4xl px-4 py-20">

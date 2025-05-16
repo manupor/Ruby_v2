@@ -1,5 +1,6 @@
 import React from 'react'
 import { Metadata } from 'next'
+import HeroSection from '@/components/hero/HeroSection'
 
 export const metadata: Metadata = {
   title: 'Help | RubyWager',
@@ -9,53 +10,22 @@ export const metadata: Metadata = {
 export default function HelpPage() {
   return (
     <>
-      {/* Desktop hero section */}
-      <div className="relative hidden h-[600px] w-full overflow-hidden lg:block">
-        <div
-          className="h-full w-full"
-          style={{
-            backgroundImage: `url('/help.png')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        >
-          {/* Content container positioned absolutely over the image */}
-          <div className="absolute top-0 left-0 flex h-full w-full items-center">
-            <div className="container mx-auto w-full px-4 sm:px-6 lg:px-16">
-              <div className="mx-auto max-w-xl text-white sm:mx-0 md:text-left">
-                <h1 className="mb-2 text-[30px]/10 font-extrabold tracking-tight uppercase md:text-[36px] lg:text-6xl">
-                  From Signup to Cashout, <br /> We've Got You
-                </h1>
-                <button className="blink-strong mt-6 rounded bg-red-600 px-6 py-3 text-lg font-bold text-white hover:bg-red-700">
-                  Contact Support
-                </button>
-              </div>
-            </div>
+      <HeroSection
+        title=""
+        subtitle={
+          <div>
+            From Signup to Cashout, <br /> We've Got You
           </div>
-        </div>
-      </div>
+        }
+        description=""
+        buttonText="Contact Support"
+        buttonLink="/contact"
+        desktopImage="/help.png"
+        mobileImage="/help-mobile.jpg"
+        buttonVariant="default"
+      />
 
-      {/* Mobile hero section */}
-      <div className="relative w-full lg:hidden">
-        <div className="relative w-full">
-          <img
-            src="/help-mobile.jpg"
-            alt="Help and support banner"
-            className="h-auto w-full"
-          />
-          {/* Dark overlay for better text visibility */}
-          {/* <div className="absolute inset-0 bg-black/50"></div> */}
-
-          {/* Content positioned at bottom left */}
-          <div className="absolute -bottom-6 flex justify-center w-full items-center">
-            <button className="blink-strong rounded bg-red-600 px-4 py-2 font-bold text-white hover:bg-red-700">
-              Contact Support
-            </button>
-          </div>
-        </div>
-      </div>
-
-      {/* Body: texto completo de atención al cliente */}
+      {/* Body: customer support content */}
       <div className="container mx-auto max-w-4xl px-4 py-20 text-white">
         <section className="mb-10 space-y-6">
           <h2 className="text-3xl font-bold">

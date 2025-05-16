@@ -35,7 +35,7 @@ const PromotionsSection = ({ promotions }: any) => {
       {/* Mobile layout */}
       <div className="sm:hidden relative bg-black">
         {/* Title section with solid black background */}
-        <div className="w-full">
+        <div className="w-full hidden sm:flex">
           <h1 className="text-4xl font-bold text-white text-center py-4">Promotions</h1>
         </div>
         
