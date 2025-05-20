@@ -104,7 +104,7 @@ export default function Navbar() {
             >
               Login
             </Button>
-            <Link href="/join">
+            <Link href="wager.rubywager.com">
               <Button className="bg-[#FF003D] px-3 py-2 text-[12px] font-bold text-white uppercase transition hover:bg-[#e60036] sm:px-6 sm:text-2xl xl:py-6 xl:text-3xl">
                 Join Now
               </Button>
