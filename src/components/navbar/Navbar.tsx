@@ -1,12 +1,8 @@
 'use client'
 
-import LoginModal from '@/components/auth/LoginModal'
+import AuthModal from '@/components/auth/AuthModal'
 import { Button } from '@/components/ui/button'
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger
-} from '@/components/ui/sheet'
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet'
 import {
   Bank,
   Football,
@@ -14,7 +10,7 @@ import {
   List,
   Question,
   Spade,
-  Tag
+  Tag,
 } from '@phosphor-icons/react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -22,7 +18,13 @@ import * as React from 'react'
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false)
-  const [isLoginModalOpen, setIsLoginModalOpen] = React.useState(false)
+  const [authModalState, setAuthModalState] = React.useState<{
+    isOpen: boolean
+    activeTab: 'login' | 'register'
+  }>({
+    isOpen: false,
+    activeTab: 'login',
+  })
 
   const navItems = [
     {
@@ -67,7 +69,25 @@ export default function Navbar() {
 
   const handleLoginClick = (e: React.MouseEvent) => {
     e.preventDefault()
-    setIsLoginModalOpen(true)
+    setAuthModalState({
+      isOpen: true,
+      activeTab: 'login',
+    })
+  }
+
+  const handleJoinClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    setAuthModalState({
+      isOpen: true,
+      activeTab: 'register',
+    })
+  }
+
+  const closeAuthModal = () => {
+    setAuthModalState((prev) => ({
+      ...prev,
+      isOpen: false,
+    }))
   }
 
   return (
@@ -104,11 +124,12 @@ export default function Navbar() {
             >
               Login
             </Button>
-            <Link href="/join">
-              <Button className="bg-[#FF003D] px-3 py-2 text-[12px] font-bold text-white uppercase transition hover:bg-[#e60036] sm:px-6 sm:text-2xl xl:py-6 xl:text-3xl">
-                Join Now
-              </Button>
-            </Link>
+            <Button
+              onClick={handleJoinClick}
+              className="bg-[#FF003D] px-3 py-2 text-[12px] font-bold text-white uppercase transition hover:bg-[#e60036] sm:px-6 sm:text-2xl xl:py-6 xl:text-3xl"
+            >
+              Join Now
+            </Button>
 
             {/* Mobile menu trigger */}
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
@@ -132,18 +153,29 @@ export default function Navbar() {
                       onClick={(e) => {
                         e.preventDefault()
                         setIsOpen(false)
-                        setIsLoginModalOpen(true)
+                        setAuthModalState({
+                          isOpen: true,
+                          activeTab: 'login',
+                        })
                       }}
                       variant="outline"
                       className="border-white px-3 py-2 text-[12px] font-bold text-white uppercase hover:bg-white hover:text-black sm:px-6 sm:text-2xl xl:py-6 xl:text-3xl"
                     >
                       Login
                     </Button>
-                    <Link href="/join">
-                      <Button className="bg-[#FF003D] px-3 py-2 text-[12px] font-bold text-white uppercase transition hover:bg-[#e60036] sm:px-6 sm:text-2xl xl:py-6 xl:text-3xl">
-                        Join Now
-                      </Button>
-                    </Link>
+                    <Button
+                      onClick={(e) => {
+                        e.preventDefault()
+                        setIsOpen(false)
+                        setAuthModalState({
+                          isOpen: true,
+                          activeTab: 'register',
+                        })
+                      }}
+                      className="bg-[#FF003D] px-3 py-2 text-[12px] font-bold text-white uppercase transition hover:bg-[#e60036] sm:px-6 sm:text-2xl xl:py-6 xl:text-3xl"
+                    >
+                      Join Now
+                    </Button>
                   </div>
                 </div>
 
@@ -241,10 +273,11 @@ export default function Navbar() {
         </nav>
       </header>
 
-      {/* Login Modal */}
-      <LoginModal 
-        isOpen={isLoginModalOpen} 
-        onClose={() => setIsLoginModalOpen(false)} 
+      {/* Auth Modal */}
+      <AuthModal
+        isOpen={authModalState.isOpen}
+        onClose={closeAuthModal}
+        initialTab={authModalState.activeTab}
       />
     </>
   )
