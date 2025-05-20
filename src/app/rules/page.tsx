@@ -157,7 +157,7 @@ export default function RulesPage() {
         {/* Important section */}
         <div className="mx-auto mb-16 max-w-4xl">
           <h2 className="mb-6 text-center text-2xl font-bold">Important</h2>
-          <div className="mx-auto max-w-3xl text-gray-300">
+          <div className="mx-auto max-w-3xl text-gray-300 text-center">
             <p className="mb-4">
               When calculating rollover, only the lower amount of the wager is
               applied:

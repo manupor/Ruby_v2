@@ -86,7 +86,7 @@ export default function Navbar() {
               className="w-[130px] sm:w-[220px] xl:w-[280px]"
             />
             <Image
-              src="/You play, we pay.svg"
+              src="/you_play_we_pay.svg"
               alt="RubyWager Logo"
               width={220}
               height={80}
