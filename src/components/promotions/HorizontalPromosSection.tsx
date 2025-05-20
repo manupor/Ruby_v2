@@ -33,7 +33,7 @@ const PromoCard = ({
           <img
             src={backgroundImage}
             alt={title}
-            className="absolute top-0 left-0 h-full w-full object-cover transition-transform duration-500 hover:scale-105"
+            className="absolute top-0 left-0 h-full w-full object-cover object-top transition-transform duration-500 hover:scale-105"
           />
           {/* Dark overlay for better text visibility */}
           <div className="absolute inset-0 bg-black/40"></div>
