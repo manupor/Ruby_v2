@@ -1,5 +1,7 @@
+'use client'
+
+import { useAuth } from '@/context/AuthContext'
 import { Volleyball, Wallet } from 'lucide-react'
-import Link from 'next/link'
 import React from 'react'
 
 interface PromoCardProps {
@@ -8,6 +10,7 @@ interface PromoCardProps {
   subtitle: string
   description: string
   backgroundImage: string
+  onClaimClick: (e: React.MouseEvent) => void
 }
 
 const PromoCard = ({
@@ -16,11 +19,12 @@ const PromoCard = ({
   subtitle,
   description,
   backgroundImage,
+  onClaimClick,
 }: PromoCardProps) => {
   return (
     <article className="overflow-hidden rounded-lg border border-gray-800 bg-[#1A1A1A] transition-transform duration-300 hover:-translate-y-2">
       {/* Featured Image - Using aspect ratio container like blog cards */}
-      <Link href="/promotions" className="relative block">
+      <a href="#" onClick={onClaimClick} className="relative block">
         <div
           className="relative w-full overflow-hidden"
           style={{ paddingBottom: '56.25%' }} // 16:9 aspect ratio
@@ -32,39 +36,32 @@ const PromoCard = ({
           />
           {/* Dark overlay for better text visibility */}
           <div className="absolute inset-0 bg-black/40"></div>
-          
+
           {/* Icon overlay */}
           <div className="absolute top-4 left-4">
-            <Icon
-              size={40}
-              className="text-[#c19652] animate-pulse"
-            />
+            <Icon size={40} className="animate-pulse text-[#c19652]" />
           </div>
         </div>
-      </Link>
+      </a>
 
       {/* Content */}
       <div className="p-6">
-        <Link href="/promotions">
+        <a href="#" onClick={onClaimClick}>
           <h3 className="mb-3 text-xl font-bold text-white transition-colors hover:text-red-500">
             {title}
           </h3>
-        </Link>
-        <p className="mb-2 text-sm font-semibold text-[#c19652]">
-          {subtitle}
-        </p>
-        <p className="mb-4 text-sm text-gray-400">
-          {description}
-        </p>
+        </a>
+        <p className="mb-2 text-sm font-semibold text-[#c19652]">{subtitle}</p>
+        <p className="mb-4 text-sm text-gray-400">{description}</p>
 
         {/* CTA Button */}
         <div className="flex justify-center">
-          <Link
-            href="/promotions"
+          <button
+            onClick={onClaimClick}
             className="rounded-md bg-red-600 px-6 py-3 font-medium text-white transition-colors hover:bg-red-700"
           >
             CLAIM NOW
-          </Link>
+          </button>
         </div>
       </div>
     </article>
@@ -72,6 +69,13 @@ const PromoCard = ({
 }
 
 const HorizontalPromosSection = () => {
+  const { openRegister } = useAuth()
+
+  const handleClaimNowClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    openRegister()
+  }
+
   const promos = [
     {
       icon: Wallet,
@@ -102,6 +106,7 @@ const HorizontalPromosSection = () => {
               subtitle={promo.subtitle}
               description={promo.description}
               backgroundImage={promo.backgroundImage}
+              onClaimClick={handleClaimNowClick}
             />
           ))}
         </div>

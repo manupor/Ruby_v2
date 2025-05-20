@@ -1,7 +1,16 @@
+'use client'
+
+import { useAuth } from '@/context/AuthContext'
 import { CreditCard, Football, Gift, Lightning } from '@phosphor-icons/react'
-import Link from 'next/link'
 
 const BetSmarterSection = () => {
+  const { openRegister } = useAuth()
+
+  const handleJoinNowClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    openRegister()
+  }
+
   return (
     <section className="bg-black px-4 py-16 text-white">
       {/* Main heading */}
@@ -74,11 +83,12 @@ const BetSmarterSection = () => {
         <p className="mb-8 text-lg text-gray-300">
           Sign up in under 60 seconds and claim your welcome bonus today.
         </p>
-        <Link href="/join">
-          <button className="rounded-full bg-[#FF003D] px-10 py-4 text-xl font-bold text-white transition-colors hover:bg-[#E00034]">
-            JOIN NOW
-          </button>
-        </Link>
+        <button
+          className="rounded-full bg-[#FF003D] px-10 py-4 text-xl font-bold text-white transition-colors hover:bg-[#E00034]"
+          onClick={handleJoinNowClick}
+        >
+          JOIN NOW
+        </button>
       </div>
     </section>
   )

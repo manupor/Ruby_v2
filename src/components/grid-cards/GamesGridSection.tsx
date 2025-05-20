@@ -1,7 +1,16 @@
+'use client'
+
+import { useAuth } from '@/context/AuthContext'
 import Image from 'next/image'
-import Link from 'next/link'
 
 const GamesGridSection = () => {
+  const { openRegister } = useAuth()
+
+  const handlePlayNowClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    openRegister()
+  }
+
   const games = [
     { id: 1, image: '/game-cards/01.png', title: 'CHILLI FIESTA' },
     { id: 2, image: '/game-cards/02.png', title: 'PHO SHO' },
@@ -55,14 +64,25 @@ const GamesGridSection = () => {
 
             {/* Play Now Button - Positioned half over card, half out */}
             <div className="absolute inset-x-0 -bottom-2 z-10 flex translate-y-1/2 transform justify-center md:-bottom-3">
-              <Link href="#">
-                <button className="cursor-pointer rounded-full bg-[#ff003d] px-3 py-1 text-[8px] font-bold text-white uppercase shadow-lg transition hover:bg-red-600 md:px-8 md:py-2 md:text-sm">
-                  PLAY NOW
-                </button>
-              </Link>
+              <button
+                className="cursor-pointer rounded-full bg-[#ff003d] px-3 py-1 text-[8px] font-bold text-white uppercase shadow-lg transition hover:bg-red-600 md:px-8 md:py-2 md:text-sm"
+                onClick={handlePlayNowClick}
+              >
+                PLAY NOW
+              </button>
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Extra "Play All Games" CTA */}
+      <div className="mt-10 text-center">
+        <button
+          className="rounded-full bg-[#ff003d] px-6 py-3 text-lg font-bold text-white uppercase shadow-lg transition hover:bg-red-600"
+          onClick={handlePlayNowClick}
+        >
+          PLAY ALL GAMES
+        </button>
       </div>
     </div>
   )

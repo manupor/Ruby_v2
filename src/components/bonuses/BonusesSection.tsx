@@ -1,6 +1,15 @@
-import Link from 'next/link'
+'use client'
+
+import { useAuth } from '@/context/AuthContext'
 
 const BonusesSection = ({ promoTickets }: any) => {
+  const { openRegister } = useAuth()
+
+  const handleMoreInfoClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    openRegister()
+  }
+
   return (
     <div className="container mx-auto px-4">
       <div className="panel my-10 md:my-20">
@@ -38,12 +47,13 @@ const BonusesSection = ({ promoTickets }: any) => {
                       {ticket.text3}
                     </p>
                   </div>
-                  <Link
-                    href="/promotions"
+                  <a
+                    href="#"
+                    onClick={handleMoreInfoClick}
                     className="mt-1 inline-block rounded-full bg-black px-3 py-1 text-[10px] font-semibold text-white uppercase transition hover:bg-gray-900 md:mt-2 md:px-5 md:py-2 md:text-sm"
                   >
                     MORE INFO
-                  </Link>
+                  </a>
                 </div>
               </div>
             )

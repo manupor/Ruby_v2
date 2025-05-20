@@ -1,14 +1,9 @@
+'use client'
+
 import BonusesSection from '@/components/bonuses/BonusesSection'
 import HeroSection from '@/components/hero/HeroSection'
 import HorizontalPromosSection from '@/components/promotions/HorizontalPromosSection'
 import { Gift, HandCoins, PercentCircle, Wallet } from 'lucide-react'
-import { Metadata } from 'next'
-
-export const metadata: Metadata = {
-  title: 'Promotions & Bonuses | RubyWager',
-  description:
-    'Discover exclusive promotions, deposit bonuses, and special offers to maximize your bankroll at Ruby Wager',
-}
 
 const promoTickets = [
   {
@@ -27,7 +22,12 @@ export default function PromotionsPage() {
     <>
       <HeroSection
         title="Unlock the Action"
-        subtitle={<div>Exclusive bonuses,<br /> boosted odds</div>}
+        subtitle={
+          <div>
+            Exclusive bonuses,
+            <br /> boosted odds
+          </div>
+        }
         description="and VIP rewards—only at Ruby Wager. Play smart. Win big."
         buttonText="CLAIM BONUS"
         buttonLink="/join"

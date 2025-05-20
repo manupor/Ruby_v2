@@ -1,7 +1,16 @@
+'use client'
+
+import { useAuth } from '@/context/AuthContext'
 import Image from 'next/image'
-import Link from 'next/link'
 
 const RacebookFeatures = () => {
+  const { openRegister } = useAuth()
+
+  const handleJoinNowClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    openRegister()
+  }
+
   return (
     <section className="bg-black px-4 py-16 text-white">
       {/* Main heading */}
@@ -102,11 +111,12 @@ const RacebookFeatures = () => {
         <p className="mb-8 text-lg text-gray-300">
           Join Ruby Wager today and experience premium horse racing action.
         </p>
-        <Link href="/join">
-          <button className="rounded-full bg-[#FF003D] px-10 py-4 text-xl font-bold text-white transition-colors hover:bg-[#E00034]">
-            JOIN NOW
-          </button>
-        </Link>
+        <button
+          className="rounded-full bg-[#FF003D] px-10 py-4 text-xl font-bold text-white transition-colors hover:bg-[#E00034]"
+          onClick={handleJoinNowClick}
+        >
+          JOIN NOW
+        </button>
       </div>
     </section>
   )
