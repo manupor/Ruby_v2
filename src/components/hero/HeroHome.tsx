@@ -1,6 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
+import { useAuth } from '@/context/AuthContext'
 import { Gift, HandCoins, PercentCircle, Wallet } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
@@ -9,6 +10,7 @@ const HeroHome = () => {
   const [offsetY, setOffsetY] = useState(0)
   const [windowWidth, setWindowWidth] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
+  const { openRegister } = useAuth()
 
   const heros = [
     {
@@ -77,6 +79,11 @@ const HeroHome = () => {
     setCurrentSlide(index)
   }
 
+  const handleJoinNowClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    openRegister()
+  }
+
   return (
     <div className="relative w-full">
       {/* Mobile-specific layout */}
@@ -105,7 +112,12 @@ const HeroHome = () => {
               <h2 className="mb-6 text-[16px] font-medium tracking-wide text-white uppercase">
                 {heros[currentSlide].text3}
               </h2>
-              <Button variant="brand" size="lg" className="blink-strong">
+              <Button
+                variant="brand"
+                size="lg"
+                className="blink-strong"
+                onClick={handleJoinNowClick}
+              >
                 JOIN NOW
               </Button>
             </div>
@@ -157,6 +169,7 @@ const HeroHome = () => {
                     variant="brand"
                     size={windowWidth >= 1024 ? 'massive' : 'lg'}
                     className="blink-strong"
+                    onClick={handleJoinNowClick}
                   >
                     JOIN NOW
                   </Button>

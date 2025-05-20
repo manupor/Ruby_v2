@@ -1,12 +1,15 @@
-import React from 'react'
+'use client'
+
+import { useAuth } from '@/context/AuthContext'
 import { Metadata } from 'next'
 
-export const metadata: Metadata = {
-  title: 'Help | RubyWager',
-  description: 'Customer support and responsible gambling resources.',
-}
-
 export default function HelpPage() {
+  const { openRegister } = useAuth()
+
+  const handleContactSupportClick = () => {
+    openRegister()
+  }
+
   return (
     <>
       {/* Desktop hero section - with adjusted sizing */}
@@ -26,7 +29,10 @@ export default function HelpPage() {
                 <h1 className="mb-2 text-[30px]/10 font-extrabold tracking-tight uppercase md:text-[36px] lg:text-6xl">
                   From Signup to Cashout, <br /> We've Got You
                 </h1>
-                <button className="blink-strong mt-6 rounded bg-red-600 px-6 py-3 text-lg font-bold text-white hover:bg-red-700">
+                <button
+                  className="blink-strong mt-6 rounded bg-red-600 px-6 py-3 text-lg font-bold text-white hover:bg-red-700"
+                  onClick={handleContactSupportClick}
+                >
                   Contact Support
                 </button>
               </div>
@@ -51,7 +57,10 @@ export default function HelpPage() {
                 <h1 className="mb-2 text-[16px] font-extrabold tracking-tight uppercase text-shadow-lg/30">
                   From Signup to Cashout, <br /> We've Got You
                 </h1>
-                <button className="blink-strong rounded bg-red-600 px-4 py-2 font-bold text-white hover:bg-red-700">
+                <button
+                  className="blink-strong rounded bg-red-600 px-4 py-2 font-bold text-white hover:bg-red-700"
+                  onClick={handleContactSupportClick}
+                >
                   Contact Support
                 </button>
               </div>
@@ -101,6 +110,17 @@ export default function HelpPage() {
             At Ruby Wager, you're never just a number — you're part of the
             action.
           </p>
+
+          {/* Additional join CTA in content */}
+          <div className="mt-8 text-center">
+            <p className="mb-4 text-xl">Don't have an account yet?</p>
+            <button
+              className="blink-strong rounded bg-red-600 px-6 py-3 text-lg font-bold text-white hover:bg-red-700"
+              onClick={openRegister}
+            >
+              Join Now
+            </button>
+          </div>
         </section>
       </div>
     </>

@@ -1,10 +1,12 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
+import { useAuth } from '@/context/AuthContext'
 import { useState, useEffect } from 'react'
 
 export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0)
+  const { openRegister } = useAuth()
   const images = ['/hero/01.png', '/hero/02.png', '/hero/03.png']
 
   const heros = [
@@ -35,6 +37,11 @@ export default function Hero() {
     return () => clearInterval(interval)
   }, [images.length])
 
+  const handleJoinNowClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    openRegister()
+  }
+
   return (
     <div className="bg-primary">
       <div className="relative h-[400px] w-full overflow-hidden">
@@ -62,7 +69,12 @@ export default function Hero() {
                   {heros[index].text3}
                 </h2>
               </div>
-              <Button variant="brand" size="massive" className="blink-strong">
+              <Button
+                variant="brand"
+                size="massive"
+                className="blink-strong"
+                onClick={handleJoinNowClick}
+              >
                 JOIN NOW
               </Button>
             </div>

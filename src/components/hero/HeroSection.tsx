@@ -1,6 +1,6 @@
 'use client'
 
-import Link from 'next/link'
+import { useAuth } from '@/context/AuthContext'
 import { useEffect, useState } from 'react'
 
 interface HeroSectionProps {
@@ -8,7 +8,7 @@ interface HeroSectionProps {
   subtitle: any
   description: string
   buttonText: string
-  buttonLink: string
+  buttonLink?: string
   desktopImage: string
   mobileImage: string
   buttonVariant?: 'default' | 'brand' | 'outline'
@@ -26,6 +26,7 @@ const HeroSection = ({
   const [offsetY, setOffsetY] = useState(0)
   const [windowWidth, setWindowWidth] = useState(0)
   const [isMobile, setIsMobile] = useState(false)
+  const { openRegister } = useAuth()
 
   useEffect(() => {
     const handleScroll = () => setOffsetY(window.scrollY)
@@ -49,6 +50,11 @@ const HeroSection = ({
       window.removeEventListener('resize', checkMobile)
     }
   }, [])
+
+  const handleButtonClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    openRegister()
+  }
 
   return (
     <div className="relative w-full">
@@ -78,11 +84,12 @@ const HeroSection = ({
                   {description}
                 </h2>
                 {buttonText && (
-                  <Link href={buttonLink}>
-                    <button className="blink-strong rounded bg-red-600 px-6 py-3 text-lg font-bold text-white hover:bg-red-700">
-                      {buttonText}
-                    </button>
-                  </Link>
+                  <button
+                    className="blink-strong rounded bg-red-600 px-6 py-3 text-lg font-bold text-white hover:bg-red-700 cursor-pointer"
+                    onClick={handleButtonClick}
+                  >
+                    {buttonText}
+                  </button>
                 )}
               </div>
             </div>
@@ -111,11 +118,12 @@ const HeroSection = ({
               {description}
             </h2>
             {buttonText && (
-              <Link href={buttonLink}>
-                <button className="blink-strong rounded bg-red-600 px-4 py-2 font-bold text-white hover:bg-red-700">
-                  {buttonText}
-                </button>
-              </Link>
+              <button
+                className="blink-strong rounded bg-red-600 px-4 py-2 font-bold text-white hover:bg-red-700"
+                onClick={handleButtonClick}
+              >
+                {buttonText}
+              </button>
             )}
           </div>
         </div>

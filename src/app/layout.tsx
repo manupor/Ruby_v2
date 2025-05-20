@@ -8,6 +8,7 @@ import './globals.css'
 import Header from '@/components/header/Header'
 import Footer from '@/components/footer/Footer'
 import FloatingHelpButton from '@/components/floating-button/FloatingHelpButton'
+import { AuthProvider } from '@/context/AuthContext'
 
 // Google Fonts
 const geistSans = Geist({
@@ -42,10 +43,12 @@ export default function RootLayout({
       <body
         className={`dark ${geistSans.variable} ${geistMono.variable} ${fontThunder.variable} antialiased`}
       >
-        <Header />
-        <main role="main">{children}</main>
-        <FloatingHelpButton />
-        <Footer />
+        <AuthProvider>
+          <Header />
+          <main role="main">{children}</main>
+          <FloatingHelpButton />
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   )
