@@ -1,10 +1,10 @@
 'use client'
 
+import { useState } from 'react'
 import { Button } from '../ui/button'
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '../ui/dialog'
 import { Input } from '../ui/input'
 import { Label } from '../ui/label'
-import { useState } from 'react'
 
 interface AuthModalProps {
   isOpen: boolean
@@ -261,6 +261,8 @@ export default function AuthModal({
                     placeholder="Promo Code"
                   />
                 </div>
+
+                <input type="hidden" name="inet" value="rubywager" />
 
                 <div className="mt-2 text-xs text-gray-400">
                   <p className="leading-tight">
