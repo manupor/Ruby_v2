@@ -1,3 +1,5 @@
+'use client'
+
 import HeroSection from '@/components/hero/HeroSection'
 import SportsRulesContent from '@/components/sports/SportsRulesContent'
 import { Metadata } from 'next'
