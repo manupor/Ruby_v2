@@ -1,3 +1,5 @@
+'use client'
+
 import HeroSection from '@/components/hero/HeroSection'
 import { Metadata } from 'next'
 
@@ -20,174 +22,104 @@ export default function RulesPage() {
         buttonVariant="default"
       />
 
-      {/* Main content - keeping the original content */}
       <div className="container mx-auto max-w-4xl px-4 py-20">
         <h1 className="mb-10 text-3xl font-bold">Rules</h1>
-        <section className="mb-16">
-          <p>
-            At Ruby Wager, we are committed to providing a safe, secure, and
-            responsible gaming environment for all of our players. While sports
-            betting is an exciting form of entertainment, we recognize the
-            importance of playing responsibly and maintaining control over your
-            gambling activities.
-          </p>
-        </section>
+
+        {/* SPORTS WAGERING RULES SECTION */}
         <h2 className="text-brand mb-6 text-2xl font-bold">
-          Responsible Gambling Guidelines
-        </h2>
-        <section className="mb-10">
-          <h3 className="mb-6 text-xl font-semibold">
-            Responsible Gambling Guidelines
-          </h3>
-          <div className="rounded-lg border border-[#ff5f5f5] p-6">
-            <p className="mb-4">
-              We encourage all players to follow these responsible gaming
-              practices:
-            </p>
-            <ul className="list-disc space-y-2 pl-6">
-              <li>
-                Set a Budget – Never bet more than you can afford to lose.
-              </li>
-              <li>
-                Manage Your Time – Keep track of how much time you spend
-                gambling.
-              </li>
-              <li>
-                Avoid Chasing Losses – Losing is part of the game; don't try to
-                recover losses with bigger bets.
-              </li>
-              <li>
-                Keep It Fun – Gambling should be a form of entertainment, not a
-                financial solution.
-              </li>
-              <li>
-                Know When to Take a Break – If betting stops being fun, consider
-                stepping away for a while.
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <section className="mb-10">
-          <h3 className="mb-6 text-xl font-semibold">
-            Self-Exclusion & Account Limits
-          </h3>
-          <div className="rounded-lg border border-[#ff5f5f5] p-6">
-            <p className="mb-4">
-              If you feel that gambling is becoming a problem, we offer the
-              following options:
-            </p>
-            <ul className="list-disc space-y-2 pl-6">
-              <li>
-                Temporary Account Suspension – Take a break from betting for a
-                set period.
-              </li>
-              <li>
-                Self-Exclusion – Restrict your access to your account for an
-                extended time.
-              </li>
-              <li>
-                Deposit Limits – Set a maximum deposit limit to help control
-                spending.
-              </li>
-            </ul>
-            <p>
-              To request any of these options, contact our Customer Support Team
-              via live chat, email, WhatsApp, or iMessage.
-            </p>
-          </div>
-        </section>
-
-        <section className="mb-10">
-          <h3 className="mb-6 text-xl font-semibold">
-            Recognizing Problem Gambling
-          </h3>
-          <div className="rounded-lg border border-[#ff5f5f5] p-6">
-            <p className="mb-4">
-              If you or someone you know is struggling with gambling addiction,
-              look out for these warning signs:
-            </p>
-            <ul className="list-disc space-y-2 pl-6">
-              <li>Betting more than intended or beyond financial means.</li>
-              <li>
-                Feeling stressed, anxious, or guilty about gambling losses.
-              </li>
-              <li>Hiding gambling activity from family or friends.</li>
-              <li>
-                Borrowing money to gamble or struggling financially due to
-                betting.
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <section className="mb-10">
-          <h3 className="mb-6 text-xl font-semibold">Need Help?</h3>
-          <div className="rounded-lg border border-[#ff5f5f5] p-6">
-            <p className="mb-4">
-              If you believe you have a gambling problem, we encourage you to
-              seek professional assistance. The following organizations offer
-              confidential support and resources:
-            </p>
-            <ul className="list-disc space-y-2 pl-6">
-              <li>
-                Gamblers Anonymous (GA) –{' '}
-                <a
-                  className="text-brand-dark underline-offset-4 hover:underline"
-                  href="http://www.gamblersanonymous.org"
-                  target="_blank"
-                >
-                  www.gamblersanonymous.org
-                </a>
-              </li>
-              <li>
-                National Council on Problem Gambling (NCPG) –{' '}
-                <a
-                  className="text-brand-dark underline-offset-4 hover:underline"
-                  href="http://www.ncpgambling.org"
-                  target="_blank"
-                >
-                  www.ncpgambling.org
-                </a>
-              </li>
-              <li>
-                BeGambleAware –{' '}
-                <a
-                  className="text-brand-dark underline-offset-4 hover:underline"
-                  href="http://www.begambleaware.org"
-                  target="_blank"
-                >
-                  www.begambleaware.org
-                </a>
-              </li>
-            </ul>
-          </div>
-        </section>
-
-        <section className="mb-12">
-          <p>
-            At Ruby Wager, we take responsible gaming seriously. If you ever
-            need assistance or guidance, our support team is here to help. Play
-            smart, stay in control, and enjoy the game!
-          </p>
-        </section>
-
-        <h2 className="text-brand mb-6 text-2xl font-bold">
-          Sports Betting Rules
+          Ruby Wager – Sports Wagering Rules & General House Rules
         </h2>
 
-        <section className="mb-10">
-          <h3 className="mb-6 text-xl font-semibold">Sports Betting Rules</h3>
-          <div className="rounded-lg border border-[#ff5f5f5] p-6">
-            <p className="mb-4">
-              At Ruby Wager, we strive to provide a fair and transparent betting
-              environment for all players. Below are the key sports betting
-              rules you need to know to ensure a smooth and enjoyable
-              experience. These rules apply to all bets placed at Ruby Wager,
-              and by placing a bet, you agree to adhere to these terms.
-            </p>
+        <section className="mb-10 space-y-10">
+          {/* 1. Wager Finality */}
+          <div className="flex gap-4">
+            <div dangerouslySetInnerHTML={{ __html: `
+              <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='currentColor'>
+                <path d='M12 2C6.49 2 2 6.48 2 12s4.49 10 10 10 10-4.48 10-10S17.51 2 12 2zm-1 15l-5-5 1.41-1.41L11 14.17l7.59-7.59L20 8l-9 9z' />
+              </svg>` }} />
+            <div>
+              <h3 className="text-xl font-semibold mb-2">1. Wager Finality</h3>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>All wagers are final once submitted and confirmed through the official Ruby Wager platform.</li>
+                <li>Double-check your plays before submitting. No edits or cancellations allowed after confirmation.</li>
+                <li>We are not responsible for user errors or misinterpretation of lines.</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* 2. Online Wagers Only */}
+          <div className="flex gap-4">
+            <div dangerouslySetInnerHTML={{ __html: `
+              <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='currentColor'>
+                <path d='M20 4H4v16h16V4zM6 6h12v12H6V6z' />
+              </svg>` }} />
+            <div>
+              <h3 className="text-xl font-semibold mb-2">2. Online Wagers Only</h3>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>Only wagers placed and confirmed via the platform will be honored.</li>
+                <li>Screenshots or verbal agreements are not valid.</li>
+                <li>Ensure your wager is logged and confirmed before the event begins.</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* 3. Wager Limits */}
+          <div className="flex gap-4">
+            <div dangerouslySetInnerHTML={{ __html: `
+              <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='currentColor'>
+                <path d='M12 2l-5.5 9h11zM2 20h20v2H2z' />
+              </svg>` }} />
+            <div>
+              <h3 className="text-xl font-semibold mb-2">3. Wager Limits</h3>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>We may set or modify wager limits at any time.</li>
+                <li>Larger bets may be subject to review or adjusted odds.</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* 4. Grading & Payouts */}
+          <div className="flex gap-4">
+            <div dangerouslySetInnerHTML={{ __html: `
+              <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='currentColor'>
+                <path d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 
+                5.42 4.42 3 7.5 3c1.74 0 3.41 1.01 4.5 
+                2.09C13.09 4.01 14.76 3 16.5 
+                3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 
+                11.54L12 21.35z'/>
+              </svg>` }} />
+            <div>
+              <h3 className="text-xl font-semibold mb-2">4. Grading & Payouts</h3>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>All bets are graded based on official results.</li>
+                <li>Payouts are processed promptly after results are final.</li>
+                <li>We do not recognize post-event stat changes or overturned results.</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* 5. Game Cancellations & Postponements */}
+          <div className="flex gap-4">
+            <div dangerouslySetInnerHTML={{ __html: `
+              <svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='currentColor'>
+                <path d='M19 3h-1V1h-2v2H8V1H6v2H5c-1.1 0-2 
+                .9-2 2v15c0 1.1.9 2 2 2h14c1.1 
+                0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 
+                17H5V9h14v11zm0-13H5V5h14v2z' />
+              </svg>` }} />
+            <div>
+              <h3 className="text-xl font-semibold mb-2">5. Game Cancellations & Postponements</h3>
+              <ul className="list-disc pl-6 space-y-1">
+                <li>Games must be played on the scheduled date.</li>
+                <li>If not completed within 24 hours, wagers will be voided unless noted.</li>
+              </ul>
+            </div>
           </div>
         </section>
+
+        <p className="mt-10">
+          By placing a wager, you acknowledge that you have read and agreed to all rules above. Ruby Wager reserves the right to update these rules at any time to ensure fairness and compliance with industry standards.
+        </p>
       </div>
     </>
   )
