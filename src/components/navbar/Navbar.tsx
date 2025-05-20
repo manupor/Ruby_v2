@@ -232,7 +232,7 @@ export default function Navbar() {
             </button>
             <form
               id="login"
-              action="https://wager.DOMAINHERE/redirectlogin.php"
+              action="wager.rubywager.com"
               method="post"
               className="space-y-4"
             >
