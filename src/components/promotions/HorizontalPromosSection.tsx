@@ -83,8 +83,8 @@ const HorizontalPromosSection = () => {
     {
       icon: Volleyball,
       title: 'NFL Weekly Insurance – 10% Freeplay',
-      subtitle: 'Get 10% back as freeplay every Monday',
-      description: 'on your NFL losses.',
+      subtitle: 'Get 10% back as freeplay every Monday on your NFL losses.',
+      description: '',
       backgroundImage: '/cajita_02.png',
     },
   ]
