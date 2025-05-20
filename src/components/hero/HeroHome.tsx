@@ -2,7 +2,6 @@
 
 import { Button } from '@/components/ui/button'
 import { useAuth } from '@/context/AuthContext'
-import { Gift, HandCoins, PercentCircle, Wallet } from 'lucide-react'
 import { useEffect, useState } from 'react'
 
 const HeroHome = () => {
@@ -97,13 +96,13 @@ const HeroHome = () => {
               className="h-auto w-full"
             />
             {/* Dark overlay - increased opacity for better text visibility */}
-            <div className="absolute inset-0 bg-black/50"></div>
+            {/* <div className="absolute inset-0 bg-black/50"></div> */}
           </div>
 
           {/* Content positioned in center with adjusted styling */}
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="px-8 text-center">
-              <h1 className="mb-1 text-[16px] font-medium tracking-wide text-white uppercase">
+              {/* <h1 className="mb-1 text-[16px] font-medium tracking-wide text-white uppercase">
                 {heros[currentSlide].text1}
               </h1>
               <p className="mb-1 text-[26px] leading-tight font-bold tracking-wide text-white">
@@ -111,11 +110,11 @@ const HeroHome = () => {
               </p>
               <h2 className="mb-6 text-[16px] font-medium tracking-wide text-white uppercase">
                 {heros[currentSlide].text3}
-              </h2>
+              </h2> */}
               <Button
                 variant="brand"
                 size="lg"
-                className="blink-strong"
+                className="blink-strong translate-y-16"
                 onClick={handleJoinNowClick}
               >
                 JOIN NOW
