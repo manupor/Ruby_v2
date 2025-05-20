@@ -22,7 +22,7 @@ export default function LoginModal({ isOpen, onClose }: LoginModalProps) {
 
         <form
           id="login"
-          action="https://wager.DOMAINHERE/redirectlogin.php"
+          action="https://wager.rubywager.com/redirectlogin.php"
           method="post"
           className="mt-6 space-y-6"
         >
