@@ -1,192 +1,193 @@
-import React from 'react'
+import HeroSection from '@/components/hero/HeroSection'
 import { Metadata } from 'next'
-import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Bonus Terms & Rollover | RubyWager',
-  description: 'Bonus terms and rollover requirements for RubyWager platform',
+  title: 'Rules | RubyWager',
+  description: 'Official rules and guidelines for RubyWager platform',
 }
 
 export default function RulesPage() {
   return (
     <>
-      {/* Hero section with no text overlay */}
-      <div className="relative hidden w-full overflow-hidden lg:block">
-        <img
-          src="/sports-rules.png"
-          alt="Sports rules banner"
-          className="h-auto w-full"
-        />
-      </div>
+      <HeroSection
+        title=""
+        subtitle=""
+        description=""
+        buttonText=""
+        buttonLink="/contact"
+        desktopImage="/sports-rules.png"
+        mobileImage="/sports-rules-mobile.png"
+        buttonVariant="default"
+      />
 
-      {/* Mobile hero section */}
-      <div className="relative w-full lg:hidden">
-        <img
-          src="/sports-rules-mobile.png"
-          alt="Sports rules banner"
-          className="h-auto w-full"
-        />
-      </div>
-
-      {/* Main Content */}
-      <div className="bg-black px-4 py-16 text-white">
-        {/* Title and description */}
-        <div className="mx-auto mb-8 text-center">
-          <h1 className="mb-6 text-4xl font-bold md:text-5xl">
-            BONUS TERMS & ROLLOVER REQUIREMENTS
-          </h1>
-          <p className="mx-auto max-w-4xl text-lg leading-relaxed text-gray-300">
-            At RubyWager, all bonuses come with a rollover requirement that must
-            be met before any withdrawals can be processed. Here's how it works:
+      {/* Main content - keeping the original content */}
+      <div className="container mx-auto max-w-4xl px-4 py-20">
+        <h1 className="mb-10 text-3xl font-bold">Rules</h1>
+        <section className="mb-16">
+          <p>
+            At Ruby Wager, we are committed to providing a safe, secure, and
+            responsible gaming environment for all of our players. While sports
+            betting is an exciting form of entertainment, we recognize the
+            importance of playing responsibly and maintaining control over your
+            gambling activities.
           </p>
-        </div>
-
-        {/* Four card layout - matching racebook exact layout */}
-        <div className="mx-auto mb-16 grid max-w-6xl grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
-          {/* Card 1 */}
-          <div className="text-center">
-            <div className="mb-4 flex justify-center">
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: `<svg xmlns="http://www.w3.org/2000/svg" fill="#C8102E" viewBox="0 0 24 24" width="48" height="48">
-                  <circle cx="12" cy="12" r="10" stroke="none"/>
-                  <circle cx="12" cy="12" r="6" fill="white"/>
-                  <circle cx="12" cy="12" r="2" fill="#C8102E"/>
-                </svg>`,
-                }}
-              />
-            </div>
-            <h3 className="mb-3 text-xl font-bold">
-              How Rollover is Calculated
-            </h3>
-            <div className="text-gray-400">
-              <p className="mb-2">(Deposit + Freeplay) × Rollover Multiplier</p>
-
-              <p className="font-semibold text-white">Example:</p>
-              <ul className="pl-4 text-left">
-                <li>• Deposit: $1,000</li>
-                <li>• Freeplay Bonus: $2,000 (200%)</li>
-                <li>• Total: $3,000</li>
-                <li>• Rollover: 15x</li>
-                <li>
-                  • Requirement: $3,000 × 15 = $45,000 in qualifying wagers
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Card 2 */}
-          <div className="text-center">
-            <div className="mb-4 flex justify-center">
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#C8102E" stroke-width="2" viewBox="0 0 24 24" width="48" height="48">
-                  <path d="M4 6h16M4 12h10M4 18h8"/>
-                  <polyline points="14 12 16 14 20 10" stroke="#C8102E" stroke-width="2" fill="none"/>
-                </svg>`,
-                }}
-              />
-            </div>
-            <h3 className="mb-3 text-xl font-bold">
-              What Counts Toward Rollover
-            </h3>
-            <div className="text-gray-400">
-              <ul className="pl-4 text-left">
-                <li>• Straight wagers only</li>
-                <li>• Pre-game or halftime bets</li>
-                <li>• Wagers must be on different events</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Card 3 */}
-          <div className="text-center">
-            <div className="mb-4 flex justify-center">
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#C8102E" stroke-width="2" viewBox="0 0 24 24" width="48" height="48">
-                  <line x1="18" y1="6" x2="6" y2="18"/>
-                  <line x1="6" y1="6" x2="18" y2="18"/>
-                </svg>`,
-                }}
-              />
-            </div>
-            <h3 className="mb-3 text-xl font-bold">What Does NOT Count</h3>
-            <div className="text-gray-400">
-              <ul className="pl-4 text-left">
-                <li>• Live bets</li>
-                <li>• Parlays (except eligible 2-team Freeplay parlays)</li>
-                <li>• Teasers</li>
-                <li>• Horse racing or casino wagers</li>
-                <li>• Wagers on the same event</li>
-                <li>• Bets made using Freeplay</li>
-              </ul>
-            </div>
-          </div>
-
-          {/* Card 4 */}
-          <div className="text-center">
-            <div className="mb-4 flex justify-center">
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: `<svg xmlns="http://www.w3.org/2000/svg" fill="#C8102E" viewBox="0 0 24 24" width="48" height="48">
-                  <rect x="2" y="8" width="20" height="14" rx="2"/>
-                  <path d="M12 8V2M9 2c0 2 3 4 3 4s3-2 3-4" fill="none" stroke="white" stroke-width="2"/>
-                </svg>`,
-                }}
-              />
-            </div>
-            <h3 className="mb-3 text-xl font-bold">Freeplay Rules</h3>
-            <div className="text-gray-400">
-              <ul className="pl-4 text-left">
-                <li>• Freeplays are only valid on:</li>
-                <li className="pl-4">- Straight wagers</li>
-                <li className="pl-4">- 2-team parlays</li>
-                <li>
-                  • Freeplay winnings are withdrawable once rollover is
-                  completed
-                </li>
-                <li>
-                  • Wagers placed with Freeplay do not contribute to rollover
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        {/* Important section */}
-        <div className="mx-auto mb-16 max-w-4xl">
-          <h2 className="mb-6 text-center text-2xl font-bold">Important</h2>
-          <div className="mx-auto max-w-3xl text-gray-300 text-center">
+        </section>
+        <h2 className="text-brand mb-6 text-2xl font-bold">
+          Responsible Gambling Guidelines
+        </h2>
+        <section className="mb-10">
+          <h3 className="mb-6 text-xl font-semibold">
+            Responsible Gambling Guidelines
+          </h3>
+          <div className="rounded-lg border border-[#ff5f5f5] p-6">
             <p className="mb-4">
-              When calculating rollover, only the lower amount of the wager is
-              applied:
+              We encourage all players to follow these responsible gaming
+              practices:
             </p>
-            <ul className="mb-4 pl-4">
-              <li>• $1,900 to win $1,000 → $1,000 counts</li>
-              <li>• $1,000 to win $1,900 → $1,000 counts</li>
+            <ul className="list-disc space-y-2 pl-6">
+              <li>
+                Set a Budget – Never bet more than you can afford to lose.
+              </li>
+              <li>
+                Manage Your Time – Keep track of how much time you spend
+                gambling.
+              </li>
+              <li>
+                Avoid Chasing Losses – Losing is part of the game; don't try to
+                recover losses with bigger bets.
+              </li>
+              <li>
+                Keep It Fun – Gambling should be a form of entertainment, not a
+                financial solution.
+              </li>
+              <li>
+                Know When to Take a Break – If betting stops being fun, consider
+                stepping away for a while.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section className="mb-10">
+          <h3 className="mb-6 text-xl font-semibold">
+            Self-Exclusion & Account Limits
+          </h3>
+          <div className="rounded-lg border border-[#ff5f5f5] p-6">
+            <p className="mb-4">
+              If you feel that gambling is becoming a problem, we offer the
+              following options:
+            </p>
+            <ul className="list-disc space-y-2 pl-6">
+              <li>
+                Temporary Account Suspension – Take a break from betting for a
+                set period.
+              </li>
+              <li>
+                Self-Exclusion – Restrict your access to your account for an
+                extended time.
+              </li>
+              <li>
+                Deposit Limits – Set a maximum deposit limit to help control
+                spending.
+              </li>
             </ul>
             <p>
-              These terms are in place to ensure a fair, transparent, and
-              rewarding experience for all RubyWager players. Review your bonus
-              terms before betting and as always, your VIP host is here if you
-              need anything.
+              To request any of these options, contact our Customer Support Team
+              via live chat, email, WhatsApp, or iMessage.
             </p>
           </div>
-        </div>
+        </section>
 
-        {/* Call to action - exact match to racebook */}
-        <div className="text-center">
-          <h2 className="mb-4 text-3xl font-bold">Ready to Start Betting?</h2>
-          <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-300">
-            Join Ruby Wager today and take advantage of our exciting bonuses.
+        <section className="mb-10">
+          <h3 className="mb-6 text-xl font-semibold">
+            Recognizing Problem Gambling
+          </h3>
+          <div className="rounded-lg border border-[#ff5f5f5] p-6">
+            <p className="mb-4">
+              If you or someone you know is struggling with gambling addiction,
+              look out for these warning signs:
+            </p>
+            <ul className="list-disc space-y-2 pl-6">
+              <li>Betting more than intended or beyond financial means.</li>
+              <li>
+                Feeling stressed, anxious, or guilty about gambling losses.
+              </li>
+              <li>Hiding gambling activity from family or friends.</li>
+              <li>
+                Borrowing money to gamble or struggling financially due to
+                betting.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section className="mb-10">
+          <h3 className="mb-6 text-xl font-semibold">Need Help?</h3>
+          <div className="rounded-lg border border-[#ff5f5f5] p-6">
+            <p className="mb-4">
+              If you believe you have a gambling problem, we encourage you to
+              seek professional assistance. The following organizations offer
+              confidential support and resources:
+            </p>
+            <ul className="list-disc space-y-2 pl-6">
+              <li>
+                Gamblers Anonymous (GA) –{' '}
+                <a
+                  className="text-brand-dark underline-offset-4 hover:underline"
+                  href="http://www.gamblersanonymous.org"
+                  target="_blank"
+                >
+                  www.gamblersanonymous.org
+                </a>
+              </li>
+              <li>
+                National Council on Problem Gambling (NCPG) –{' '}
+                <a
+                  className="text-brand-dark underline-offset-4 hover:underline"
+                  href="http://www.ncpgambling.org"
+                  target="_blank"
+                >
+                  www.ncpgambling.org
+                </a>
+              </li>
+              <li>
+                BeGambleAware –{' '}
+                <a
+                  className="text-brand-dark underline-offset-4 hover:underline"
+                  href="http://www.begambleaware.org"
+                  target="_blank"
+                >
+                  www.begambleaware.org
+                </a>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section className="mb-12">
+          <p>
+            At Ruby Wager, we take responsible gaming seriously. If you ever
+            need assistance or guidance, our support team is here to help. Play
+            smart, stay in control, and enjoy the game!
           </p>
-          <Link href="/join">
-            <button className="rounded-full bg-[#FF003D] px-10 py-4 text-xl font-bold text-white transition-colors hover:bg-[#E00034]">
-              JOIN NOW
-            </button>
-          </Link>
-        </div>
+        </section>
+
+        <h2 className="text-brand mb-6 text-2xl font-bold">
+          Sports Betting Rules
+        </h2>
+
+        <section className="mb-10">
+          <h3 className="mb-6 text-xl font-semibold">Sports Betting Rules</h3>
+          <div className="rounded-lg border border-[#ff5f5f5] p-6">
+            <p className="mb-4">
+              At Ruby Wager, we strive to provide a fair and transparent betting
+              environment for all players. Below are the key sports betting
+              rules you need to know to ensure a smooth and enjoyable
+              experience. These rules apply to all bets placed at Ruby Wager,
+              and by placing a bet, you agree to adhere to these terms.
+            </p>
+          </div>
+        </section>
       </div>
     </>
   )
