@@ -18,8 +18,9 @@ export default function CasinoPage() {
         buttonText="PLAY NOW"
         buttonLink="/join"
         desktopImage="/casino.png"
-        mobileImage="/casino-mobile.png"
+        mobileImage="/hero/mobile/03.png"
         buttonVariant="brand"
+        hideTextOnMobile={true}
       />
 
       {/* Main content */}

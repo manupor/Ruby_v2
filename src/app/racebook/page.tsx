@@ -18,8 +18,9 @@ export default function RacebookPage() {
         buttonText="PLACE YOUR BETS NOW"
         buttonLink="/join"
         desktopImage="/racebook.png"
-        mobileImage="/racebook-mobile.png"
+        mobileImage="/hero/mobile/02.png"
         buttonVariant="default"
+        hideTextOnMobile={true}
       />
 
       <RacebookFeatures />

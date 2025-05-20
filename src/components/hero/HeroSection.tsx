@@ -12,6 +12,7 @@ interface HeroSectionProps {
   desktopImage: string
   mobileImage: string
   buttonVariant?: 'default' | 'brand' | 'outline'
+  hideTextOnMobile?: boolean
 }
 
 const HeroSection = ({
@@ -22,6 +23,7 @@ const HeroSection = ({
   buttonLink,
   desktopImage,
   mobileImage,
+  hideTextOnMobile = false,
 }: HeroSectionProps) => {
   const [offsetY, setOffsetY] = useState(0)
   const [windowWidth, setWindowWidth] = useState(0)
@@ -85,7 +87,7 @@ const HeroSection = ({
                 </h2>
                 {buttonText && (
                   <button
-                    className="blink-strong rounded bg-red-600 px-6 py-3 text-lg font-bold text-white hover:bg-red-700 cursor-pointer"
+                    className="blink-strong cursor-pointer rounded bg-red-600 px-6 py-3 text-lg font-bold text-white hover:bg-red-700"
                     onClick={handleButtonClick}
                   >
                     {buttonText}
@@ -102,24 +104,30 @@ const HeroSection = ({
         <div className="relative w-full">
           <img src={mobileImage} alt="Hero banner" className="h-auto w-full" />
           {/* Dark overlay for better text visibility */}
-          <div className="absolute inset-0 bg-black/50"></div>
+          {!hideTextOnMobile && (
+            <div className="absolute inset-0 bg-black/50"></div>
+          )}
         </div>
 
         {/* Content positioned in center with adjusted styling */}
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="px-8 text-center">
-            <h1 className="mb-1 text-[14px] font-medium tracking-wide text-white uppercase">
-              {title}
-            </h1>
-            <p className="mb-1 text-[20px] leading-tight font-bold tracking-wide text-white">
-              {subtitle}
-            </p>
-            <h2 className="mb-6 text-[14px] font-medium tracking-wide text-white uppercase">
-              {description}
-            </h2>
+            {!hideTextOnMobile && (
+              <>
+                <h1 className="mb-1 text-[14px] font-medium tracking-wide text-white uppercase">
+                  {title}
+                </h1>
+                <p className="mb-1 text-[20px] leading-tight font-bold tracking-wide text-white">
+                  {subtitle}
+                </p>
+                <h2 className="mb-6 text-[14px] font-medium tracking-wide text-white uppercase">
+                  {description}
+                </h2>
+              </>
+            )}
             {buttonText && (
               <button
-                className="blink-strong rounded bg-red-600 px-4 py-2 font-bold text-white hover:bg-red-700"
+                className={`blink-strong rounded bg-red-600 px-4 py-2 font-bold text-white hover:bg-red-700 ${hideTextOnMobile ? 'translate-y-16' : ''}`}
                 onClick={handleButtonClick}
               >
                 {buttonText}
