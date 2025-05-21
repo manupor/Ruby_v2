@@ -27,7 +27,7 @@ export default function NewsPage() {
               />
             </svg>
           </div>
-          <h2 className="mb-4 text-2xl font-bold">Under Construction</h2>
+          <h2 className="mb-4 text-2xl font-bold">Underr Construction</h2>
           <p className="mb-6 text-lg">
             Our newsroom is currently being built to bring you the latest
             updates, features, and insider information from Ruby Wager.
