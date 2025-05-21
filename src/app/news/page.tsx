@@ -1,51 +1,69 @@
+'use client'
+
 import { Metadata } from 'next'
+import Link from 'next/link'
+import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'News | RubyWager',
-  description: 'Latest news, updates, and announcements from RubyWager',
+  title: 'Blog | RubyWager',
+  description: 'Explore tips, updates, and the latest trends in sports and casino betting from RubyWager.',
 }
 
-export default function NewsPage() {
+const blogPosts = [
+  {
+    title: 'Top 5 Strategies to Maximize Your Casino Winnings',
+    excerpt: 'Learn how to make the most of your casino experience with these practical strategies that every player should know.',
+    image: '/blog-casino-winnings.jpg',
+    slug: '/blog/maximize-casino-winnings',
+    date: 'May 21, 2025',
+  },
+  {
+    title: 'Beginner’s Guide to Sports Betting',
+    excerpt: 'New to sports betting? This guide covers the fundamentals so you can bet smarter and enjoy the game.',
+    image: '/blog-sports-guide.jpg',
+    slug: '/blog/sports-betting-guide',
+    date: 'May 18, 2025',
+  },
+  {
+    title: 'What’s New on RubyWager: May Highlights',
+    excerpt: 'Check out the new features, bonuses, and campaigns launching this month at RubyWager.',
+    image: '/blog-may-highlights.jpg',
+    slug: '/blog/may-updates',
+    date: 'May 15, 2025',
+  },
+]
+
+export default function BlogPage() {
   return (
-    <div className="container mx-auto max-w-4xl px-4 py-20">
-      {/* Under construction section */}
-      <section className="mb-16">
-        <div className="rounded-lg border border-[#ff5f5f5] bg-black/5 p-8 text-center">
-          <div className="mb-6">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="mx-auto h-20 w-20 text-[#ff5f5f]"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+    <div className="container mx-auto max-w-6xl px-4 py-20">
+      <h1 className="mb-12 text-4xl font-extrabold text-center text-white">RubyWager Blog</h1>
+      <p className="mb-16 text-center text-lg text-gray-300 max-w-2xl mx-auto">
+        Stay ahead of the game with insights, updates, and tips from the RubyWager team. Dive into our latest articles and get the edge you need.
+      </p>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        {blogPosts.map((post) => (
+          <Link
+            key={post.slug}
+            href={post.slug}
+            className="group rounded-2xl bg-zinc-900 hover:bg-zinc-800 transition duration-300 shadow-md hover:shadow-lg overflow-hidden"
+          >
+            <div className="relative h-52 w-full overflow-hidden">
+              <Image
+                src={post.image}
+                alt={post.title}
+                fill
+                className="object-cover group-hover:scale-105 transition-transform duration-300"
               />
-            </svg>
-          </div>
-          <h2 className="mb-4 text-2xl font-bold">Underr Construction</h2>
-          <p className="mb-6 text-lg">
-            Our newsroom is currently being built to bring you the latest
-            updates, features, and insider information from Ruby Wager.
-          </p>
-          <p className="mb-8 text-lg">
-            Stay tuned for exciting news, announcements, and exclusive content
-            coming soon!
-          </p>
-          <div className="flex justify-center space-x-4">
-            <a
-              href="/"
-              className="blink-strong rounded bg-red-600 px-6 py-3 font-bold text-white hover:bg-red-700"
-            >
-              Back to Home
-            </a>
-          </div>
-        </div>
-      </section>
+            </div>
+            <div className="p-6">
+              <h2 className="mb-2 text-xl font-bold text-white group-hover:text-gold">{post.title}</h2>
+              <p className="mb-4 text-gray-400 text-sm">{post.date}</p>
+              <p className="text-gray-300 text-base leading-relaxed">{post.excerpt}</p>
+            </div>
+          </Link>
+        ))}
+      </div>
     </div>
   )
 }
