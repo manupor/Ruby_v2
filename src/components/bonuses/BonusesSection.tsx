@@ -29,7 +29,7 @@ const BonusesSection = ({ promoTickets }: any) => {
             return (
               <div
                 key={index}
-                className="group rounded-xl border border-[#660418] bg-[url('public/125%.png')] bg-cover bg-center p-2 text-white shadow-md transition-all duration-300 hover:border-[#ff073a] hover:shadow-xl md:rounded-2xl md:p-6"
+                className="group rounded-xl border border-[#660418] bg-[url('/bonus-card.png')] bg-cover bg-center p-2 text-white shadow-md transition-all duration-300 hover:border-[#ff073a] hover:shadow-xl md:rounded-2xl md:p-6"
               >
                 <div className="flex flex-col items-center space-y-1 text-center md:space-y-4">
                   <Icon
