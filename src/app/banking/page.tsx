@@ -20,6 +20,7 @@ export default function BankingPage() {
         desktopImage="/banking.png"
         mobileImage="/banking-mobile.png"
         buttonVariant="brand"
+        hideTextOnMobile={true}
       />
 
       {/* Main content */}

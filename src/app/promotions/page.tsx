@@ -3,7 +3,7 @@
 import BonusesSection from '@/components/bonuses/BonusesSection'
 import HeroSection from '@/components/hero/HeroSection'
 import HorizontalPromosSection from '@/components/promotions/HorizontalPromosSection'
-import { Gift, HandCoins, PercentCircle, Wallet } from 'lucide-react'
+import { Gift, PercentCircle, Wallet } from 'lucide-react'
 
 const promoTickets = [
   {
@@ -14,7 +14,7 @@ const promoTickets = [
   },
   { icon: Gift, text1: '200%', text2: 'Signup Bonus', text3: 'Free Play' },
   { icon: Wallet, text1: '20%', text2: 'Cash Bonus', text3: 'Bonus' },
-  { icon: HandCoins, text1: '$25', text2: 'No Deposit', text3: 'Free Play' },
+  // { icon: HandCoins, text1: '$25', text2: 'No Deposit', text3: 'Free Play' },
 ]
 
 export default function PromotionsPage() {
@@ -34,6 +34,7 @@ export default function PromotionsPage() {
         desktopImage="/promotions.png"
         mobileImage="/promotions-mobile.png"
         buttonVariant="brand"
+        hideTextOnMobile={true}
       />
 
       {/* Main content */}

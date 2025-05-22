@@ -23,16 +23,29 @@ const BonusesSection = ({ promoTickets }: any) => {
         </div>
 
         {/* Grid: 2x2 on mobile, 2x2 on tablet, 4x1 on desktop */}
-        <div className="grid grid-cols-2 gap-3 md:grid-cols-2 md:gap-6 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-3 md:grid-cols-3 md:gap-6">
           {promoTickets.map((ticket: any, index: number) => {
             const Icon = ticket.icon
+
+            // Define background images for each card
+            const backgroundImages = [
+              '/bonus/125.png',
+              '/bonus/200.png',
+              '/bonus/20.png',
+            ]
+
+            const backgroundImage = backgroundImages[index] || '/bonus-card.png'
+
             return (
               <div
                 key={index}
-                className="group rounded-xl border border-[#660418] bg-[url('/bonus-card.png')] bg-cover bg-center p-2 text-white shadow-md transition-all duration-300 hover:border-[#ff073a] hover:shadow-xl md:rounded-2xl md:p-6"
+                className="h-[280px] group rounded-xl border border-[#660418] bg-cover bg-center p-2 text-white shadow-md transition-all duration-300 hover:border-[#ff073a] hover:shadow-xl md:rounded-2xl md:p-6"
+                style={{
+                  backgroundImage: `url('${backgroundImage}')`,
+                }}
               >
-                <div className="flex flex-col items-center space-y-1 text-center md:space-y-4">
-                  <Icon
+                <div className="h-full flex justify-center items-end space-y-1 text-center md:space-y-4">
+                  {/* <Icon
                     size={24}
                     className="stroke-white transition-transform duration-300 group-hover:scale-110 md:size-9"
                   />
@@ -46,7 +59,7 @@ const BonusesSection = ({ promoTickets }: any) => {
                     <p className="text-xs font-bold uppercase md:text-xl">
                       {ticket.text3}
                     </p>
-                  </div>
+                  </div> */}
                   <a
                     href="#"
                     onClick={handleMoreInfoClick}

@@ -78,7 +78,7 @@ const promoTickets = [
   },
   { icon: Gift, text1: '200%', text2: 'Signup Bonus', text3: 'Free Play' },
   { icon: Wallet, text1: '20%', text2: 'Cash Bonus', text3: 'Bonus' },
-  { icon: HandCoins, text1: '$25', text2: 'No Deposit', text3: 'Free Play' },
+  // { icon: HandCoins, text1: '$25', text2: 'No Deposit', text3: 'Free Play' },
 ]
 
 export default function Home() {
