@@ -23,7 +23,7 @@ const blogPosts = [
   },
   {
     slug: 'IPLTrophy-1.webp',
-    image: 'public/blogs/IPLTrophy-1.webp',
+    image: 'public/blogs/IPL_2025.png',
     title: 'IPL 2025: The Road to the Final Amidst Turmoil and Triumph',
     date: 'May 21, 2025',
     content: `
