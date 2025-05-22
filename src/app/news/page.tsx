@@ -32,7 +32,7 @@ const blogPosts = [
   },
   {
     slug: 'summer-boxing-2025',
-    image: 'blogs/014003-13558p-1440x550.jpg',
+    image: 'blogs/boxing bouts.png',
     title: 'Summer Slugfests: The Must-Watch Boxing Bouts of June and July 2025',
     date: 'May 21, 2025',
     content: `
