@@ -12,7 +12,11 @@ const blogPosts = [
   // Be sure to add the corresponding images into your public directory (e.g., blogs/french-open.jpg)
   {
     slug: 'french-open.jpg',
+    <img
+    src={post.image}
+    alt={post.title}
     className="w-full h-[450px] object-cover md:h-[550px] lg:h-[600px]"
+  />
     title: 'Clay Court Royalty: Can Iga Świątek and Carlos Alcaraz Defend Their French Open Crowns?',
     date: 'May 21, 2025',
     image: 'blogs/french-open.jpg',
