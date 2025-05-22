@@ -11,10 +11,10 @@ const blogPosts = [
   // French Open Article Image
   // Be sure to add the corresponding images into your public directory (e.g., blogs/french-open.jpg)
   {
-    slug: 'public/blogs/french-open.jpg',
+    slug: 'french-open.jpg',
     title: 'Clay Court Royalty: Can Iga Świątek and Carlos Alcaraz Defend Their French Open Crowns?',
     date: 'May 21, 2025',
-    image: 'public/blogs/french-open.jpg',
+    image: 'blogs/french-open.jpg',
     content: `
       <p>The 2025 French Open is shaping up to be one of the most anticipated tennis events in recent history, as the kings and queens of clay return to Roland Garros. Carlos Alcaraz, the Spanish prodigy, arrives as the defending champion after a spectacular 2024 performance that cemented his position as a future all-time great. His court coverage, drop shots, and mental fortitude have continued to improve, and he’s now the man to beat on clay. Meanwhile, Jannik Sinner, Daniil Medvedev, and Novak Djokovic remain looming threats, determined to disrupt his rise.</p>
       <p>On the women’s side, Iga Świątek is chasing her fourth consecutive French Open title — a feat that would elevate her status to legendary. Her dominance on clay is nearly unmatched in the modern era, with a game built around controlled aggression, tireless footwork, and pinpoint accuracy. However, she faces stiff competition from Aryna Sabalenka, Coco Gauff, and an emerging generation of fearless hitters. The women’s draw promises fireworks, and every match could be a potential upset in the making.</p>
@@ -23,7 +23,7 @@ const blogPosts = [
   },
   {
     slug: 'public/blogs/IPLTrophy-1.webp',
-    image: '/images/ipl-2025.jpg',
+    image: 'blogs/images/ipl-2025.jpg',
     title: 'IPL 2025: The Road to the Final Amidst Turmoil and Triumph',
     date: 'May 21, 2025',
     content: `
