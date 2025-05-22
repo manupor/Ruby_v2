@@ -12,15 +12,10 @@ const blogPosts = [
   // Be sure to add the corresponding images into your public directory (e.g., blogs/french-open.jpg)
   {
     slug: 'french-open.jpg',
-    <img
-    src={post.image}
-    alt={post.title}
-    className="w-full h-[450px] object-cover md:h-[550px] lg:h-[600px]"
-  />
     title: 'Clay Court Royalty: Can Iga Świątek and Carlos Alcaraz Defend Their French Open Crowns?',
     date: 'May 21, 2025',
-    image: 'blogs/french-open.jpg',
-    content: `
+    src="blogs/french-open.jpg" alt="Clay Court Royalty: Can Iga Świątek and Carlos Alcaraz Defend Their French Open Crowns?" class="w-full h-120 object-cover",
+    content:
       <p>The 2025 French Open is shaping up to be one of the most anticipated tennis events in recent history, as the kings and queens of clay return to Roland Garros. Carlos Alcaraz, the Spanish prodigy, arrives as the defending champion after a spectacular 2024 performance that cemented his position as a future all-time great. His court coverage, drop shots, and mental fortitude have continued to improve, and he’s now the man to beat on clay. Meanwhile, Jannik Sinner, Daniil Medvedev, and Novak Djokovic remain looming threats, determined to disrupt his rise.</p>
       <p>On the women’s side, Iga Świątek is chasing her fourth consecutive French Open title — a feat that would elevate her status to legendary. Her dominance on clay is nearly unmatched in the modern era, with a game built around controlled aggression, tireless footwork, and pinpoint accuracy. However, she faces stiff competition from Aryna Sabalenka, Coco Gauff, and an emerging generation of fearless hitters. The women’s draw promises fireworks, and every match could be a potential upset in the making.</p>
       <p>For bettors, the 2025 edition of Roland Garros offers juicy lines and valuable futures. Alcaraz and Świątek may be favorites, but longer odds on dark horses like Casper Ruud or Ons Jabeur present strong value plays. Betting markets on set totals and live in-play opportunities will also be crucial, especially considering the unpredictable weather and potential five-set thrillers. As Paris turns red with clay, expect drama, surprises, and legacy-defining moments.</p>
