@@ -43,7 +43,7 @@ const blogPosts = [
   },
   {
     slug: 'nba-finals-2025-preview',
-    image: '/images/nba-finals-2025.jpg',
+    image: '/blogs/nba.png',
     title: 'NBA Finals 2025: A Clash of Titans on the Hardwood',
     date: 'May 21, 2025',
     content: `
