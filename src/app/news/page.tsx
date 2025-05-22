@@ -1,9 +1,11 @@
+'use client'
+
 // src/app/blog/page.tsx
 
 import { Metadata } from 'next'
 import { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
-import { blogPosts } from '@/lib/blogPosts' // optionally externalize data
+import { blogPosts } from '@/lib/blogPosts'
 
 export const metadata: Metadata = {
   title: 'News | RubyWager',
