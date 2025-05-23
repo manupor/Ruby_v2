@@ -95,7 +95,7 @@ export default function Footer() {
                 href="/news"
                 className="hover:text-brand text-sm text-white/90 transition"
               >
-                News Room
+                Sports Blog
               </Link>
 
               {/* Social Media */}
