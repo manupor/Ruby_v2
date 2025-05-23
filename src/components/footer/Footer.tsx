@@ -92,7 +92,7 @@ export default function Footer() {
                 Crypto Tutorial
               </Link>
               <Link
-                href="/news"
+                href="/sports-blog"
                 className="hover:text-brand text-sm text-white/90 transition"
               >
                 Sports Blog
