@@ -29,9 +29,9 @@ const BonusesSection = ({ promoTickets }: any) => {
 
             // Define background images for each card
             const backgroundImages = [
+              '/bonus/20.png',
               '/bonus/125.png',
               '/bonus/200.png',
-              '/bonus/20.png',
             ]
 
             const backgroundImage = backgroundImages[index] || '/bonus-card.png'
@@ -39,35 +39,29 @@ const BonusesSection = ({ promoTickets }: any) => {
             return (
               <div
                 key={index}
-                className="h-[280px] group rounded-xl border border-[#660418] bg-cover bg-center p-2 text-white shadow-md transition-all duration-300 hover:border-[#ff073a] hover:shadow-xl md:rounded-2xl md:p-6"
-                style={{
-                  backgroundImage: `url('${backgroundImage}')`,
-                }}
+                className="group relative aspect-[16/9] overflow-hidden rounded-2xl text-white shadow-md transition-all duration-300 hover:border-[#ff073a] hover:shadow-xl p-6"
               >
-                <div className="h-full flex justify-center items-end space-y-1 text-center md:space-y-4">
-                  {/* <Icon
-                    size={24}
-                    className="stroke-white transition-transform duration-300 group-hover:scale-110 md:size-9"
-                  />
-                  <div>
-                    <p className="text-lg font-extrabold text-white md:text-4xl">
-                      {ticket.text1}
-                    </p>
-                    <p className="text-xs font-bold uppercase md:text-xl">
-                      {ticket.text2}
-                    </p>
-                    <p className="text-xs font-bold uppercase md:text-xl">
-                      {ticket.text3}
-                    </p>
-                  </div> */}
+                <img
+                  src={backgroundImage}
+                  alt=""
+                  className="absolute inset-0 z-0 h-full w-full rounded-2xl object-cover object-center"
+                />
+                <div className="relative z-10 flex h-full items-end justify-start space-y-1 text-center md:space-y-4">
                   <a
                     href="#"
                     onClick={handleMoreInfoClick}
-                    className="mt-1 inline-block rounded-full bg-black px-3 py-1 text-[10px] font-semibold text-white uppercase transition hover:bg-gray-900 md:mt-2 md:px-5 md:py-2 md:text-sm"
+                    className="mt-1 inline-block rounded-full bg-[#ff073a] px-3 py-1 text-[10px] font-semibold text-white uppercase transition hover:bg-gray-900 md:mt-2 md:px-5 md:py-2 md:text-sm"
                   >
                     MORE INFO
                   </a>
                 </div>
+                <a
+                  href="#"
+                  onClick={handleMoreInfoClick}
+                  className="mt-1 inline-block rounded-full bg-[#ff073a] px-3 py-1 text-[10px] font-semibold text-white uppercase transition hover:bg-gray-900 md:mt-2 md:px-5 md:py-2 md:text-sm"
+                >
+                  MORE INFO
+                </a>
               </div>
             )
           })}
