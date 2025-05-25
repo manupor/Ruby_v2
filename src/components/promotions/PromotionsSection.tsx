@@ -109,7 +109,7 @@ const PromotionsSection = ({ promotions }: any) => {
 
       {/* Desktop layout - preserved exactly as original */}
       <div
-        className="relative my-20 hidden overflow-hidden sm:flex sm:h-[60vh] sm:flex-col sm:justify-end"
+        className="relative  hidden overflow-hidden sm:flex sm:h-[60vh] sm:flex-col sm:justify-end"
         ref={sectionRef}
       >
         {/* Background image container */}

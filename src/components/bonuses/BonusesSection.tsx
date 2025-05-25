@@ -12,7 +12,7 @@ const BonusesSection = ({ promoTickets }: any) => {
 
   return (
     <div className="container mx-auto px-4">
-      <div className="panel my-10 md:my-20">
+      <div className="panel my-10">
         <div className="mb-6 text-center md:mb-10">
           <h1 className="text-3xl font-bold tracking-wide text-white uppercase md:text-4xl">
             CLAIM YOUR BONUSES

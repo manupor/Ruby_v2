@@ -35,7 +35,7 @@ const GamesGridSection = () => {
   ]
 
   return (
-    <div className="w-full px-2 py-8 md:px-4 md:py-12">
+    <div className="w-full px-2 py-8 md:px-4">
       {/* Header Section */}
       <div className="mb-6 text-center md:mb-10">
         <h2 className="text-2xl font-bold text-white uppercase md:text-3xl lg:text-6xl">

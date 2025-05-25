@@ -12,7 +12,7 @@ export default function Leagues() {
           }
           
           .logo-carousel {
-            margin: 60px 0;
+            margin: 40px 0;
             display: flex;
             align-items: center;
             gap: 2rem;

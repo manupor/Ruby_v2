@@ -265,18 +265,18 @@ export default function Home() {
       <FeaturesSection features={features} />
 
       {/* 🎁 Bonuses section */}
-      <div className="pb-10 md:pb-20 lg:px-8">
-        <BonusesSection promoTickets={promoTickets} />
-      </div>
+      <BonusesSection promoTickets={promoTickets} />
 
       {/* 🎯 Promotions section with background image */}
       <PromotionsSection promotions={promotions} />
 
+      <div className="my-4 sm:my-0">
+        <FeaturesSection features={additionalFeatures} />
+      </div>
+
       <CasinoBanner />
 
       <Leagues />
-
-      <FeaturesSection features={additionalFeatures} />
 
       <SportsOptions options={options} />
 

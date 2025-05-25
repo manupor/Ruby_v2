@@ -7,7 +7,7 @@ import { Button } from '@/components/ui/button'
 
 export default function SportsBettingOptions({ options }: any) {
   return (
-    <div className="container mx-auto px-2 pb-8 sm:px-4 lg:px-8">
+    <div className="container mx-auto px-2 sm:pb-8 sm:px-4 lg:px-8">
       <div className="panel my-10 sm:my-20">
         {/* Centered heading on mobile, with larger text */}
         <div className="mb-6 sm:mb-10">
