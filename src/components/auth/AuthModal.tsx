@@ -119,7 +119,7 @@ export default function AuthModal({
             <div className="mt-8 space-y-3">
               <form
                 id="create-account"
-                action="https://wager.rubywager.com/createAccount.php"
+                action="https://wager.rubywager.com/sites/rubywager.com/createAccount.php"
                 method="post"
                 className="space-y-3"
               >
