@@ -9,7 +9,6 @@ import GamesGridSection from '@/components/grid-cards/GamesGridSection'
 import HeroHome from '@/components/hero/HeroHome'
 import Leagues from '@/components/leagues/Leagues'
 import PromotionsSection from '@/components/promotions/PromotionsSection'
-import ReviewsSection from '@/components/reviews/ReviewsSection'
 import SportsOptions from '@/components/sports-options/SportsOptions'
 import { Gift, HandCoins, PercentCircle, Wallet } from 'lucide-react'
 
