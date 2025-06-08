@@ -51,7 +51,7 @@ export default function Navbar() {
           />
           <Image
             src="/you_play_we_pay.svg"
-            alt="RubyWager Tagline"
+            alt="RubyWager Logo"
             width={220}
             height={80}
             priority
@@ -80,28 +80,17 @@ export default function Navbar() {
             Join Now
           </Button>
 
-          {/* Mobile menu */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                className="ml-2 lg:hidden p-3 bg-[#FF003D] rounded-md hover:scale-105 transition"
-              >
-                <List
-                  size={48}
-                  weight="bold"
-                  color="#FFFFFF"
-                  className="drop-shadow-[0_0_4px_rgba(255,255,255,0.5)]"
-                />
+              <Button className="ml-2 bg-[#FF003D] p-2 lg:hidden">
+                <List size={36} color="#FFFFFF" />
               </Button>
             </SheetTrigger>
-
             <SheetContent
               side="right"
               className="w-full max-w-[100vw] overflow-y-auto border-none bg-black p-0"
             >
-              {/* Logo at top left */}
+              {/* Top section with logo and buttons */}
               <div className="flex items-center justify-between px-4 pt-4">
                 <Link href="/" onClick={() => setIsOpen(false)}>
                   <Image
@@ -113,11 +102,7 @@ export default function Navbar() {
                     priority
                   />
                 </Link>
-              </div>
-
-              {/* Login + Register buttons */}
-              <div className="mr-10 mt-4 flex items-center justify-end p-4">
-                <div className="flex gap-2">
+                <div className="flex items-center gap-2">
                   <Button
                     onClick={(e) => {
                       e.preventDefault()
@@ -142,25 +127,17 @@ export default function Navbar() {
                 </div>
               </div>
 
-              {/* Why Join? section */}
-              <Link
-                href="/why-ruby"
-                className="block w-full"
-                onClick={() => setIsOpen(false)}
-              >
+              {/* Why Join */}
+              <Link href="/why-ruby" onClick={() => setIsOpen(false)}>
                 <div className="m-4 rounded-xl bg-[#1b1b1b] p-4 text-center">
                   <span className="text-xl font-bold text-white">WHY JOIN?</span>
                 </div>
               </Link>
 
-              {/* Navigation grid */}
+              {/* Grid menu */}
               <div className="grid grid-cols-2 gap-4 p-4">
                 {navItems.map((item, index) => (
-                  <Link
-                    key={index}
-                    href={item.href}
-                    onClick={() => setIsOpen(false)}
-                  >
+                  <Link key={index} href={item.href} onClick={() => setIsOpen(false)}>
                     <div className="flex flex-col items-center justify-center rounded-xl bg-[#1b1b1b] p-6 text-center text-white transition-all hover:bg-[#3C3C3C]">
                       <div className="mb-2">{item.icon}</div>
                       <span className="font-semibold uppercase">{item.label}</span>
@@ -169,31 +146,39 @@ export default function Navbar() {
                 ))}
               </div>
 
-              {/* Divider */}
               <div className="px-4">
                 <div className="h-px w-full bg-[#333333]"></div>
               </div>
 
-              {/* Footer links */}
               <div className="p-4">
                 {footerLinks.map((link, index) => (
-                  <Link
-                    key={index}
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                  >
+                  <Link key={index} href={link.href} onClick={() => setIsOpen(false)}>
                     <div className="border-b border-[#333333] py-4 text-center">
                       <span className="text-sm font-medium text-white">{link.label}</span>
                     </div>
                   </Link>
                 ))}
               </div>
+
+              <div className="flex justify-center gap-8 p-6">
+                <Link
+                  href="https://www.instagram.com/betwithruby"
+                  target="_blank"
+                  aria-label="Instagram"
+                  className="text-white"
+                >
+                  {/* Aquí podés mantener el SVG de Instagram o reemplazarlo por un icono externo */}
+                  <svg width="24" height="24" fill="white" viewBox="0 0 24 24">
+                    <path d="M12 2.2c3.2 0 3.6 0 4.8.1 1.2.1 1.8.3 2.3.5.6.2 1 .5 1.5 1 .5.5.8.9 1 1.5.2.5.4 1.1.5 2.3.1 1.2.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 1.2-.3 1.8-.5 2.3-.2.6-.5 1-.9 1.5-.5.5-.9.8-1.5 1-.5.2-1.1.4-2.3.5-1.2.1-1.6.1-4.8.1s-3.6 0-4.8-.1c-1.2-.1-1.8-.3-2.3-.5-.6-.2-1-.5-1.5-1-.5-.5-.8-.9-1-1.5-.2-.5-.4-1.1-.5-2.3C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8c.1-1.2.3-1.8.5-2.3.2-.6.5-1 1-1.5.5-.5.9-.8 1.5-1 .5-.2 1.1-.4 2.3-.5C8.4 2.2 8.8 2.2 12 2.2zm0 1.8c-3.1 0-3.5 0-4.7.1-1 .1-1.6.2-2 .4-.5.2-.8.4-1.2.8-.4.4-.6.7-.8 1.2-.2.4-.3 1-.4 2-.1 1.2-.1 1.6-.1 4.7s0 3.5.1 4.7c.1 1 .2 1.6.4 2 .2.5.4.8.8 1.2.4.4.7.6 1.2.8.4.2 1 .3 2 .4 1.2.1 1.6.1 4.7.1s3.5 0 4.7-.1c1-.1 1.6-.2 2-.4.5-.2.8-.4 1.2-.8.4-.4.6-.7.8-1.2.2-.4.3-1 .4-2 .1-1.2.1-1.6.1-4.7s0-3.5-.1-4.7c-.1-1-.2-1.6-.4-2-.2-.5-.4-.8-.8-1.2-.4-.4-.7-.6-1.2-.8-.4-.2-1-.3-2-.4-1.2-.1-1.6-.1-4.7-.1zM12 6.3A5.7 5.7 0 1 0 17.7 12 5.7 5.7 0 0 0 12 6.3zm0 9.4A3.7 3.7 0 1 1 15.7 12 3.7 3.7 0 0 1 12 15.7zm5.9-9.9a1.3 1.3 0 1 1-1.3-1.3 1.3 1.3 0 0 1 1.3 1.3z" />
+                  </svg>
+                </Link>
+              </div>
             </SheetContent>
           </Sheet>
         </div>
       </div>
 
-      {/* Bottom nav (desktop only) */}
+      {/* Desktop nav */}
       <nav className="hidden items-center justify-center gap-12 bg-[#1b1b1b] py-4 lg:flex">
         {navItems.map((item) => (
           <Link
