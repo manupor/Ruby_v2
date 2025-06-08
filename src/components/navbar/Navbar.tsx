@@ -84,17 +84,17 @@ export default function Navbar() {
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button
-                variant="ghost"
-                size="icon"
-                className="ml-2 lg:hidden p-2 transition hover:scale-110"
-              >
-                <List
-                  size={48}
-                  weight="bold"
-                  color="#FFD700"
-                  className="drop-shadow-[0_0_6px_rgba(255,255,255,0.5)]"
-                />
-              </Button>
+  variant="ghost"
+  size="icon"
+  className="ml-2 lg:hidden p-3 bg-[#FF003D] rounded-md hover:scale-105 transition"
+>
+  <List
+    size={48}
+    weight="bold"
+    color="#FFFFFF"
+    className="drop-shadow-[0_0_4px_rgba(255,255,255,0.5)]"
+  />
+</Button>
             </SheetTrigger>
 
             <SheetContent
