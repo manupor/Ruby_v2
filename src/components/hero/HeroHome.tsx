@@ -15,7 +15,7 @@ const HeroHome = () => {
       text2: '200% SIGN UP BONUS!',
       text3: 'SAME DAY PAYOUTS, TRUE VIP EXPERIENCE',
       img_src: '/hero/01.png',
-      mobile_img_src: '/hero/mobile/01.png.jpg',
+      mobile_img_src: '/hero/mobile/MLB_RUBY.jpg',
     },
     {
       text1: 'Win More, Get Paid Faster',
