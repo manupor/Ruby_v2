@@ -41,8 +41,22 @@ export default function Navbar() {
     <header className="sticky top-0 z-50">
       <div className="flex items-center justify-between border-b border-neutral-800 bg-black px-4 py-4 shadow-md sm:px-6">
         <Link href="/" className="flex items-center space-x-2">
-          <Image src="/logo-ruby.png" alt="RubyWager Logo" width={220} height={80} priority className="w-[130px] sm:w-[220px] xl:w-[280px]" />
-          <Image src="/you_play_we_pay.svg" alt="RubyWager Logo" width={220} height={80} priority className="hidden w-[130px] sm:block sm:w-[220px] xl:w-[280px]" />
+          <Image
+            src="/logo-ruby.png"
+            alt="RubyWager Logo"
+            width={220}
+            height={80}
+            priority
+            className="w-[130px] sm:w-[220px] xl:w-[280px]"
+          />
+          <Image
+            src="/you_play_we_pay.svg"
+            alt="RubyWager Logo Text"
+            width={220}
+            height={80}
+            priority
+            className="hidden w-[130px] sm:block sm:w-[220px] xl:w-[280px]"
+          />
         </Link>
 
         <div className="flex items-center gap-2 sm:gap-4">
@@ -57,9 +71,18 @@ export default function Navbar() {
             </SheetTrigger>
             <SheetContent side="right" className="w-full max-w-[100vw] overflow-y-auto border-none bg-black p-0">
               <div className="flex items-center justify-between px-4 pt-4">
-                <Link href="/" onClick={() => setIsOpen(false)}>
-                  <Image src="/logo-ruby.png" alt="RubyWager Logo" width={150} height={40} className="w-[120px] sm:w-[150px]" priority />
+                {/* ✅ Logo dentro del menú móvil */}
+                <Link href="/" onClick={() => setIsOpen(false)} className="ml-4 mt-2">
+                  <Image
+                    src="/logo-ruby.png"
+                    alt="RubyWager Logo"
+                    width={160}
+                    height={60}
+                    priority
+                    className="w-[120px] sm:w-[150px] h-auto"
+                  />
                 </Link>
+
                 <div className="flex items-center gap-2 mr-8">
                   <Button onClick={(e) => { e.preventDefault(); setIsOpen(false); openLogin() }} variant="outline" className="border-white px-3 py-2 text-[12px] font-bold text-white uppercase hover:bg-white hover:text-black sm:px-6 sm:text-2xl xl:py-6 xl:text-3xl">Login</Button>
                   <Button onClick={(e) => { e.preventDefault(); setIsOpen(false); openRegister() }} className="bg-[#FF003D] px-3 py-2 text-[12px] font-bold text-white uppercase transition hover:bg-[#e60036] sm:px-6 sm:text-2xl xl:py-6 xl:text-3xl">Join Now</Button>
@@ -99,7 +122,7 @@ export default function Navbar() {
 
               <div className="flex justify-center gap-8 p-6">
                 <Link href="https://www.instagram.com/betwithruby" target="_blank" aria-label="Instagram" className="text-white">
-                  {/* Instagram SVG icon here */}
+                  {/* Puedes insertar tu icono aquí */}
                 </Link>
               </div>
             </SheetContent>
