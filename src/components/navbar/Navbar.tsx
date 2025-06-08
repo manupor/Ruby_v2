@@ -51,7 +51,7 @@ export default function Navbar() {
           />
           <Image
             src="/you_play_we_pay.svg"
-            alt="RubyWager Logo"
+            alt="RubyWager Tagline"
             width={220}
             height={80}
             priority
@@ -80,28 +80,43 @@ export default function Navbar() {
             Join Now
           </Button>
 
-          {/* Botón de menú móvil (modificado a tamaño 48) */}
+          {/* Mobile menu */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button
-  variant="ghost"
-  size="icon"
-  className="ml-2 lg:hidden p-3 bg-[#FF003D] rounded-md hover:scale-105 transition"
->
-  <List
-    size={48}
-    weight="bold"
-    color="#FFFFFF"
-    className="drop-shadow-[0_0_4px_rgba(255,255,255,0.5)]"
-  />
-</Button>
+                variant="ghost"
+                size="icon"
+                className="ml-2 lg:hidden p-3 bg-[#FF003D] rounded-md hover:scale-105 transition"
+              >
+                <List
+                  size={48}
+                  weight="bold"
+                  color="#FFFFFF"
+                  className="drop-shadow-[0_0_4px_rgba(255,255,255,0.5)]"
+                />
+              </Button>
             </SheetTrigger>
 
             <SheetContent
               side="right"
               className="w-full max-w-[100vw] overflow-y-auto border-none bg-black p-0"
             >
-              <div className="mr-10 flex items-center justify-end p-4">
+              {/* Logo at top left */}
+              <div className="flex items-center justify-between px-4 pt-4">
+                <Link href="/" onClick={() => setIsOpen(false)}>
+                  <Image
+                    src="/logo-ruby.png"
+                    alt="RubyWager Logo"
+                    width={150}
+                    height={40}
+                    className="w-[120px] sm:w-[150px]"
+                    priority
+                  />
+                </Link>
+              </div>
+
+              {/* Login + Register buttons */}
+              <div className="mr-10 mt-4 flex items-center justify-end p-4">
                 <div className="flex gap-2">
                   <Button
                     onClick={(e) => {
@@ -127,6 +142,7 @@ export default function Navbar() {
                 </div>
               </div>
 
+              {/* Why Join? section */}
               <Link
                 href="/why-ruby"
                 className="block w-full"
@@ -137,6 +153,7 @@ export default function Navbar() {
                 </div>
               </Link>
 
+              {/* Navigation grid */}
               <div className="grid grid-cols-2 gap-4 p-4">
                 {navItems.map((item, index) => (
                   <Link
@@ -152,10 +169,12 @@ export default function Navbar() {
                 ))}
               </div>
 
+              {/* Divider */}
               <div className="px-4">
                 <div className="h-px w-full bg-[#333333]"></div>
               </div>
 
+              {/* Footer links */}
               <div className="p-4">
                 {footerLinks.map((link, index) => (
                   <Link
@@ -164,9 +183,7 @@ export default function Navbar() {
                     onClick={() => setIsOpen(false)}
                   >
                     <div className="border-b border-[#333333] py-4 text-center">
-                      <span className="text-sm font-medium text-white">
-                        {link.label}
-                      </span>
+                      <span className="text-sm font-medium text-white">{link.label}</span>
                     </div>
                   </Link>
                 ))}
@@ -176,6 +193,7 @@ export default function Navbar() {
         </div>
       </div>
 
+      {/* Bottom nav (desktop only) */}
       <nav className="hidden items-center justify-center gap-12 bg-[#1b1b1b] py-4 lg:flex">
         {navItems.map((item) => (
           <Link
