@@ -80,7 +80,7 @@ export default function Navbar() {
             Join Now
           </Button>
 
-          {/* Botón de menú móvil (modificado) */}
+          {/* Botón de menú móvil (modificado a tamaño 48) */}
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
               <Button
@@ -89,10 +89,10 @@ export default function Navbar() {
                 className="ml-2 lg:hidden p-2 transition hover:scale-110"
               >
                 <List
-                  size={36}
+                  size={48}
                   weight="bold"
                   color="#FFD700"
-                  className="drop-shadow-[0_0_4px_rgba(255,255,255,0.5)]"
+                  className="drop-shadow-[0_0_6px_rgba(255,255,255,0.5)]"
                 />
               </Button>
             </SheetTrigger>
@@ -170,27 +170,6 @@ export default function Navbar() {
                     </div>
                   </Link>
                 ))}
-              </div>
-
-              <div className="flex justify-center gap-8 p-6">
-                <Link
-                  href="https://www.instagram.com/betwithruby"
-                  target="_blank"
-                  aria-label="Instagram"
-                  className="text-white"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="white"
-                  >
-                    <path d="M12 2.16C15.2 2.16 15.58 2.17 16.82 2.22C18.02 2.27 18.71 2.47 19.19 2.64C19.82 2.86 20.27 3.14 20.74 3.61C21.21 4.08 21.49 4.53 21.71 5.16C21.88 5.63 22.08 6.33 22.13 7.53C22.18 8.77 22.19 9.15 22.19 12.35C22.19 15.55 22.18 15.93 22.13 17.17C22.08 18.37 21.88 19.06 21.71 19.54C21.49 20.17 21.21 20.62 20.74 21.09C20.27 21.56 19.82 21.84 19.19 22.06C18.72 22.23 18.02 22.43 16.82 22.48C15.58 22.53 15.2 22.54 12 22.54C8.8 22.54 8.42 22.53 7.18 22.48C5.98 22.43 5.29 22.23 4.81 22.06C4.18 21.84 3.73 21.56 3.26 21.09C2.79 20.62 2.51 20.17 2.29 19.54C2.12 19.07 1.92 18.37 1.87 17.17C1.82 15.93 1.81 15.55 1.81 12.35C1.81 9.15 1.82 8.77 1.87 7.53C1.92 6.33 2.12 5.64 2.29 5.16C2.51 4.53 2.79 4.08 3.26 3.61C3.73 3.14 4.18 2.86 4.81 2.64C5.28 2.47 5.98 2.27 7.18 2.22C8.42 2.17 8.8 2.16 12 2.16Z" />
-                    <path d="M12 5.84C8.6 5.84 5.84 8.6 5.84 12C5.84 15.4 8.6 18.16 12 18.16C15.4 18.16 18.16 15.4 18.16 12C18.16 8.6 15.4 5.84 12 5.84ZM12 16C9.79 16 8 14.21 8 12C8 9.79 9.79 8 12 8C14.21 8 16 9.79 16 12C16 14.21 14.21 16 12 16Z" />
-                    <path d="M19.8 5.59C19.8 6.39 19.15 7.04 18.35 7.04C17.55 7.04 16.9 6.39 16.9 5.59C16.9 4.79 17.55 4.14 18.35 4.14C19.15 4.14 19.8 4.79 19.8 5.59Z" />
-                  </svg>
-                </Link>
               </div>
             </SheetContent>
           </Sheet>
