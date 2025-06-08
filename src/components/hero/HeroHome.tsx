@@ -98,14 +98,7 @@ const HeroHome = () => {
               <h2 className="mb-6 text-[16px] font-medium tracking-wide text-white uppercase">
                 {heros[currentSlide].text3}
               </h2> */}
-              <Button
-                variant="brand"
-                size="lg"
-                className="blink-strong translate-y-16"
-                onClick={handleJoinNowClick}
-              >
-                JOIN NOW
-              </Button>
+              
             </div>
           </div>
 
