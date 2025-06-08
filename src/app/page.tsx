@@ -1,4 +1,4 @@
-use client'
+'use client'
 
 import Banking from '@/components/banking/Banking'
 import BlogSection from '@/components/blog/BlogSection'
