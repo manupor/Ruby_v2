@@ -133,6 +133,20 @@ export default function Home() {
       {/* 1. Hero Section */}
       <HeroHome />
 
+      {/* ✅ Trustpilot-style Banner */}
+      <div className="flex items-center justify-center bg-[#1b1b1b] py-4 px-4 sm:px-0">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:gap-6 text-center sm:text-left bg-black border border-red-600 rounded-lg px-6 py-4 max-w-4xl w-full shadow-lg">
+          <div className="text-white">
+            <p className="text-xl font-bold text-[#FF003D]">Excellent</p>
+            <p className="text-sm text-white/80">4.9 out of 5 based on 3,217 reviews</p>
+          </div>
+          <div className="flex justify-center sm:justify-start mt-2 sm:mt-0">
+            <img src="/trustpilot-stars.svg" alt="5 stars" className="h-6" />
+            <img src="/trustpilot-logo.svg" alt="Trustpilot" className="h-6 ml-2" />
+          </div>
+        </div>
+      </div>
+
       {/* 2. Features */}
       <FeaturesSection features={features} />
 
@@ -156,7 +170,7 @@ export default function Home() {
       {/* 8. Sports Options */}
       <SportsOptions options={options} />
 
-      {/* ✅ 9. Bonuses (Claim Your Bonuses) */}
+      {/* 9. Bonuses */}
       <BonusesSection promoTickets={promoTickets} />
 
       {/* 10. Reviews */}
@@ -170,4 +184,3 @@ export default function Home() {
     </>
   )
 }
-
