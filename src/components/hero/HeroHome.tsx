@@ -10,9 +10,7 @@ const HeroHome = () => {
 
   const heros = [
     {
-      text1: 'Weekly Rebate, Daily Payouts',
-      text2: '200% SIGN UP BONUS!',
-      text3: 'SAME DAY PAYOUTS, TRUE VIP EXPERIENCE',
+      
       mobile_img_src: '/hero/mobile/01.png.jpg',
     },
   ]
