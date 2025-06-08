@@ -1,4 +1,4 @@
-'use client'
+use client'
 
 import Banking from '@/components/banking/Banking'
 import BlogSection from '@/components/blog/BlogSection'
@@ -9,6 +9,7 @@ import GamesGridSection from '@/components/grid-cards/GamesGridSection'
 import HeroHome from '@/components/hero/HeroHome'
 import Leagues from '@/components/leagues/Leagues'
 import PromotionsSection from '@/components/promotions/PromotionsSection'
+import ReviewsSection from '@/components/reviews/ReviewsSection'
 import SportsOptions from '@/components/sports-options/SportsOptions'
 import { Gift, HandCoins, PercentCircle, Wallet } from 'lucide-react'
 
@@ -132,37 +133,40 @@ export default function Home() {
       {/* 1. Hero Section */}
       <HeroHome />
 
-      {/* 2. Promotions */}
-      <PromotionsSection promotions={promotions} />
-
-      {/* 3. Bonuses Section */}
-      <BonusesSection promoTickets={promoTickets} />
-
-      {/* 4. Casino Banner */}
-      <CasinoBanner />
-
-      {/* 5. Features */}
+      {/* 2. Features */}
       <FeaturesSection features={features} />
 
-      {/* 6. Additional Features */}
+      {/* 3. Games Grid Section */}
+      <GamesGridSection />
+
+      {/* 4. Promotions */}
+      <PromotionsSection promotions={promotions} />
+
+      {/* 5. Additional Features */}
       <div className="my-4 sm:my-0">
         <FeaturesSection features={additionalFeatures} />
       </div>
 
-      {/* 7. Sports Options */}
-      <SportsOptions options={options} />
+      {/* 6. Casino Banner */}
+      <CasinoBanner />
 
-      {/* 8. Games Grid Section */}
-      <GamesGridSection />
-
-      {/* 9. Leagues */}
+      {/* 7. Leagues */}
       <Leagues />
 
-      {/* 10. Banking */}
-      <Banking />
+      {/* 8. Sports Options */}
+      <SportsOptions options={options} />
+
+      {/* ✅ 9. Bonuses (Claim Your Bonuses) */}
+      <BonusesSection promoTickets={promoTickets} />
+
+      {/* 10. Reviews */}
+      <ReviewsSection />
 
       {/* 11. Blog */}
       <BlogSection />
+
+      {/* 12. Banking */}
+      <Banking />
     </>
   )
 }
