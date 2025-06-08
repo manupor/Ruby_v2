@@ -19,20 +19,7 @@ const HeroHome = () => {
       img_src: '/hero/01.png',
       mobile_img_src: '/hero/mobile/01.png.jpg',
     },
-    {
-      text1: 'BET ON ALL',
-      text2: 'MAJOR TRACKS',
-      text3: '6% HORSE REBATE!',
-      img_src: '/hero/02.png',
-      mobile_img_src: '/hero/mobile/02.png',
-    },
-    {
-      text1: 'CASINO BRINGS',
-      text2: 'VEGAS ACTION TO YOU',
-      text3: 'FREE SPINS + MONTHLY INSURANCE!',
-      img_src: '/hero/03.png',
-      mobile_img_src: '/hero/mobile/03.png',
-    },
+    
   ]
 
   useEffect(() => {
@@ -100,8 +87,8 @@ const HeroHome = () => {
           </div>
 
           {/* Content positioned in center with adjusted styling */}
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="px-8 text-center">
+          <div className="absolute inset-0 flex items-center justify-right">
+            <div className="px-8 text-right">
               {/* <h1 className="mb-1 text-[16px] font-medium tracking-wide text-white uppercase">
                 {heros[currentSlide].text1}
               </h1>
