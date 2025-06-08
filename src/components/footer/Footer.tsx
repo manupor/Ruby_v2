@@ -45,12 +45,17 @@ export default function Footer() {
               >
                 Sports Rules
               </Link>
-              <Link
-                href="/responsible-gaming"
-                className="hover:text-brand text-sm text-white/90 transition"
-              >
-                Responsible Gaming
-              </Link>
+
+              {/* Responsible Gaming hidden */}
+              {false && (
+                <Link
+                  href="/responsible-gaming"
+                  className="hover:text-brand text-sm text-white/90 transition"
+                >
+                  Responsible Gaming
+                </Link>
+              )}
+
               <Link
                 href="/terms-conditions"
                 className="hover:text-brand text-sm text-white/90 transition"
