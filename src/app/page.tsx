@@ -137,22 +137,22 @@ export default function Home() {
       <FeaturesSection features={features} />
 
       {/* ✅ Nuevo orden solicitado */}
-
-      {/* 1. Imagen de slots */}
-      <GamesGridSection />
+      
+ {/* 3. Bonos (Claim Your Bonuses) */}
+      <BonusesSection promoTickets={promoTickets} />
 
       {/* 2. Carrusel animado con logos de ligas */}
       <Leagues />
-
-      {/* 3. Bonos (Claim Your Bonuses) */}
-      <BonusesSection promoTickets={promoTickets} />
 
       {/* 4. Imágenes de casino */}
       <SportsOptions options={options} />
 
       {/* 🔁 Secciones restantes */}
       <PromotionsSection promotions={promotions} />
-
+      
+{/* 1. Imagen de slots */}
+      <GamesGridSection />
+      
       <div className="my-4 sm:my-0">
         <FeaturesSection features={additionalFeatures} />
       </div>
