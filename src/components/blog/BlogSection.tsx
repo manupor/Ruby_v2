@@ -76,7 +76,8 @@ const BlogSection = () => {
               className="overflow-hidden rounded-lg border border-gray-800 bg-[#1A1A1A] transition-transform duration-300 hover:-translate-y-2"
             >
               {/* Featured Image - Updated to preserve aspect ratio */}
-              <Link href={`/blog/${post.slug}`} className="relative block">
+              {/* <Link href={`/blog/${post.slug}`} className="relative block"> */}
+              <Link href="/sports-blog" className="relative block">
                 <div
                   className="relative w-full overflow-hidden"
                   style={{ paddingBottom: '56.25%' }}
@@ -105,7 +106,8 @@ const BlogSection = () => {
 
               {/* Content */}
               <div className="p-6">
-                <Link href={`/blog/${post.slug}`}>
+                {/* <Link href={`/blog/${post.slug}`}> */}
+                <Link href="/sports-blog">
                   <h3 className="mb-3 text-xl font-bold text-white transition-colors hover:text-red-500">
                     {post.title}
                   </h3>
