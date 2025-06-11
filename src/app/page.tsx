@@ -135,6 +135,8 @@ export default function Home() {
 
       {/* 2. Features */}
       <FeaturesSection features={features} />
+       {/* 2. Carrusel animado con logos de ligas */}
+      <Leagues />
 
       {/* 🔁 Secciones restantes */}
       <PromotionsSection promotions={promotions} />
@@ -155,8 +157,7 @@ export default function Home() {
 
       <CasinoBanner />
 
-      {/* 2. Carrusel animado con logos de ligas */}
-      <Leagues />
+     
 
       <ReviewsSection />
 
