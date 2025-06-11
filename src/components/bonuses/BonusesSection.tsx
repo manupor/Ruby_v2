@@ -15,7 +15,7 @@ const BonusesSection = ({ promoTickets }: any) => {
       <div className="panel my-10">
         <div className="mb-6 text-center md:mb-10">
           <h1 className="text-3xl font-bold tracking-wide text-white uppercase md:text-4xl">
-            CLAIM YOUR BONUSES
+            RUBY KEEPS YOU IN THE GAME
           </h1>
           <p className="mt-2 text-sm font-medium text-[#c19652] md:text-lg">
             Don't miss out on these exclusive offers
@@ -39,7 +39,7 @@ const BonusesSection = ({ promoTickets }: any) => {
             return (
               <div
                 key={index}
-                className="group relative aspect-[16/9] overflow-hidden rounded-2xl text-white shadow-md transition-all duration-300 hover:border-[#ff073a] hover:shadow-xl p-6"
+                className="group relative aspect-[16/9] overflow-hidden rounded-2xl p-6 text-white shadow-md transition-all duration-300 hover:border-[#ff073a] hover:shadow-xl"
               >
                 <img
                   src={backgroundImage}
