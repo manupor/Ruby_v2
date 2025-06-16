@@ -18,7 +18,7 @@ const promotions = [
     title: 'New customers',
     icon: PercentCircle,
     content1: 'Bet $50 get up to $100',
-    content2: 'Intantly on bonus bets',
+    content2: 'INSTANTLY ON BONUS BETS',
     footer: 'Ruby keeps you in the game',
   },
   {

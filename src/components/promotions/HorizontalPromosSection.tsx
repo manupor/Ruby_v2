@@ -244,8 +244,10 @@ const HorizontalPromosSection = () => {
             <div className="text-gray-400">
               <ul className="pl-4 text-left">
                 <li>• Live bets</li>
-                <li>• Parlays (except eligible 2-team Freeplay parlays)</li>
+                <li>• Parlays</li>
                 <li>• Teasers</li>
+                <li>• Prop bets</li>
+                <li>• Futures</li>
                 <li>• Horse racing or casino wagers</li>
                 <li>• Wagers on the same event</li>
                 <li>• Bets made using Freeplay</li>
