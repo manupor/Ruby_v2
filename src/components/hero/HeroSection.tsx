@@ -60,6 +60,20 @@ const HeroSection = ({
 
   return (
     <div className="relative w-full">
+      {/* Preload both images with high priority */}
+      <link
+        rel="preload"
+        as="image"
+        href={desktopImage}
+        media="(min-width: 1024px)"
+      />
+      <link
+        rel="preload"
+        as="image"
+        href={mobileImage}
+        media="(max-width: 1023px)"
+      />
+
       {/* Desktop hero section */}
       <div className="relative hidden w-full lg:block">
         <div className="relative h-[400px] w-full overflow-hidden sm:h-auto sm:py-0">
@@ -70,6 +84,9 @@ const HeroSection = ({
             style={{
               transform: `translateY(${offsetY * 0.3}px)`,
             }}
+            loading="eager"
+            fetchPriority="high"
+            decoding="sync"
           />
 
           {/* Content container positioned absolutely over the image */}
@@ -102,7 +119,14 @@ const HeroSection = ({
       {/* Mobile hero section */}
       <div className="relative w-full lg:hidden">
         <div className="relative w-full">
-          <img src={mobileImage} alt="Hero banner" className="h-auto w-full" />
+          <img
+            src={mobileImage}
+            alt="Hero banner"
+            className="h-auto w-full"
+            loading="eager"
+            fetchPriority="high"
+            decoding="sync"
+          />
           {/* Dark overlay for better text visibility */}
           {!hideTextOnMobile && (
             <div className="absolute inset-0 bg-black/50"></div>
