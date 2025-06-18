@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button'
 import { useAuth } from '@/context/AuthContext'
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 
 const HeroHome = () => {
   const [currentSlide, setCurrentSlide] = useState(0)
@@ -60,20 +61,25 @@ const HeroHome = () => {
       {isMobile ? (
         // ✅ Mobile Version: static image, no slider
         <div className="relative w-full cursor-pointer" onClick={handleJoinNowClick}>
-          <img
+          <Image
             src={heros[0].mobile_img_src}
             alt="Hero banner"
+            width={750}
+            height={400}
             className="h-auto w-full"
+            priority
           />
         </div>
       ) : (
         // ✅ Desktop Version: full slider with content and button
         <div className="relative w-full">
           <div className="relative h-[400px] w-full overflow-hidden sm:h-auto sm:py-0">
-            <img
+            <Image
               src={heros[currentSlide].img_src}
               alt="Hero banner"
+              fill
               className="h-full w-full object-cover sm:h-auto sm:object-contain"
+              priority
             />
 
             <div className="absolute top-0 left-0 flex h-full w-full items-center">

@@ -2,6 +2,7 @@
 
 import { useAuth } from '@/context/AuthContext'
 import { useEffect, useState } from 'react'
+import Image from 'next/image'
 
 interface HeroSectionProps {
   title: string
@@ -77,16 +78,15 @@ const HeroSection = ({
       {/* Desktop hero section */}
       <div className="relative hidden w-full lg:block">
         <div className="relative h-[400px] w-full overflow-hidden sm:h-auto sm:py-0">
-          <img
+          <Image
             src={desktopImage}
             alt="Hero banner"
+            fill
             className="h-full w-full object-cover sm:h-auto sm:object-contain"
             style={{
               transform: `translateY(${offsetY * 0.3}px)`,
             }}
-            loading="eager"
-            fetchPriority="high"
-            decoding="sync"
+            priority
           />
 
           {/* Content container positioned absolutely over the image */}
@@ -119,13 +119,13 @@ const HeroSection = ({
       {/* Mobile hero section */}
       <div className="relative w-full lg:hidden">
         <div className="relative w-full">
-          <img
+          <Image
             src={mobileImage}
             alt="Hero banner"
+            width={750}
+            height={400}
             className="h-auto w-full"
-            loading="eager"
-            fetchPriority="high"
-            decoding="sync"
+            priority
           />
           {/* Dark overlay for better text visibility */}
           {!hideTextOnMobile && (

@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react'
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react'
+import Image from 'next/image'
 
 interface ReviewProps {
   content: string
@@ -226,12 +227,13 @@ const ReviewsSection = () => {
                   <div className="flex items-center justify-between">
                     <div className="flex items-center">
                       <div className="mr-4 h-12 w-12 overflow-hidden rounded-full bg-gray-700">
-                        <img
+                        <Image
                           src={review.image}
                           alt={review.name}
+                          width={48}
+                          height={48}
                           className="h-full w-full object-cover"
                           onError={(e) => {
-                            // Fallback for missing images
                             const target = e.target as HTMLImageElement
                             target.src = `https://placehold.co/48/333333/ff0000?text=${review.name.charAt(0)}`
                           }}

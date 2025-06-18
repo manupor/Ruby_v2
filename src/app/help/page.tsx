@@ -2,6 +2,7 @@
 
 import { useAuth } from '@/context/AuthContext'
 import { Metadata } from 'next'
+import Image from 'next/image'
 
 export default function HelpPage() {
   const { openRegister } = useAuth()
@@ -44,10 +45,13 @@ export default function HelpPage() {
       {/* Mobile hero section - unchanged */}
       <div className="relative w-full lg:hidden">
         <div className="relative w-full">
-          <img
+          <Image
             src="/help-mobile.jpg"
             alt="Help and support banner"
+            width={750}
+            height={420}
             className="h-auto w-full"
+            priority
           />
 
           {/* Content positioned at bottom left */}
