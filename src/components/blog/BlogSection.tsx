@@ -3,6 +3,7 @@
 import React from 'react'
 import Link from 'next/link'
 import { ArrowRight, Calendar, Clock } from 'lucide-react'
+import Image from 'next/image'
 
 interface BlogPostProps {
   category: string
@@ -84,15 +85,16 @@ const BlogSection = () => {
                 >
                   {' '}
                   {/* 16:9 aspect ratio */}
-                  <img
+                  <Image
                     src={
-                      post.image ||
-                      'https://placehold.co/640x360/151515/ff0000.png?text=Ruby+Wager+Blog'
+                      post.image.startsWith('/')
+                        ? post.image
+                        : `/${post.image}`
                     }
                     alt={post.title}
+                    fill
                     className="absolute top-0 left-0 h-full w-full object-contain transition-transform duration-500 hover:scale-105"
                     onError={(e) => {
-                      // Fallback for missing images
                       const target = e.target as HTMLImageElement
                       target.src =
                         'https://placehold.co/640x360/151515/ff0000.png?text=Ruby+Wager+Blog'

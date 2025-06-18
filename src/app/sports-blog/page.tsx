@@ -4,6 +4,7 @@
 
 import { useState } from 'react'
 import { ChevronDown } from 'lucide-react'
+import Image from 'next/image'
 
 const blogPosts = [
   {
@@ -81,9 +82,11 @@ export default function NewsPage() {
             <div
               className={`transition-all duration-500 ease-in-out overflow-hidden ${openSlug === post.slug ? 'max-h-[5000px] opacity-100' : 'max-h-0 opacity-0'}`}
             >
-              <img
-                src={post.image}
+              <Image
+                src={`/${post.image}`}
                 alt={post.title}
+                width={960}
+                height={600}
                 className="w-full h-[450px] object-cover md:h-[550px] lg:h-[600px]"
               />
               <div className="p-6">

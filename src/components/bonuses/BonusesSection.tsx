@@ -1,6 +1,7 @@
 'use client'
 
 import { useAuth } from '@/context/AuthContext'
+import Image from 'next/image'
 
 const BonusesSection = ({ promoTickets }: any) => {
   const { openRegister } = useAuth()
@@ -41,12 +42,13 @@ const BonusesSection = ({ promoTickets }: any) => {
                 key={index}
                 className="group relative aspect-[16/9] overflow-hidden rounded-2xl p-6 text-white shadow-md transition-all duration-300 hover:border-[#ff073a] hover:shadow-xl"
               >
-                <img
+                <Image
                   src={backgroundImage}
-                  alt=""
+                  alt={"Bonus background"}
+                  fill
                   className="absolute inset-0 z-0 h-full w-full rounded-2xl object-cover object-center"
                 />
-                <div className="relative z-10 flex h-full items-end justify-start space-y-1 text-center md:space-y-4">
+                <div className="relative z-10 flex h-full items-end justify-start text-center">
                   <a
                     href="#"
                     onClick={handleMoreInfoClick}
@@ -55,13 +57,6 @@ const BonusesSection = ({ promoTickets }: any) => {
                     MORE INFO
                   </a>
                 </div>
-                <a
-                  href="#"
-                  onClick={handleMoreInfoClick}
-                  className="mt-1 inline-block rounded-full bg-[#ff073a] px-3 py-1 text-[10px] font-semibold text-white uppercase transition hover:bg-gray-900 md:mt-2 md:px-5 md:py-2 md:text-sm"
-                >
-                  MORE INFO
-                </a>
               </div>
             )
           })}

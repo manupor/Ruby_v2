@@ -4,6 +4,7 @@ import { useAuth } from '@/context/AuthContext'
 import { Volleyball, Wallet } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
+import Image from 'next/image'
 
 interface PromoCardProps {
   icon: React.ElementType
@@ -30,9 +31,10 @@ const PromoCard = ({
           className="relative w-full overflow-hidden"
           style={{ paddingBottom: '56.25%' }} // 16:9 aspect ratio
         >
-          <img
+          <Image
             src={backgroundImage}
             alt={title}
+            fill
             className="absolute top-0 left-0 h-full w-full object-cover object-top transition-transform duration-500 hover:scale-105"
           />
           {/* Dark overlay for better text visibility */}
