@@ -148,6 +148,12 @@ export default function TermsConditionsPage() {
                 withdrawals can be made.
               </li>
               <li>
+                If a client wants to use a promotion on both casino and sports,
+                the casino portion carries a 30× rollover requirement in
+                addition to any applicable sports wagering conditions. This
+                ensures fairness for both the player and the sportsbook.
+              </li>
+              <li>
                 Abuse of promotions, including multiple accounts or fraudulent
                 activity, will result in forfeiture of bonuses and potential
                 account suspension.
