@@ -158,6 +158,24 @@ export default function TermsConditionsPage() {
               </li>
             </ul>
           </div>
+          <div className="mt-6 rounded-lg border border-[#ff5f5f5] p-6">
+            <h4 className="mb-2 font-semibold">How Rollover is Calculated</h4>
+            <p className="mb-4">(Deposit + Freeplay) × Rollover Multiplier</p>
+            <p className="mb-2 font-semibold">Example:</p>
+            <ul className="list-disc space-y-2 pl-6">
+              <li>Deposit: $1,000</li>
+              <li>Freeplay Bonus: $2,000 (200%)</li>
+              <li>Total: $3,000</li>
+              <li>Rollover: 15x</li>
+              <li>Requirement: $3,000 × 15 = $45,000 in qualifying wagers</li>
+              <li>
+                If a client wants to use a promotion on both casino and sports,
+                the casino portion carries a 30× rollover requirement in
+                addition to any applicable sports wagering conditions. This
+                ensures fairness for both the player and the sportsbook.
+              </li>
+            </ul>
+          </div>
         </section>
 
         <section className="mb-10">
