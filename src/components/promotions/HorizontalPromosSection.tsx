@@ -201,7 +201,7 @@ const HorizontalPromosSection = () => {
                   • Requirement: $3,000 × 15 = $45,000 in qualifying wagers
                 </li>
               </ul>
-              <div className="mt-2 rounded border border-white p-3 text-left">
+              <div className="mt-2 rounded border border-white bg-gray-800 p-3 text-left">
                 If a client wants to use a promotion on both casino and sports,
                 the casino portion carries a 30× rollover requirement in
                 addition to any applicable sports wagering conditions. This
