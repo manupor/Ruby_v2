@@ -158,7 +158,7 @@ export default function TermsConditionsPage() {
               </li>
             </ul>
           </div>
-          <div className="mt-6 rounded-lg border border-[#ff5f5f5] p-6">
+          <div className="mt-6 rounded-lg border border-[#ff5f5f5] p-6 bg-transparent">
             <h4 className="mb-2 font-semibold">How Rollover is Calculated</h4>
             <p className="mb-4">(Deposit + Freeplay) × Rollover Multiplier</p>
             <p className="mb-2 font-semibold">Example:</p>
