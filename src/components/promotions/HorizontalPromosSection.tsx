@@ -202,6 +202,12 @@ const HorizontalPromosSection = () => {
                 </li>
               </ul>
             </div>
+            <p className="mt-3 text-gray-400">
+              If a client wants to use a promotion on both casino and sports, the
+              casino portion carries a 30× rollover requirement in addition to
+              any applicable sports wagering conditions. This ensures fairness for
+              both the player and the sportsbook.
+            </p>
           </div>
 
           {/* Card 2 */}
