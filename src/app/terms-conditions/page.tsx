@@ -168,13 +168,13 @@ export default function TermsConditionsPage() {
               <li>Total: $3,000</li>
               <li>Rollover: 15x</li>
               <li>Requirement: $3,000 × 15 = $45,000 in qualifying wagers</li>
-              <li>
-                If a client wants to use a promotion on both casino and sports,
-                the casino portion carries a 30× rollover requirement in
-                addition to any applicable sports wagering conditions. This
-                ensures fairness for both the player and the sportsbook.
-              </li>
             </ul>
+            <p className="mt-2">
+              If a client wants to use a promotion on both casino and sports,
+              the casino portion carries a 30× rollover requirement in addition
+              to any applicable sports wagering conditions. This ensures
+              fairness for both the player and the sportsbook.
+            </p>
           </div>
         </section>
 
