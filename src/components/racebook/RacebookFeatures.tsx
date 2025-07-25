@@ -112,7 +112,7 @@ const RacebookFeatures = () => {
           Join Ruby Wager today and experience premium horse racing action.
         </p>
         <button
-          className="rounded-full bg-[#FF003D] px-10 py-4 text-xl font-bold text-white transition-colors hover:bg-[#E00034]"
+          className="rounded-full bg-[#FF003D] px-10 py-4 text-xl font-bold text-white transition-colors hover:bg-[#E00034] blink-mobile"
           onClick={handleJoinNowClick}
         >
           JOIN NOW

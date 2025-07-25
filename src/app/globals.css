@@ -369,3 +369,44 @@
 img {
   image-rendering: auto;
 }
+
+@keyframes blinkMobile {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes heroLight {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .blink-mobile {
+    animation: blinkMobile 1.5s infinite;
+  }
+
+  .hero-light::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.1),
+      transparent
+    );
+    background-size: 200% 100%;
+    animation: heroLight 5s linear infinite;
+    pointer-events: none;
+    z-index: 1;
+  }
+}
