@@ -409,4 +409,34 @@ img {
     pointer-events: none;
     z-index: 1;
   }
+
+  .hero-light::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 80%, rgba(255, 0, 61, 0.25), transparent 60%),
+      radial-gradient(circle at 80% 20%, rgba(255, 0, 61, 0.25), transparent 60%);
+    animation: heroRedPulse 8s linear infinite;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .neon-card {
+    position: relative;
+    background-color: rgba(255, 0, 61, 0.05);
+    border: 1px solid rgba(255, 0, 61, 0.3);
+    box-shadow: 0 0 8px rgba(255, 0, 61, 0.2);
+  }
 }
+
+@keyframes heroRedPulse {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+

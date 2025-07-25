@@ -73,7 +73,7 @@ const PromotionsSection = ({ promotions }: any) => {
                     onClick={handlePromotionClick}
                     className="flex-1"
                   >
-                    <Card className="flex h-[140px] flex-col overflow-hidden rounded-xl border border-neutral-800 bg-[#1A1A1A90]">
+                    <Card className="flex h-[140px] flex-col overflow-hidden rounded-xl border border-neutral-800 bg-[#1A1A1A90] neon-card">
                       <CardContent className="flex flex-1 flex-col p-2">
                         <div className="mb-2 flex items-center gap-1">
                           <Icon size={12} className="shrink-0 text-[#FF003D]" />
@@ -153,7 +153,7 @@ const PromotionsSection = ({ promotions }: any) => {
                     transitionDelay: `${index * 150}ms`,
                   }}
                 >
-                  <Card className="flex h-[280px] flex-1 flex-col overflow-hidden rounded-xl bg-[#1A1A1A] transition-all duration-300 ease-in-out hover:scale-[1.02]">
+                  <Card className="flex h-[280px] flex-1 flex-col overflow-hidden rounded-xl bg-[#1A1A1A] transition-all duration-300 ease-in-out hover:scale-[1.02] neon-card">
                     <CardContent className="flex flex-1 flex-col justify-between p-6">
                       <div className="mb-4 flex items-center gap-4">
                         <Icon size={40} className="shrink-0 text-[#FF003D]" />

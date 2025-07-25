@@ -26,7 +26,7 @@ export default function SportsBettingOptions({ options }: any) {
           {options.map((card: any) => (
             <Card
               key={card.title}
-              className="relative flex h-[180px] flex-col overflow-hidden sm:h-[380px] sm:w-[380px] border-none sm:border text-shadow-sm"
+              className="relative flex h-[180px] flex-col overflow-hidden sm:h-[380px] sm:w-[380px] border-none sm:border text-shadow-sm neon-card"
             >
               <CardContent className="relative z-10 flex flex-1 flex-col justify-end p-2 sm:p-4 sm:pb-8">
                 <CardTitle className="text-foreground mb-1 text-xs font-extrabold text-white sm:mb-3 sm:text-2xl">
