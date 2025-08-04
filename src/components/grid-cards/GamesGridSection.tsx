@@ -39,10 +39,10 @@ const GamesGridSection = () => {
       {/* Header Section */}
       <div className="mb-6 text-center md:mb-10">
         <h2 className="text-2xl font-bold text-white uppercase md:text-3xl lg:text-6xl">
-          <span className="block">EXPLORE THE WORLD OF</span>
+          <span className="text-highlight block">EXPLORE THE WORLD OF</span>
           <span className="block text-[#ff003d]">RUBY WAGER ONLINE GAMING</span>
         </h2>
-        <p className="mt-2 text-[8px] text-white uppercase md:mt-4 md:text-xl">
+        <p className="text-highlight mt-2 text-[8px] text-white uppercase md:mt-4 md:text-xl">
           THE BEST PLACE TO BE LIVE ON SPORTS AND PLAY ONLINE CASINO GAMES
         </p>
       </div>
@@ -50,7 +50,10 @@ const GamesGridSection = () => {
       {/* Games Grid - Now 4 columns on mobile */}
       <div className="mx-auto grid max-w-7xl grid-cols-4 gap-2 md:gap-6 lg:gap-8">
         {games.map((game) => (
-          <div key={game.id} className="group relative mb-4 md:mb-6">
+          <div
+            key={game.id}
+            className="card-animate group relative mb-4 md:mb-6"
+          >
             {/* Game Card with Hover Effect */}
             <div className="relative aspect-square w-full overflow-hidden rounded-xl transition-transform duration-500 group-hover:scale-110 md:rounded-3xl">
               <Image

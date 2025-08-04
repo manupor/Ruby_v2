@@ -130,42 +130,20 @@ const additionalFeatures = [
 export default function Home() {
   return (
     <>
-      <div className="section-highlight">
-        <HeroHome />
-      </div>
-      <div className="section-highlight">
-        <FeaturesSection features={features} />
-      </div>
-      <div className="section-highlight">
-        <Leagues />
-      </div>
-      <div className="section-highlight">
-        <PromotionsSection promotions={promotions} />
-      </div>
-      <div className="section-highlight">
-        <BonusesSection promoTickets={promoTickets} />
-      </div>
-      <div className="section-highlight">
-        <SportsOptions options={options} />
-      </div>
-      <div className="section-highlight">
-        <GamesGridSection />
-      </div>
-      <div className="section-highlight my-4 sm:my-0">
+      <HeroHome />
+      <FeaturesSection features={features} />
+      <Leagues />
+      <PromotionsSection promotions={promotions} />
+      <BonusesSection promoTickets={promoTickets} />
+      <SportsOptions options={options} />
+      <GamesGridSection />
+      <div className="my-4 sm:my-0">
         <FeaturesSection features={additionalFeatures} />
       </div>
-      <div className="section-highlight">
-        <CasinoBanner />
-      </div>
-      <div className="section-highlight">
-        <ReviewsSection />
-      </div>
-      <div className="section-highlight">
-        <BlogSection />
-      </div>
-      <div className="section-highlight">
-        <Banking />
-      </div>
+      <CasinoBanner />
+      <ReviewsSection />
+      <BlogSection />
+      <Banking />
     </>
   )
 }
