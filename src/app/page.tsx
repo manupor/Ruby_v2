@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import Banking from '@/components/banking/Banking'
 import BlogSection from '@/components/blog/BlogSection'
 import BonusesSection from '@/components/bonuses/BonusesSection'
@@ -13,7 +12,6 @@ import PromotionsSection from '@/components/promotions/PromotionsSection'
 import ReviewsSection from '@/components/reviews/ReviewsSection'
 import SportsOptions from '@/components/sports-options/SportsOptions'
 import { Gift, HandCoins, PercentCircle, Wallet } from 'lucide-react'
-
 
 const promotions = [
   {
@@ -132,20 +130,42 @@ const additionalFeatures = [
 export default function Home() {
   return (
     <>
-      <HeroHome />
-      <FeaturesSection features={features} />
-      <Leagues />
-      <PromotionsSection promotions={promotions} />
-      <BonusesSection promoTickets={promoTickets} />
-      <SportsOptions options={options} />
-      <GamesGridSection />
-      <div className="my-4 sm:my-0">
+      <div className="section-highlight">
+        <HeroHome />
+      </div>
+      <div className="section-highlight">
+        <FeaturesSection features={features} />
+      </div>
+      <div className="section-highlight">
+        <Leagues />
+      </div>
+      <div className="section-highlight">
+        <PromotionsSection promotions={promotions} />
+      </div>
+      <div className="section-highlight">
+        <BonusesSection promoTickets={promoTickets} />
+      </div>
+      <div className="section-highlight">
+        <SportsOptions options={options} />
+      </div>
+      <div className="section-highlight">
+        <GamesGridSection />
+      </div>
+      <div className="section-highlight my-4 sm:my-0">
         <FeaturesSection features={additionalFeatures} />
       </div>
-      <CasinoBanner />
-      <ReviewsSection />
-      <BlogSection />
-      <Banking />
+      <div className="section-highlight">
+        <CasinoBanner />
+      </div>
+      <div className="section-highlight">
+        <ReviewsSection />
+      </div>
+      <div className="section-highlight">
+        <BlogSection />
+      </div>
+      <div className="section-highlight">
+        <Banking />
+      </div>
     </>
   )
 }
