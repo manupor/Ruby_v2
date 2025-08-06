@@ -26,7 +26,7 @@ export default function Hero() {
       text1: 'CASINO BRINGS',
       text2: 'VEGAS ACTION TO YOU',
       text3: 'FREE SPINS + MONTHLY INSURANCE!',
-      img_src: '/hero/01.png',
+      img_src: '/01.jpg',
     },
   ]
 
