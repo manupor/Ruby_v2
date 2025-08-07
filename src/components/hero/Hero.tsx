@@ -14,7 +14,7 @@ export default function Hero() {
       text1: 'Weekly rebatess, Daily Payouts',
       text2: '200% SIGN UP BONUS!',
       text3: 'SAME DAY PAYOUTS, TRUE VIP EXPERIENCE',
-      img_src: '/hero/01.png',
+      img_src: '01.jpgg',
     },
     {
       text1: 'BET ON ALL',
