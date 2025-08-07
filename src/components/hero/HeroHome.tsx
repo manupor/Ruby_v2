@@ -80,7 +80,7 @@ const HeroHome = () => {
             />
 
             {currentSlide === 0 && (
-              <div className="absolute top-0 left-0 z-10 h-full w-1/2 bg-gradient-to-r from-black/40 to-transparent pointer-events-none" />
+              <div className="pointer-events-none absolute top-0 left-0 z-10 h-full w-full bg-gradient-to-r from-black to-transparent" />
             )}
 
             <div className="absolute top-0 left-0 z-20 flex h-full w-full items-center">
