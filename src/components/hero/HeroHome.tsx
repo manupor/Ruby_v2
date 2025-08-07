@@ -79,13 +79,13 @@ const HeroHome = () => {
               className="h-full w-full object-cover sm:h-auto sm:object-contain"
             />
 
-            <div className="absolute top-0 left-0 flex h-full w-full items-center">
+            {currentSlide === 0 && (
+              <div className="absolute top-0 left-0 z-10 h-full w-1/2 bg-gradient-to-r from-black/40 to-transparent pointer-events-none" />
+            )}
+
+            <div className="absolute top-0 left-0 z-20 flex h-full w-full items-center">
               <div className="container mx-auto w-full px-4 sm:px-6 lg:px-16">
-                <div
-                  className={`mx-auto sm:mx-0 md:text-left ${
-                    currentSlide === 0 ? 'text-black' : 'text-white'
-                  }`}
-                >
+                <div className="mx-auto text-white sm:mx-0 md:text-left">
                   <h1 className="mb-2 text-[18px] font-bold tracking-tight uppercase md:text-[20px] lg:text-2xl">
                     {heros[currentSlide].text1}
                   </h1>
