@@ -46,7 +46,7 @@ export default function AuthModal({
                 activeTab === 'register'
                   ? 'bg-[#FF003D] text-white'
                   : 'text-gray-400 hover:text-white'
-              }`}
+              } blink-mobile`}
             >
               Join Now
             </button>

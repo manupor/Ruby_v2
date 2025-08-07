@@ -115,7 +115,7 @@ export default function HelpPage() {
           <div className="mt-8 text-center">
             <p className="mb-4 text-xl">Don't have an account yet?</p>
             <button
-              className="blink-strong rounded bg-red-600 px-6 py-3 text-lg font-bold text-white hover:bg-red-700"
+              className="blink-strong blink-mobile rounded bg-red-600 px-6 py-3 text-lg font-bold text-white hover:bg-red-700"
               onClick={openRegister}
             >
               Join Now
