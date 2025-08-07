@@ -82,20 +82,17 @@ const HeroHome = () => {
             <div className="absolute top-0 left-0 flex h-full w-full items-center">
               <div className="container mx-auto w-full px-4 sm:px-6 lg:px-16">
                 <div
-                  className="mx-auto text-white sm:mx-0 md:text-left"
-                  style={
-                    currentSlide === 0
-                      ? { textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }
-                      : undefined
-                  }
+                  className={`mx-auto sm:mx-0 md:text-left ${
+                    currentSlide === 0 ? 'text-black' : 'text-white'
+                  }`}
                 >
-                  <h1 className="mb-2 text-[18px] font-bold tracking-tight uppercase text-shadow-lg/30 md:text-[20px] lg:text-2xl">
+                  <h1 className="mb-2 text-[18px] font-bold tracking-tight uppercase md:text-[20px] lg:text-2xl">
                     {heros[currentSlide].text1}
                   </h1>
                   <p className="mb-2 text-[30px]/10 font-black tracking-tight md:text-[36px] lg:text-6xl">
                     {heros[currentSlide].text2}
                   </p>
-                  <h2 className="mb-6 text-[20px] font-bold uppercase text-shadow-lg/30 md:text-2xl lg:text-4xl">
+                  <h2 className="mb-6 text-[20px] font-bold uppercase md:text-2xl lg:text-4xl">
                     {heros[currentSlide].text3}
                   </h2>
                   <Button
