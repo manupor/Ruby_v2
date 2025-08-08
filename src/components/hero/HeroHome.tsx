@@ -59,11 +59,21 @@ const HeroHome = () => {
     <div className="relative w-full">
       {isMobile ? (
         // ✅ Mobile Version: static image, no slider
-        <div className="relative w-full cursor-pointer" onClick={handleJoinNowClick}>
+        <div
+          className="relative w-full cursor-pointer"
+          onClick={handleJoinNowClick}
+        >
           <img
             src={heros[0].mobile_img_src}
             alt="Hero banner"
             className="h-auto w-full"
+          />
+          <div
+            className="pointer-events-none absolute inset-0"
+            style={{
+              background:
+                'radial-gradient(circle at 20% 30%, rgba(255,0,0,0.25), transparent 60%), radial-gradient(circle at 80% 70%, rgba(255,0,0,0.25), transparent 60%)',
+            }}
           />
         </div>
       ) : (
