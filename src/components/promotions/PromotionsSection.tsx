@@ -4,7 +4,19 @@ import { useAuth } from '@/context/AuthContext'
 import { useEffect, useRef, useState } from 'react'
 import { Card, CardContent, CardTitle } from '../ui/card'
 
-const PromotionsSection = ({ promotions }: any) => {
+type Promotion = {
+  title: string
+  content1: string
+  content2: string
+  footer?: string
+  icon: React.ComponentType<{ size: number; className?: string }>
+}
+
+interface PromotionsSectionProps {
+  promotions: Promotion[]
+}
+
+const PromotionsSection = ({ promotions }: PromotionsSectionProps) => {
   const [isVisible, setIsVisible] = useState(false)
   const sectionRef = useRef<HTMLDivElement>(null)
   const { openRegister } = useAuth()
@@ -15,6 +27,7 @@ const PromotionsSection = ({ promotions }: any) => {
   }
 
   useEffect(() => {
+    const currentSection = sectionRef.current
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -25,13 +38,13 @@ const PromotionsSection = ({ promotions }: any) => {
       { threshold: 0.2 }
     )
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
+    if (currentSection) {
+      observer.observe(currentSection)
     }
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current)
+      if (currentSection) {
+        observer.unobserve(currentSection)
       }
     }
   }, [])
@@ -39,71 +52,48 @@ const PromotionsSection = ({ promotions }: any) => {
   return (
     <>
       {/* Mobile layout */}
-      <div className="relative bg-black sm:hidden">
-        {/* Title section with solid black background */}
-        <div className="hidden w-full sm:flex">
-          <h1 className="py-4 text-center text-4xl font-bold text-white">
-            Promotions
-          </h1>
-        </div>
+      <div className="bg-black sm:hidden">
+        <h1 className="py-4 text-center text-2xl font-bold text-white">Promotions</h1>
 
-        {/* Background image section */}
-        <div className="relative">
-          {/* Image container with gradient */}
-          <div className="relative h-[220px] w-full overflow-hidden">
-            <div
-              className="absolute inset-0"
-              style={{
-                background: `linear-gradient(to bottom, black 0%, transparent 15%, transparent 85%, black 100%), url('/banner-ruby.png') no-repeat center`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
-            ></div>
-          </div>
+        <div className="flex gap-4 overflow-x-auto px-4 pb-6 snap-x snap-mandatory">
+          {promotions.map((card) => {
+            const Icon = card.icon
+            return (
+              <a
+                key={card.title}
+                href="#"
+                onClick={handlePromotionClick}
+                className="min-w-[160px] flex-shrink-0 snap-start transition-transform hover:scale-105"
+              >
+                <Card className="flex h-[160px] flex-col overflow-hidden rounded-xl border border-neutral-700 bg-gradient-to-b from-neutral-800 to-neutral-900 p-3 shadow-md">
+                  <CardContent className="flex flex-1 flex-col">
+                    <div className="mb-2 flex items-center gap-2">
+                      <Icon size={16} className="shrink-0 text-[#FF003D]" />
+                      <CardTitle className="text-xs font-bold uppercase text-white">
+                        {card.title}
+                      </CardTitle>
+                    </div>
 
-          {/* Cards */}
-          <div className="relative -mt-8 w-full px-1">
-            <div className="flex flex-row gap-2">
-              {promotions.map((card: any, index: number) => {
-                const Icon = card.icon
-                return (
-                  <a
-                    key={card.title}
-                    href="#"
-                    onClick={handlePromotionClick}
-                    className="flex-1"
-                  >
-                    <Card className="flex h-[140px] flex-col overflow-hidden rounded-xl border border-neutral-800 bg-[#1A1A1A90]">
-                      <CardContent className="flex flex-1 flex-col p-2">
-                        <div className="mb-2 flex items-center gap-1">
-                          <Icon size={12} className="shrink-0 text-[#FF003D]" />
-                          <CardTitle className="text-[6px] font-bold text-white uppercase">
-                            {card.title}
-                          </CardTitle>
-                        </div>
-
-                        <div className="flex h-full flex-col text-white">
-                          <div className="flex h-full flex-col justify-start">
-                            <p className="text-[12px] leading-tight font-black text-[#FF003D] uppercase">
-                              {card.content1}
-                            </p>
-                            <p className="mt-1 text-[6px] font-medium uppercase">
-                              {card.content2}
-                            </p>
-                            {card.footer && (
-                              <p className="mt-1 text-[6px] font-medium text-gray-400 uppercase">
-                                {card.footer}
-                              </p>
-                            )}
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </a>
-                )
-              })}
-            </div>
-          </div>
+                    <div className="flex h-full flex-col text-white">
+                      <div className="flex h-full flex-col justify-start">
+                        <p className="text-sm font-black uppercase text-[#FF003D]">
+                          {card.content1}
+                        </p>
+                        <p className="mt-1 text-[10px] font-medium uppercase">
+                          {card.content2}
+                        </p>
+                        {card.footer && (
+                          <p className="mt-1 text-[10px] font-medium uppercase text-gray-400">
+                            {card.footer}
+                          </p>
+                        )}
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </a>
+            )
+          })}
         </div>
       </div>
 
@@ -137,7 +127,7 @@ const PromotionsSection = ({ promotions }: any) => {
 
           {/* Cards Section */}
           <div className="flex flex-row gap-6">
-            {promotions.map((card: any, index: number) => {
+            {promotions.map((card, index: number) => {
               const Icon = card.icon
               return (
                 <a
