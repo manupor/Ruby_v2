@@ -61,7 +61,7 @@ export default function Navbar() {
 
         <div className="flex items-center gap-2 sm:gap-4">
           <Button onClick={(e) => { e.preventDefault(); openLogin() }} variant="outline" className="border-white px-3 py-2 text-[12px] font-bold text-white uppercase hover:bg-white hover:text-black sm:px-6 sm:text-2xl xl:py-6 xl:text-3xl">Login</Button>
-          <Button onClick={(e) => { e.preventDefault(); openRegister() }} className="bg-[#FF003D] px-3 py-2 text-[12px] font-bold text-white uppercase transition hover:bg-[#e60036] sm:px-6 sm:text-2xl xl:py-6 xl:text-3xl">Join Now</Button>
+          <Button onClick={(e) => { e.preventDefault(); openRegister() }} className="bg-[#FF003D] px-3 py-2 text-[12px] font-bold text-white uppercase transition hover:bg-[#e60036] sm:px-6 sm:text-2xl xl:py-6 xl:text-3xl blink-mobile">Join Now</Button>
 
           <Sheet open={isOpen} onOpenChange={setIsOpen}>
             <SheetTrigger asChild>
@@ -85,7 +85,7 @@ export default function Navbar() {
 
                 <div className="flex items-center gap-2 mr-8">
                   <Button onClick={(e) => { e.preventDefault(); setIsOpen(false); openLogin() }} variant="outline" className="border-white px-3 py-2 text-[12px] font-bold text-white uppercase hover:bg-white hover:text-black sm:px-6 sm:text-2xl xl:py-6 xl:text-3xl">Login</Button>
-                  <Button onClick={(e) => { e.preventDefault(); setIsOpen(false); openRegister() }} className="bg-[#FF003D] px-3 py-2 text-[12px] font-bold text-white uppercase transition hover:bg-[#e60036] sm:px-6 sm:text-2xl xl:py-6 xl:text-3xl">Join Now</Button>
+                  <Button onClick={(e) => { e.preventDefault(); setIsOpen(false); openRegister() }} className="bg-[#FF003D] px-3 py-2 text-[12px] font-bold text-white uppercase transition hover:bg-[#e60036] sm:px-6 sm:text-2xl xl:py-6 xl:text-3xl blink-mobile">Join Now</Button>
                 </div>
               </div>
 

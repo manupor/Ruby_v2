@@ -69,7 +69,7 @@ const HeroHome = () => {
       ) : (
         // ✅ Desktop Version: full slider with content and button
         <div className="relative w-full">
-          <div className="relative h-[400px] w-full overflow-hidden sm:h-auto sm:py-0">
+        <div className="relative h-[400px] w-full overflow-hidden sm:h-auto sm:py-0 hero-light">
             <img
               src={heros[currentSlide].img_src}
               alt="Hero banner"
@@ -78,7 +78,7 @@ const HeroHome = () => {
 
             <div className="absolute top-0 left-0 flex h-full w-full items-center">
               <div className="container mx-auto w-full px-4 sm:px-6 lg:px-16">
-                <div className="mx-auto text-white sm:mx-0 md:text-left">
+                <div className="relative z-10 mx-auto text-white sm:mx-0 md:text-left">
                   <h1 className="mb-2 text-[18px] font-bold tracking-tight uppercase text-shadow-lg/30 md:text-[20px] lg:text-2xl">
                     {heros[currentSlide].text1}
                   </h1>
@@ -91,7 +91,7 @@ const HeroHome = () => {
                   <Button
                     variant="brand"
                     size="lg"
-                    className="blink-strong"
+                    className="blink-strong blink-mobile"
                     onClick={handleJoinNowClick}
                   >
                     JOIN NOW

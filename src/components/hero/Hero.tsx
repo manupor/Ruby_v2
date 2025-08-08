@@ -44,7 +44,7 @@ export default function Hero() {
 
   return (
     <div className="bg-primary">
-      <div className="relative h-[400px] w-full overflow-hidden">
+      <div className="relative h-[400px] w-full overflow-hidden hero-light">
         {images.map((image, index) => (
           <div
             key={image}
@@ -57,7 +57,7 @@ export default function Hero() {
               backgroundPosition: 'center',
             }}
           >
-            <div className="lg:-x-8 container mx-auto px-4 py-20 text-white">
+            <div className="lg:-x-8 container mx-auto px-4 py-20 text-white relative z-10">
               <div className="mb-4">
                 <h1 className="text-2xl font-bold tracking-tight uppercase">
                   {heros[index].text1}
@@ -72,7 +72,7 @@ export default function Hero() {
               <Button
                 variant="brand"
                 size="massive"
-                className="blink-strong"
+                className="blink-strong blink-mobile"
                 onClick={handleJoinNowClick}
               >
                 JOIN NOW

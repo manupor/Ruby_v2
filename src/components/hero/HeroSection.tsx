@@ -104,7 +104,7 @@ const HeroSection = ({
                 </h2>
                 {buttonText && (
                   <button
-                    className="blink-strong cursor-pointer rounded bg-red-600 px-6 py-3 text-lg font-bold text-white hover:bg-red-700"
+                    className="blink-strong blink-mobile cursor-pointer rounded bg-red-600 px-6 py-3 text-lg font-bold text-white hover:bg-red-700"
                     onClick={handleButtonClick}
                   >
                     {buttonText}
@@ -117,7 +117,7 @@ const HeroSection = ({
       </div>
 
       {/* Mobile hero section */}
-      <div className="relative w-full lg:hidden">
+      <div className="relative w-full lg:hidden hero-light">
         <div className="relative w-full">
           <img
             src={mobileImage}
@@ -135,7 +135,7 @@ const HeroSection = ({
 
         {/* Content positioned in center with adjusted styling */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="px-8 text-center">
+          <div className="relative z-10 px-8 text-center">
             {!hideTextOnMobile && (
               <>
                 <h1 className="mb-1 text-[14px] font-medium tracking-wide text-white uppercase">
@@ -151,7 +151,7 @@ const HeroSection = ({
             )}
             {buttonText && (
               <button
-                className={`blink-strong rounded bg-red-600 px-4 py-2 font-bold text-white hover:bg-red-700 ${hideTextOnMobile ? 'translate-y-16' : ''}`}
+                className={`blink-strong blink-mobile rounded bg-red-600 px-4 py-2 font-bold text-white hover:bg-red-700 ${hideTextOnMobile ? 'translate-y-16' : ''}`}
                 onClick={handleButtonClick}
               >
                 {buttonText}
