@@ -39,71 +39,41 @@ const PromotionsSection = ({ promotions }: any) => {
   return (
     <>
       {/* Mobile layout */}
-      <div className="relative bg-black sm:hidden">
-        {/* Title section with solid black background */}
-        <div className="hidden w-full sm:flex">
-          <h1 className="py-4 text-center text-4xl font-bold text-white">
-            Promotions
-          </h1>
-        </div>
-
-        {/* Background image section */}
-        <div className="relative">
-          {/* Image container with gradient */}
-          <div className="relative h-[220px] w-full overflow-hidden">
-            <div
-              className="absolute inset-0"
-              style={{
-                background: `linear-gradient(to bottom, black 0%, transparent 15%, transparent 85%, black 100%), url('/banner-ruby.png') no-repeat center`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
-            ></div>
-          </div>
-
-          {/* Cards */}
-          <div className="relative -mt-8 w-full px-1">
-            <div className="flex flex-row gap-2">
-              {promotions.map((card: any, index: number) => {
-                const Icon = card.icon
-                return (
-                  <a
-                    key={card.title}
-                    href="#"
-                    onClick={handlePromotionClick}
-                    className="flex-1"
-                  >
-                    <Card className="flex h-[140px] flex-col overflow-hidden rounded-xl border border-neutral-800 bg-[#1A1A1A90]">
-                      <CardContent className="flex flex-1 flex-col p-2">
-                        <div className="mb-2 flex items-center gap-1">
-                          <Icon size={12} className="shrink-0 text-[#FF003D]" />
-                          <CardTitle className="text-[6px] font-bold text-white uppercase">
-                            {card.title}
-                          </CardTitle>
-                        </div>
-
-                        <div className="flex h-full flex-col text-white">
-                          <div className="flex h-full flex-col justify-start">
-                            <p className="text-[12px] leading-tight font-black text-[#FF003D] uppercase">
-                              {card.content1}
-                            </p>
-                            <p className="mt-1 text-[6px] font-medium uppercase">
-                              {card.content2}
-                            </p>
-                            {card.footer && (
-                              <p className="mt-1 text-[6px] font-medium text-gray-400 uppercase">
-                                {card.footer}
-                              </p>
-                            )}
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </a>
-                )
-              })}
-            </div>
-          </div>
+      <div className="bg-black px-4 py-4 sm:hidden">
+        <div className="flex flex-col gap-4">
+          {promotions.map((card: any) => {
+            const Icon = card.icon
+            return (
+              <a
+                key={card.title}
+                href="#"
+                onClick={handlePromotionClick}
+                className="w-full"
+              >
+                <Card className="flex h-[140px] w-full items-center justify-center overflow-hidden rounded-xl border border-neutral-800 bg-[#1A1A1A90] shadow-[0_0_10px_#FF003D]">
+                  <CardContent className="flex h-full flex-col items-center justify-center space-y-1 p-4 text-center">
+                    <div className="flex items-center justify-center gap-2">
+                      <Icon size={16} className="shrink-0 text-[#FF003D]" />
+                      <CardTitle className="text-sm font-bold uppercase text-white">
+                        {card.title}
+                      </CardTitle>
+                    </div>
+                    <p className="text-lg font-black uppercase leading-tight text-[#FF003D]">
+                      {card.content1}
+                    </p>
+                    <p className="text-base font-medium uppercase text-white">
+                      {card.content2}
+                    </p>
+                    {card.footer && (
+                      <p className="text-sm font-medium uppercase text-gray-400">
+                        {card.footer}
+                      </p>
+                    )}
+                  </CardContent>
+                </Card>
+              </a>
+            )
+          })}
         </div>
       </div>
 
