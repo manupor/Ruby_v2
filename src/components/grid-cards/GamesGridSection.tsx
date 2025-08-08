@@ -52,7 +52,7 @@ const GamesGridSection = () => {
         {games.map((game) => (
           <div key={game.id} className="group relative mb-4 md:mb-6">
             {/* Game Card with Hover Effect */}
-            <div className="relative aspect-square w-full overflow-hidden rounded-xl transition-transform duration-500 group-hover:scale-110 md:rounded-3xl">
+            <div className="relative aspect-square w-full overflow-hidden rounded-xl transition-transform duration-500 group-hover:scale-110 md:rounded-3xl neon-card">
               <Image
                 src={game.image}
                 alt={game.title}
