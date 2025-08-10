@@ -61,7 +61,7 @@ const BlogSection = () => {
             Latest from the Blog
           </h2>
           <Link
-            href="/blog"
+            href="/sports-blog"
             className="flex items-center gap-1 font-medium text-red-600 hover:text-red-500"
           >
             View all posts <ArrowRight className="h-4 w-4" />
@@ -156,7 +156,7 @@ const BlogSection = () => {
         {/* View All Button (Mobile) */}
         <div className="mt-10 flex justify-center md:hidden">
           <Link
-            href="/blog"
+            href="/sports-blog"
             className="rounded-md bg-red-600 px-6 py-3 font-medium text-white transition-colors hover:bg-red-700"
           >
             View All Blog Posts
