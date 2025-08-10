@@ -82,7 +82,7 @@ const HeroHome = () => {
                   <h1 className="mb-2 text-[18px] font-bold tracking-tight uppercase text-shadow-lg/30 md:text-[20px] lg:text-2xl">
                     {heros[currentSlide].text1}
                   </h1>
-                  <p className="mb-2 text-[30px]/10 font-black tracking-tight md:text-[36px] lg:text-6xl">
+                  <p className="mb-2 text-[30px]/10 font-black text-shadow-lg/30 tracking-tight md:text-[36px] lg:text-6xl">
                     {heros[currentSlide].text2}
                   </p>
                   <h2 className="mb-6 text-[20px] font-bold uppercase text-shadow-lg/30 md:text-2xl lg:text-4xl">
