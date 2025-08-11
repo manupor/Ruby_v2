@@ -32,6 +32,66 @@ const GamesGridSection = () => {
       image: '/game-cards/08.png',
       title: 'BUFFALO POWER 2 HOLD AND WIN',
     },
+    {
+      id: 9,
+      image: '/game-cards/baccarat-no-commission.jpg',
+      title: 'BUFFALO POWER 2 HOLD AND WIN',
+    },
+    {
+      id: 10,
+      image: '/game-cards/baccarat-supreme.jpg',
+      title: 'BUFFALO POWER 2 HOLD AND WIN',
+    },
+    {
+      id: 11,
+      image: '/game-cards/bonus-track.jpg',
+      title: 'BUFFALO POWER 2 HOLD AND WIN',
+    },
+    {
+      id: 12,
+      image: '/game-cards/bubbles-bonanza.jpg',
+      title: 'BUFFALO POWER 2 HOLD AND WIN',
+    },
+    {
+      id: 13,
+      image: '/game-cards/cash-galaxy.jpg',
+      title: 'BUFFALO POWER 2 HOLD AND WIN',
+    },
+    {
+      id: 14,
+      image: '/game-cards/flexing-dragons.jpg',
+      title: 'BUFFALO POWER 2 HOLD AND WIN',
+    },
+    {
+      id: 15,
+      image: '/game-cards/forgotten-pharaoh.jpg',
+      title: 'BUFFALO POWER 2 HOLD AND WIN',
+    },
+    {
+      id: 16,
+      image: '/game-cards/genies-secret.jpg',
+      title: 'BUFFALO POWER 2 HOLD AND WIN',
+    },
+    {
+      id: 17,
+      image: '/game-cards/grand-heist-feature-buy.jpg',
+      title: 'BUFFALO POWER 2 HOLD AND WIN',
+    },
+    {
+      id: 18,
+      image: '/game-cards/grand-heist.jpg',
+      title: 'BUFFALO POWER 2 HOLD AND WIN',
+    },
+    {
+      id: 19,
+      image: '/game-cards/queens-of-glory.jpg',
+      title: 'BUFFALO POWER 2 HOLD AND WIN',
+    },
+    {
+      id: 19,
+      image: '/game-cards/raiden-medal-burst.jpg',
+      title: 'BUFFALO POWER 2 HOLD AND WIN',
+    },
   ]
 
   return (
@@ -58,7 +118,7 @@ const GamesGridSection = () => {
                 alt={game.title}
                 layout="fill"
                 objectFit="cover"
-                className="rounded-xl md:rounded-3xl"
+                className="rounded-xl md:rounded-3xl object-bottom"
               />
             </div>
 
