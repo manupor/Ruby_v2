@@ -8,6 +8,7 @@ import './globals.css'
 import Header from '@/components/header/Header'
 import Footer from '@/components/footer/Footer'
 import FloatingHelpButton from '@/components/floating-button/FloatingHelpButton'
+import MobileNav from '@/components/mobile-nav/MobileNav'
 import { AuthProvider } from '@/context/AuthContext'
 
 // Google Fonts
@@ -48,6 +49,7 @@ export default function RootLayout({
           <main role="main">{children}</main>
           <FloatingHelpButton />
           <Footer />
+          <MobileNav />
         </AuthProvider>
       </body>
     </html>
