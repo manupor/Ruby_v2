@@ -88,7 +88,7 @@ const GamesGridSection = () => {
       title: 'BUFFALO POWER 2 HOLD AND WIN',
     },
     {
-      id: 19,
+      id: 20,
       image: '/game-cards/raiden-medal-burst.jpg',
       title: 'BUFFALO POWER 2 HOLD AND WIN',
     },

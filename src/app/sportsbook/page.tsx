@@ -1,12 +1,12 @@
 'use client'
 
-import HeroHome from '@/components/hero/HeroHome'
+import SportsHero from '@/components/hero/sports-hero'
 import BetSmarterSection from '@/components/smarter-cta/BetSmarterSection'
 
 export default function Home() {
   return (
     <>
-      <HeroHome />
+      <SportsHero />
 
       <div className="mb-20">
         <BetSmarterSection />

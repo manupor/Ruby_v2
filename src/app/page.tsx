@@ -13,6 +13,7 @@ import PromotionsSection from '@/components/promotions/PromotionsSection'
 import ReviewsSection from '@/components/reviews/ReviewsSection'
 import SportsOptions from '@/components/sports-options/SportsOptions'
 import { Gift, HandCoins, PercentCircle, Wallet } from 'lucide-react'
+import { HeroCarousel } from '@/components/hero/hero-carousel'
 
 
 const promotions = [
@@ -132,7 +133,7 @@ const additionalFeatures = [
 export default function Home() {
   return (
     <>
-      <HeroHome />
+      <HeroCarousel />
       <FeaturesSection features={features} />
       <Leagues />
       <PromotionsSection promotions={promotions} />
