@@ -1,6 +1,5 @@
 'use client'
 
-import Image from 'next/image'
 import Banking from '@/components/banking/Banking'
 import BlogSection from '@/components/blog/BlogSection'
 import BonusesSection from '@/components/bonuses/BonusesSection'
@@ -14,7 +13,6 @@ import ReviewsSection from '@/components/reviews/ReviewsSection'
 import SportsOptions from '@/components/sports-options/SportsOptions'
 import { Gift, HandCoins, PercentCircle, Wallet } from 'lucide-react'
 import { HeroCarousel } from '@/components/hero/hero-carousel'
-
 
 const promotions = [
   {

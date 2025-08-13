@@ -42,7 +42,7 @@ const PromotionsSection = ({ promotions }: any) => {
       <div className="relative bg-black sm:hidden">
         {/* Title section with solid black background */}
         <div className="hidden w-full sm:flex">
-          <h1 className="py-4 text-center text-4xl font-bold text-white">
+          <h1 className="text-highlight py-4 text-center text-4xl font-bold text-white">
             Promotions
           </h1>
         </div>
@@ -73,25 +73,25 @@ const PromotionsSection = ({ promotions }: any) => {
                     onClick={handlePromotionClick}
                     className="flex-1"
                   >
-                    <Card className="flex h-[140px] flex-col overflow-hidden rounded-xl border border-neutral-800 bg-[#1A1A1A90]">
+                    <Card className="card-animate flex h-[140px] flex-col overflow-hidden rounded-xl border border-neutral-800 bg-[#1A1A1A90]">
                       <CardContent className="flex flex-1 flex-col p-2">
                         <div className="mb-2 flex items-center gap-1">
                           <Icon size={12} className="shrink-0 text-[#FF003D]" />
-                          <CardTitle className="text-[6px] font-bold text-white uppercase">
+                          <CardTitle className="text-highlight text-[6px] font-bold text-white uppercase">
                             {card.title}
                           </CardTitle>
                         </div>
 
                         <div className="flex h-full flex-col text-white">
                           <div className="flex h-full flex-col justify-start">
-                            <p className="text-[12px] leading-tight font-black text-[#FF003D] uppercase">
+                            <p className="text-highlight text-[12px] leading-tight font-black text-[#FF003D] uppercase">
                               {card.content1}
                             </p>
-                            <p className="mt-1 text-[6px] font-medium uppercase">
+                            <p className="text-highlight mt-1 text-[6px] font-medium uppercase">
                               {card.content2}
                             </p>
                             {card.footer && (
-                              <p className="mt-1 text-[6px] font-medium text-gray-400 uppercase">
+                              <p className="text-highlight mt-1 text-[6px] font-medium text-gray-400 uppercase">
                                 {card.footer}
                               </p>
                             )}
@@ -109,7 +109,7 @@ const PromotionsSection = ({ promotions }: any) => {
 
       {/* Desktop layout - preserved exactly as original */}
       <div
-        className="relative  hidden overflow-hidden sm:flex sm:h-[60vh] sm:flex-col sm:justify-end"
+        className="relative hidden overflow-hidden sm:flex sm:h-[60vh] sm:flex-col sm:justify-end"
         ref={sectionRef}
       >
         {/* Background image container */}
@@ -125,7 +125,9 @@ const PromotionsSection = ({ promotions }: any) => {
         <div className="container mx-auto px-4 py-16 lg:px-8">
           {/* Heading Section */}
           <div className="mb-10 flex items-center justify-between">
-            <h1 className="text-3xl font-bold text-white">Promotions</h1>
+            <h1 className="text-highlight text-3xl font-bold text-white">
+              Promotions
+            </h1>
             <a
               href="#"
               onClick={handlePromotionClick}
@@ -153,25 +155,25 @@ const PromotionsSection = ({ promotions }: any) => {
                     transitionDelay: `${index * 150}ms`,
                   }}
                 >
-                  <Card className="flex h-[280px] flex-1 flex-col overflow-hidden rounded-xl bg-[#1A1A1A] transition-all duration-300 ease-in-out hover:scale-[1.02]">
+                  <Card className="card-animate flex h-[280px] flex-1 flex-col overflow-hidden rounded-xl bg-[#1A1A1A] transition-all duration-300 ease-in-out hover:scale-[1.02]">
                     <CardContent className="flex flex-1 flex-col justify-between p-6">
                       <div className="mb-4 flex items-center gap-4">
                         <Icon size={40} className="shrink-0 text-[#FF003D]" />
-                        <CardTitle className="text-xl font-bold text-white uppercase">
+                        <CardTitle className="text-highlight text-xl font-bold text-white uppercase">
                           {card.title}
                         </CardTitle>
                       </div>
 
                       <div className="flex h-full flex-col text-pretty text-white">
                         <div className="flex h-full flex-col justify-start">
-                          <p className="text-3xl leading-tight font-black break-words text-[#FF003D] uppercase sm:text-4xl">
+                          <p className="text-highlight text-3xl leading-tight font-black break-words text-[#FF003D] uppercase sm:text-4xl">
                             {card.content1}
                           </p>
-                          <p className="mt-2 text-lg font-semibold uppercase">
+                          <p className="text-highlight mt-2 text-lg font-semibold uppercase">
                             {card.content2}
                           </p>
                           {card.footer && (
-                            <p className="text-md mt-2 font-bold text-gray-400 uppercase">
+                            <p className="text-highlight text-md mt-2 font-bold text-gray-400 uppercase">
                               {card.footer}
                             </p>
                           )}

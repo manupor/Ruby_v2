@@ -112,10 +112,13 @@ const FeaturesSection: React.FC<FeaturesSectionProps> = ({ features }) => {
         <div className="mx-auto max-w-7xl px-4">
           <div className="grid grid-cols-4 gap-6">
             {features.map((feature, index) => (
-              <div key={index} className="flex items-center space-x-4">
+              <div
+                key={index}
+                className="card-animate flex items-center space-x-4"
+              >
                 <div className="flex-shrink-0">{feature.icon}</div>
                 <div className="min-w-0 flex-1">
-                  <h3 className="text-sm leading-tight font-bold text-white">
+                  <h3 className="text-highlight text-sm leading-tight font-bold text-white">
                     {feature.title}
                   </h3>
                   <p className="mt-1 text-xs leading-tight text-gray-300">
@@ -148,10 +151,10 @@ const FeaturesSection: React.FC<FeaturesSectionProps> = ({ features }) => {
           >
             {features.map((feature, index) => (
               <div key={index} className="w-full flex-shrink-0 px-4">
-                <div className="flex items-center justify-center space-x-4 py-4">
+                <div className="card-animate flex items-center justify-center space-x-4 py-4">
                   <div className="flex-shrink-0">{feature.icon}</div>
                   <div className="min-w-0 flex-1">
-                    <h3 className="text-sm leading-tight font-bold text-white">
+                    <h3 className="text-highlight text-sm leading-tight font-bold text-white">
                       {feature.title}
                     </h3>
                     <p className="mt-1 text-xs leading-tight text-gray-300">
