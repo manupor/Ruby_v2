@@ -1,5 +1,3 @@
-// src/app/layout.tsx
-
 import type { Metadata } from 'next'
 import localFont from 'next/font/local'
 import { Geist, Geist_Mono } from 'next/font/google'
@@ -9,6 +7,7 @@ import Header from '@/components/header/Header'
 import Footer from '@/components/footer/Footer'
 import FloatingHelpButton from '@/components/floating-button/FloatingHelpButton'
 import { AuthProvider } from '@/context/AuthContext'
+import TawkToChat from '@/components/TawkToChat/TawkToChat'
 
 // Google Fonts
 const geistSans = Geist({
@@ -46,8 +45,10 @@ export default function RootLayout({
         <AuthProvider>
           <Header />
           <main role="main">{children}</main>
-          <FloatingHelpButton />
+          {/* <FloatingHelpButton /> */}
           <Footer />
+          {/* Tawk.to Chat Widget */}
+          <TawkToChat />
         </AuthProvider>
       </body>
     </html>
