@@ -215,7 +215,7 @@ const SportsRulesContent = () => {
         <a
           href="#"
           onClick={handleJoinNowClick}
-          className="inline-block rounded-full bg-[#FF003D] px-10 py-3 text-xl font-bold text-white transition-colors hover:bg-[#E00034]"
+          className="inline-block rounded-full bg-[#FF003D] px-10 py-3 text-xl font-bold text-white transition-colors hover:bg-[#E00034] blink-mobile"
         >
           JOIN NOW
         </a>
