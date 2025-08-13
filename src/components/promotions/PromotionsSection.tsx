@@ -62,21 +62,21 @@ const PromotionsSection = ({ promotions }: any) => {
           </div>
 
           {/* Cards */}
-          <div className="relative -mt-8 w-full px-1">
-            <div className="flex flex-row gap-2">
-              {promotions.map((card: any, index: number) => {
+          <div className="relative -mt-8 w-full px-4">
+            <div className="flex flex-col gap-4">
+              {promotions.map((card: any) => {
                 const Icon = card.icon
                 return (
                   <a
                     key={card.title}
                     href="#"
                     onClick={handlePromotionClick}
-                    className="flex-1"
+                    className="block w-full"
                   >
-                    <Card className="flex h-[140px] flex-col overflow-hidden rounded-xl border border-neutral-800 bg-[#1A1A1A90]">
+                    <Card className="red-glow flex h-[140px] w-full flex-col overflow-hidden rounded-xl border-2 border-red-600 bg-black text-white">
                       <CardContent className="flex flex-1 flex-col p-2">
                         <div className="mb-2 flex items-center gap-1">
-                          <Icon size={12} className="shrink-0 text-[#FF003D]" />
+                          <Icon size={12} className="shrink-0 text-red-600" />
                           <CardTitle className="text-[6px] font-bold text-white uppercase">
                             {card.title}
                           </CardTitle>
@@ -84,14 +84,14 @@ const PromotionsSection = ({ promotions }: any) => {
 
                         <div className="flex h-full flex-col text-white">
                           <div className="flex h-full flex-col justify-start">
-                            <p className="text-[12px] leading-tight font-black text-[#FF003D] uppercase">
+                            <p className="text-[12px] leading-tight font-black uppercase">
                               {card.content1}
                             </p>
                             <p className="mt-1 text-[6px] font-medium uppercase">
                               {card.content2}
                             </p>
                             {card.footer && (
-                              <p className="mt-1 text-[6px] font-medium text-gray-400 uppercase">
+                              <p className="mt-1 text-[6px] font-medium uppercase">
                                 {card.footer}
                               </p>
                             )}
@@ -109,7 +109,7 @@ const PromotionsSection = ({ promotions }: any) => {
 
       {/* Desktop layout - preserved exactly as original */}
       <div
-        className="relative  hidden overflow-hidden sm:flex sm:h-[60vh] sm:flex-col sm:justify-end"
+        className="relative hidden overflow-hidden sm:flex sm:h-[60vh] sm:flex-col sm:justify-end"
         ref={sectionRef}
       >
         {/* Background image container */}
