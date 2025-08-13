@@ -59,7 +59,10 @@ const HeroHome = () => {
     <div className="relative w-full">
       {isMobile ? (
         // ✅ Mobile Version: static image, no slider
-        <div className="relative w-full cursor-pointer" onClick={handleJoinNowClick}>
+        <div
+          className="relative w-full cursor-pointer"
+          onClick={handleJoinNowClick}
+        >
           <img
             src={heros[0].mobile_img_src}
             alt="Hero banner"
@@ -76,16 +79,20 @@ const HeroHome = () => {
               className="h-full w-full object-cover sm:h-auto sm:object-contain"
             />
 
-            <div className="absolute top-0 left-0 flex h-full w-full items-center">
+            {currentSlide === 0 && (
+              <div className="pointer-events-none absolute top-0 left-0 z-10 h-full w-full bg-gradient-to-r from-black to-transparent" />
+            )}
+
+            <div className="absolute top-0 left-0 z-20 flex h-full w-full items-center">
               <div className="container mx-auto w-full px-4 sm:px-6 lg:px-16">
                 <div className="mx-auto text-white sm:mx-0 md:text-left">
-                  <h1 className="mb-2 text-[18px] font-bold tracking-tight uppercase text-shadow-lg/30 md:text-[20px] lg:text-2xl">
+                  <h1 className="mb-2 text-[18px] font-bold tracking-tight uppercase md:text-[20px] lg:text-2xl">
                     {heros[currentSlide].text1}
                   </h1>
                   <p className="mb-2 text-[30px]/10 font-black text-shadow-lg/30 tracking-tight md:text-[36px] lg:text-6xl">
                     {heros[currentSlide].text2}
                   </p>
-                  <h2 className="mb-6 text-[20px] font-bold uppercase text-shadow-lg/30 md:text-2xl lg:text-4xl">
+                  <h2 className="mb-6 text-[20px] font-bold uppercase md:text-2xl lg:text-4xl">
                     {heros[currentSlide].text3}
                   </h2>
                   <Button
@@ -103,7 +110,9 @@ const HeroHome = () => {
             {/* Arrows */}
             <button
               onClick={() =>
-                setCurrentSlide((prev) => (prev - 1 + heros.length) % heros.length)
+                setCurrentSlide(
+                  (prev) => (prev - 1 + heros.length) % heros.length
+                )
               }
               className="absolute top-1/2 left-4 -translate-y-1/2 transform rounded-full bg-black/30 p-2 text-white hover:bg-black/50"
               aria-label="Previous slide"
@@ -111,7 +120,9 @@ const HeroHome = () => {
               &lt;
             </button>
             <button
-              onClick={() => setCurrentSlide((prev) => (prev + 1) % heros.length)}
+              onClick={() =>
+                setCurrentSlide((prev) => (prev + 1) % heros.length)
+              }
               className="absolute top-1/2 right-4 -translate-y-1/2 transform rounded-full bg-black/30 p-2 text-white hover:bg-black/50"
               aria-label="Next slide"
             >
