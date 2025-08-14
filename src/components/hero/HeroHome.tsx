@@ -91,9 +91,8 @@ const HeroHome = () => {
                   <Button
                     variant="brand"
                     size="lg"
-                    className="blink-strong"
+                    className={`blink-strong ${currentSlide === 0 ? 'relative -mt-1.5' : ''}`}
                     onClick={handleJoinNowClick}
-                    style={currentSlide === 0 ? { marginTop: '-5px' } : {}}
                   >
                     JOIN NOW
                   </Button>
