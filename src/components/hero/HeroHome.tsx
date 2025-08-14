@@ -22,7 +22,7 @@ const HeroHome = () => {
       text2: '150% SPORTS BONUS',
       text3: 'FAST PAYMENTS, 24/7 SUPPORT',
       img_src: '/hero/02.png',
-      mobile_img_src: '/hero/mobile/01.png.jpg', // Solo se usa uno en mobile
+      mobile_img_src: '/hero/mobile/01.png.jpg',
     },
   ]
 
@@ -30,13 +30,11 @@ const HeroHome = () => {
     const handleResize = () => {
       setIsMobile(window.innerWidth < 640)
     }
-
     handleResize()
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  // Auto-slide solo en desktop
   useEffect(() => {
     if (!isMobile) {
       const interval = setInterval(() => {
@@ -58,45 +56,42 @@ const HeroHome = () => {
   return (
     <div className="relative w-full">
       {isMobile ? (
-        // ✅ Mobile Version
         <div className="relative w-full">
-          <img
-            src={heros[currentSlide].mobile_img_src}
-            alt="Hero banner"
-            className="h-auto w-full"
-          />
-
-          {/* Botón alineado: mismo nivel en ambos slides (ajuste extra para el slide 1) */}
-          <div
-            className={`absolute left-1/2 -translate-x-1/2 transform ${
-              currentSlide === 0 ? 'bottom-16' : 'bottom-8'
-            }`}
-          >
-            <Button
-              variant="brand"
-              size="lg"
-              onClick={handleJoinNowClick}
-            >
-              JOIN NOW
-            </Button>
-          </div>
-
-          {/* Dots */}
-          <div className="absolute bottom-2 left-1/2 flex -translate-x-1/2 transform space-x-2">
-            {heros.map((_, index) => (
-              <button
-                key={index}
-                className={`h-3 w-3 rounded-full ${
-                  index === currentSlide ? 'bg-white' : 'bg-white/50'
-                }`}
-                onClick={() => goToSlide(index)}
-                aria-label={`Go to slide ${index + 1}`}
+          {currentSlide === 0 ? (
+            <div className="relative w-full">
+              <img
+                src={heros[0].mobile_img_src}
+                alt="Hero banner"
+                className="h-auto w-full"
               />
-            ))}
-          </div>
+              <Button
+                variant="brand"
+                size="lg"
+                className="blink-strong absolute left-1/2 -translate-x-1/2 bottom-[22%]"
+                onClick={handleJoinNowClick}
+              >
+                JOIN NOW!
+              </Button>
+            </div>
+          ) : (
+            <div className="relative w-full">
+              <img
+                src={heros[1].mobile_img_src}
+                alt="Hero banner"
+                className="h-auto w-full"
+              />
+              <Button
+                variant="brand"
+                size="lg"
+                className="blink-strong absolute left-1/2 -translate-x-1/2 bottom-[22%]"
+                onClick={handleJoinNowClick}
+              >
+                JOIN NOW!
+              </Button>
+            </div>
+          )}
         </div>
       ) : (
-        // ✅ Desktop Version: full slider con contenido original
         <div className="relative w-full">
           <div className="relative h-[400px] w-full overflow-hidden sm:h-auto sm:py-0">
             <img
@@ -104,7 +99,6 @@ const HeroHome = () => {
               alt="Hero banner"
               className="h-full w-full object-cover sm:h-auto sm:object-contain"
             />
-
             <div className="absolute top-0 left-0 flex h-full w-full items-center">
               <div className="container mx-auto w-full px-4 sm:px-6 lg:px-16">
                 <div className="mx-auto text-white sm:mx-0 md:text-left">
@@ -128,8 +122,6 @@ const HeroHome = () => {
                 </div>
               </div>
             </div>
-
-            {/* Arrows */}
             <button
               onClick={() =>
                 setCurrentSlide((prev) => (prev - 1 + heros.length) % heros.length)
@@ -146,8 +138,6 @@ const HeroHome = () => {
             >
               &gt;
             </button>
-
-            {/* Dots */}
             <div className="absolute bottom-4 left-1/2 flex -translate-x-1/2 transform space-x-2">
               {heros.map((_, index) => (
                 <button
