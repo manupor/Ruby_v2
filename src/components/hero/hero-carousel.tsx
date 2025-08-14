@@ -20,7 +20,7 @@ const slides = [
   },
   {
     id: 2,
-    title: 'PLAY.WIN.GETPAID',
+    title: 'PLAY.WIN.GET PAID',
     subtitle: '',
     subtitlePrefix: '',
     subtitleSuffix: '',
