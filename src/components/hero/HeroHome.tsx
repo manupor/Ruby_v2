@@ -93,6 +93,7 @@ const HeroHome = () => {
                     size="lg"
                     className="blink-strong"
                     onClick={handleJoinNowClick}
+                    style={currentSlide === 0 ? { marginTop: '-5px' } : {}}
                   >
                     JOIN NOW
                   </Button>
