@@ -160,6 +160,14 @@ export function HeroCarousel() {
 
   return (
     <section className="relative flex h-[300px] items-center justify-center overflow-hidden bg-black sm:h-[400px] lg:h-[500px]">
+      {/* Mobile-specific height adjustment for image slides */}
+      <div className="absolute inset-0 sm:hidden">
+        {(currentSlide === 0 || currentSlide === 1) && (
+          <div className="h-auto min-h-[300px] w-full">
+            {/* Content will be positioned within this container */}
+          </div>
+        )}
+      </div>
       {slides.map((slide, index) => (
         <div
           key={`${slide.id}-${index}`}
@@ -192,8 +200,10 @@ export function HeroCarousel() {
                 <Image
                   src="/ruby-home-mobile-first-slide.png"
                   alt="Ruby Mobile Hero"
-                  fill
-                  className="object-cover object-center"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  className="h-auto w-full object-contain"
                   priority={index === 0}
                 />
               </div>
@@ -211,15 +221,30 @@ export function HeroCarousel() {
           )}
 
           {index === 1 && (
-            <div className="hidden sm:block">
-              <Image
-                src={slide.image}
-                alt={slide.title}
-                fill
-                className="object-cover object-center opacity-30 sm:translate-x-[60px] sm:translate-y-[20px] sm:object-contain sm:object-right sm:opacity-100"
-                priority={index === 1}
-              />
-            </div>
+            <>
+              {/* Mobile background image for second slide only */}
+              <div className="absolute inset-0 sm:hidden">
+                <Image
+                  src="/ruby-home-mobile-second-slide.png"
+                  alt="Ruby Mobile Second Slide"
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  className="h-auto w-full object-contain"
+                  priority={index === 1}
+                />
+              </div>
+              {/* Desktop background image */}
+              <div className="hidden sm:block">
+                <Image
+                  src={slide.image}
+                  alt={slide.title}
+                  fill
+                  className="object-cover object-center opacity-30 sm:translate-x-[60px] sm:translate-y-[20px] sm:object-contain sm:object-right sm:opacity-100"
+                  priority={index === 1}
+                />
+              </div>
+            </>
           )}
         </div>
       ))}
@@ -229,8 +254,23 @@ export function HeroCarousel() {
       {/* MOBILE VERSION */}
       <div className="relative z-10 mx-auto flex min-h-full w-full max-w-7xl items-center px-4 py-6 sm:hidden">
         <div className="w-full max-w-xl text-center">
-          {/* Only show content for slides other than first slide */}
-          {currentSlide !== 0 && (
+          {/* Hide all content for first and second slides, only show button at bottom */}
+          {(currentSlide === 0 || currentSlide === 1) && (
+            <div
+              className={`absolute left-1/2 -translate-x-1/2 transform ${currentSlide === 0 ? 'bottom-28' : 'bottom-20'}`}
+            >
+              <Button
+                size="lg"
+                onClick={handleJoinNowClick}
+                className="blink-button rounded-lg bg-yellow-500 px-6 py-3 text-base font-bold text-white shadow-lg transition-all duration-300 hover:bg-yellow-400 hover:shadow-xl"
+              >
+                {slides[currentSlide].cta}
+              </Button>
+            </div>
+          )}
+
+          {/* Show content for other slides (if any) */}
+          {currentSlide !== 0 && currentSlide !== 1 && (
             <>
               <h1 className="mb-2 pt-2 text-3xl leading-tight font-bold text-white">
                 {slides[currentSlide].title}
@@ -269,19 +309,6 @@ export function HeroCarousel() {
                 </Button>
               </div>
             </>
-          )}
-
-          {/* For first slide, only show button at bottom */}
-          {currentSlide === 0 && (
-            <div className="absolute bottom-12 left-1/2 -translate-x-1/2 transform">
-              <Button
-                size="lg"
-                onClick={handleJoinNowClick}
-                className="blink-button rounded-lg bg-yellow-500 px-6 py-3 text-base font-bold text-white shadow-lg transition-all duration-300 hover:bg-yellow-400 hover:shadow-xl"
-              >
-                {slides[currentSlide].cta}
-              </Button>
-            </div>
           )}
         </div>
       </div>
