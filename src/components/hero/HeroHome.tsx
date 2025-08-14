@@ -22,7 +22,7 @@ const HeroHome = () => {
       text2: '150% SPORTS BONUS',
       text3: 'FAST PAYMENTS, 24/7 SUPPORT',
       img_src: '/hero/02.png',
-      mobile_img_src: '/hero/mobile/01.png.jpg',
+      mobile_img_src: '/hero/mobile/01.png.jpg', // Solo se usa uno en mobile
     },
   ]
 
@@ -36,6 +36,7 @@ const HeroHome = () => {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
+  // Auto-slide solo en desktop
   useEffect(() => {
     if (!isMobile) {
       const interval = setInterval(() => {
@@ -64,11 +65,16 @@ const HeroHome = () => {
             alt="Hero banner"
             className="h-auto w-full"
           />
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 transform">
+
+          {/* Botón alineado: mismo nivel en ambos slides (ajuste extra para el slide 1) */}
+          <div
+            className={`absolute left-1/2 -translate-x-1/2 transform ${
+              currentSlide === 0 ? 'bottom-16' : 'bottom-8'
+            }`}
+          >
             <Button
               variant="brand"
               size="lg"
-              className={`${currentSlide === 0 ? 'mt-2' : ''}`} // Ajuste solo en slide 1
               onClick={handleJoinNowClick}
             >
               JOIN NOW
@@ -90,7 +96,7 @@ const HeroHome = () => {
           </div>
         </div>
       ) : (
-        // ✅ Desktop Version
+        // ✅ Desktop Version: full slider con contenido original
         <div className="relative w-full">
           <div className="relative h-[400px] w-full overflow-hidden sm:h-auto sm:py-0">
             <img
@@ -114,6 +120,7 @@ const HeroHome = () => {
                   <Button
                     variant="brand"
                     size="lg"
+                    className="blink-strong"
                     onClick={handleJoinNowClick}
                   >
                     JOIN NOW
