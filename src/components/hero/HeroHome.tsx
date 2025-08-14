@@ -22,7 +22,7 @@ const HeroHome = () => {
       text2: '150% SPORTS BONUS',
       text3: 'FAST PAYMENTS, 24/7 SUPPORT',
       img_src: '/hero/02.png',
-      mobile_img_src: '/hero/mobile/01.png.jpg', // Solo se usa uno en mobile
+      mobile_img_src: '/hero/mobile/01.png.jpg',
     },
   ]
 
@@ -36,7 +36,6 @@ const HeroHome = () => {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  // Auto-slide solo en desktop
   useEffect(() => {
     if (!isMobile) {
       const interval = setInterval(() => {
@@ -58,16 +57,40 @@ const HeroHome = () => {
   return (
     <div className="relative w-full">
       {isMobile ? (
-        // ✅ Mobile Version: static image, no slider
-        <div className="relative w-full cursor-pointer" onClick={handleJoinNowClick}>
+        // ✅ Mobile Version
+        <div className="relative w-full">
           <img
-            src={heros[0].mobile_img_src}
+            src={heros[currentSlide].mobile_img_src}
             alt="Hero banner"
             className="h-auto w-full"
           />
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 transform">
+            <Button
+              variant="brand"
+              size="lg"
+              className={`${currentSlide === 0 ? 'mt-2' : ''}`} // Ajuste solo en slide 1
+              onClick={handleJoinNowClick}
+            >
+              JOIN NOW
+            </Button>
+          </div>
+
+          {/* Dots */}
+          <div className="absolute bottom-2 left-1/2 flex -translate-x-1/2 transform space-x-2">
+            {heros.map((_, index) => (
+              <button
+                key={index}
+                className={`h-3 w-3 rounded-full ${
+                  index === currentSlide ? 'bg-white' : 'bg-white/50'
+                }`}
+                onClick={() => goToSlide(index)}
+                aria-label={`Go to slide ${index + 1}`}
+              />
+            ))}
+          </div>
         </div>
       ) : (
-        // ✅ Desktop Version: full slider with content and button
+        // ✅ Desktop Version
         <div className="relative w-full">
           <div className="relative h-[400px] w-full overflow-hidden sm:h-auto sm:py-0">
             <img
@@ -91,7 +114,6 @@ const HeroHome = () => {
                   <Button
                     variant="brand"
                     size="lg"
-                    className={`blink-strong ${currentSlide === 0 ? 'relative -mt-1.5' : ''}`}
                     onClick={handleJoinNowClick}
                   >
                     JOIN NOW
