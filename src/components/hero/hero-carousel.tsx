@@ -186,15 +186,28 @@ export function HeroCarousel() {
           </div>
 
           {index === 0 && (
-            <div className="absolute top-0 right-0 hidden h-full w-full sm:block">
-              <Image
-                src="/nfl-background-hero.jpg"
-                alt="NFL Player Background"
-                fill
-                className="object-cover object-center opacity-30 sm:object-right sm:opacity-100"
-                priority={index === 0}
-              />
-            </div>
+            <>
+              {/* Mobile background image for first slide only */}
+              <div className="absolute inset-0 sm:hidden">
+                <Image
+                  src="/ruby-home-mobile-first-slide.png"
+                  alt="Ruby Mobile Hero"
+                  fill
+                  className="object-cover object-center"
+                  priority={index === 0}
+                />
+              </div>
+              {/* Desktop background image */}
+              <div className="absolute top-0 right-0 hidden h-full w-full sm:block">
+                <Image
+                  src="/nfl-background-hero.jpg"
+                  alt="NFL Player Background"
+                  fill
+                  className="object-cover object-center opacity-30 sm:object-right sm:opacity-100"
+                  priority={index === 0}
+                />
+              </div>
+            </>
           )}
 
           {index === 1 && (
@@ -213,66 +226,127 @@ export function HeroCarousel() {
 
       <style>{blinkingStyles}</style>
 
-      <div className="relative z-10 mx-auto flex min-h-full w-full max-w-7xl items-center px-4 py-6 sm:px-8 sm:py-12 lg:px-12">
-        <div className="w-full max-w-xl text-center sm:w-auto sm:text-left lg:max-w-2xl">
-          <h1 className="mb-2 pt-2 text-3xl leading-tight font-bold text-white sm:mb-2 sm:pt-6 sm:text-3xl lg:text-4xl xl:text-5xl">
+      {/* MOBILE VERSION */}
+      <div className="relative z-10 mx-auto flex min-h-full w-full max-w-7xl items-center px-4 py-6 sm:hidden">
+        <div className="w-full max-w-xl text-center">
+          {/* Only show content for slides other than first slide */}
+          {currentSlide !== 0 && (
+            <>
+              <h1 className="mb-2 pt-2 text-3xl leading-tight font-bold text-white">
+                {slides[currentSlide].title}
+              </h1>
+
+              <div className="mb-4">
+                <div className="mb-3">
+                  <div className="flex items-center justify-center gap-3">
+                    <span className="neon-text text-6xl leading-none font-black text-white">
+                      {slides[currentSlide].subtitle}
+                    </span>
+                    <div className="flex flex-col">
+                      {slides[currentSlide].subtitlePrefix && (
+                        <span className="text-xl leading-tight font-bold text-white">
+                          {slides[currentSlide].subtitlePrefix}
+                        </span>
+                      )}
+                      <span className="text-xl leading-tight font-bold text-white">
+                        {slides[currentSlide].subtitleSuffix}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-lg font-semibold tracking-wide text-white uppercase">
+                  {slides[currentSlide].description}
+                </p>
+              </div>
+
+              <div className="mb-4">
+                <Button
+                  size="lg"
+                  onClick={handleJoinNowClick}
+                  className="blink-button rounded-lg bg-yellow-500 px-6 py-3 text-base font-bold text-white shadow-lg transition-all duration-300 hover:bg-yellow-400 hover:shadow-xl"
+                >
+                  {slides[currentSlide].cta}
+                </Button>
+              </div>
+            </>
+          )}
+
+          {/* For first slide, only show button at bottom */}
+          {currentSlide === 0 && (
+            <div className="absolute bottom-12 left-1/2 -translate-x-1/2 transform">
+              <Button
+                size="lg"
+                onClick={handleJoinNowClick}
+                className="blink-button rounded-lg bg-yellow-500 px-6 py-3 text-base font-bold text-white shadow-lg transition-all duration-300 hover:bg-yellow-400 hover:shadow-xl"
+              >
+                {slides[currentSlide].cta}
+              </Button>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* DESKTOP VERSION - EXACTLY AS ORIGINAL */}
+      <div className="relative z-10 mx-auto hidden min-h-full w-full max-w-7xl items-center px-8 py-12 sm:flex lg:px-12">
+        <div className="w-full max-w-xl text-left lg:max-w-2xl">
+          <h1 className="mb-2 pt-6 text-3xl leading-tight font-bold text-white lg:text-4xl xl:text-5xl">
             {slides[currentSlide].title}
           </h1>
 
-          <div className="mb-4 sm:mb-8">
-            <div className="mb-3 sm:mb-6">
+          <div className="mb-8">
+            <div className="mb-6">
               {currentSlide === 0 ? (
                 <div
-                  className="mx-auto w-fit rounded-lg border border-white/60 bg-white/10 px-4 py-2 shadow-lg sm:mx-0"
+                  className="w-fit rounded-lg border border-white/60 bg-white/10 px-4 py-2 shadow-lg"
                   style={{
                     boxShadow:
                       '0 0 15px rgba(255, 255, 255, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.1)',
                   }}
                 >
-                  <div className="flex items-center justify-center gap-3 sm:justify-start sm:gap-4">
-                    <span className="neon-text text-6xl leading-none font-black text-white sm:text-6xl lg:text-7xl xl:text-8xl">
+                  <div className="flex items-center justify-start gap-4">
+                    <span className="neon-text text-6xl leading-none font-black text-white lg:text-7xl xl:text-8xl">
                       {slides[currentSlide].subtitle}
                     </span>
                     <div className="flex flex-col">
                       {slides[currentSlide].subtitlePrefix && (
-                        <span className="text-xl leading-tight font-bold text-white sm:text-2xl lg:text-3xl xl:text-4xl">
+                        <span className="text-2xl leading-tight font-bold text-white lg:text-3xl xl:text-4xl">
                           {slides[currentSlide].subtitlePrefix}
                         </span>
                       )}
-                      <span className="text-xl leading-tight font-bold text-white sm:text-2xl lg:text-3xl xl:text-4xl">
+                      <span className="text-2xl leading-tight font-bold text-white lg:text-3xl xl:text-4xl">
                         {slides[currentSlide].subtitleSuffix}
                       </span>
                     </div>
                   </div>
                 </div>
               ) : (
-                <div className="flex items-center justify-center gap-3 sm:justify-start sm:gap-4">
-                  <span className="neon-text text-6xl leading-none font-black text-white sm:text-6xl lg:text-7xl xl:text-8xl">
+                <div className="flex items-center justify-start gap-4">
+                  <span className="neon-text text-6xl leading-none font-black text-white lg:text-7xl xl:text-8xl">
                     {slides[currentSlide].subtitle}
                   </span>
                   <div className="flex flex-col">
                     {slides[currentSlide].subtitlePrefix && (
-                      <span className="text-xl leading-tight font-bold text-white sm:text-2xl lg:text-3xl xl:text-4xl">
+                      <span className="text-2xl leading-tight font-bold text-white lg:text-3xl xl:text-4xl">
                         {slides[currentSlide].subtitlePrefix}
                       </span>
                     )}
-                    <span className="text-xl leading-tight font-bold text-white sm:text-2xl lg:text-3xl xl:text-4xl">
+                    <span className="text-2xl leading-tight font-bold text-white lg:text-3xl xl:text-4xl">
                       {slides[currentSlide].subtitleSuffix}
                     </span>
                   </div>
                 </div>
               )}
             </div>
-            <p className="text-lg font-semibold tracking-wide text-white uppercase sm:text-lg lg:text-xl xl:text-2xl">
+            <p className="text-lg font-semibold tracking-wide text-white uppercase lg:text-xl xl:text-2xl">
               {slides[currentSlide].description}
             </p>
           </div>
 
-          <div className="mb-4 sm:mb-8">
+          <div className="mb-8">
             <Button
               size="lg"
               onClick={handleJoinNowClick}
-              className="blink-button rounded-lg bg-yellow-500 px-6 py-3 text-base font-bold text-white shadow-lg transition-all duration-300 hover:bg-yellow-400 hover:shadow-xl sm:px-12 sm:py-6 sm:text-xl lg:px-16 lg:py-8 lg:text-2xl xl:text-3xl"
+              className="blink-button rounded-lg bg-yellow-500 px-12 py-6 text-xl font-bold text-white shadow-lg transition-all duration-300 hover:bg-yellow-400 hover:shadow-xl lg:px-16 lg:py-8 lg:text-2xl xl:text-3xl"
             >
               {slides[currentSlide].cta}
             </Button>
