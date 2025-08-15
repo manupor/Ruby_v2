@@ -257,7 +257,7 @@ export function HeroCarousel() {
           {/* Hide all content for first and second slides, only show button at bottom */}
           {(currentSlide === 0 || currentSlide === 1) && (
             <div
-              className={`absolute left-1/2 -translate-x-1/2 transform ${currentSlide === 0 ? 'bottom-28' : 'bottom-20'}`}
+              className={`absolute left-1/2 -translate-x-1/2 transform bottom-20`}
             >
               <Button
                 size="lg"
