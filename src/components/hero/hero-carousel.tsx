@@ -225,7 +225,7 @@ export function HeroCarousel() {
               {/* Mobile background image for second slide only */}
               <div className="absolute inset-0 sm:hidden">
                 <Image
-                  src="/ruby-home-mobile-second-slide.png"
+                  src="/hero 2.png"
                   alt="Ruby Mobile Second Slide"
                   width={0}
                   height={0}
@@ -259,14 +259,20 @@ export function HeroCarousel() {
             <div
               className={`absolute left-1/2 -translate-x-1/2 transform bottom-12`}
             >
+              {/* Add the bitcoin text only for second slide */}
+              {currentSlide === 1 && (
+                <div className="text-white text-xs mb-4 text-center font-semibold">
+                  Ruby wager casino - the fastest payout in the game
+                </div>
+              )}
               <Button
                 size="lg"
                 onClick={handleJoinNowClick}
-                className="blink-button rounded-lg bg-yellow-500 px-8 py-4 text-base font-bold text-white shadow-lg transition-all duration-300 hover:bg-yellow-400 hover:shadow-xl"
+                className="blink-button rounded-lg bg-yellow-500 px-12 py-4 text-xl font-bold text-white shadow-lg transition-all duration-300 hover:bg-yellow-400 hover:shadow-xl"
               >
                 {slides[currentSlide].cta}
               </Button>
-              <div className='text-white mt-4 text-center'>Bitcoin & Crypto Specials</div>
+              <div className='text-white mt-4 font-bold text-center'>Bitcoin & Crypto Specials</div>
             </div>
           )}
 
