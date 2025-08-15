@@ -257,15 +257,16 @@ export function HeroCarousel() {
           {/* Hide all content for first and second slides, only show button at bottom */}
           {(currentSlide === 0 || currentSlide === 1) && (
             <div
-              className={`absolute left-1/2 -translate-x-1/2 transform bottom-20`}
+              className={`absolute left-1/2 -translate-x-1/2 transform bottom-12`}
             >
               <Button
                 size="lg"
                 onClick={handleJoinNowClick}
-                className="blink-button rounded-lg bg-yellow-500 px-6 py-3 text-base font-bold text-white shadow-lg transition-all duration-300 hover:bg-yellow-400 hover:shadow-xl"
+                className="blink-button rounded-lg bg-yellow-500 px-8 py-4 text-base font-bold text-white shadow-lg transition-all duration-300 hover:bg-yellow-400 hover:shadow-xl"
               >
                 {slides[currentSlide].cta}
               </Button>
+              <div className='text-white mt-4 text-center'>Bitcoin & Crypto Specials</div>
             </div>
           )}
 
@@ -294,12 +295,12 @@ export function HeroCarousel() {
                     </div>
                   </div>
                 </div>
-                <p className="text-lg font-semibold tracking-wide text-white uppercase">
+                <p className="text-4xl font-semibold tracking-wide text-white uppercase">
                   {slides[currentSlide].description}
                 </p>
               </div>
 
-              <div className="mb-4">
+              <div>
                 <Button
                   size="lg"
                   onClick={handleJoinNowClick}
@@ -307,6 +308,7 @@ export function HeroCarousel() {
                 >
                   {slides[currentSlide].cta}
                 </Button>
+                <div className='text-white mb-2 font-semibold text-center'>Bitcoin & Crypto Specials</div>
               </div>
             </>
           )}
