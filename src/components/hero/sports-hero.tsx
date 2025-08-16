@@ -1,43 +1,70 @@
 import React from 'react'
 
 const SportsHero = () => {
+  const handleJoinNow = (e: React.MouseEvent) => {
+    e.preventDefault();
+    // Add your join now logic here
+  };
+
   return (
-    <div className="relative flex h-64 items-center justify-center overflow-hidden bg-gradient-to-r from-red-900/20 to-black sm:h-80 lg:h-96">
+    <div className="relative flex h-48 items-start pt-3 justify-center overflow-hidden bg-black sm:h-64 lg:h-96">
+      {/* Desktop Background */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-80"
+        className="hidden lg:block absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage:
-            "url('/RUBY-SPORTSBOOK.png')",
+          backgroundImage: "url('/sportsbook1.png')",
+          opacity: 1,
         }}
       ></div>
-      <div className="relative z-10 container mx-auto flex h-full items-center px-4 sm:px-6 lg:px-8">
-        <div className="max-w-xl text-left lg:max-w-2xl">
-          <h1 className="mb-2 text-3xl leading-tight font-bold text-white text-shadow-2xs sm:mb-2 sm:text-3xl lg:text-4xl xl:text-5xl">
-            Weekly Rebate, Daily Payouts
+      
+      {/* Mobile Background */}
+      <div
+        className="lg:hidden absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/sportsbook mobile.jpg')",
+          opacity: 1,
+        }}
+      ></div>
+      
+      <div className="relative z-10 container mx-auto flex h-full items-start px-4 sm:px-6 lg:items-center lg:px-12">
+        <div className="w-full mt-1 sm:mt-0">
+          <h1 className="text-2xl leading-snug font-bold text-white sm:text-4xl lg:text-6xl xl:text-7xl">
+            Bet on Every Game{' '}
+            <span className="text-white neon-text block sm:inline">
+              ANYWHERE
+            </span>
           </h1>
-
-          <div className="mb-4 sm:mb-8">
-            <div className="mb-3 inline-block rounded-lg border-2 border-white bg-black/60 px-4 py-3 sm:mb-6 sm:rounded-xl sm:px-6 sm:py-4">
-              <div className="flex items-center justify-center gap-3 sm:justify-start sm:gap-4">
-                <span className="neon-text text-4xl leading-none font-black text-white sm:text-5xl lg:text-6xl xl:text-7xl text-shadow-2xs">
-                  200%
-                </span>
-                <div className="flex flex-col">
-                  <span className="text-lg leading-tight font-bold text-white sm:text-xl lg:text-2xl xl:text-3xl text-shadow-2xs">
-                    SIGN UP
-                  </span>
-                  <span className="text-lg leading-tight font-bold text-white sm:text-xl lg:text-2xl xl:text-3xl text-shadow-2xs">
-                    BONUS!
-                  </span>
-                </div>
-              </div>
-            </div>
-            <p className="text-lg font-semibold tracking-wide text-white uppercase sm:text-lg lg:text-xl xl:text-2xl text-shadow-2xs">
-              SAME DAY PAYOUTS, TRUE VIP EXPERIENCE
-            </p>
-          </div>
+          <button 
+            onClick={handleJoinNow}
+            className="mt-3 bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-6 rounded-md transition-colors duration-200 text-base sm:py-3 sm:px-8 sm:mt-6 sm:text-lg"
+          >
+            JOIN NOW
+          </button>
         </div>
       </div>
+      <style jsx>{`
+        .neon-text {
+          text-shadow: 
+            0 0 1px #fff,
+            0 0 2px #fff,
+            0 0 3px rgba(255, 255, 255, 0.5);
+          animation: neon 2.5s ease-in-out infinite alternate;
+        }
+        @keyframes neon {
+          from {
+            text-shadow: 
+              0 0 1px #fff,
+              0 0 2px #fff,
+              0 0 3px rgba(255, 255, 255, 0.5);
+          }
+          to {
+            text-shadow: 
+              0 0 2px #fff,
+              0 0 4px #fff,
+              0 0 6px rgba(255, 255, 255, 0.4);
+          }
+        }
+      `}</style>
     </div>
   )
 }
