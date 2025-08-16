@@ -1,204 +1,326 @@
 'use client'
 
 import { useAuth } from '@/context/AuthContext'
-import { useEffect, useRef, useState } from 'react'
-import { Card, CardContent, CardTitle } from '../ui/card'
+import { Volleyball, Wallet } from 'lucide-react'
+import Link from 'next/link'
+import React from 'react'
 
-const PromotionsSection = ({ promotions }: any) => {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLDivElement>(null)
+interface PromoCardProps {
+  icon: React.ElementType
+  title: string
+  subtitle: string
+  description: string
+  backgroundImage: string
+  onClaimClick: (e: React.MouseEvent) => void
+}
+
+const PromoCard = ({
+  icon: Icon,
+  title,
+  subtitle,
+  description,
+  backgroundImage,
+  onClaimClick,
+}: PromoCardProps) => {
+  return (
+    <article className="flex h-full flex-col overflow-hidden rounded-lg border border-gray-800 bg-[#1A1A1A] transition-all duration-300 hover:-translate-y-1">
+      {/* Featured Image */}
+      <a href="#" onClick={onClaimClick} className="relative block flex-shrink-0">
+        <div className="relative w-full" style={{ paddingBottom: '45%' }}>
+          <img
+            src={backgroundImage}
+            alt={title}
+            className="absolute inset-0 h-full w-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-black/40"></div>
+          <div className="absolute left-3 top-3">
+            <Icon size={28} className="text-[#c19652]" />
+          </div>
+        </div>
+      </a>
+
+      {/* Content */}
+      <div className="flex flex-1 flex-col p-1.5 sm:p-2">
+        <div className="flex-1 space-y-0.5">
+          <h3 className="line-clamp-2 min-h-[1.8em] text-[10px] font-medium leading-tight text-white sm:text-[11px]">
+            {title}
+          </h3>
+          <p className="text-[9px] font-semibold leading-tight text-[#c19652] sm:text-[10px]">
+            {subtitle}
+          </p>
+          {description && (
+            <p className="line-clamp-2 text-[9px] leading-tight text-gray-300 sm:text-[10px]">
+              {description}
+            </p>
+          )}
+        </div>
+
+        {/* CTA Button */}
+        <div className="mt-1.5">
+          <button
+            onClick={onClaimClick}
+            className="w-full rounded bg-red-600 px-1.5 py-1 text-[9px] font-medium leading-none text-white hover:bg-red-700 sm:px-2 sm:py-1 sm:text-[10px]"
+          >
+            CLAIM NOW
+          </button>
+        </div>
+      </div>
+    </article>
+  )
+}
+
+const HorizontalPromosSection = () => {
   const { openRegister } = useAuth()
 
-  const handlePromotionClick = (e: React.MouseEvent) => {
+  const handleClaimNowClick = (e: React.MouseEvent) => {
     e.preventDefault()
     openRegister()
   }
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-          observer.unobserve(entry.target)
-        }
-      },
-      { threshold: 0.2 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current)
-      }
-    }
-  }, [])
+  const promos = [
+    {
+      icon: Wallet,
+      title: 'Earn More With Ruby Wager!',
+      subtitle: '25% Referral Bonus – Up to $5,000',
+      description: "Get 25% freeplay on your friend's total deposits!",
+      backgroundImage: '/cajita_01.png',
+    },
+    {
+      icon: Volleyball,
+      title: 'NFL Weekly Insurance – 10% Freeplay',
+      subtitle: 'Get 10% back as freeplay every Monday on your NFL losses.',
+      description: '',
+      backgroundImage: '/cajita_02.png',
+    },
+  ]
 
   return (
-    <>
-      {/* Mobile layout */}
-      <div className="relative bg-black sm:hidden">
-        {/* Title section with solid black background */}
-        <div className="hidden w-full sm:flex">
-          <h1 className="py-4 text-center text-4xl font-bold text-white">
-            Promotions
+    <div className="container mx-auto px-4 pb-10 md:pb-20 lg:px-8">
+      <div className="mt-8 md:mt-16">
+        {/* Grid: 1 column on mobile, 2 columns on larger screens */}
+        <div className="mx-auto grid max-w-4xl grid-cols-1 gap-8 md:grid-cols-2">
+          {promos.map((promo, index) => (
+            <PromoCard
+              key={index}
+              icon={promo.icon}
+              title={promo.title}
+              subtitle={promo.subtitle}
+              description={promo.description}
+              backgroundImage={promo.backgroundImage}
+              onClaimClick={handleClaimNowClick}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Bonus Terms & Rollover Requirements */}
+      {/* <div className="mx-auto mt-4 mb-10 max-w-4xl rounded-lg border border-[#333] p-6">
+        <h2 className="mb-4 text-xl font-bold text-[#c19652]">
+          Bonus Terms & Rollover Requirements
+        </h2>
+        <div className="space-y-4 text-sm text-gray-300">
+          <p>
+            At Ruby Wager, all bonuses come with a rollover requirement that
+            must be met before any withdrawals can be made. The rollover is
+            calculated using the formula:
+          </p>
+          <p className="text-center font-semibold text-white">
+            (Deposit + Freeplay) × Rollover Multiplier
+          </p>
+          <p>
+            For example, a $1,000 deposit with a 200% freeplay bonus ($2,000)
+            results in a total of $3,000 — with a 15x rollover, the player must
+            place $45,000 in qualifying wagers to complete the requirement.
+          </p>
+          <p>
+            Only straight wagers placed pre-game or at halftime count toward
+            fulfilling the rollover. Live plays, parlays, teasers, horse racing,
+            and casino games do not apply. Additionally, wagers made on the same
+            event will not count toward rollover progression.
+          </p>
+          <p>
+            When calculating rollover, only the lesser value of the wager is
+            applied:
+          </p>
+          <ul className="list-disc space-y-1 pl-6">
+            <li>A bet of $1,900 to win $1,000 counts as $1,000</li>
+            <li>A bet of $1,000 to win $1,900 also counts as $1,000</li>
+          </ul>
+          <p>
+            Wagers placed using the Freeplay bonus itself do not count toward
+            the rollover requirement.
+          </p>
+          <p>
+            These rules are in place to ensure a fair, transparent, and
+            rewarding experience for all Ruby Wager players. Please review your
+            bonus terms carefully before placing bets.
+          </p>
+        </div>
+      </div> */}
+
+      <div className="bg-black px-4 py-16 text-white">
+        {/* Title and description */}
+        <div className="mx-auto mb-8 text-center">
+          <h1 className="mb-6 text-4xl font-bold md:text-5xl">
+            BONUS TERMS & ROLLOVER REQUIREMENTS
           </h1>
+          <p className="mx-auto max-w-4xl text-lg leading-relaxed text-gray-300">
+            At RubyWager, all bonuses come with a rollover requirement that must
+            be met before any withdrawals can be processed. Here's how it works:
+          </p>
         </div>
 
-        {/* Background image section */}
-        <div className="relative">
-          {/* Image container with gradient */}
-          <div className="relative h-[220px] w-full overflow-hidden">
-            <div
-              className="absolute inset-0"
-              style={{
-                background: `linear-gradient(to bottom, black 0%, transparent 15%, transparent 85%, black 100%), url('/banner-ruby.png') no-repeat center`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
-            ></div>
+        {/* Four card layout - matching racebook exact layout */}
+        <div className="mx-auto mb-16 grid max-w-6xl grid-cols-1 gap-10 md:grid-cols-2 lg:grid-cols-4">
+          {/* Card 1 */}
+          <div className="text-center">
+            <div className="mb-4 flex justify-center">
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: `<svg xmlns="http://www.w3.org/2000/svg" fill="#C8102E" viewBox="0 0 24 24" width="48" height="48">
+                  <circle cx="12" cy="12" r="10" stroke="none"/>
+                  <circle cx="12" cy="12" r="6" fill="white"/>
+                  <circle cx="12" cy="12" r="2" fill="#C8102E"/>
+                </svg>`,
+                }}
+              />
+            </div>
+            <h3 className="mb-3 text-xl font-bold">
+              How Rollover is Calculated
+            </h3>
+            <div className="text-gray-400">
+              <p className="mb-2">(Deposit + Freeplay) × Rollover Multiplier</p>
+
+              <p className="font-semibold text-white">Example:</p>
+              <ul className="pl-4 text-left">
+                <li>• Deposit: $1,000</li>
+                <li>• Freeplay Bonus: $2,000 (200%)</li>
+                <li>• Total: $3,000</li>
+                <li>• Rollover: 15x</li>
+                <li>
+                  • Requirement: $3,000 × 15 = $45,000 in qualifying wagers
+                </li>
+              </ul>
+            </div>
           </div>
 
-          {/* Cards */}
-          <div className="relative -mt-8 w-full px-1">
-            <div className="flex flex-row gap-2">
-              {promotions.map((card: any, index: number) => {
-                const Icon = card.icon
-                return (
-                  <a
-                    key={card.title}
-                    href="#"
-                    onClick={handlePromotionClick}
-                    className="flex-1"
-                  >
-                    <Card className="relative flex h-[140px] flex-col overflow-hidden rounded-xl bg-[#1A1A1A90] border border-neutral-800 transition-all duration-300 ease-in-out hover:scale-[1.02]">
-                      {/* Neon border effect */}
-                      <div className="absolute inset-0 rounded-xl" style={{
-                        border: '1px solid rgba(255, 255, 255, 0.3)',
-                        boxShadow: '0 0 10px 2px rgba(255, 255, 255, 0.1)',
-                        pointerEvents: 'none',
-                      }}></div>
-                      <CardContent className="relative z-10 flex flex-1 flex-col p-2">
-                        <div className="mb-2 flex items-center gap-1">
-                          <Icon size={12} className="shrink-0 text-[#FF003D]" />
-                          <CardTitle className="text-[6px] font-bold text-white uppercase">
-                            {card.title}
-                          </CardTitle>
-                        </div>
+          {/* Card 2 */}
+          <div className="text-center">
+            <div className="mb-4 flex justify-center">
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#C8102E" stroke-width="2" viewBox="0 0 24 24" width="48" height="48">
+                  <path d="M4 6h16M4 12h10M4 18h8"/>
+                  <polyline points="14 12 16 14 20 10" stroke="#C8102E" stroke-width="2" fill="none"/>
+                </svg>`,
+                }}
+              />
+            </div>
+            <h3 className="mb-3 text-xl font-bold">
+              What Counts Toward Rollover
+            </h3>
+            <div className="text-gray-400">
+              <ul className="pl-4 text-left">
+                <li>• Straight wagers only</li>
+                <li>• Pre-game or halftime bets</li>
+                <li>• Wagers must be on different events</li>
+              </ul>
+            </div>
+          </div>
 
-                        <div className="flex h-full flex-col text-white">
-                          <div className="flex h-full flex-col justify-start">
-                            <p className="text-[12px] leading-tight font-black text-[#FF003D] uppercase">
-                              {card.content1}
-                            </p>
-                            <p className="mt-1 text-[6px] font-medium uppercase">
-                              {card.content2}
-                            </p>
-                            {card.footer && (
-                              <p className="mt-1 text-[6px] font-medium text-gray-400 uppercase">
-                                {card.footer}
-                              </p>
-                            )}
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </a>
-                )
-              })}
+          {/* Card 3 */}
+          <div className="text-center">
+            <div className="mb-4 flex justify-center">
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="#C8102E" stroke-width="2" viewBox="0 0 24 24" width="48" height="48">
+                  <line x1="18" y1="6" x2="6" y2="18"/>
+                  <line x1="6" y1="6" x2="18" y2="18"/>
+                </svg>`,
+                }}
+              />
+            </div>
+            <h3 className="mb-3 text-xl font-bold">What Does NOT Count</h3>
+            <div className="text-gray-400">
+              <ul className="pl-4 text-left">
+                <li>• Live bets</li>
+                <li>• Parlays</li>
+                <li>• Teasers</li>
+                <li>• Prop bets</li>
+                <li>• Futures</li>
+                <li>• Horse racing or casino wagers</li>
+                <li>• Wagers on the same event</li>
+                <li>• Bets made using Freeplay</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Card 4 */}
+          <div className="text-center">
+            <div className="mb-4 flex justify-center">
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: `<svg xmlns="http://www.w3.org/2000/svg" fill="#C8102E" viewBox="0 0 24 24" width="48" height="48">
+                  <rect x="2" y="8" width="20" height="14" rx="2"/>
+                  <path d="M12 8V2M9 2c0 2 3 4 3 4s3-2 3-4" fill="none" stroke="white" stroke-width="2"/>
+                </svg>`,
+                }}
+              />
+            </div>
+            <h3 className="mb-3 text-xl font-bold">Freeplay Rules</h3>
+            <div className="text-gray-400">
+              <ul className="pl-4 text-left">
+                <li>• Freeplays are only valid on:</li>
+                <li className="pl-4">- Straight wagers</li>
+                <li className="pl-4">- 2-team parlays</li>
+                <li>
+                  • Freeplay winnings are withdrawable once rollover is
+                  completed
+                </li>
+                <li>
+                  • Wagers placed with Freeplay do not contribute to rollover
+                </li>
+              </ul>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Desktop layout - preserved exactly as original */}
-      <div
-        className="relative  hidden overflow-hidden sm:flex sm:h-[60vh] sm:flex-col sm:justify-end"
-        ref={sectionRef}
-      >
-        {/* Background image container */}
-        <div
-          className="absolute inset-0 -z-10 bg-center"
-          style={{
-            backgroundImage: `linear-gradient(to top, black 0%, transparent 20%, transparent 80%, black 100%), url('/banner-ruby.png')`,
-            backgroundPosition: 'center',
-            backgroundSize: 'cover',
-          }}
-        />
-
-        <div className="container mx-auto px-4 py-16 lg:px-8">
-          {/* Heading Section */}
-          <div className="mb-10 flex items-center justify-between">
-            <h1 className="text-3xl font-bold text-white">Promotions</h1>
-            <a
-              href="#"
-              onClick={handlePromotionClick}
-              className="text-xs text-white underline hover:no-underline"
-            >
-              <span>See all promotions</span>
-            </a>
-          </div>
-
-          {/* Cards Section */}
-          <div className="flex flex-row gap-6">
-            {promotions.map((card: any, index: number) => {
-              const Icon = card.icon
-              return (
-                <a
-                  key={card.title}
-                  href="#"
-                  onClick={handlePromotionClick}
-                  className={`flex-1 transition-all duration-500 ease-out ${
-                    isVisible
-                      ? 'translate-y-0 opacity-90'
-                      : 'translate-y-10 opacity-0'
-                  }`}
-                  style={{
-                    transitionDelay: `${index * 150}ms`,
-                  }}
-                >
-                  <Card className="relative flex h-[280px] flex-1 flex-col overflow-hidden rounded-xl bg-[#1A1A1A] transition-all duration-300 ease-in-out hover:scale-[1.02] border border-white/10 hover:border-white/30">
-                    {/* Neon border effect */}
-                    <div className="absolute inset-0 rounded-xl" style={{
-                      border: '1px solid rgba(255, 255, 255, 0.3)',
-                      boxShadow: '0 0 10px 2px rgba(255, 255, 255, 0.1)',
-                      pointerEvents: 'none',
-                    }}></div>
-                    <CardContent className="relative z-10 flex flex-1 flex-col justify-between p-6">
-                      <div className="mb-4 flex items-center gap-4">
-                        <Icon size={40} className="shrink-0 text-[#FF003D]" />
-                        <CardTitle className="text-xl font-bold text-white uppercase">
-                          {card.title}
-                        </CardTitle>
-                      </div>
-
-                      <div className="flex h-full flex-col text-pretty text-white">
-                        <div className="flex h-full flex-col justify-start">
-                          <p className="text-xl leading-tight font-black break-words text-[#FF003D] uppercase sm:text-2xl">
-                            {card.content1}
-                          </p>
-                          <p className="mt-1 text-sm font-semibold uppercase sm:text-base">
-                            {card.content2}
-                          </p>
-                          {card.footer && (
-                            <p className="text-xs mt-1 font-medium text-gray-400 uppercase">
-                              {card.footer}
-                            </p>
-                          )}
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </a>
-              )
-            })}
+        {/* Important section */}
+        <div className="mx-auto mb-16 max-w-4xl">
+          <h2 className="mb-6 text-center text-2xl font-bold">Important</h2>
+          <div className="mx-auto max-w-3xl text-center text-gray-300">
+            <p className="mb-4">
+              When calculating rollover, only the lower amount of the wager is
+              applied:
+            </p>
+            <ul className="mb-4 pl-4">
+              <li>• $1,900 to win $1,000 → $1,000 counts</li>
+              <li>• $1,000 to win $1,900 → $1,000 counts</li>
+            </ul>
+            <p>
+              These terms are in place to ensure a fair, transparent, and
+              rewarding experience for all RubyWager players. Review your bonus
+              terms before betting and as always, your VIP host is here if you
+              need anything.
+            </p>
           </div>
         </div>
+
+        {/* Call to action - exact match to racebook */}
+        <div className="text-center">
+          <h2 className="mb-4 text-3xl font-bold">Ready to Start Betting?</h2>
+          <p className="mx-auto mb-8 max-w-2xl text-lg text-gray-300">
+            Join Ruby Wager today and take advantage of our exciting bonuses.
+          </p>
+          <Link href="/join">
+            <button className="rounded-full bg-[#FF003D] px-10 py-4 text-xl font-bold text-white transition-colors hover:bg-[#E00034]">
+              JOIN NOW
+            </button>
+          </Link>
+        </div>
       </div>
-    </>
+    </div>
   )
 }
 
-export default PromotionsSection
+export default HorizontalPromosSection
