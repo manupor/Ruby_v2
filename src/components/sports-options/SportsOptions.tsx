@@ -29,12 +29,12 @@ export default function SportsBettingOptions({ options }: any) {
               className="relative flex h-[180px] flex-col overflow-hidden sm:h-[380px] sm:w-[380px] border-none sm:border text-shadow-sm"
             >
               <CardContent className="relative z-10 flex flex-1 flex-col justify-end p-2 sm:p-4 sm:pb-8">
-                <CardTitle className="text-foreground mb-1 text-xs font-extrabold text-white sm:mb-3 sm:text-2xl">
+                <CardTitle className="text-foreground mb-1 text-xs font-extrabold text-white [text-shadow:0_0_10px_rgba(0,0,0,1),0_0_20px_rgba(0,0,0,0.8)] sm:mb-3 sm:text-2xl sm:[text-shadow:0_0_15px_rgba(0,0,0,1),0_0_30px_rgba(0,0,0,0.9)]">
                   {card.title}
                 </CardTitle>
                 <Button
                   variant="outline"
-                  className="h-auto w-fit border-white bg-transparent px-2 py-1 text-[8px] font-bold text-white uppercase hover:bg-white/10 sm:px-4 sm:py-2 sm:text-base"
+                  className="h-auto w-fit border-none bg-red-600 px-2 py-1 text-[8px] font-bold text-white uppercase hover:bg-red-700 sm:px-4 sm:py-2 sm:text-base"
                 >
                   View odds
                 </Button>
