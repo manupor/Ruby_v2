@@ -14,6 +14,7 @@ interface HeroSectionProps {
   buttonVariant?: 'default' | 'brand' | 'outline'
   hideTextOnMobile?: boolean
   className?: string
+  mobileObjectPosition?: string
 }
 
 const HeroSection = ({
@@ -26,6 +27,7 @@ const HeroSection = ({
   mobileImage,
   hideTextOnMobile = false,
   className,
+  mobileObjectPosition = 'center',
 }: HeroSectionProps) => {
   const [isMobile, setIsMobile] = useState(false)
   const { openRegister } = useAuth()
@@ -151,39 +153,36 @@ const HeroSection = ({
 
       {/* Mobile hero section */}
       <div className="relative w-full lg:hidden">
-        <div className="relative w-full overflow-hidden">
-          <div className="w-full">
-            <div className="relative left-[-30%] w-[150%]">
-              <img
-                src={mobileImage}
-                alt="Hero banner"
-                className="h-auto w-full"
-                loading="eager"
-                fetchPriority="high"
-                decoding="sync"
-              />
-            </div>
+        <div className="relative w-full overflow-hidden" style={{ height: '30vh' }}>
+          <div className="absolute inset-0">
+            <img
+              src={mobileImage}
+              alt="Hero banner"
+              className="h-full w-full object-cover"
+              style={{ objectPosition: mobileObjectPosition }}
+              loading="eager"
+              fetchPriority="high"
+              decoding="sync"
+            />
           </div>
-          <div className="absolute inset-0 flex flex-col justify-end pb-4">
-            <div className="container mx-auto px-4 mb-4">
-              <div className="text-center">
-                <h1 className="text-2xl font-bold [text-shadow:0_0_10px_rgba(0,0,0,0.9),0_0_5px_#000] sm:text-3xl md:text-4xl">
+          <div className="absolute inset-0 flex flex-col justify-end">
+            <div className="container mx-auto px-4">
+              <div className="text-left mb-24">
+                <h1 className="text-lg font-bold [text-shadow:0_0_10px_rgba(0,0,0,0.9),0_0_5px_#000] sm:text-xl">
                   {title}
                 </h1>
-                <p className="text-xl font-bold [text-shadow:0_0_10px_rgba(0,0,0,0.9),0_0_5px_#000] sm:text-2xl md:text-3xl">
+                <p className="text-base font-bold [text-shadow:0_0_10px_rgba(0,0,0,0.9),0_0_5px_#000] sm:text-lg">
                   {subtitle}
                 </p>
                 {description && (
-                  <h2 className="text-sm font-bold uppercase [text-shadow:0_0_8px_rgba(0,0,0,0.9),0_0_3px_#000] sm:text-base">
+                  <h2 className="text-xs font-bold uppercase [text-shadow:0_0_8px_rgba(0,0,0,0.9),0_0_3px_#000] sm:text-sm">
                     {description}
                   </h2>
                 )}
               </div>
-            </div>
-            <div className="w-full">
-              <div className="container mx-auto px-4">
+              <div className="w-full mb-3">
                 <button
-                  className="w-full max-w-xs mx-auto block rounded bg-red-600 px-6 py-3 text-center font-bold text-white hover:bg-red-700 shadow-md transition-colors"
+                  className="w-full max-w-xs block rounded bg-red-600 px-4 py-2 text-sm font-bold text-white hover:bg-red-700 shadow-md transition-colors"
                   onClick={handleButtonClick}
                 >
                   {buttonText}
