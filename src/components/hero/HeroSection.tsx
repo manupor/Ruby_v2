@@ -152,7 +152,7 @@ const HeroSection = ({
       {/* Mobile hero section */}
       <div className="relative w-full lg:hidden">
         <div className="relative w-full">
-          <div className="scale-110">
+          <div className="w-full">
             <img
               src={mobileImage}
               alt="Hero banner"
@@ -162,13 +162,15 @@ const HeroSection = ({
               decoding="sync"
             />
           </div>
-          <div className="absolute bottom-4 left-0 right-0 flex justify-center px-4">
-            <button
-              className="blink-strong w-full max-w-xs rounded-full bg-red-600 px-6 py-3 font-bold text-white hover:bg-red-700"
-              onClick={handleButtonClick}
-            >
-              PLACE YOUR BETS NOW
-            </button>
+          <div className="w-full py-2">
+            <div className="container mx-auto px-4">
+              <button
+                className="w-full max-w-xs mx-auto block rounded bg-red-600 px-6 py-3 text-center font-bold text-white hover:bg-red-700 shadow-md transition-colors"
+                onClick={handleButtonClick}
+              >
+                {buttonText}
+              </button>
+            </div>
           </div>
         </div>
       </div>
