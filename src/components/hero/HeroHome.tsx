@@ -15,7 +15,7 @@ const HeroHome = () => {
       text2: '200% SIGN UP BONUS!',
       text3: 'SAME DAY PAYOUTS, TRUE VIP EXPERIENCE',
       img_src: '/hero/01.jpg',
-      mobile_img_src: '/hero/mobile/Ruby_banner_Mobile.png',
+      mobile_img_src: '/BACGKROUND HERO-MAIN.jpg',
     },
     {
       text1: 'Win More, Get Paid Faster',
@@ -64,14 +64,25 @@ const HeroHome = () => {
                 alt="Hero banner"
                 className="h-auto w-full"
               />
-              <Button
-                variant="brand"
-                size="lg"
-                className="blink-strong absolute left-1/2 -translate-x-1/2 bottom-[22%]"
-                onClick={handleJoinNowClick}
-              >
-                JOIN NOW!
-              </Button>
+              <div className="absolute inset-0 flex flex-col justify-end pb-8 px-4 text-center">
+                <h1 className="text-2xl font-black uppercase text-white text-shadow-md mb-2">
+                  {heros[0].text1}
+                </h1>
+                <p className="text-4xl font-black text-white text-shadow-md mb-4">
+                  {heros[0].text2}
+                </p>
+                <h2 className="text-xl font-black uppercase text-yellow-300 text-shadow-md mb-6">
+                  {heros[0].text3}
+                </h2>
+                <Button
+                  variant="brand"
+                  size="lg"
+                  className="w-full max-w-xs mx-auto text-xl font-black py-6 px-8 rounded-full shadow-xl transform transition-all duration-300 hover:scale-105 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 border-2 border-yellow-400"
+                  onClick={handleJoinNowClick}
+                >
+                  <span className="drop-shadow-md">JOIN NOW!</span>
+                </Button>
+              </div>
             </div>
           ) : (
             <div className="relative w-full">
@@ -80,14 +91,25 @@ const HeroHome = () => {
                 alt="Hero banner"
                 className="h-auto w-full"
               />
-              <Button
-                variant="brand"
-                size="lg"
-                className="blink-strong absolute left-1/2 -translate-x-1/2 bottom-[22%]"
-                onClick={handleJoinNowClick}
-              >
-                JOIN NOW!
-              </Button>
+              <div className="absolute inset-0 flex flex-col justify-end pb-8 px-4 text-center">
+                <h1 className="text-2xl font-black uppercase text-white text-shadow-md mb-2">
+                  {heros[1].text1}
+                </h1>
+                <p className="text-4xl font-black text-white text-shadow-md mb-4">
+                  {heros[1].text2}
+                </p>
+                <h2 className="text-xl font-black uppercase text-yellow-300 text-shadow-md mb-6">
+                  {heros[1].text3}
+                </h2>
+                <Button
+                  variant="brand"
+                  size="lg"
+                  className="w-full max-w-xs mx-auto text-xl font-black py-6 px-8 rounded-full shadow-xl transform transition-all duration-300 hover:scale-105 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 border-2 border-yellow-400"
+                  onClick={handleJoinNowClick}
+                >
+                  <span className="drop-shadow-md">JOIN NOW!</span>
+                </Button>
+              </div>
             </div>
           )}
         </div>
@@ -114,10 +136,10 @@ const HeroHome = () => {
                   <Button
                     variant="brand"
                     size="lg"
-                    className="blink-strong"
+                    className="text-lg font-bold py-6 px-10 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 border-2 border-yellow-400"
                     onClick={handleJoinNowClick}
                   >
-                    JOIN NOW
+                    <span className="drop-shadow-md">JOIN NOW</span>
                   </Button>
                 </div>
               </div>
