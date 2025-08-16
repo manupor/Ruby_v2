@@ -12,15 +12,18 @@ export default function CasinoPage() {
   return (
     <>
       <HeroSection
-        title="WELCOME TO THE RUBY CASINO"
-        subtitle="Spin. Win. Repeat."
-        description="Step into a world of elite gaming — slots, tables, and jackpots await."
+        title="Play & Win Big"
+        subtitle="LIVE DEALERS !"
+        description=""
         buttonText="PLAY NOW"
         buttonLink="/join"
-        desktopImage="/casino.png"
-        mobileImage="/hero/mobile/03.png"
+        desktopImage="/casino.jpg"
+        mobileImage="/casino.jpg"
         buttonVariant="brand"
         hideTextOnMobile={true}
+        mobileObjectPosition="80% center"
+        mobileButtonClass="relative z-30"
+        mobileCenterButton
       />
 
       {/* Main content */}
