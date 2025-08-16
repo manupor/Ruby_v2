@@ -73,8 +73,14 @@ const PromotionsSection = ({ promotions }: any) => {
                     onClick={handlePromotionClick}
                     className="flex-1"
                   >
-                    <Card className="flex h-[140px] flex-col overflow-hidden rounded-xl border border-neutral-800 bg-[#1A1A1A90]">
-                      <CardContent className="flex flex-1 flex-col p-2">
+                    <Card className="relative flex h-[140px] flex-col overflow-hidden rounded-xl bg-[#1A1A1A90] border border-neutral-800 transition-all duration-300 ease-in-out hover:scale-[1.02]">
+                      {/* Neon border effect */}
+                      <div className="absolute inset-0 rounded-xl" style={{
+                        border: '1px solid rgba(255, 255, 255, 0.3)',
+                        boxShadow: '0 0 10px 2px rgba(255, 255, 255, 0.1)',
+                        pointerEvents: 'none',
+                      }}></div>
+                      <CardContent className="relative z-10 flex flex-1 flex-col p-2">
                         <div className="mb-2 flex items-center gap-1">
                           <Icon size={12} className="shrink-0 text-[#FF003D]" />
                           <CardTitle className="text-[6px] font-bold text-white uppercase">
@@ -153,8 +159,14 @@ const PromotionsSection = ({ promotions }: any) => {
                     transitionDelay: `${index * 150}ms`,
                   }}
                 >
-                  <Card className="flex h-[280px] flex-1 flex-col overflow-hidden rounded-xl bg-[#1A1A1A] transition-all duration-300 ease-in-out hover:scale-[1.02]">
-                    <CardContent className="flex flex-1 flex-col justify-between p-6">
+                  <Card className="relative flex h-[280px] flex-1 flex-col overflow-hidden rounded-xl bg-[#1A1A1A] transition-all duration-300 ease-in-out hover:scale-[1.02] border border-white/10 hover:border-white/30">
+                    {/* Neon border effect */}
+                    <div className="absolute inset-0 rounded-xl" style={{
+                      border: '1px solid rgba(255, 255, 255, 0.3)',
+                      boxShadow: '0 0 10px 2px rgba(255, 255, 255, 0.1)',
+                      pointerEvents: 'none',
+                    }}></div>
+                    <CardContent className="relative z-10 flex flex-1 flex-col justify-between p-6">
                       <div className="mb-4 flex items-center gap-4">
                         <Icon size={40} className="shrink-0 text-[#FF003D]" />
                         <CardTitle className="text-xl font-bold text-white uppercase">
