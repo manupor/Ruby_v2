@@ -21,20 +21,39 @@ export default function PromotionsPage() {
   return (
     <>
       <HeroSection
-        title="Unlock the Action"
-        subtitle={
-          <div>
-            Exclusive bonuses,
-            <br /> boosted odds
-          </div>
-        }
-        description="and VIP rewards—only at Ruby Wager. Play smart. Win big."
+        title=""
+        desktopTitleLines={[
+          'UNLOCK THE ACTION',
+          'WITH OUR EXCLUSIVE OFFERS',
+          'AND REBATE PROGRAMS',
+        ]}
+        mobileTitleLines={[
+          'UNLOCK THE ACTION',
+          'WITH OUR EXCLUSIVE OFFERS',
+          'AND REBATE PROGRAMS',
+        ]}
+        subtitle=""
+        description=""
         buttonText="CLAIM BONUS"
         buttonLink="/join"
-        desktopImage="/promotions.png"
-        mobileImage="/promotions-mobile.png"
+        desktopImage="/promotions-desktop.png"
+        desktopScaleClass="scale-100"
+        desktopTitleClass="text-xl font-black tracking-tight [text-shadow:0_0_8px_rgba(255,255,255,0.7)] text-left md:text-2xl lg:text-3xl xl:text-4xl"
+        desktopSubtitleClass="mb-1 text-2xl font-black tracking-tight [text-shadow:0_0_10px_rgba(255,255,255,0.8)] md:text-3xl lg:text-4xl"
+        desktopDescriptionClass="text-base font-bold uppercase [text-shadow:0_0_6px_rgba(255,255,255,0.6)] md:text-lg"
+        desktopContentSpacingClass="space-y-4"
+        desktopButtonClass="blink-strong cursor-pointer rounded bg-red-600 px-4 py-2.5 text-base font-bold text-white hover:bg-red-700"
+        mobileImage="/promotions-mobile.jpg"
+        mobileTextAlign="center"
+        mobileTextMarginBottom="mb-2"
+        mobileCenterButton
+        mobileStrongTextShadow
+        mobileObjectPosition="center top"
+        mobileButtonMarginBottom="mb-3"
+        mobileButtonClass="relative z-30 bg-gradient-to-r from-red-500 via-red-600 to-red-700 shadow-[0_0_20px_rgba(255,0,0,0.7),0_0_8px_rgba(255,0,0,0.5)] ring-2 ring-red-400/70 hover:shadow-[0_0_26px_rgba(255,0,0,0.85),0_0_12px_rgba(255,0,0,0.6)] transition-shadow"
+        mobileHeight="40vh"
         buttonVariant="brand"
-        hideTextOnMobile={true}
+        hideTextOnMobile={false}
       />
 
       {/* Main content */}
@@ -45,8 +64,8 @@ export default function PromotionsPage() {
             At Ruby Wager, we believe that bonuses are a fantastic way to
             maximize your bankroll and increase your chances of winning. We
             offer several exciting bonuses designed to give you more value for
-            your deposits. Whether you're a new player or a returning customer,
-            there's something for everyone to take advantage of!
+            your deposits. Whether you&apos;re a new player or a returning customer,
+            there&apos;s something for everyone to take advantage of!
           </p>
         </section>
       </div>
