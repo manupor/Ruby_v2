@@ -54,11 +54,11 @@ export default function BankingPage() {
       </div>
 
       {/* Main content */}
-      <div className="container mx-auto max-w-4xl px-4 py-20">
-        <h1 className="mb-10 text-3xl font-bold">
+      <div className="container mx-auto max-w-4xl px-4 py-6 md:py-20">
+        <h1 className="mb-4 text-xl font-bold md:mb-10 md:text-3xl">
           Banking & Payments at Ruby Wager
         </h1>
-        <section className="mb-16">
+        <section className="mb-8 md:mb-16">
           <p>
             At Ruby Wager, we&apos;ve made deposits and withdrawals fast,
             flexible, and secure. Here&apos;s everything you need to know about
