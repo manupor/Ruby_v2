@@ -22,8 +22,8 @@ const BonusesSection = ({ promoTickets }: any) => {
           </p>
         </div>
 
-        {/* Grid: 2x2 on mobile, 2x2 on tablet, 4x1 on desktop */}
-        <div className="grid grid-cols-1 gap-3 md:grid-cols-3 md:gap-6">
+        {/* Grid: 1 column on mobile, 3 columns on desktop */}
+        <div className="grid grid-cols-1 gap-4 px-4 sm:grid-cols-3 sm:gap-6 sm:px-0">
           {promoTickets.map((ticket: any, index: number) => {
             const Icon = ticket.icon
 
@@ -40,19 +40,49 @@ const BonusesSection = ({ promoTickets }: any) => {
               <div className="relative group">
                 <div
                   key={index}
-                  className="relative aspect-[16/9] overflow-hidden rounded-2xl p-6 transition-all duration-300 hover:shadow-lg hover:shadow-white/20"
+                  className="relative aspect-[16/9] overflow-hidden rounded-2xl p-6 transition-all duration-300 group-hover:shadow-[0_0_20px_rgba(255,255,255,0.4)]"
                 >
-                  {/* Subtle neon border with hover effect */}
+                  {/* Neon border effect */}
                   <div 
-                    className="absolute inset-0 rounded-2xl transition-all duration-300 group-hover:border-4 group-hover:border-white/80"
+                    className="absolute inset-0 rounded-2xl transition-all duration-300"
                     style={{
-                      border: '2px solid rgba(255, 255, 255, 0.8)',
-                      boxShadow: '0 0 15px 5px rgba(255, 255, 255, 0.5)',
-                      filter: 'drop-shadow(0 0 8px rgba(255, 255, 255, 0.5))',
+                      border: '1px solid rgba(255, 255, 255, 0.6)',
+                      boxShadow: '0 0 15px 3px rgba(255, 255, 255, 0.3)',
                       pointerEvents: 'none',
-                      zIndex: 1
+                      zIndex: 1,
+                      opacity: 0,
+                      transition: 'opacity 0.3s ease, box-shadow 0.3s ease',
                     }}
                   ></div>
+                  
+                  {/* Subtle pulsing glow */}
+                  <div 
+                    className="absolute inset-0 rounded-2xl transition-all duration-500"
+                    style={{
+                      boxShadow: '0 0 0 1px rgba(255, 255, 255, 0.1)',
+                      pointerEvents: 'none',
+                      zIndex: 1,
+                      opacity: 0.7,
+                      animation: 'pulse 3s infinite',
+                    }}
+                  ></div>
+                  
+                  <style jsx global>{`
+                    @keyframes pulse {
+                      0% { box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1); }
+                      50% { box-shadow: 0 0 15px 3px rgba(255, 255, 255, 0.3); }
+                      100% { box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.1); }
+                    }
+                    .group:hover .absolute:first-of-type {
+                      opacity: 1;
+                    }
+                    .group:hover .absolute:nth-of-type(2) {
+                      opacity: 1;
+                    }
+                    .group:hover {
+                      transform: translateY(-5px);
+                    }
+                  `}</style>
                   
                   <img
                     src={backgroundImage}
