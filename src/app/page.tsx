@@ -1,7 +1,6 @@
 'use client'
 
 import Image from 'next/image'
-import Banking from '@/components/banking/Banking'
 import BlogSection from '@/components/blog/BlogSection'
 import BonusesSection from '@/components/bonuses/BonusesSection'
 import CasinoBanner from '@/components/casino-banner/CasinoBanner'
@@ -15,6 +14,7 @@ import SportsOptions from '@/components/sports-options/SportsOptions'
 import { Gift, HandCoins, PercentCircle, Wallet } from 'lucide-react'
 import { HeroCarousel } from '@/components/hero/hero-carousel'
 
+// import BankingPage from './banking/page'
 
 const promotions = [
   {
@@ -146,7 +146,7 @@ export default function Home() {
       <CasinoBanner />
       <ReviewsSection />
       <BlogSection />
-      <Banking />
+      {/* Banking section removed from Home */}
     </>
   )
 }
