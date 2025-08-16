@@ -1,27 +1,55 @@
+'use client';
+
 import React from 'react'
-import { Metadata } from 'next'
 import HeroSection from '@/components/hero/HeroSection'
 
-export const metadata: Metadata = {
-  title: 'Banking & Payments | RubyWager',
-  description:
-    'Learn about deposit and withdrawal options, payment methods, and transaction policies at Ruby Wager',
+// Move the effect to a client component
+function RedLightEffect() {
+  return (
+    <>
+      <div className="absolute right-0 top-0 hidden h-full w-[100px] overflow-hidden lg:block">
+        <div className="h-full w-full bg-gradient-to-l from-red-500/10 to-transparent">
+          <div 
+            className="h-full w-[300px] bg-gradient-to-r from-transparent via-red-500/5 to-transparent"
+            style={{
+              animation: 'sweep 15s ease-in-out infinite',
+            }}
+          />
+        </div>
+      </div>
+      <style jsx global>{`
+        @keyframes sweep {
+          0%, 100% { transform: translateX(0); }
+          50% { transform: translateX(-66.67%); }
+        }
+      `}</style>
+    </>
+  );
 }
 
 export default function BankingPage() {
+  const handleJoinNow = () => {
+    // Add your logic here
+  }
+
   return (
     <>
-      <HeroSection
-        title="Bank on Your Terms"
-        subtitle="Crypto, cards, or cashouts"
-        description="Fund your play and get paid fast. No limits, no delays, no hassle."
-        buttonText="GET STARTED"
-        buttonLink="/join"
-        desktopImage="/banking.png"
-        mobileImage="/banking-mobile.png"
-        buttonVariant="brand"
-        hideTextOnMobile={true}
-      />
+      <div className="relative">
+        <HeroSection
+          title="SAME DAY PAYOUTS"
+          subtitle="Fast & Secure Payments"
+          description=""
+          buttonText="JOIN NOW"
+          buttonLink="/join"
+          desktopImage="/banking.jpg"
+          mobileImage="/banking-mobile.jpg"
+          mobileObjectPosition="90% center"
+          buttonVariant="brand"
+          hideTextOnMobile={false}
+          className="pt-0 h-auto min-h-[300px] md:min-h-[400px]"
+        />
+        <RedLightEffect />
+      </div>
 
       {/* Main content */}
       <div className="container mx-auto max-w-4xl px-4 py-20">
