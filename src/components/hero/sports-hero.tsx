@@ -30,7 +30,7 @@ const SportsHero = () => {
         <div className="w-full mt-1 sm:mt-0">
           <h1 className="text-2xl leading-snug font-bold text-white sm:text-4xl lg:text-6xl xl:text-7xl">
             Bet on Every Game{' '}
-            <span className="text-white neon-text block sm:inline">
+            <span className="text-white neon-text block sm:inline lg:block">
               ANYWHERE
             </span>
           </h1>
