@@ -12,15 +12,15 @@ export default function RacebookPage() {
   return (
     <>
       <HeroSection
-        title="BET THE TRACK WITH RUBYWAGER"
-        subtitle="Fast. Fierce. Unstoppable."
-        description="From local derbies to international classics, saddle up and ride the odds."
+        title="Your Track to Winning!"
+        subtitle="6% HORSE REBATE!"
+        description=""
         buttonText="PLACE YOUR BETS NOW"
         buttonLink="/join"
-        desktopImage="/racebook.png"
-        mobileImage="/hero/mobile/02.png"
+        desktopImage="/racebook_hero.jpg"
+        mobileImage="/racebook_hero.jpg"
         buttonVariant="default"
-        hideTextOnMobile={true}
+        hideTextOnMobile={false}
       />
 
       <RacebookFeatures />
