@@ -151,25 +151,44 @@ const HeroSection = ({
 
       {/* Mobile hero section */}
       <div className="relative w-full lg:hidden">
-        <div className="relative w-full">
+        <div className="relative w-full overflow-hidden">
           <div className="w-full">
-            <img
-              src={mobileImage}
-              alt="Hero banner"
-              className="h-auto w-full"
-              loading="eager"
-              fetchPriority="high"
-              decoding="sync"
-            />
+            <div className="relative left-[-30%] w-[150%]">
+              <img
+                src={mobileImage}
+                alt="Hero banner"
+                className="h-auto w-full"
+                loading="eager"
+                fetchPriority="high"
+                decoding="sync"
+              />
+            </div>
           </div>
-          <div className="w-full py-2">
-            <div className="container mx-auto px-4">
-              <button
-                className="w-full max-w-xs mx-auto block rounded bg-red-600 px-6 py-3 text-center font-bold text-white hover:bg-red-700 shadow-md transition-colors"
-                onClick={handleButtonClick}
-              >
-                {buttonText}
-              </button>
+          <div className="absolute inset-0 flex flex-col justify-end pb-4">
+            <div className="container mx-auto px-4 mb-4">
+              <div className="text-center">
+                <h1 className="text-2xl font-bold [text-shadow:0_0_10px_rgba(0,0,0,0.9),0_0_5px_#000] sm:text-3xl md:text-4xl">
+                  {title}
+                </h1>
+                <p className="text-xl font-bold [text-shadow:0_0_10px_rgba(0,0,0,0.9),0_0_5px_#000] sm:text-2xl md:text-3xl">
+                  {subtitle}
+                </p>
+                {description && (
+                  <h2 className="text-sm font-bold uppercase [text-shadow:0_0_8px_rgba(0,0,0,0.9),0_0_3px_#000] sm:text-base">
+                    {description}
+                  </h2>
+                )}
+              </div>
+            </div>
+            <div className="w-full">
+              <div className="container mx-auto px-4">
+                <button
+                  className="w-full max-w-xs mx-auto block rounded bg-red-600 px-6 py-3 text-center font-bold text-white hover:bg-red-700 shadow-md transition-colors"
+                  onClick={handleButtonClick}
+                >
+                  {buttonText}
+                </button>
+              </div>
             </div>
           </div>
         </div>
