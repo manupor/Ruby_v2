@@ -46,6 +46,8 @@ export default function BankingPage() {
           mobileObjectPosition="90% center"
           buttonVariant="brand"
           hideTextOnMobile={false}
+          mobileCenterButton
+          mobileButtonClass="relative z-30"
           className="pt-0 h-auto min-h-[300px] md:min-h-[400px]"
         />
         <RedLightEffect />
