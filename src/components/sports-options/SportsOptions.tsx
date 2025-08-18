@@ -4,8 +4,16 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Card, CardContent, CardTitle } from '@/components/ui/card'
 import { Button } from '@/components/ui/button'
+import { useAuth } from '@/context/AuthContext'
 
 export default function SportsBettingOptions({ options }: any) {
+  const { openRegister } = useAuth()
+
+  const handleViewOddsClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    openRegister()
+  }
+
   return (
     <div className="container mx-auto px-2 sm:pb-8 sm:px-4 lg:px-8">
       <div className="panel my-10 sm:my-20">
@@ -34,7 +42,8 @@ export default function SportsBettingOptions({ options }: any) {
                 </CardTitle>
                 <Button
                   variant="outline"
-                  className="h-auto w-fit border-none bg-red-600 px-2 py-1 text-[8px] font-bold text-white uppercase hover:bg-red-700 sm:px-4 sm:py-2 sm:text-base"
+                  onClick={handleViewOddsClick}
+                  className="h-auto w-fit border-none bg-red-600 px-2 py-1 text-[8px] font-bold text-white uppercase hover:bg-red-700 sm:px-4 sm:py-2 sm:text-base transition-colors cursor-pointer"
                 >
                   View odds
                 </Button>
