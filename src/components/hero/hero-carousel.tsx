@@ -194,7 +194,7 @@ export function HeroCarousel() {
             />
           </div>
 
-          {index === 0 && (
+          {index === 0 && slide.mobileImage && (
             <>
               {/* Mobile background image for first slide only */}
               <div className="absolute inset-0 sm:hidden">
