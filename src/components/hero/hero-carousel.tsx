@@ -16,7 +16,7 @@ const slides = [
     description: 'SAME DAY PAYOUTS - FASTEST IN THE INDUSTRY',
     badge: 'FASTEST PAYOUTS GUARANTEED',
     image: '/hero/mobile/Ruby_banner_Mobile.png',
-    mobileImage: '/hero/mobile/Ruby_banner_Mobile.png',
+    mobileImage: '/ruby-home-mobile-first-slide.png',
     cta: 'JOIN NOW!',
   },
   {
@@ -199,23 +199,23 @@ export function HeroCarousel() {
               {/* Mobile background image for first slide only */}
               <div className="absolute inset-0 sm:hidden">
                 <Image
-                  src="/Hero_version.png"
+                  src={slide.mobileImage}
                   alt="Ruby Mobile Hero"
                   fill
                   className="object-cover object-center"
                   priority={index === 0}
                   unoptimized
                 />
-                <div className="absolute inset-0 flex flex-col items-center pt-8 px-4">
+                <div className="absolute inset-0 flex flex-col items-center px-4 pt-8">
                   <div className="relative w-full max-w-lg">
-                    <div className="relative z-10 -mt-8 light-effect">
+                    <div className="light-effect relative z-10 -mt-8">
                       <div className="relative">
                         <Image
                           src="/hero-text.png"
                           alt="Ruby Wager - The Fastest Payout in the Game"
                           width={700}
                           height={300}
-                          className="w-full h-auto"
+                          className="h-auto w-full"
                           priority={index === 0}
                           unoptimized
                         />
@@ -268,17 +268,17 @@ export function HeroCarousel() {
 
       <style jsx global>{`
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
-        
+
         .font-poppins-bold {
           font-family: 'Poppins', sans-serif;
           font-weight: 700;
         }
-        
+
         .bitcoin-glow {
           filter: drop-shadow(0 0 6px rgba(247, 147, 26, 0.6));
           transition: filter 0.3s ease;
         }
-        
+
         .bitcoin-glow:hover {
           filter: drop-shadow(0 0 10px rgba(247, 147, 26, 0.8));
         }
@@ -286,7 +286,8 @@ export function HeroCarousel() {
       <style>{blinkingStyles}</style>
       <style jsx global>{`
         @keyframes microGlow {
-          0%, 100% {
+          0%,
+          100% {
             opacity: 0.3;
             transform: scale(1);
             filter: drop-shadow(0 0 5px rgba(255, 200, 0, 0.5));
@@ -308,7 +309,12 @@ export function HeroCarousel() {
             left: -5px;
             right: -5px;
             bottom: -5px;
-            background: radial-gradient(circle, rgba(255, 200, 0, 0.15) 0%, rgba(255, 215, 0, 0.05) 40%, rgba(255, 215, 0, 0) 70%);
+            background: radial-gradient(
+              circle,
+              rgba(255, 200, 0, 0.15) 0%,
+              rgba(255, 215, 0, 0.05) 40%,
+              rgba(255, 215, 0, 0) 70%
+            );
             border-radius: 8px;
             z-index: -1;
             animation: microGlow 3s ease-in-out infinite;
@@ -328,26 +334,29 @@ export function HeroCarousel() {
           {/* Hide all content for first and second slides, only show button at bottom */}
           {(currentSlide === 0 || currentSlide === 1) && (
             <div
-              className={`absolute left-1/2 -translate-x-1/2 transform bottom-8`}
+              className={`absolute bottom-8 left-1/2 -translate-x-1/2 transform`}
             >
               {/* Text for first slide */}
               {currentSlide === 0 && (
-                <div className="mb-3 light-effect">
+                <div className="light-effect mb-3">
                   <div className="relative">
-                    <p className="text-white text-xs font-bold uppercase tracking-wider">
+                    <p className="text-xs font-bold tracking-wider text-white uppercase">
                       SAME DAY PAYOUTS - FASTEST IN THE INDUSTRY
                     </p>
                   </div>
                 </div>
               )}
-              
+
               {/* Text for second slide */}
               {currentSlide === 1 && (
-                <div className="mb-3 text-center" style={{ transform: 'translateY(3px)' }}>
-                  <div className="text-white text-[11px] font-poppins-bold uppercase tracking-wider leading-none">
+                <div
+                  className="mb-3 text-center"
+                  style={{ transform: 'translateY(3px)' }}
+                >
+                  <div className="font-poppins-bold text-[11px] leading-none tracking-wider text-white uppercase">
                     RUBY WAGER CASINO
                   </div>
-                  <div className="text-white/90 text-[11px] font-poppins-bold uppercase tracking-wider leading-none font-extrabold mt-0.5 whitespace-nowrap">
+                  <div className="font-poppins-bold mt-0.5 text-[11px] leading-none font-extrabold tracking-wider whitespace-nowrap text-white/90 uppercase">
                     THE FASTEST PAYOUT IN THE GAME
                   </div>
                 </div>
@@ -359,23 +368,25 @@ export function HeroCarousel() {
               >
                 {slides[currentSlide].cta}
               </Button>
-              <div className='flex items-center justify-center gap-3 mt-4'>
-                <div className='relative w-12 h-12'>
-                  <Image 
-                    src="/herobitcoin.png" 
+              <div className="mt-4 flex items-center justify-center gap-3">
+                <div className="relative h-12 w-12">
+                  <Image
+                    src="/herobitcoin.png"
                     alt="Bitcoin"
                     fill
-                    className='object-contain bitcoin-glow'
+                    className="bitcoin-glow object-contain"
                     unoptimized
                   />
                 </div>
-                <span className='text-white font-bold text-sm whitespace-nowrap'>Bitcoin & Crypto Specials</span>
-                <div className='relative w-12 h-12'>
-                  <Image 
-                    src="/herobitcoin.png" 
+                <span className="text-sm font-bold whitespace-nowrap text-white">
+                  Bitcoin & Crypto Specials
+                </span>
+                <div className="relative h-12 w-12">
+                  <Image
+                    src="/herobitcoin.png"
                     alt="Bitcoin"
                     fill
-                    className='object-contain bitcoin-glow'
+                    className="bitcoin-glow object-contain"
                     unoptimized
                   />
                 </div>
@@ -421,7 +432,9 @@ export function HeroCarousel() {
                 >
                   {slides[currentSlide].cta}
                 </Button>
-                <div className='text-white mb-2 font-semibold text-center'>Bitcoin & Crypto Specials</div>
+                <div className="mb-2 text-center font-semibold text-white">
+                  Bitcoin & Crypto Specials
+                </div>
               </div>
             </>
           )}
