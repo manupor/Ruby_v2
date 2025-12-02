@@ -1,0 +1,63 @@
+'use client'
+
+import HeroSection from '@/components/hero/HeroSection'
+import HorizontalPromosSection from '@/components/promotions/HorizontalPromosSection'
+
+export default function PromotionsPage() {
+  return (
+    <>
+      <HeroSection
+        title=""
+        desktopTitleLines={[
+          'UNLOCK THE ACTION',
+          'WITH OUR EXCLUSIVE OFFERS',
+          'AND REBATE PROGRAMS',
+        ]}
+        mobileTitleLines={[
+          'UNLOCK THE ACTION',
+          'WITH OUR EXCLUSIVE OFFERS',
+          'AND REBATE PROGRAMS',
+        ]}
+        subtitle=""
+        description=""
+        buttonText="CLAIM BONUS"
+        buttonLink="/join"
+        desktopImage="/promotions-desktop.png"
+        desktopScaleClass="scale-100"
+        desktopTitleClass="text-xl font-black tracking-tight [text-shadow:0_0_8px_rgba(255,255,255,0.7)] text-left md:text-2xl lg:text-3xl xl:text-4xl"
+        desktopSubtitleClass="mb-1 text-2xl font-black tracking-tight [text-shadow:0_0_10px_rgba(255,255,255,0.8)] md:text-3xl lg:text-4xl"
+        desktopDescriptionClass="text-base font-bold uppercase [text-shadow:0_0_6px_rgba(255,255,255,0.6)] md:text-lg"
+        desktopContentSpacingClass="space-y-4"
+        desktopButtonClass="blink-strong cursor-pointer rounded bg-red-600 px-4 py-2.5 text-base font-bold text-white hover:bg-red-700"
+        mobileImage="/promotions-mobile.jpg"
+        mobileTextAlign="center"
+        mobileTextMarginBottom="mb-2"
+        mobileCenterButton
+        mobileStrongTextShadow
+        mobileObjectPosition="center top"
+        mobileButtonMarginBottom="mb-3"
+        mobileButtonClass="relative z-30 bg-gradient-to-r from-red-500 via-red-600 to-red-700 shadow-[0_0_20px_rgba(255,0,0,0.7),0_0_8px_rgba(255,0,0,0.5)] ring-2 ring-red-400/70 hover:shadow-[0_0_26px_rgba(255,0,0,0.85),0_0_12px_rgba(255,0,0,0.6)] transition-shadow"
+        mobileHeight="40vh"
+        buttonVariant="brand"
+        hideTextOnMobile={false}
+      />
+
+      {/* Main content */}
+      <div className="container mx-auto max-w-4xl px-4 pt-20">
+        <h1 className="mb-10 text-3xl font-bold">Promotions & Bonuses</h1>
+        <section className="mb-16">
+          <p>
+            At Ruby Wager, we believe that bonuses are a fantastic way to
+            maximize your bankroll and increase your chances of winning. We
+            offer several exciting bonuses designed to give you more value for
+            your deposits. Whether you&apos;re a new player or a returning customer,
+            there&apos;s something for everyone to take advantage of!
+          </p>
+        </section>
+      </div>
+
+      {/* 🔥 Horizontal Promos section */}
+      <HorizontalPromosSection />
+    </>
+  )
+}
